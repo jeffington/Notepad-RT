@@ -1,0 +1,13 @@
+C:\Users\Mark\Desktop\Dropbox\Work\Projects\Notepad RT\Notepad RT\Notepad RT\bin\x86\Release\resources.pri
+C:\Users\Mark\Desktop\Dropbox\Work\Projects\Notepad RT\Notepad RT\Notepad RT\bin\x86\Release\AppxManifest.xml
+C:\Users\Mark\Desktop\Dropbox\Work\Projects\Notepad RT\Notepad RT\Notepad RT\bin\x86\Release\Notepad RT.build.appxrecipe
+C:\Users\Mark\Desktop\Dropbox\Work\Projects\Notepad RT\Notepad RT\Notepad RT\bld\x86\Release\priconfig.xml.intermediate
+C:\Users\Mark\Desktop\Dropbox\Work\Projects\Notepad RT\Notepad RT\Notepad RT\bld\x86\Release\layout.resfiles.intermediate
+C:\Users\Mark\Desktop\Dropbox\Work\Projects\Notepad RT\Notepad RT\Notepad RT\bld\x86\Release\resources.resfiles.intermediate
+C:\Users\Mark\Desktop\Dropbox\Work\Projects\Notepad RT\Notepad RT\Notepad RT\bld\x86\Release\pri.resfiles.intermediate
+C:\Users\Mark\Desktop\Dropbox\Work\Projects\Notepad RT\Notepad RT\Notepad RT\bld\x86\Release\priconfig.xml
+C:\Users\Mark\Desktop\Dropbox\Work\Projects\Notepad RT\Notepad RT\Notepad RT\bld\x86\Release\layout.resfiles
+C:\Users\Mark\Desktop\Dropbox\Work\Projects\Notepad RT\Notepad RT\Notepad RT\bld\x86\Release\resources.resfiles
+C:\Users\Mark\Desktop\Dropbox\Work\Projects\Notepad RT\Notepad RT\Notepad RT\bld\x86\Release\pri.resfiles
+C:\Users\Mark\Desktop\Dropbox\Work\Projects\Notepad RT\Notepad RT\Notepad RT\bld\x86\Release\LanguageQualifiers.txt
+C:\Users\Mark\Desktop\Dropbox\Work\Projects\Notepad RT\Notepad RT\Notepad RT\bld\x86\Release\ProjectArchitectures.txt

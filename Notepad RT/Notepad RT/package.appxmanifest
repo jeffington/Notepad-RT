@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="21022MarkSpirek.NotepadRT" Version="1.0.0.0" Publisher="CN=3714733F-5D19-41FF-8C3D-D9DF8CBCAFC1" />
+  <Properties>
+    <DisplayName>Notepad RT</DisplayName>
+    <PublisherDisplayName>JDM Labs, LLC</PublisherDisplayName>
+    <Logo>images\storelogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="default.html">
+      <VisualElements DisplayName="Notepad RT" Logo="images\logo.png" SmallLogo="images\smallogo.png" Description="Notepad RT the missing code editor for developers and geeks for Windows 8 with rich support for text manipulation and syntax highlighting. Built specifically for Windows 8, Notepad RT matches the features and performance of desktop-class editors." ForegroundText="light" BackgroundColor="#8DC125">
+        <DefaultTile ShowName="allLogos" WideLogo="images\widelogo.png" />
+        <SplashScreen Image="images\splashscreen.png" BackgroundColor="#8DC125" />
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.shareTarget" StartPage="default.html">
+          <ShareTarget>
+            <DataFormat>Text</DataFormat>
+            <DataFormat>HTML</DataFormat>
+          </ShareTarget>
+        </Extension>
+        <Extension Category="windows.fileTypeAssociation">
+          <FileTypeAssociation Name=".txt">
+            <Logo>images\logo.png</Logo>
+            <SupportedFileTypes>
+              <FileType>.txt</FileType>
+              <FileType>.css</FileType>
+              <FileType>.js</FileType>
+              <FileType>.md</FileType>
+              <FileType>.java</FileType>
+            </SupportedFileTypes>
+          </FileTypeAssociation>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="removableStorage" />
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
