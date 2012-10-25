@@ -10,22 +10,31 @@
     <meta name="author" content="Notepad RT">
     <meta name="copyright" content="© 2012 JDM Labs, LLC. All Rights Reserved.">
 
-    <link rel="shortcut icon" href="/notepad.png"/> 
+    <link rel="shortcut icon" href="images/notepad.png"/> 
     
     <meta property="og:title" content="Notepad RT for Windows 8">
     <meta property="og:description" content="Notepad RT the missing code editor for developers and geeks for Windows 8 with rich support for text manipulation and syntax highlighting. Built specifically for Windows 8, Notepad RT matches the features and performance of desktop-class editors.">
-    <meta property="og:image" content="http://notepadrt.com/notepad.png"/>
+    <meta property="og:image" content="http://notepadrt.com/images/notepad.png"/>
     
     <link href="#" rel="publisher" />
        
-    <link href="/beta/structure/css/style.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/style.css" type="text/css" />   
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    
+    <link rel="stylesheet" href="slider/themes/bar/bar.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="slider/themes/dark/dark.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="slider/themes/light/light.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="slider/themes/default/default.css" type="text/css" media="screen" />
+    
+    <link rel="stylesheet" href="slider/nivo-slider.css" type="text/css" media="screen" />
+    
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="jquery.mousewheel.js"></script>
+    
     <script>
     $(function(){
     	$("#wrap").wrapInner("<table cellspacing='30'><tr>");
@@ -37,76 +46,7 @@
     });
     </script>
     
-    <style>
-      body{
-      	background: #f5f5f5 url('start.png') no-repeat left top;
-      	font-family: 'Segoe UI', Tahoma, Helvetica, Sans-Serif;
-      	color: #222;
-      	font-size: 14px;
-      	line-height: 1.5em;
-      	
-      	-webkit-background-size: cover;
-      	-moz-background-size: cover;
-      	background-size: cover;
-      	background-attachment:fixed;
-      	
-      	position: relative;
-      	
-      }
-      
-      h1{
-      	color: #fff;
-      	font-weight: 100;
-      	font-size: 55px;
-      	position: fixed;
-      	top: 0px;
-      	left: 33px;
-      	
-      }
-      
-      #wrap{
-				margin-top: 6%;
-      	
-      }
-      #wrap h1{
-      	font-size: 24px;
-      	color: #fff;
-      	text-align: center;
-      }
-      #wrap h2{
-      	font-size: 18px;
-      	color: #fff;
-      	text-align: center;
-      }
-      
-      #wrap h3{
-      	font-size: 24px;
-      	color: #7cb800;
-      	text-align: center;
-      }
-      #wrap img{
-      	text-align: center;
-      }
-      
-      .box{
-      	background: #fff;
-      	padding: 10px;
-      	margin: 10px 0;
-      	float: left;
-      	width: 512px;
-      }
-     
-      a{
-      	color: #7cb800;
-      }
-      a:hover{
-      	text-decoration: none;
-      }
-      
-      li{
-      	margin: 10px 0;
-      }
-    </style>
+
     
   </head>
   
@@ -114,75 +54,113 @@
   	
   	<h1>Notepad RT</h1>
   	
-  	  <article id="wrap">
-  	 
-    	  <img src="notepad.png" class="col" alt="Notepad RT Code Editor for Windows 8" />
-    	  
-<article class="col">
-			<article class="box" style="padding: 50px 10px;">
-				<h3>Summary</h3>
-				<p><strong>Notepad RT</strong> - the missing code editor for developers and geeks for Windows 8 with rich support for text manipulation and syntax highlighting. Built specifically for Windows 8, Notepad RT matches the features and performance of desktop-class editors.</p>
-</article>
-
-	<article class="box" style="padding: 50px 10px;">
-			<h3>Availability</h3>
-					<p>Notepad RT is due out before the launch of Windows 8 on October 26th. The perfect compliment to your shiny new <a href="http://microsoft.com/surface">Microsoft Surface for Windows RT</a>.</p>
-			</article> 
+  	
+		<article id="wrap">
+		
+			<img src="images/notepad.png" class="col" alt="Notepad RT Code Editor for Windows 8" />
 			
-</article>
+			<article class="col">
+				<article id="summary" class="box">
+					<h3>Summary</h3>
+					<p><strong>Notepad RT</strong> - the missing code editor for developers and geeks for Windows 8 with rich support for text manipulation and syntax highlighting. Built specifically for Windows 8, Notepad RT matches the features and performance of desktop-class editors.</p>
+				</article>
+			
+				<article id="availability" class="box">
+					<h3>Availability</h3>
+					<p>Notepad RT is due out before the launch of Windows 8 on October 26th. The perfect compliment to your shiny new <a href="http://microsoft.com/surface">Microsoft Surface for Windows RT</a>.</p>
+				</article> 
+						
+			</article>
+			  	  
+			<article id="features"class="box col">
+			  <h3>Features</h3>
+			  <ul>
+				  <li>Syntax highlighting for HTML, CSS, JavaScript, PHP, Python, Ruby, C/C++, C#, Markdown, and many more languages.</li>
+				  <li>Several popular Dark and Light Syntax highlighting themes to choose from.</li>
+				  <li>Live syntax checking for JavaScript, CoffeeScript, and CSS.</li>
+				  <li>Automatic indention, Line wrapping, and Code folding.</li>
+				  <!--<li>Highlighting of matching parentheses, selected line, and selected word.</li>-->
+				  <li>Highlighting of matching parentheses and selected line</li>
+				  <!--<li>Search and replace using regular expressions.</li>-->
+				  <!--<li>Choose soft tabs or real tabs.</li>-->
+				  <li>Toggle invisible characters.</li>
+				  <li>Drag and drop text using your finger or mouse.</li>
+				  <li>Remains responsive even with very large files.</li>
+				  <li>Open files directly from the Desktop.</li>
+				  <li>Use the Share Charm to send code via IM or Mail.</li>
+					<!--<li>Preview HTML by sharing to IE10.</li>-->
+				  <li>Work with multiple cursors and selections.</li>
+				  <li>Fast and Fluid interface at home on a desktop or tablet.</li>
+				  <li>Edit any compatible file from the file picker.</li>
+			  </ul>
+			</article>
+			  	  
+			<article id="screenshots" class="box col">
+				<!--<h3>Screenshots</h3>-->
+				
+				<div class="slider-wrapper theme-default" style="margin-top: 10px;">
+				    <div id="slider" class="nivoSlider">
+				        <img src="slider/images/s1.png" data-thumb="slider/images/s1.png" data-transition="fold" alt=""  title="Save or create a new document from the App Bar."/>
+				        <a href="slider/images/s2.png"><img src="slider/images/s2.png" data-thumb="s1.png" alt="" title="Open and edit any file on your system or choose from the Recent File list." /></a>
+				        <img src="slider/images/s3.png" data-thumb="slider/images/s3.png" alt="" title="Choose font size, mode, and theme from Settings."/>
+				        <img src="slider/images/s4.png" data-thumb="slider/images/s4.png" alt="" title="Compare notes or code while Notepad RT is snapped." />
+				    </div>
+				</div>
+				
+			</article>
+  
+  
+  
   	  
-  	  <article class="box col">
-	  	  <h3>Features</h3>
-	  	  <ul>
-		  	  <li>Syntax highlighting for HTML, CSS, JavaScript, PHP, Python, Ruby, C/C++, C#, Markdown, and many more languages.</li>
-		  	  <li>Several popular Dark and Light Syntax highlighting themes to choose from.</li>
-		  	  <li>Live syntax checking for JavaScript, CoffeeScript, and CSS.</li>
-		  	  <li>Automatic indention, Line wrapping, and Code folding.</li>
-		  	  <!--<li>Highlighting of matching parentheses, selected line, and selected word.</li>-->
-		  	  <li>Highlighting of matching parentheses and selected line</li>
-		  	  <!--<li>Search and replace using regular expressions.</li>-->
-		  	  <!--<li>Choose soft tabs or real tabs.</li>-->
-		  	  <li>Toggle invisible characters.</li>
-		  	  <li>Drag and drop text using your finger or mouse.</li>
-		  	  <li>Remains responsive even with very large files.</li>
-		  	  <li>Open files directly from the Desktop.</li>
-		  	  <li>Use the Share Charm to send code via IM or Mail.</li>
-<!--<li>Preview HTML by sharing to IE10.</li>-->
-		  	  <li>Work with multiple cursors and selections.</li>
-		  	  <li>Fast and Fluid interface at home on a desktop or tablet.</li>
-		  	  <li>Edit any compatible file from the file picker.</li>
-		  	  
-	  	  </ul>
-  	  </article>
+<!--  	 <article class="col">
   	  
-
-  	  
-<!--  	  <article class="box">
+ <article class="box">
   	  <h3>Contact</h3>
-
+					<p><strong>Email</strong>: <a href="">contact@notepadrt.com</a></p>
+					
   	  		<p><strong>Twitter</strong>: <a href="">@NotepadRT</a></p>
   	  		
   	  		<p><strong>Facebook</strong>: <a href="">/NotepadRT</a></p>
   	  		
   	  		<p><strong>Google+</strong>:<a href="">+NotepadRT</a></p>
-  	  </article>-->
-  	  
-  	    	  
-  	  <!--  	  <article class="box">
-  	    	  <h3>Screenshots</h3>
-  	  
-  	    	  </article>-->
-  	    	  
-  	    	  <!--  	  <article class="box">
-  	    	    	  <h3>Tutorial</h3>
-  	    	  
-  	    	    	  </article>-->
-  	    	    		  
-  	  
-  	  <article class="box col">
-			<p>© 2012 JDM Labs, LLC. All Rights Reserved. <!--<a href="mailto:hello@notepadrt.com">hello@notepadrt.com</a>--></p>
   	  </article>
   	  
-  	  </article>
+  -->	    	  
+  	  
+  	  <footer>
+			<p>© 2012 JDM Labs, LLC. All Rights Reserved.</p>
+  	  </footer>
+  	  
+  	  
+  	  
+  	  <script type="text/javascript" src="slider/jquery.nivo.slider.js"></script>
+<script type="text/javascript">
+$(window).load(function() {
+    $('#slider').nivoSlider({
+        effect: 'fold', // Specify sets like: 'fold,fade,sliceDown'
+        slices: 16, // For slice animations
+        boxCols: 8, // For box animations
+        boxRows: 4, // For box animations
+        animSpeed: 700, // Slide transition speed
+        pauseTime: 5000, // How long each slide will show
+        startSlide: 0, // Set starting Slide (0 index)
+        directionNav: true, // Next & Prev navigation
+        controlNav: true, // 1,2,3... navigation
+        controlNavThumbs: false, // Use thumbnails for Control Nav
+        pauseOnHover: true, // Stop animation while hovering
+        manualAdvance: false, // Force manual transitions
+        prevText: 'Prev', // Prev directionNav text
+        nextText: 'Next', // Next directionNav text
+        randomStart: false, // Start on a random slide
+        beforeChange: function(){}, // Triggers before a slide transition
+        afterChange: function(){}, // Triggers after a slide transition
+        slideshowEnd: function(){}, // Triggers after all slides have been shown
+        lastSlide: function(){}, // Triggers when last slide is shown
+        afterLoad: function(){} // Triggers when slider has loaded
+    });
+});
+</script>
+  	   
+  	  </article> 
   </body>
 </html>

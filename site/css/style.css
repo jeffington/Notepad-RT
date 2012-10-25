@@ -1,0 +1,102 @@
+body{
+ 	background: #f5f5f5 url('../images/start.png') no-repeat left top;
+ 	font-family: 'Segoe UI', Tahoma, Helvetica, Sans-Serif;
+ 	color: #222;
+ 	font-size: 14px;
+ 	line-height: 1.5em;
+ 	
+ 	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+ 	background-size: cover;
+ 	background-attachment:fixed;
+ 	
+ 	position: relative;
+ 	
+ }
+ 
+ h1{
+ 	color: #fff;
+ 	font-weight: 100;
+ 	font-size: 55px;
+ 	position: fixed;
+ 	top: 15px;
+ 	left: 33px;
+ 	
+ }
+ 
+ #wrap{
+		margin-top: 100px;
+ }
+ #wrap h1{
+ 	font-size: 24px;
+ 	color: #fff;
+ 	text-align: center;
+ }
+ #wrap h2{
+ 	font-size: 18px;
+ 	color: #fff;
+ 	text-align: center;
+ }
+ 
+ #wrap h3{
+ 	font-size: 24px;
+ 	color: #7cb800;
+ 	text-align: center;
+ }
+ #wrap img{
+ 	text-align: center;
+ }
+ 
+ .box{
+ 	background: #fff;
+ 	padding: 10px;
+ 	margin: 10px 0;
+ 	float: left;
+ 	width: 512px;
+ }
+
+ a{
+ 	color: #7cb800;
+ }
+ a:hover{
+ 	text-decoration: none;
+ }
+ 
+ li{
+ 	margin: 10px 0;
+ }
+ 
+ footer{
+ 	position: fixed;
+ 	bottom: 1px;
+ 	right: 10px;
+ 	color: #fff;
+ 	font-size: 12px;
+ }
+ 
+ .col{
+ 	height: 512px;
+ }
+ 
+ #summary{
+ 	padding: 30px 10px;
+ 	line-height: 2em;
+ 	margin-top: 5px;
+ }
+ 
+ #availability{
+ 	padding: 42px 10px;
+ 	line-height: 2em;
+ 	
+ }
+ 
+ #features{
+ 	padding: 0px 10px;
+ 	margin-top: 5px;
+ }
+ 
+ #screenshots{
+ 	width: 780px;
+ 	margin-top: 5px;
+ 	padding: 0px 10px;
+ }
