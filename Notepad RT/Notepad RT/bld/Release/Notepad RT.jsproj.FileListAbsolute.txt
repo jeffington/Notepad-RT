@@ -1,0 +1,13 @@
+C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\bin\Release\resources.pri
+C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\bin\Release\AppxManifest.xml
+C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\bin\Release\Notepad RT.build.appxrecipe
+C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\bld\Release\priconfig.xml
+C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\bld\Release\layout.resfiles
+C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\bld\Release\resources.resfiles
+C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\bld\Release\pri.resfiles
+C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\bld\Release\LanguageQualifiers.txt
+C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\bld\Release\ProjectArchitectures.txt
+C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\bld\Release\priconfig.xml.intermediate
+C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\bld\Release\layout.resfiles.intermediate
+C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\bld\Release\resources.resfiles.intermediate
+C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\bld\Release\pri.resfiles.intermediate

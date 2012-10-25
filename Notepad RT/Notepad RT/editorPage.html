@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Notepad&nbsp;RT</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- Notepad_RT references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/settings.js"></script>
+    <script src="/js/saveFile.js"></script>
+    <script src="/js/pickFile.js"></script>
+    <script src="/js/default.js"></script>
+    <!--<script src="/pages/editorPage.js"></script>
+    <script src="/ace-src/ace.js"></script>-->
+
+<style type="text/css">
+    #editor { 
+        position: absolute;
+        top: 80px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+</style>
+</head>
+<body>
+<header aria-label="Header content" role="banner">
+    <div class="titlearea ">
+
+        <!--<button class="titlecontainer">-->
+            <h2>
+                <a id="openfile" >
+                    <img src="/images/smallogo.png" />
+                </a>
+                <span id="filename" class="pagetitle">Untitled.html</span>
+                <!--<span class="chevron win-type-x-large">&#xe099;</span>-->
+
+            </h2>
+        </div>
+        <!--</button>-->
+</header>
+<!--<div id="editor">function foo(items) {
+    var x = "All this is syntax highlighted";
+    return x;
+}</div>-->
+    <button class="fileButton" style="width: 300px; height: 150px;">New File</button>
+    <button class="fileButton">Open File</button>
+</body>
+</html>
