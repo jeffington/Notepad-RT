@@ -121,7 +121,7 @@ var editor,
             cmdRedo = document.getElementById('cmdRedo'),
             cmdSave = document.getElementById('cmdSave'),
             cmdSaveAs = document.getElementById('cmdSaveAs'),
-            cmdSearch = document.getElementById('cmdSearch'),
+            //cmdSearch = document.getElementById('cmdSearch'),
             cmdPin = document.getElementById('cmdPinFile');
 
 
@@ -132,7 +132,7 @@ var editor,
         cmdSaveAs.addEventListener('click', saveFileToLocation);
         cmdUndo.addEventListener('click', doUndo);
         cmdRedo.addEventListener('click', doRedo);
-        cmdSearch.addEventListener('click', openSearch);
+        //cmdSearch.addEventListener('click', openSearch);
     }
     
     function openSearch() {
