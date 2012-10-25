@@ -24,37 +24,67 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="jquery.mousewheel.js"></script>
+    <script>
+    $(function(){
+    	$("#wrap").wrapInner("<table cellspacing='30'><tr>");
+    	$(".col").wrap("<td></td>");
+    	$("body").mousewheel(function(event, delta) {
+    		this.scrollLeft -= (delta * 30);
+    		event.preventDefault();
+    	});   
+    });
+    </script>
+    
     <style>
       body{
-      	background: #222;
+      	background: #f5f5f5 url('start.png') no-repeat left top;
       	font-family: 'Segoe UI', Tahoma, Helvetica, Sans-Serif;
       	color: #222;
       	font-size: 14px;
       	line-height: 1.5em;
       	
+      	-webkit-background-size: cover;
+      	-moz-background-size: cover;
+      	background-size: cover;
+      	background-attachment:fixed;
+      	
+      	position: relative;
+      	
       }
-      #hero{
-      	margin: 0px auto;
-      	margin-top: 25px;
-      	width: 512px;
+      
+      h1{
+      	color: #fff;
+      	font-weight: 100;
+      	font-size: 55px;
+      	position: fixed;
+      	top: 0px;
+      	left: 33px;
+      	
       }
-      #hero h1{
+      
+      #wrap{
+				margin-top: 6%;
+      	
+      }
+      #wrap h1{
       	font-size: 24px;
       	color: #fff;
       	text-align: center;
       }
-      #hero h2{
+      #wrap h2{
       	font-size: 18px;
       	color: #fff;
       	text-align: center;
       }
       
-      #hero h3{
+      #wrap h3{
       	font-size: 24px;
       	color: #7cb800;
       	text-align: center;
       }
-      #hero img{
+      #wrap img{
       	text-align: center;
       }
       
@@ -62,7 +92,10 @@
       	background: #fff;
       	padding: 10px;
       	margin: 10px 0;
+      	float: left;
+      	width: 512px;
       }
+     
       a{
       	color: #7cb800;
       }
@@ -78,18 +111,27 @@
   </head>
   
   	<body>
-  	  <article id="hero">
-  	  
-<!--  	  <h1>Notepad RT</h1>
-  	  <h2>Coming to the Windows 8 Store</h2>-->
-    	  <img src="notepad.png" alt="Notepad RT Code Editor for Windows 8" />
-
-			<article class="box">
+  	
+  	<h1>Notepad RT</h1>
+  	
+  	  <article id="wrap">
+  	 
+    	  <img src="notepad.png" class="col" alt="Notepad RT Code Editor for Windows 8" />
+    	  
+<article class="col">
+			<article class="box" style="padding: 50px 10px;">
 				<h3>Summary</h3>
-				<p>Notepad RT the missing code editor for developers and geeks for Windows 8 with rich support for text manipulation and syntax highlighting. Built specifically for Windows 8, Notepad RT matches the features and performance of desktop-class editors.</p>
-			</article>
+				<p><strong>Notepad RT</strong> - the missing code editor for developers and geeks for Windows 8 with rich support for text manipulation and syntax highlighting. Built specifically for Windows 8, Notepad RT matches the features and performance of desktop-class editors.</p>
+</article>
+
+	<article class="box" style="padding: 50px 10px;">
+			<h3>Availability</h3>
+					<p>Notepad RT is due out before the launch of Windows 8 on October 26th. The perfect compliment to your shiny new <a href="http://microsoft.com/surface">Microsoft Surface for Windows RT</a>.</p>
+			</article> 
+			
+</article>
   	  
-  	  <article class="box">
+  	  <article class="box col">
 	  	  <h3>Features</h3>
 	  	  <ul>
 		  	  <li>Syntax highlighting for HTML, CSS, JavaScript, PHP, Python, Ruby, C/C++, C#, Markdown, and many more languages.</li>
@@ -113,10 +155,7 @@
 	  	  </ul>
   	  </article>
   	  
-  	  <article class="box">
-  	  <h3>Availability</h3>
-					<p>Notepad RT is due out before the launch of Windows 8 on October 26th. The perfect compliment to your shiny new <a href="http://microsoft.com/surface">Microsoft Surface for Windows RT</a>.</p>
-  	  </article>
+
   	  
 <!--  	  <article class="box">
   	  <h3>Contact</h3>
@@ -138,9 +177,9 @@
   	    	    	  <h3>Tutorial</h3>
   	    	  
   	    	    	  </article>-->
-  	    	  
+  	    	    		  
   	  
-  	  <article class="box">
+  	  <article class="box col">
 			<p>© 2012 JDM Labs, LLC. All Rights Reserved. <!--<a href="mailto:hello@notepadrt.com">hello@notepadrt.com</a>--></p>
   	  </article>
   	  
