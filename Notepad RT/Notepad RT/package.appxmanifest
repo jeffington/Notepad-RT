@@ -20,12 +20,6 @@
         <SplashScreen Image="images\splashscreen.png" BackgroundColor="#8DC125" />
       </VisualElements>
       <Extensions>
-        <Extension Category="windows.shareTarget" StartPage="default.html">
-          <ShareTarget>
-            <DataFormat>Text</DataFormat>
-            <DataFormat>HTML</DataFormat>
-          </ShareTarget>
-        </Extension>
         <Extension Category="windows.fileTypeAssociation">
           <FileTypeAssociation Name=".txt">
             <Logo>images\logo.png</Logo>
