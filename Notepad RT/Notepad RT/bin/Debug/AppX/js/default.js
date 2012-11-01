@@ -44,7 +44,7 @@
                 }
             }));
 
-        } else if (args.detail.kind === activation.ActivationKind.shareTarget) {
+        }/*else if (args.detail.kind === activation.ActivationKind.shareTarget) {
             
             var arg = {};
             var shareOperation = args.detail.shareOperation;
@@ -56,18 +56,18 @@
                 return nav.navigate(Application.navigator.editor, arg);
 
             }));
-            /*if (shareOperation.data.contains(Windows.ApplicationModel.DataTransfer.StandardDataFormats.storageItems)) {
-                shareOperation.data.getStorageItemsAsync().done(function (storageItems) {
+            //if (shareOperation.data.contains(Windows.ApplicationModel.DataTransfer.StandardDataFormats.storageItems)) {
+            //    shareOperation.data.getStorageItemsAsync().done(function (storageItems) {
 
-                    if (storageItems.size > 0) {
-                        args.files = storageItems;
-                    }
+            //        if (storageItems.size > 0) {
+            //            args.files = storageItems;
+            //        }
                     
-                });
-            } else {
+            //    });
+            //} else {
               
-            }*/
-        } else if (args.detail.kind === activation.ActivationKind.file) {
+            //}
+        }*/else if (args.detail.kind === activation.ActivationKind.file) {
             
             var arg = {};
             arg.files = args.detail.files;

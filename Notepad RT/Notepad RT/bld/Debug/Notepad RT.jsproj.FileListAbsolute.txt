@@ -24,3 +24,16 @@ C:\Users\Mark\Desktop\Dropbox\Work\Projects\Notepad RT\Notepad RT\Notepad RT\bld
 C:\Users\Mark\Desktop\Dropbox\Work\Projects\Notepad RT\Notepad RT\Notepad RT\bld\Debug\pri.resfiles
 C:\Users\Mark\Desktop\Dropbox\Work\Projects\Notepad RT\Notepad RT\Notepad RT\bld\Debug\LanguageQualifiers.txt
 C:\Users\Mark\Desktop\Dropbox\Work\Projects\Notepad RT\Notepad RT\Notepad RT\bld\Debug\ProjectArchitectures.txt
+C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bin\Debug\resources.pri
+C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bin\Debug\AppxManifest.xml
+C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bin\Debug\Notepad RT.build.appxrecipe
+C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bld\Debug\priconfig.xml.intermediate
+C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bld\Debug\layout.resfiles.intermediate
+C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bld\Debug\resources.resfiles.intermediate
+C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bld\Debug\pri.resfiles.intermediate
+C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bld\Debug\priconfig.xml
+C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bld\Debug\layout.resfiles
+C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bld\Debug\resources.resfiles
+C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bld\Debug\pri.resfiles
+C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bld\Debug\LanguageQualifiers.txt
+C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bld\Debug\ProjectArchitectures.txt

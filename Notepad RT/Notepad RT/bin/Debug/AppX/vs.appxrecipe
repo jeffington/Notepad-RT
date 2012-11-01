@@ -5,7 +5,7 @@
     <WindowsUser>Mark</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>BB646A235C47588024F00FC799F037331914B7B3C298801061F34D4522714D32</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>FD260FD104B805F9423A13E323784C4BADC35AB6C0F984546872D873F4ED4F60</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>21022MarkSpirek.NotepadRT_1.0.0.0_neutral__gk7k3632sm22a</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>21022MarkSpirek.NotepadRT_gk7k3632sm22a!App</RegisteredUserModeAppID>
     <RegisteredPackageID>21022MarkSpirek.NotepadRT</RegisteredPackageID>
@@ -13,421 +13,421 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-10-24T03:24:54.615</Modified>
+      <Modified>2012-10-31T02:40:13.928</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\default.html">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\default.html">
       <PackagePath>default.html</PackagePath>
       <Modified>2012-10-19T22:49:19.139</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\html\DefaultsUI.html">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\html\DefaultsUI.html">
       <PackagePath>html\DefaultsUI.html</PackagePath>
       <Modified>2012-10-22T21:06:47.428</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\html\AboutUI.html">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\html\AboutUI.html">
       <PackagePath>html\AboutUI.html</PackagePath>
       <Modified>2012-10-21T05:57:33.890</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\pages\editor\editorPage.html">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorPage.html">
       <PackagePath>pages\editor\editorPage.html</PackagePath>
-      <Modified>2012-10-24T22:17:45.336</Modified>
+      <Modified>2012-10-31T00:55:14.232</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\pages\home\homePage.html">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\home\homePage.html">
       <PackagePath>pages\home\homePage.html</PackagePath>
       <Modified>2012-10-23T03:36:01.874</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\images\logo.png">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\images\logo.png">
       <PackagePath>images\logo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2012-10-18T17:58:56.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\images\smallogo.png">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\images\smallogo.png">
       <PackagePath>images\smallogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2012-10-21T03:20:18.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\images\splashscreen.png">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\images\splashscreen.png">
       <PackagePath>images\splashscreen.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2012-10-21T03:15:50.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\images\storelogo.png">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\images\storelogo.png">
       <PackagePath>images\storelogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2012-10-19T07:14:32.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\images\widelogo.png">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\images\widelogo.png">
       <PackagePath>images\widelogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2012-10-18T17:58:39.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\js\default.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\default.js">
       <PackagePath>js\default.js</PackagePath>
-      <Modified>2012-10-24T04:01:55.730</Modified>
+      <Modified>2012-10-25T04:53:51.665</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\ace.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\ace.js">
       <PackagePath>ace-src\ace.js</PackagePath>
       <Modified>2012-10-23T06:28:29.475</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\keybinding-emacs.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\keybinding-emacs.js">
       <PackagePath>ace-src\keybinding-emacs.js</PackagePath>
       <Modified>2012-10-23T06:27:01.994</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\keybinding-vim.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\keybinding-vim.js">
       <PackagePath>ace-src\keybinding-vim.js</PackagePath>
       <Modified>2012-10-23T06:27:25.821</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-c9search.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-c9search.js">
       <PackagePath>ace-src\mode-c9search.js</PackagePath>
       <Modified>2012-10-23T06:27:51.294</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-clojure.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-clojure.js">
       <PackagePath>ace-src\mode-clojure.js</PackagePath>
       <Modified>2012-10-23T06:28:10.550</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-coffee.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-coffee.js">
       <PackagePath>ace-src\mode-coffee.js</PackagePath>
       <Modified>2012-10-23T07:57:56.354</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-coldfusion.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-coldfusion.js">
       <PackagePath>ace-src\mode-coldfusion.js</PackagePath>
       <Modified>2012-10-23T07:58:23.139</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-csharp.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-csharp.js">
       <PackagePath>ace-src\mode-csharp.js</PackagePath>
       <Modified>2012-10-23T07:58:48.159</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-css.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-css.js">
       <PackagePath>ace-src\mode-css.js</PackagePath>
       <Modified>2012-10-23T07:59:04.340</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-c_cpp.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-c_cpp.js">
       <PackagePath>ace-src\mode-c_cpp.js</PackagePath>
       <Modified>2012-10-23T07:59:25.746</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-diff.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-diff.js">
       <PackagePath>ace-src\mode-diff.js</PackagePath>
       <Modified>2012-10-23T07:59:46.580</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-glsl.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-glsl.js">
       <PackagePath>ace-src\mode-glsl.js</PackagePath>
       <Modified>2012-10-23T08:00:10.092</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-golang.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-golang.js">
       <PackagePath>ace-src\mode-golang.js</PackagePath>
       <Modified>2012-10-23T08:00:22.782</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-groovy.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-groovy.js">
       <PackagePath>ace-src\mode-groovy.js</PackagePath>
       <Modified>2012-10-23T08:00:36.167</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-haxe.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-haxe.js">
       <PackagePath>ace-src\mode-haxe.js</PackagePath>
       <Modified>2012-10-23T08:00:47.349</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-html.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-html.js">
       <PackagePath>ace-src\mode-html.js</PackagePath>
       <Modified>2012-10-23T08:00:59.964</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-jade.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-jade.js">
       <PackagePath>ace-src\mode-jade.js</PackagePath>
       <Modified>2012-10-23T08:01:12.545</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-java.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-java.js">
       <PackagePath>ace-src\mode-java.js</PackagePath>
       <Modified>2012-10-23T08:01:25.220</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-javascript.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-javascript.js">
       <PackagePath>ace-src\mode-javascript.js</PackagePath>
       <Modified>2012-10-23T08:01:37.702</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-json.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-json.js">
       <PackagePath>ace-src\mode-json.js</PackagePath>
       <Modified>2012-10-23T08:02:01.352</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-jsp.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-jsp.js">
       <PackagePath>ace-src\mode-jsp.js</PackagePath>
       <Modified>2012-10-23T08:02:18.282</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-jsx.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-jsx.js">
       <PackagePath>ace-src\mode-jsx.js</PackagePath>
       <Modified>2012-10-23T08:03:13.299</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-latex.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-latex.js">
       <PackagePath>ace-src\mode-latex.js</PackagePath>
       <Modified>2012-10-23T08:03:25.841</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-less.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-less.js">
       <PackagePath>ace-src\mode-less.js</PackagePath>
       <Modified>2012-10-23T08:03:37.654</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-liquid.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-liquid.js">
       <PackagePath>ace-src\mode-liquid.js</PackagePath>
       <Modified>2012-10-23T08:04:35.704</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-lua.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-lua.js">
       <PackagePath>ace-src\mode-lua.js</PackagePath>
       <Modified>2012-10-23T08:33:01.855</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-luapage.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-luapage.js">
       <PackagePath>ace-src\mode-luapage.js</PackagePath>
       <Modified>2012-10-23T08:05:05.655</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-markdown.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-markdown.js">
       <PackagePath>ace-src\mode-markdown.js</PackagePath>
       <Modified>2012-10-23T08:05:42.624</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-ocaml.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-ocaml.js">
       <PackagePath>ace-src\mode-ocaml.js</PackagePath>
       <Modified>2012-10-23T08:06:06.893</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-perl.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-perl.js">
       <PackagePath>ace-src\mode-perl.js</PackagePath>
       <Modified>2012-10-23T08:06:24.623</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-pgsql.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-pgsql.js">
       <PackagePath>ace-src\mode-pgsql.js</PackagePath>
       <Modified>2012-10-23T08:06:53.239</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-php.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-php.js">
       <PackagePath>ace-src\mode-php.js</PackagePath>
       <Modified>2012-10-23T08:07:05.295</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-powershell.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-powershell.js">
       <PackagePath>ace-src\mode-powershell.js</PackagePath>
       <Modified>2012-10-23T08:07:17.067</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-python.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-python.js">
       <PackagePath>ace-src\mode-python.js</PackagePath>
       <Modified>2012-10-23T08:07:30.786</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-ruby.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-ruby.js">
       <PackagePath>ace-src\mode-ruby.js</PackagePath>
       <Modified>2012-10-23T08:07:45.347</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-scad.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-scad.js">
       <PackagePath>ace-src\mode-scad.js</PackagePath>
       <Modified>2012-10-23T08:08:21.054</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-scala.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-scala.js">
       <PackagePath>ace-src\mode-scala.js</PackagePath>
       <Modified>2012-10-23T08:08:33.976</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-scss.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-scss.js">
       <PackagePath>ace-src\mode-scss.js</PackagePath>
       <Modified>2012-10-23T08:08:44.911</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-sh.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-sh.js">
       <PackagePath>ace-src\mode-sh.js</PackagePath>
       <Modified>2012-10-23T08:09:02.002</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-sql.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-sql.js">
       <PackagePath>ace-src\mode-sql.js</PackagePath>
       <Modified>2012-10-23T08:09:16.751</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-svg.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-svg.js">
       <PackagePath>ace-src\mode-svg.js</PackagePath>
       <Modified>2012-10-23T08:09:50.031</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-tcl.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-tcl.js">
       <PackagePath>ace-src\mode-tcl.js</PackagePath>
       <Modified>2012-10-23T08:10:26.844</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-text.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-text.js">
       <PackagePath>ace-src\mode-text.js</PackagePath>
       <Modified>2012-10-23T08:33:38.116</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-textile.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-textile.js">
       <PackagePath>ace-src\mode-textile.js</PackagePath>
       <Modified>2012-10-23T08:12:05.370</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-xml.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-xml.js">
       <PackagePath>ace-src\mode-xml.js</PackagePath>
       <Modified>2012-10-23T08:12:55.869</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-xquery.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-xquery.js">
       <PackagePath>ace-src\mode-xquery.js</PackagePath>
       <Modified>2012-10-23T08:13:13.543</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\mode-yaml.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-yaml.js">
       <PackagePath>ace-src\mode-yaml.js</PackagePath>
       <Modified>2012-10-23T08:13:28.500</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-ambiance.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-ambiance.js">
       <PackagePath>ace-src\theme-ambiance.js</PackagePath>
       <Modified>2012-10-23T08:13:43.633</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-chrome.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-chrome.js">
       <PackagePath>ace-src\theme-chrome.js</PackagePath>
       <Modified>2012-10-23T08:14:24.270</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-clouds.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-clouds.js">
       <PackagePath>ace-src\theme-clouds.js</PackagePath>
       <Modified>2012-10-23T08:14:47.519</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-clouds_midnight.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-clouds_midnight.js">
       <PackagePath>ace-src\theme-clouds_midnight.js</PackagePath>
       <Modified>2012-10-23T08:15:15.484</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-cobalt.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-cobalt.js">
       <PackagePath>ace-src\theme-cobalt.js</PackagePath>
       <Modified>2012-10-23T08:15:27.515</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-crimson_editor.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-crimson_editor.js">
       <PackagePath>ace-src\theme-crimson_editor.js</PackagePath>
       <Modified>2012-10-23T08:15:40.054</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-dawn.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-dawn.js">
       <PackagePath>ace-src\theme-dawn.js</PackagePath>
       <Modified>2012-10-23T08:16:00.237</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-dreamweaver.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-dreamweaver.js">
       <PackagePath>ace-src\theme-dreamweaver.js</PackagePath>
       <Modified>2012-10-23T08:16:17.340</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-eclipse.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-eclipse.js">
       <PackagePath>ace-src\theme-eclipse.js</PackagePath>
       <Modified>2012-10-23T08:17:16.274</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-github.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-github.js">
       <PackagePath>ace-src\theme-github.js</PackagePath>
       <Modified>2012-10-23T08:17:36.158</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-idle_fingers.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-idle_fingers.js">
       <PackagePath>ace-src\theme-idle_fingers.js</PackagePath>
       <Modified>2012-10-23T08:17:50.277</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-kr_theme.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-kr_theme.js">
       <PackagePath>ace-src\theme-kr_theme.js</PackagePath>
       <Modified>2012-10-23T08:18:04.288</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-merbivore.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-merbivore.js">
       <PackagePath>ace-src\theme-merbivore.js</PackagePath>
       <Modified>2012-10-23T08:18:16.283</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-merbivore_soft.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-merbivore_soft.js">
       <PackagePath>ace-src\theme-merbivore_soft.js</PackagePath>
       <Modified>2012-10-23T08:18:29.364</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-monokai.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-monokai.js">
       <PackagePath>ace-src\theme-monokai.js</PackagePath>
       <Modified>2012-10-23T08:19:41.505</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-mono_industrial.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-mono_industrial.js">
       <PackagePath>ace-src\theme-mono_industrial.js</PackagePath>
       <Modified>2012-10-23T08:19:21.965</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-pastel_on_dark.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-pastel_on_dark.js">
       <PackagePath>ace-src\theme-pastel_on_dark.js</PackagePath>
       <Modified>2012-10-23T08:19:59.874</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-solarized_dark.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-solarized_dark.js">
       <PackagePath>ace-src\theme-solarized_dark.js</PackagePath>
       <Modified>2012-10-23T08:20:20.309</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-solarized_light.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-solarized_light.js">
       <PackagePath>ace-src\theme-solarized_light.js</PackagePath>
       <Modified>2012-10-23T08:20:40.356</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-textmate.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-textmate.js">
       <PackagePath>ace-src\theme-textmate.js</PackagePath>
       <Modified>2012-10-23T08:21:06.836</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-tomorrow.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-tomorrow.js">
       <PackagePath>ace-src\theme-tomorrow.js</PackagePath>
       <Modified>2012-10-23T08:21:25.598</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-tomorrow_night.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-tomorrow_night.js">
       <PackagePath>ace-src\theme-tomorrow_night.js</PackagePath>
       <Modified>2012-10-23T08:21:42.422</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-tomorrow_night_blue.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-tomorrow_night_blue.js">
       <PackagePath>ace-src\theme-tomorrow_night_blue.js</PackagePath>
       <Modified>2012-10-23T08:22:07.888</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-tomorrow_night_bright.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-tomorrow_night_bright.js">
       <PackagePath>ace-src\theme-tomorrow_night_bright.js</PackagePath>
       <Modified>2012-10-23T08:22:21.878</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-tomorrow_night_eighties.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-tomorrow_night_eighties.js">
       <PackagePath>ace-src\theme-tomorrow_night_eighties.js</PackagePath>
       <Modified>2012-10-23T08:22:32.734</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-twilight.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-twilight.js">
       <PackagePath>ace-src\theme-twilight.js</PackagePath>
       <Modified>2012-10-23T08:22:53.542</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-vibrant_ink.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-vibrant_ink.js">
       <PackagePath>ace-src\theme-vibrant_ink.js</PackagePath>
       <Modified>2012-10-23T08:23:29.920</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\theme-xcode.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\theme-xcode.js">
       <PackagePath>ace-src\theme-xcode.js</PackagePath>
       <Modified>2012-10-23T08:23:49.377</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\worker-coffee.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\worker-coffee.js">
       <PackagePath>ace-src\worker-coffee.js</PackagePath>
       <Modified>2012-10-23T08:24:12.574</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\worker-css.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\worker-css.js">
       <PackagePath>ace-src\worker-css.js</PackagePath>
       <Modified>2012-10-23T08:24:29.196</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\worker-javascript.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\worker-javascript.js">
       <PackagePath>ace-src\worker-javascript.js</PackagePath>
       <Modified>2012-10-23T08:24:52.745</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\worker-json.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\worker-json.js">
       <PackagePath>ace-src\worker-json.js</PackagePath>
       <Modified>2012-10-23T08:26:03.609</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\ace-src\worker-xquery.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\worker-xquery.js">
       <PackagePath>ace-src\worker-xquery.js</PackagePath>
       <Modified>2012-10-23T08:26:36.966</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\js\navigator.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\navigator.js">
       <PackagePath>js\navigator.js</PackagePath>
       <Modified>2012-10-19T21:46:10.527</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\js\pickFile.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\pickFile.js">
       <PackagePath>js\pickFile.js</PackagePath>
       <Modified>2012-10-19T22:30:35.143</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\js\readFile.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\readFile.js">
       <PackagePath>js\readFile.js</PackagePath>
       <Modified>2012-10-18T06:03:53.079</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\js\saveFile.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\saveFile.js">
       <PackagePath>js\saveFile.js</PackagePath>
       <Modified>2012-10-19T19:16:00.822</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\js\settings.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\settings.js">
       <PackagePath>js\settings.js</PackagePath>
       <Modified>2012-10-23T07:41:24.879</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\pages\editor\editorPage.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorPage.js">
       <PackagePath>pages\editor\editorPage.js</PackagePath>
-      <Modified>2012-10-24T22:13:42.987</Modified>
+      <Modified>2012-10-31T00:55:14.370</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\pages\editor\editorSettingsPage.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorSettingsPage.js">
       <PackagePath>pages\editor\editorSettingsPage.js</PackagePath>
       <Modified>2012-10-23T00:58:48.888</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\pages\home\homePage.js">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\home\homePage.js">
       <PackagePath>pages\home\homePage.js</PackagePath>
       <Modified>2012-10-23T04:10:09.924</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\css\default.css">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\css\default.css">
       <PackagePath>css\default.css</PackagePath>
       <Modified>2012-10-22T20:23:27.781</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Dropbox\Projects\Notepad RT\Notepad RT\Notepad RT\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2012-10-24T03:24:54.327</Modified>
+      <Modified>2012-10-31T02:40:13.542</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

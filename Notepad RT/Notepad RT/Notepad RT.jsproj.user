@@ -5,7 +5,7 @@
     <AutoRefresh>false</AutoRefresh>
     <ShowAllFiles>true</ShowAllFiles>
     <AppxPackageIsForStore>True</AppxPackageIsForStore>
-    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxShowAllApps>True</AppxShowAllApps>
     <AppxBuildConfigurationSelection>neutral</AppxBuildConfigurationSelection>
   </PropertyGroup>
 </Project>
