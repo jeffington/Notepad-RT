@@ -16,6 +16,7 @@ var editor,
 (function () {
     "use strict";
 
+    var fileTypes = [];
     
     var page = WinJS.UI.Pages.define("/pages/editor/editorPage.html", {
         ready: function (element, options) {
@@ -121,18 +122,26 @@ var editor,
             cmdRedo = document.getElementById('cmdRedo'),
             cmdSave = document.getElementById('cmdSave'),
             cmdSaveAs = document.getElementById('cmdSaveAs'),
-            //cmdSearch = document.getElementById('cmdSearch'),
-            cmdPin = document.getElementById('cmdPinFile');
+            cmdSearch = document.getElementById('cmdSearch'),
+            cmdPin = document.getElementById('cmdPinFile'),
+            cmdFindNext = document.getElementById('cmdFindNext'),
+            cmdFindPrev = document.getElementById('cmdFindPrev'),
+            cmdReplace = document.getElementById('cmdReplace'),
+            cmdReplaceAll = document.getElementById('cmdReplaceAll');
 
 
 
         cmdNew.addEventListener('click', cmdNewFile);
         cmdSave.addEventListener('click', saveFile);
-        //cmdSearch.addEventListener('click', openSearch);
+        cmdSearch.addEventListener('click', openSearch);
         cmdSaveAs.addEventListener('click', saveFileToLocation);
         cmdUndo.addEventListener('click', doUndo);
         cmdRedo.addEventListener('click', doRedo);
-        //cmdSearch.addEventListener('click', openSearch);
+        cmdFindNext.addEventListener('click', findNext);
+        cmdFindPrev.addEventListener('click', findPrev);
+        cmdReplace.addEventListener('click', replace);
+        cmdReplaceAll.addEventListener('click', replaceAll);
+        
     }
     
     function openSearch() {
@@ -145,6 +154,66 @@ var editor,
         };
         searchBar.show();
 
+    }
+
+    function findNext() {
+
+        var searchTerms = document.getElementById('').value,
+            editorSession = editor.getSession(),
+            options = {};
+        
+        options.needle = searchTerms;
+        options.backwards = false;
+
+        if (searchTerms && searchTerms.length > 0) {
+
+            editorSession.find(searchTerms, options, true);
+
+        }
+
+    }
+
+    function findPrev() {
+
+        var searchTerms = document.getElementById('').value,
+            editorSession = editor.getSession();
+
+        if (searchTerms && searchTerms.length > 0) {
+
+            editorSession.findPrevious(searchTerms, options, true);
+
+        }
+
+    }
+
+    function replace() {
+
+        var searchTerms = document.getElementById('searchTerms').value,
+            replaceTerms = document.getElementById('replaceTerms').value,
+            options = {};
+        
+        options.needle = searchTerms;
+
+        if (searchTerms && searchTerms.length > 0 && replaceTerms && replaceterms.length > 0) {
+
+            editor.replace(replaceTerms, options);
+
+        }
+
+    }
+
+    function replaceAll() {
+
+        var searchTerms = document.getElementById('searchTerms').value,
+            replaceTerms = document.getElementById('replaceTerms').value,
+            options = {};
+
+        options.needle = searchTerms;
+        if (searchTerms && searchTerms.length > 0 && replaceTerms && replaceTerms.length > 0) {
+
+            editor.replaceAll(replaceTerms, options);
+
+        }
 
     }
 
@@ -179,8 +248,10 @@ var editor,
     }
 
     function saveFile() {
+
         saveFileContents(editor.getSession().getDocument().getValue());
         hideAppBar();
+
     }
 
     function saveFileAs() {
