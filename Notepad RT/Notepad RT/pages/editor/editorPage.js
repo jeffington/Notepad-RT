@@ -45,7 +45,47 @@ var editor,
         {
             exts: ["pl"],
             mode: "ace/mode/perl",
-        }
+        },
+        {
+            exts: ["py"],
+            mode: "ace/mode/python",
+        },
+        {
+            exts: ["js"],
+            mode: "ace/mode/javascript",
+        },
+        {
+            exts: ["php"],
+            mode: "ace/mode/php",
+        },
+        {
+            exts: ["xml", "rss"],
+            mode: "ace/mode/xml",
+        },
+        {
+            exts: ["c", "cpp", "h"],
+            mode: "ace/mode/c_cpp",
+        },
+        {
+            exts: ["cs"],
+            mode: "ace/mode/csharp",
+        },
+        {
+            exts: ["json"],
+            mode: "ace/mode/json",
+        },
+        {
+            exts: ["rb", "rbw"],
+            mode: "ace/mode/ruby",
+        },
+        {
+            exts: ["sql"],
+            mode: "ace/mode/sql",
+        },
+        {
+            exts: ["psql"],
+            mode: "ace/mode/pgsql",
+        },
     ];
     
     var page = WinJS.UI.Pages.define("/pages/editor/editorPage.html", {
