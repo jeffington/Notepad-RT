@@ -16,7 +16,16 @@ var editor,
 (function () {
     "use strict";
 
-    var fileTypes = [];
+    var fileTypes = [
+        {
+            exts: [".txt"],
+            mode: "",
+        },
+        {
+            exts: [".java"],
+            mode: "",
+        },
+    ];
     
     var page = WinJS.UI.Pages.define("/pages/editor/editorPage.html", {
         ready: function (element, options) {
@@ -86,7 +95,7 @@ var editor,
 
             var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
 
-            saveFileContents(editorSession.getDocument().getValue());
+            //saveFileContents(editorSession.getDocument().getValue());
             editorCurrentFileToken = null;
             dataTransferManager.removeEventListener("datarequested", dataRequested);
             Windows.Storage.ApplicationData.current.removeEventListener("datachanged", configureEditorFromSettings);
@@ -95,6 +104,27 @@ var editor,
         }
 
     });
+
+    function detectEditorModeFromExtension(fileName) {
+        var x,
+            numTypes = fileTypes.length, y, numExtensions;
+
+        for (x = 0; x < numTypes; x++) {
+
+            var extensions = fileTypes[x].exts,
+                numExtensions = extensions.length;
+
+            for (y = 0; y < numExtensions; y++) {
+
+                //if (fileName.e
+
+            }
+
+
+        }
+
+
+    }
 
     function setEditorContents(text) {
 

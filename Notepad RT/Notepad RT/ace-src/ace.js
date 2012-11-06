@@ -10966,7 +10966,7 @@ exports.commands = [{
     exec: function(editor) {
         //var needle = prompt("Find:", editor.getCopyText());
         //editor.find(needle);
-        openSearch();
+        //openSearch();
     },
     readOnly: true
 }, {
