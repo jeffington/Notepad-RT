@@ -116,7 +116,9 @@ var editor,
 
             for (y = 0; y < numExtensions; y++) {
 
-                //if (fileName.e
+                editorSession.setMode(numTypes[x].mode);
+                editorSession.setMode('ace/mode/text');
+                editorSession.setMode(numTypes[x].mode);
 
             }
 
@@ -136,6 +138,13 @@ var editor,
 
         var appBar = document.getElementById("appBar").winControl;
         appBar.disabled = true;
+    }
+
+    function dismissAppBar() {
+
+        var appBar = document.getElementById("appBar").winControl;
+        appBar.hide();
+
     }
 
     function showAppBar() {
@@ -263,7 +272,7 @@ var editor,
         editorCurrentFileToken = null;
         editor.getSession().getDocument().setValue('');
         document.getElementById("filename").innerHTML = 'Untitled';
-        hideAppBar();
+        dismissAppBar();
 
     }
 
@@ -282,7 +291,7 @@ var editor,
     function saveFile() {
 
         saveFileContents(editor.getSession().getDocument().getValue());
-        hideAppBar();
+        dismissAppBar();
 
     }
 
