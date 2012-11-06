@@ -146,7 +146,6 @@
     <Content Include="ace-src\worker-json.js" />
     <Content Include="ace-src\worker-xquery.js" />
     <Content Include="js\navigator.js" />
-    <Content Include="js\pickFile.js" />
     <Content Include="js\readFile.js" />
     <Content Include="js\saveFile.js" />
     <Content Include="js\settings.js" />

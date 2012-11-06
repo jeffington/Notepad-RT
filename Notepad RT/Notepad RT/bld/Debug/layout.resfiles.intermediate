@@ -89,7 +89,6 @@ images\storelogo.png
 images\widelogo.png
 js\default.js
 js\navigator.js
-js\pickFile.js
 js\readFile.js
 js\saveFile.js
 js\settings.js

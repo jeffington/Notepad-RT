@@ -158,7 +158,7 @@ var editor,
 
     function findNext() {
 
-        var searchTerms = document.getElementById('').value,
+        var searchTerms = document.getElementById('searchTerms').value,
             editorSession = editor.getSession(),
             options = {};
         
@@ -167,7 +167,7 @@ var editor,
 
         if (searchTerms && searchTerms.length > 0) {
 
-            editorSession.find(searchTerms, options, true);
+            editor.find(searchTerms, options, true);
 
         }
 
@@ -175,12 +175,14 @@ var editor,
 
     function findPrev() {
 
-        var searchTerms = document.getElementById('').value,
-            editorSession = editor.getSession();
+        var searchTerms = document.getElementById('searchTerms').value,
+            options = {};
 
+        options.needle = searchTerms;
+        options.backwards = true;
         if (searchTerms && searchTerms.length > 0) {
 
-            editorSession.findPrevious(searchTerms, options, true);
+            editor.findPrevious(searchTerms, options, true);
 
         }
 
@@ -194,7 +196,7 @@ var editor,
         
         options.needle = searchTerms;
 
-        if (searchTerms && searchTerms.length > 0 && replaceTerms && replaceterms.length > 0) {
+        if (searchTerms && searchTerms.length > 0 && replaceTerms && replaceTerms.length > 0) {
 
             editor.replace(replaceTerms, options);
 

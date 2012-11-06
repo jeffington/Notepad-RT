@@ -10920,7 +10920,7 @@ exports.commands = [{
     bindKey: bindKey(null, "Ctrl-L"),
     exec: function(editor) { editor.centerSelection(); },
     readOnly: true
-}, {
+},/*{
     name: "gotoline",
     bindKey: bindKey("Ctrl-L", "Command-L"),
     exec: function(editor) {
@@ -10930,7 +10930,7 @@ exports.commands = [{
         }
     },
     readOnly: true
-}, {
+},*/{
     name: "fold",
     bindKey: bindKey("Alt-L|Ctrl-F1", "Command-Alt-L|Command-F1"),
     exec: function(editor) { editor.session.toggleFold(false); },
@@ -10960,12 +10960,13 @@ exports.commands = [{
     bindKey: bindKey("Ctrl-Shift-K", "Command-Shift-G"),
     exec: function(editor) { editor.findPrevious(); },
     readOnly: true
-}, {
+},{
     name: "find",
     bindKey: bindKey("Ctrl-F", "Command-F"),
     exec: function(editor) {
-        var needle = prompt("Find:", editor.getCopyText());
-        editor.find(needle);
+        //var needle = prompt("Find:", editor.getCopyText());
+        //editor.find(needle);
+        openSearch();
     },
     readOnly: true
 }, {
@@ -11196,7 +11197,7 @@ exports.commands = [{
     bindKey: bindKey("Ctrl-/", "Command-/"),
     exec: function(editor) { editor.toggleCommentLines(); },
     multiSelectAction: "forEach"
-}, {
+}, /*{
     name: "replace",
     bindKey: bindKey("Ctrl-R", "Command-Option-F"),
     exec: function(editor) {
@@ -11220,7 +11221,7 @@ exports.commands = [{
             return;
         editor.replaceAll(replacement, {needle: needle});
     }
-}, {
+},*/{
     name: "undo",
     bindKey: bindKey("Ctrl-Z", "Command-Z"),
     exec: function(editor) { editor.undo(); }

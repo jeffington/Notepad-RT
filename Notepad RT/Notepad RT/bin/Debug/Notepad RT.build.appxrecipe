@@ -294,9 +294,6 @@
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\navigator.js">
       <PackagePath>js\navigator.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\pickFile.js">
-      <PackagePath>js\pickFile.js</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\readFile.js">
       <PackagePath>js\readFile.js</PackagePath>
     </AppxPackagedFile>
