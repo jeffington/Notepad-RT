@@ -18,13 +18,34 @@ var editor,
 
     var fileTypes = [
         {
-            exts: [".txt"],
+            exts: ["txt"],
             mode: "",
         },
         {
-            exts: [".java"],
-            mode: "",
+            exts: ["css"],
+            mode: "ace/mode/css",
+        
         },
+        {
+            exts: ["java"],
+            mode: "ace/mode/java",
+        },
+        {
+            exts: ["html", "htm"],
+            mode: "ace/mode/html",
+        },
+        {
+            exts: ["jsp"],
+            mode: "ace/mode/jsp",
+        },
+        {
+            exts: ["markdown", "md"],
+            mode: "ace/mode/markdown",
+        },
+        {
+            exts: ["pl"],
+            mode: "ace/mode/perl",
+        }
     ];
     
     var page = WinJS.UI.Pages.define("/pages/editor/editorPage.html", {
@@ -106,8 +127,12 @@ var editor,
     });
 
     function detectEditorModeFromExtension(fileName) {
-        var x,
-            numTypes = fileTypes.length, y, numExtensions;
+
+        var x, y,
+            numTypes = fileTypes.length,
+            numExtensions,
+            fileExtension = fileName.substring(fileName.lastIndexOf('.') + 1),
+            foundFlag = false;
 
         for (x = 0; x < numTypes; x++) {
 
@@ -116,12 +141,24 @@ var editor,
 
             for (y = 0; y < numExtensions; y++) {
 
-                editorSession.setMode(numTypes[x].mode);
-                editorSession.setMode('ace/mode/text');
-                editorSession.setMode(numTypes[x].mode);
+                if (fileExtension == extensions[y]) {
+// If the extension matches, set the editor's mode
+// Set the found flag to true so we can stop looking for a match
+                    editorSession.setMode(fileTypes[x].mode);
+                    editorSession.setMode('ace/mode/text');
+                    editorSession.setMode(fileTypes[x].mode);
+                    foundFlag = true;
+                    break;
 
+                }
+                
             }
 
+            if (foundFlag) {
+
+                break;
+
+            }
 
         }
 
@@ -407,6 +444,9 @@ var editor,
                 //.log(contents);
                 setTimeout(function () {
                     configureEditorFromSettings();
+
+                    detectEditorModeFromExtension(retrievedFile.name);
+
                     editor.getSession().getDocument().setValue(contents);
                     editor.navigateTo(0, 0);
                 }, 1200);
