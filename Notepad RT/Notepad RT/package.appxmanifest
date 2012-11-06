@@ -15,9 +15,9 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <VisualElements DisplayName="Notepad RT" Logo="images\logo.png" SmallLogo="images\smallogo.png" Description="Notepad RT the missing code editor for developers and geeks for Windows 8 with rich support for text manipulation and syntax highlighting. Built specifically for Windows 8, Notepad RT matches the features and performance of desktop-class editors." ForegroundText="light" BackgroundColor="#8DC125">
+      <VisualElements DisplayName="Notepad RT" Logo="images\logo.png" SmallLogo="images\smallogo.png" Description="Notepad RT the missing code editor for developers and geeks for Windows 8 with rich support for text manipulation and syntax highlighting. Built specifically for Windows 8, Notepad RT matches the features and performance of desktop-class editors." ForegroundText="light" BackgroundColor="#7cb800">
         <DefaultTile ShowName="allLogos" WideLogo="images\widelogo.png" />
-        <SplashScreen Image="images\splashscreen.png" BackgroundColor="#8DC125" />
+        <SplashScreen Image="images\splashscreen.png" BackgroundColor="#7cb800" />
       </VisualElements>
       <Extensions>
         <Extension Category="windows.fileTypeAssociation">
