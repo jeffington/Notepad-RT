@@ -78,7 +78,7 @@ body{
  	height: 512px;
  }
  #note{
- 	height: 325px;
+ 	height: 375px;
  }
  #summary{
  	padding: 22px 10px;
@@ -107,6 +107,10 @@ body{
  #features{
  	padding: 0px 10px;
  	margin-top: 5px;
+ }
+ 
+ #features ul{
+ 	margin-top: 50px;
  }
  
  #screenshots{
@@ -156,6 +160,25 @@ body{
  	margin: 15px 0;
  	display: inline-block;
  	margin-top: 0px;
+ }
+ 
+ #note{
+ 	text-align: center;
+ }
+ 
+#note p{
+	text-align: left;
+}
+ 
+ .feedback{
+ 	background: #7cb800;
+ 	color: #fff;
+ 	text-decoration: none;
+ 	padding: 8px 20px;
+ 	margin: 0px auto;
+ 	display: inline-block;
+ 	margin-top: 0px;
+ 	text-align: center;
  }
 
 /***** SELECTION *****/
