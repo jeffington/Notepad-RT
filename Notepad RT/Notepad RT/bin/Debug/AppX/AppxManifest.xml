@@ -43,6 +43,7 @@
     </Application>
   </Applications>
   <Capabilities>
+    <Capability Name="documentsLibrary" />
     <Capability Name="removableStorage" />
   </Capabilities>
   <Dependencies>

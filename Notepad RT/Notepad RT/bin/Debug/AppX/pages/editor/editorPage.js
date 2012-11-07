@@ -45,7 +45,47 @@ var editor,
         {
             exts: ["pl"],
             mode: "ace/mode/perl",
-        }
+        },
+        {
+            exts: ["py"],
+            mode: "ace/mode/python",
+        },
+        {
+            exts: ["js"],
+            mode: "ace/mode/javascript",
+        },
+        {
+            exts: ["php"],
+            mode: "ace/mode/php",
+        },
+        {
+            exts: ["xml", "rss"],
+            mode: "ace/mode/xml",
+        },
+        {
+            exts: ["c", "cpp", "h"],
+            mode: "ace/mode/c_cpp",
+        },
+        {
+            exts: ["cs"],
+            mode: "ace/mode/csharp",
+        },
+        {
+            exts: ["json"],
+            mode: "ace/mode/json",
+        },
+        {
+            exts: ["rb", "rbw"],
+            mode: "ace/mode/ruby",
+        },
+        {
+            exts: ["sql"],
+            mode: "ace/mode/sql",
+        },
+        {
+            exts: ["psql"],
+            mode: "ace/mode/pgsql",
+        },
     ];
     
     var page = WinJS.UI.Pages.define("/pages/editor/editorPage.html", {
@@ -65,20 +105,20 @@ var editor,
 
 
             if (options && options.filetoken) {
-// Load from recent opened files
+                // Load from recent opened files
 
                 loadFromToken(options.filetoken);
 
             } else if (options && options.files) {
-// Load from file from outside (like Explorer in Desktop)
+                // Load from file from outside (like Explorer in Desktop)
 
                 var file = options.files[0];
                 editorCurrentFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, { name: file.name, dateCreated: file.dateCreated });
                 loadFromToken(editorCurrentFileToken);
 
             } else if (options && options.shareData) {
-// Load content being shared to this app
-// We current only accept text, but are looking to accept files soon
+                // Load content being shared to this app
+                // We current only accept text, but are looking to accept files soon
 
                 filenameTitle.innerHTML = options.shareData.properties.title;
                 
@@ -101,7 +141,7 @@ var editor,
                 }
 
             } else {
-// Loaded with no options, i.e. New File
+                // Loaded with no options, i.e. New File
 
                 console.log("New document");
                 
@@ -142,8 +182,8 @@ var editor,
             for (y = 0; y < numExtensions; y++) {
 
                 if (fileExtension == extensions[y]) {
-// If the extension matches, set the editor's mode
-// Set the found flag to true so we can stop looking for a match
+                    // If the extension matches, set the editor's mode
+                    // Set the found flag to true so we can stop looking for a match
                     editorSession.setMode(fileTypes[x].mode);
                     editorSession.setMode('ace/mode/text');
                     editorSession.setMode(fileTypes[x].mode);
@@ -435,32 +475,81 @@ var editor,
 
         editorCurrentFileToken = fileToken;
 
-        Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(fileToken).done(function (retrievedFile) {
+        Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(fileToken).then(function (retrievedFile) {
 
-            Windows.Storage.FileIO.readTextAsync(retrievedFile).done(function (contents) {
+            console.log("retrieved the file");
+            //return Windows.Storage.FileIO.readTextAsync(retrievedFile);
+            return retrievedFile.openAsync(Windows.Storage.FileAccessMode.read);
+        }).then(function (stream) {
 
-                document.getElementById('filename').innerHTML = retrievedFile.name;
-                //var doc = editor.getSession().getDocument();
-                //.log(contents);
-                setTimeout(function () {
-                    configureEditorFromSettings();
+            var size = stream.size;
+            if (size == 0) {
+                // Data not found
+            } else {
+                var inputStream = stream.getInputStreamAt(0);
+                var reader = new Windows.Storage.Streams.DataReader(inputStream);
 
-                    detectEditorModeFromExtension(retrievedFile.name);
+                reader.loadAsync(size).then(function () {
 
-                    editor.getSession().getDocument().setValue(contents);
-                    editor.navigateTo(0, 0);
-                }, 1200);
-                //console.log("Should have loaded the file contents at this point.");
-                //console.log(editor.getSession().getDocument().getValue());
+                    //var contents = reader.readString(size); // fails with multibyte error if bad data (see legislators.getList.json)
+                    // allocate the full array so readBytes can insert it in full
+                    var array = new Array(size);
+                    reader.readBytes(array);
 
-            });
+                    var newString = "";
 
-        },
-        function (error) {
-            // Handle errors 
+                    for (var i = 0; i < array.length; i++) {
+                        // only printable characters (include spaces because could be part of names) (very rough here)
+                        // http://www.csgnetwork.com/asciiset.html
+                        //if (array[i] >= 32 && array[i] <= 126) {
+                            var c = String.fromCharCode(array[i]);
+                            newString += c;
+                        //}
+                    }
+                    //newString = array.join('');
+                    console.log("File contents: " + newString);
+
+                    setTimeout(function () {
+                        configureEditorFromSettings();
+
+                        //detectEditorModeFromExtension(retrievedFile.name);
+                        
+                        editor.getSession().getDocument().setValue(newString);
+                        editor.navigateTo(0, 0);
+                    }, 1200);
+
+
+                    //document.getElementById('outputhere').innerHTML = "New York Population: " + newYorkPopulation;
+
+                });
+            }
         });
 
+        //});
+        
+        /*.done(function (contents) {
+            console.log("loaded the file contents");
+            document.getElementById('filename').innerHTML = retrievedFile.name;
+            //var doc = editor.getSession().getDocument();
+            //.log(contents);
+                
+            setTimeout(function () {
+                configureEditorFromSettings();
+
+                detectEditorModeFromExtension(retrievedFile.name);
+
+                editor.getSession().getDocument().setValue(contents);
+                editor.navigateTo(0, 0);
+            }, 1200);
+            //console.log("Should have loaded the file contents at this point.");
+            //console.log(editor.getSession().getDocument().getValue());
+
+        }, function (error) {
+            console.log("FUCKED " + error);
+        });*/
+
     }
+
 
     function saveFileContents(contents) {
         var fileToken = editorCurrentFileToken;
