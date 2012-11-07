@@ -1,5 +1,20 @@
 ﻿body {
 }
+div.fragment {
+    padding: 3%;
+}
+button.btn {
+    width:250px;
+    height: 60px;
+    margin-bottom: 20px;
+    border: 2px white dashed;
+}
+#firstCol {
+    margin-right: 20px;
+}
+#filesListView {
+    /*column-width: 3;*/
+}
 
 .notepadrt-background {
     background: #7cb800;
@@ -11,7 +26,7 @@
 }
 
 .fullScreenLayout {
-    column-count: 4;
+    /*column-count: 4;*/
 }
 
 @media screen and (-ms-view-state: fullscreen-landscape) {
@@ -25,7 +40,7 @@
 
 @media screen and (-ms-view-state: snapped) {
     .fullScreenLayout {
-        column-count: 1;
+        /*column-count: 1;*/
     }
 }
 
