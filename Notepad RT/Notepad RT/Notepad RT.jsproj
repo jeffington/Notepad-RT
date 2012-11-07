@@ -57,7 +57,7 @@
     </AppxManifest>
     <Content Include="default.html" />
     <Content Include="html\DefaultsUI.html" />
-    <Content Include="html\AboutUI.html" />
+    <Content Include="html\SupportUI.html" />
     <Content Include="images\logo.png" />
     <Content Include="images\smallogo.png" />
     <Content Include="images\splashscreen.png" />
