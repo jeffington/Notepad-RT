@@ -7,8 +7,8 @@ function initializeSettings() {
     // Populate settings pane and tie commands to settings flyouts.
     WinJS.Application.onsettings = function (e) {
         e.detail.applicationcommands = {
-            "defaultsDiv": { href: "/html/DefaultsUI.html", title: "Editor" },
-            "aboutDiv": { href: "/html/SupportUI.html", title: "Help & Support" }
+            "defaultsDiv": { href: "/html/DefaultsUI.html", title: "Editor Defaults" },
+            "aboutDiv": { href: "/html/SupportUI.html", title: "Feedback and Support" }
         };
         WinJS.UI.SettingsFlyout.populateSettings(e);
     }
