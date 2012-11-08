@@ -15,6 +15,7 @@
 
     var recentFilesDataSource, groupDataSource;
     var itemDataSource, groupDataSource;
+    var recentFilesListView;
 
     var flavors = [
         { title: "FUCK", kind: "R", icon: "images/smallogo.png"},
@@ -49,7 +50,7 @@
             //initRecentFilesData();
             initData();
             
-            var listView4 = new WinJS.UI.ListView(document.getElementById("filesListView"), {
+            recentFilesListView = new WinJS.UI.ListView(document.getElementById("filesListView"), {
                 itemDataSource: itemDataSource,
                 groupDataSource: groupDataSource,
                 itemTemplate: document.getElementById("imageTextListFileTemplate"),
@@ -289,73 +290,6 @@
         this._baseDataSourceConstructor(new desertsDataAdapter(data));
     });
 
-
-    function initRecentFilesData() {
-
-
-        var mruCount = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.size,
-            x;
-
-        files = new Array(mruCount);
-        // icon, textName, textSize, textDate
-        for (x = 0; x < mruCount; x++) {
-
-            var currentFileEntry = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(x),
-                currentFileData = currentFileEntry.metadata,
-                currentFileToken = currentFileEntry.token;
-
-
-            Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(currentFileToken).then(function (currentFile) {
-                files[x] = {
-                    icon: "images/smallogo.png",
-                    textName: "",
-                    textType: "",
-                    kind: "R"
-                };
-
-                if (currentFile && files[x]) {
-                    // TODO: sometimes files[x] is undefined?!?!
-                    files[x].textName = currentFile.name;
-                    //files[x].textPath = currentFile.path;
-                    files[x].textType = currentFile.displayType;
-
-                    //return currentFile.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.documentsView);
-                }
-            });/*.then(function (thumb) {
-
-                if (files[x] && thumb) {
-
-                    files[x].icon = URL.createObjectURL(thumb, { oneTimeOnly: false });
-
-                }
-
-            });*/
-
-        }
-
-        recentFilesDataSource = new recentFileDataSource(flavors);
-        
-        groupDataSource = new groupsDataSource(desertTypes);
-        
-
-        var listView4 = new WinJS.UI.ListView(document.getElementById("filesListView"), {
-            itemDataSource: recentFilesDataSource,
-            groupDataSource: groupDataSource,
-            itemTemplate: document.getElementById("imageTextListFileTemplate"),
-            groupHeaderTemplate: document.getElementById("groupTemplate"),
-            layout: new WinJS.UI.GridLayout()
-        });
-        /*var filesList = new WinJS.Binding.List(files);
-        var recentFilesList = document.getElementById("imageTextListFile").winControl;
-        //recentFilesList.layout = WinJS.UI.ListLayout;
-        recentFilesList.selectionMode = WinJS.UI.SelectionMode.single;
-        recentFilesList.itemDataSource = filesList.dataSource;
-        //recentFilesList.itemTemplate = document.getElementById("imageTextListFileTemplate");
-        recentFilesList.oniteminvoked = recentFilesSelection;
-        recentFilesList.tapBehavior = WinJS.UI.TapBehavior.invokeOnly;
-        recentFilesList.forceLayout();*/
-
-    }
     function initData() {
 
         // form an array of the keys to help with the sort
@@ -377,6 +311,7 @@
                 currentFileData = currentFileEntry.metadata,
                 currentFileToken = currentFileEntry.token;
 
+            console.log("Token " + currentFileToken + " ");
 
             Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(currentFileToken).then(function (currentFile) {
                 files[x] = {
@@ -387,9 +322,7 @@
                 };
 
                 if (currentFile && files[x]) {
-                    // TODO: sometimes files[x] is undefined?!?!
                     files[x].title = currentFile.name;
-                    //files[x].textPath = currentFile.path;
                     files[x].textType = currentFile.displayType;
 
                     return currentFile.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.documentsView);
@@ -414,9 +347,9 @@
         });*/
 
         // Calculate the indexes of the first item for each group, ideally this should also be done at the source of the data
-        var itemData = files;
-        var itemIndex = 0;
-        for (var j = 0, len = files.length; j < len; j++) {
+        //var itemData = files;
+        //var itemIndex = 0;
+        //for (var j = 0, len = files.length; j < len; j++) {
             //desertTypes[j].firstItemIndex = 0;
             //desertTypes[j].firstItemIndex = itemIndex;
             /*var key = desertTypes[j].key;
@@ -426,9 +359,9 @@
                     break;
                 }
             }*/
-        }
+        //}
 
-        console.log("Files: " + JSON.stringify(files));
+        console.log("Files: " + files.length + " " + JSON.stringify(files));
         console.log("Flavors: " + JSON.stringify(flavors));
         // Create the datasources that will then be set on the datasource
         itemDataSource = new flavorsDataSource(files);//flavors

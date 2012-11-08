@@ -477,9 +477,10 @@ var editor,
 
         Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(fileToken).then(function (retrievedFile) {
 
-            console.log("retrieved the file");
-            //return Windows.Storage.FileIO.readTextAsync(retrievedFile);
+            filenameTitle.innerHTML = retrievedFile.name;
+            
             return retrievedFile.openAsync(Windows.Storage.FileAccessMode.read);
+
         }).then(function (stream) {
 
             var size = stream.size;
