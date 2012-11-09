@@ -468,15 +468,6 @@ var editor,
         } catch (e) {
             request.failWithDisplayText("There's no text to share in the document.");
         }
-        /*if (editorCurrentFileToken) {
-
-            var mruList = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries,
-                mruListSize = mruList.size,
-                file = mruList.getAt(mruListSize - 1);
-
-            //request.data.setStorageItems([file]);
-
-        }*/
         
     }
 

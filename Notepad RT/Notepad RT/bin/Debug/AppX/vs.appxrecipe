@@ -71,7 +71,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\ace.js">
       <PackagePath>ace-src\ace.js</PackagePath>
-      <Modified>2012-11-06T07:07:01.510</Modified>
+      <Modified>2012-11-09T09:44:35.975</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\keybinding-emacs.js">
       <PackagePath>ace-src\keybinding-emacs.js</PackagePath>
@@ -407,7 +407,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorPage.js">
       <PackagePath>pages\editor\editorPage.js</PackagePath>
-      <Modified>2012-11-09T07:21:54.709</Modified>
+      <Modified>2012-11-09T07:23:34.308</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorSettingsPage.js">
       <PackagePath>pages\editor\editorSettingsPage.js</PackagePath>
