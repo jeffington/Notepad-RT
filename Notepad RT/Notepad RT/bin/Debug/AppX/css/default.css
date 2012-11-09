@@ -10,10 +10,20 @@ button.btn {
     border: 2px white dashed;
 }
 #firstCol {
-    margin-right: 20px;
+    float: left;
+    width: 17%;
+    padding-right: 3%;
 }
+#secondCol {
+    float: left;
+    width: 74%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
 #filesListView {
-    /*column-width: 3;*/
+    padding: 0;
+    margin: 0;
 }
 
 .notepadrt-background {
@@ -33,14 +43,27 @@ button.btn {
 }
 
 @media screen and (-ms-view-state: filled) {
-    .fullScreenLayout {
-        column-count: 2;
+    #firstCol {
+        
+
+    }
+    #secondCol {
+        clear: both;
+
     }
 }
 
 @media screen and (-ms-view-state: snapped) {
-    .fullScreenLayout {
-        /*column-count: 1;*/
+    #firstCol {
+        width: 100%;
+        height: 10%;
+        padding: 0;
+    }
+    #secondCol {
+        width: 96%;
+        height: 80%;
+        padding: 0;
+        bottom: 0;
     }
 }
 

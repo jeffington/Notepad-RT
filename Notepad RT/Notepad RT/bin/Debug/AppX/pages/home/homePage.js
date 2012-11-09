@@ -17,14 +17,14 @@
     var itemDataSource, groupDataSource;
     var recentFilesListView;
 
-    var flavors = [
+    /*var flavors = [
         { title: "FUCK", kind: "R", icon: "images/smallogo.png"},
         { title: "Lavish Lemon Ice", kind: "R", icon: "images/smallogo.png"},
         { title: "Marvelous Mint", kind: "R", icon: "images/smallogo.png"},
         { title: "Creamy Orange", kind: "R", icon: "images/smallogo.png"},
         { title: "Succulent Strawberry", kind: "R", icon: "images/smallogo.png"},
         { title: "Very Vanilla", kind: "R", icon: "images/smallogo.png"},
-    ];
+    ];*/
     //var flavors = [{ "icon": "images/smallogo.png", "title": "fuck.txt", "kind": "R" }];
 
     var desertTypes = [
@@ -314,19 +314,27 @@
             console.log("Token " + currentFileToken + " ");
 
             Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(currentFileToken).then(function (currentFile) {
-                files[x] = {
+                var index = x;
+                files[index] = {
                     icon: "images/smallogo.png",
                     title: "",
                     textType: "",
                     kind: "R"
                 };
 
-                if (currentFile && files[x]) {
-                    files[x].title = currentFile.name;
-                    files[x].textType = currentFile.displayType;
+                if (currentFile && files[index]) {
+                    files[index].title = currentFile.name;
+                    files[index].textType = currentFile.displayType;
 
                     return currentFile.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.documentsView);
                 }
+
+            }, function (error) { // Deleted or possibly corrupted file, get it out of here
+
+                console.log("Files length: " + files.length + " Index: " + x + " Token: " + currentFileToken + " " + error);
+                files.splice(index, 1);
+                Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(currentFileToken);
+                console.log("Files length: " + files.length + " Index: " + x + " Token: " + currentFileToken + " " + error);
             }).then(function (thumb) {
 
                 if (files[x] && thumb) {
@@ -362,7 +370,7 @@
         //}
 
         console.log("Files: " + files.length + " " + JSON.stringify(files));
-        console.log("Flavors: " + JSON.stringify(flavors));
+        //console.log("Flavors: " + JSON.stringify(flavors));
         // Create the datasources that will then be set on the datasource
         itemDataSource = new flavorsDataSource(files);//flavors
         groupDataSource = new desertsDataSource(desertTypes);

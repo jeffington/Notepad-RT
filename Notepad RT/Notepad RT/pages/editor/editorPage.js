@@ -11,12 +11,17 @@
 var editor,
      editorSession,
      editorCurrentFileToken = null,
-     filenameTitle;
+     filenameTitle,
+     hasEditorChanged;
 
 (function () {
     "use strict";
 
     var fileTypes = [
+        {
+            exts: ["ps1"],
+            mode: "ace/mode/powershell",
+        },
         {
             exts: ["txt"],
             mode: "",
@@ -474,11 +479,14 @@ var editor,
     function loadFromToken(fileToken) {
 
         editorCurrentFileToken = fileToken;
+// Configure and prepare the editor to receive the file's content
+        configureEditorFromSettings();                
 
         Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(fileToken).then(function (retrievedFile) {
 
             filenameTitle.innerHTML = retrievedFile.name;
-            
+            detectEditorModeFromExtension(retrievedFile.name);
+
             return retrievedFile.openAsync(Windows.Storage.FileAccessMode.read);
 
         }).then(function (stream) {
@@ -511,11 +519,11 @@ var editor,
                     console.log("File contents: " + newString);
 
                     setTimeout(function () {
-                        configureEditorFromSettings();
-
-                        //detectEditorModeFromExtension(retrievedFile.name);
+                        
                         
                         editor.getSession().getDocument().setValue(newString);
+                        newString = null;
+                        //delete newString;
                         editor.navigateTo(0, 0);
                     }, 1200);
 

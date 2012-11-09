@@ -18,14 +18,16 @@
             <section aria-label="Main content" role="main" class="fullScreenLayout">
                 <ul style="list-style-type: none;">
                     <li>
-                        <div id="firstCol" style="float: left;">
+                        <div id="firstCol">
                             <button id="openfile" class="btn">Open File</button>
                             <br />
                             <button id="newfile" class="btn">New File</button>
                         </div>
                     </li>
                     <li>
-                        <div id="filesListView" style="float: left; width: 400px;"></div>
+                        <div id="secondCol">
+                            <div id="filesListView"></div>
+                        </div>
                     </li>
                 </ul>
 <!-- List Header template -->
@@ -37,12 +39,12 @@
 <!-- Item template -->
 <div id="imageTextListFileTemplate" 
      data-win-control="WinJS.Binding.Template">
-    <table style="padding: 10px;">
+    <table style="width: 240px !important; width: 80px; padding: 10px;">
         <tr>
             <td rowspan="2" style="padding-right: 10px; vertical-align: middle;"><img class="imageTextListFileImage" data-win-bind="src: icon"/></td>
-            <td data-win-bind="innerText: title" style="vertical-align: top; font-size: 18px;"></td>
+            <td data-win-bind="innerText: title" style="vertical-align: top; font-size: 18px; text-align: left;" align="left"></td>
         </tr>
-        <tr><td data-win-bind="innerText: textType" style="color: #CCC;"></td></tr>
+        <tr><td data-win-bind="innerText: textType" style="color: #CCC; text-align: left;" align="left"></td></tr>
         <!--<tr><td data-win-bind="innerText: textPath" style="color: #CCC;"></td></tr>-->
     </table>
 </div>
