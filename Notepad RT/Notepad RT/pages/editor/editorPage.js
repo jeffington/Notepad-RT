@@ -545,7 +545,14 @@ var editor,
                         // only printable characters (include spaces because could be part of names) (very rough here)
                         // http://www.csgnetwork.com/asciiset.html
                         //if (array[i] >= 32 && array[i] <= 126) {
-                            var c = String.fromCharCode(array[i]);
+                        // Byte-order mark in UTF-8 files: ï»¿
+                        
+                        var c = String.fromCharCode(array[i]);
+
+                        if (i == 0 && c == 'ï' ||
+                            i == 1 && c == '»' || i == 2 && c == '¿') {
+                            continue;
+                        }
                             newString += c;
                         //}
                     }
