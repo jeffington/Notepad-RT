@@ -462,17 +462,12 @@ var editor,
         // Title is required
         var dataPackageTitle = document.getElementById("filename").innerHTML;
         request.data.properties.title = dataPackageTitle;
-        request.data.setText(editorSession.getDocument().getValue() || "");
 
-        /*if (editorCurrentFileToken) {
-
-            var mruList = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries,
-                mruListSize = mruList.size,
-                file = mruList.getAt(mruListSize - 1);
-
-            //request.data.setStorageItems([file]);
-
-        }*/
+        try {
+            request.data.setText(editorSession.getDocument().getValue());
+        } catch (e) {
+            request.failWithDisplayText("There's no text to share in the document.");
+        }
         
     }
 
