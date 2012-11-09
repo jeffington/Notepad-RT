@@ -29,7 +29,7 @@
       <Extensions>
         <Extension Category="windows.fileTypeAssociation">
           <FileTypeAssociation Name=".txt">
-            <Logo>images\logo.png</Logo>
+            <Logo>images\filelogo.png</Logo>
             <SupportedFileTypes>
               <FileType>.txt</FileType>
               <FileType>.css</FileType>

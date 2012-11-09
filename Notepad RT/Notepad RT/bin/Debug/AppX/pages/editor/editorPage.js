@@ -432,16 +432,32 @@ var editor,
         var savePicker = new Windows.Storage.Pickers.FileSavePicker();
         savePicker.suggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.documentsLibrary;
         // Dropdown of file types the user can save the file as
-        savePicker.fileTypeChoices.insert("Plain Text", [".txt"]);
-        savePicker.fileTypeChoices.insert("C/C++", [".c", ".h", ".cpp"]);
-        savePicker.fileTypeChoices.insert("HTML", [".html"]);
-        savePicker.fileTypeChoices.insert("CSS", [".css"]);
-        savePicker.fileTypeChoices.insert("JavaScript", [".js"]);
+        savePicker.fileTypeChoices.insert(".txt", [".txt"]);
+        savePicker.fileTypeChoices.insert(".c", [".c"]);
+        savePicker.fileTypeChoices.insert(".cs", [".cs"]);
+        savePicker.fileTypeChoices.insert(".h", [".h"]);
+        savePicker.fileTypeChoices.insert(".cpp", [".cpp"]);
+        savePicker.fileTypeChoices.insert(".html", [".html"]);
+        savePicker.fileTypeChoices.insert(".css", [".css"]);
+        savePicker.fileTypeChoices.insert(".js", [".js"]);
+        savePicker.fileTypeChoices.insert(".md", [".md"]);
+        savePicker.fileTypeChoices.insert(".java", [".java"]);
+        savePicker.fileTypeChoices.insert(".js", [".js"]);
+        savePicker.fileTypeChoices.insert(".jsp", [".jsp"]);
+        savePicker.fileTypeChoices.insert(".json", [".json"]);
+        savePicker.fileTypeChoices.insert(".sql", [".sql"]);
+        savePicker.fileTypeChoices.insert(".psql", [".psql"]);
+        savePicker.fileTypeChoices.insert(".php", [".php"]);
+        savePicker.fileTypeChoices.insert(".pl", [".pl"]);
+        savePicker.fileTypeChoices.insert(".py", [".py"]);
+        savePicker.fileTypeChoices.insert(".rb", [".rb"]);
+
+        savePicker.fileTypeChoices.insert(".xml", [".xml"]);
         //savePicker.defaultFileExtension = "";
         // Default file name if the user does not type one in or select a file to replace
-        if (document && document.getElementById('filename')) {
+        if (filenameInput) {
 
-            savePicker.suggestedFileName = document.getElementById('filename').innerHTML;
+            savePicker.suggestedFileName = filenameInput.innerHTML;
             
         } else {
 
@@ -466,11 +482,11 @@ var editor,
                             filenameInput.innerHTML = file.name;
                             
                             setImmediate(function () {
-
-                                var mruList = document.getElementById("imageTextListFile");
+                                // TODO: 
+                                var mruList = document.getElementById("filesListView");
                                 if (mruList) {
 
-                                    initRecentFiles();
+                                    initData();
 
 
                                 }
@@ -545,6 +561,7 @@ var editor,
                         // only printable characters (include spaces because could be part of names) (very rough here)
                         // http://www.csgnetwork.com/asciiset.html
                         //if (array[i] >= 32 && array[i] <= 126) {
+
                         // Byte-order mark in UTF-8 files: ï»¿
                         
                         var c = String.fromCharCode(array[i]);

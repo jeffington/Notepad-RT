@@ -8,8 +8,8 @@ function initializeSettings() {
     WinJS.Application.onsettings = function (e) {
         e.detail.applicationcommands = {
             "defaultsDiv": { href: "/html/DefaultsUI.html", title: "Editor" },
-            "supportDiv": { href: "/html/SupportUI.html", title: "Feedback and Support" },
-            "copyrightDiv": { href: "/html/LegalUI.html", title: "Copyright Notice" }
+            "feedbackDiv": { href: "/html/FeedbackUI.html", title: "Feedback" },
+            "copyrightDiv": { href: "/html/LegalUI.html", title: "Copyright" }
         };
         WinJS.UI.SettingsFlyout.populateSettings(e);
     }

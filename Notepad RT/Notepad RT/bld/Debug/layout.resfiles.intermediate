@@ -81,7 +81,9 @@ ace-src\worker-xquery.js
 css\default.css
 default.html
 html\DefaultsUI.html
-html\SupportUI.html
+html\FeedbackUI.html
+html\LegalUI.html
+images\filelogo.png
 images\logo.png
 images\smallogo.png
 images\splashscreen.png
