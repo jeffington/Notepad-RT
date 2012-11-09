@@ -11,21 +11,10 @@
 (function () {
     "use strict";
 
-    //var editor, editorSession, editorCurrentFileToken = null;
-
     var recentFilesDataSource, groupDataSource;
     var itemDataSource, groupDataSource;
     var recentFilesListView;
 
-    /*var flavors = [
-        { title: "FUCK", kind: "R", icon: "images/smallogo.png"},
-        { title: "Lavish Lemon Ice", kind: "R", icon: "images/smallogo.png"},
-        { title: "Marvelous Mint", kind: "R", icon: "images/smallogo.png"},
-        { title: "Creamy Orange", kind: "R", icon: "images/smallogo.png"},
-        { title: "Succulent Strawberry", kind: "R", icon: "images/smallogo.png"},
-        { title: "Very Vanilla", kind: "R", icon: "images/smallogo.png"},
-    ];*/
-    //var flavors = [{ "icon": "images/smallogo.png", "title": "fuck.txt", "kind": "R" }];
 
     var desertTypes = [
         //{ key: "IC", type: "Ice Cream" },
@@ -39,15 +28,13 @@
 
             var openFileButton = document.getElementById('openfile');
             var newFileButton = document.getElementById('newfile');
-            //var filenameTitle = document.getElementById('filename');
             openFileButton.addEventListener('click', this._pickFile);
             newFileButton.addEventListener('click', function () {
 
                 WinJS.Navigation.navigate("/pages/editor/editorPage.html");
 
-            });
+            }); // Pass them directory to editorPage.html with no arguments
 
-            //initRecentFilesData();
             initData();
             
             recentFilesListView = new WinJS.UI.ListView(document.getElementById("filesListView"), {
@@ -86,22 +73,17 @@
 
                     token = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, file.name);
                     Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.add(file);
-                    WinJS.Navigation.navigate("/pages/editor/editorPage.html", {filetoken: token}).done(function () {
+                    WinJS.Navigation.navigate("/pages/editor/editorPage.html", {filetoken: token});//.done(function () {
                         //document.getElementById('filename').innerHTML = file.name;
                         //editorCurrentFileToken = file;
                         //document.getElementById('editor').innerHTML = contents;
                         //editor.getDocument().setContents(contents);
-                    });
+                    //});
 
 
-                    //console.log(outputString);
+                    
 
-                } else {
-
-                    // The picker was dismissed with no selected file
-                    console.log("File picker was cancelled.");
-
-                }
+                } // Do nothing if a file wasn't picked
 
             });
         }

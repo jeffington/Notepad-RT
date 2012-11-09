@@ -462,7 +462,7 @@ var editor,
         // Title is required
         var dataPackageTitle = document.getElementById("filename").innerHTML;
         request.data.properties.title = dataPackageTitle;
-        request.data.setText(editorSession.getDocument().getValue());
+        request.data.setText(editorSession.getDocument().getValue() || "");
 
         /*if (editorCurrentFileToken) {
 
