@@ -80,8 +80,8 @@ ace-src\worker-json.js
 ace-src\worker-xquery.js
 css\default.css
 default.html
-html\AboutUI.html
 html\DefaultsUI.html
+html\SupportUI.html
 images\logo.png
 images\smallogo.png
 images\splashscreen.png

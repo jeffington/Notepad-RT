@@ -124,6 +124,10 @@
                     return WinJS.Promise.wrapError(new WinJS.ErrorFromName(WinJS.UI.FetchError.doesNotExist));
                 }
 
+                /*if (!that._itemData[requestIndex]) {
+                    return WinJS.Promise.wrapError(new WinJS.ErrorFromName("Data for this row is undefined or null."));
+                }*/
+
                 var lastFetchIndex = Math.min(requestIndex + countAfter, that._itemData.length - 1);
                 var fetchIndex = Math.max(requestIndex - countBefore, 0);
                 var results = [];
@@ -131,11 +135,18 @@
                 // iterate and form the collection of items
                 for (var i = fetchIndex; i <= lastFetchIndex; i++) {
                     var item = that._itemData[i];
-                    results.push({
-                        key: i.toString(), // the key for the item itself
-                        groupKey: item.kind, // the key for the group for the item
-                        data: item // the data fields for the item
-                    });
+                    
+                    if (!item) { // FORGIVE ME JESUS!!!
+                        i--;
+                        continue;
+                    }
+
+                        results.push({
+                            key: i.toString(), // the key for the item itself
+                            groupKey: item.kind, // the key for the group for the item
+                            data: item || {}// the data fields for the item
+                        });
+                    
                 }
 
                 // return a promise for the results
@@ -312,10 +323,11 @@
                 }
 
             }, function (error) { // Deleted or possibly corrupted file, get it out of here
-
+                var index = x;
                 console.log("Files length: " + files.length + " Index: " + x + " Token: " + currentFileToken + " " + error);
                 files.splice(index, 1);
                 Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(currentFileToken);
+
                 console.log("Files length: " + files.length + " Index: " + x + " Token: " + currentFileToken + " " + error);
             }).then(function (thumb) {
 
@@ -328,28 +340,6 @@
             });
 
         }
-
-        /*itemData.sort(function CompareForSort(item1, item2) {
-            var first = groupKeys.indexOf(item1.kind), second = groupKeys.indexOf(item2.kind);
-            if (first === second) { return 0; }
-            else if (first < second) { return -1; }
-            else { return 1; }
-        });*/
-
-        // Calculate the indexes of the first item for each group, ideally this should also be done at the source of the data
-        //var itemData = files;
-        //var itemIndex = 0;
-        //for (var j = 0, len = files.length; j < len; j++) {
-            //desertTypes[j].firstItemIndex = 0;
-            //desertTypes[j].firstItemIndex = itemIndex;
-            /*var key = desertTypes[j].key;
-            for (var k = itemIndex, len2 = itemData.length; k < len2; k++) {
-                if (itemData[k].kind !== key) {
-                    itemIndex = k;
-                    break;
-                }
-            }*/
-        //}
 
         console.log("Files: " + files.length + " " + JSON.stringify(files));
         //console.log("Flavors: " + JSON.stringify(flavors));

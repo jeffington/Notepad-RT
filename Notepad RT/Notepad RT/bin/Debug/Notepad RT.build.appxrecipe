@@ -19,8 +19,8 @@
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\html\DefaultsUI.html">
       <PackagePath>html\DefaultsUI.html</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\html\AboutUI.html">
-      <PackagePath>html\AboutUI.html</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\html\SupportUI.html">
+      <PackagePath>html\SupportUI.html</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorPage.html">
       <PackagePath>pages\editor\editorPage.html</PackagePath>

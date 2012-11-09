@@ -16,29 +16,29 @@
     <AppXManifest Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-11-07T07:23:07.968</Modified>
+      <Modified>2012-11-09T05:56:59.260</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\default.html">
       <PackagePath>default.html</PackagePath>
-      <Modified>2012-11-09T04:33:02.609</Modified>
+      <Modified>2012-11-09T05:55:33.670</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\html\DefaultsUI.html">
       <PackagePath>html\DefaultsUI.html</PackagePath>
-      <Modified>2012-11-09T03:56:57.893</Modified>
+      <Modified>2012-11-09T05:55:33.677</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\html\AboutUI.html">
-      <PackagePath>html\AboutUI.html</PackagePath>
-      <Modified>2012-11-06T05:07:50.763</Modified>
+    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\html\SupportUI.html">
+      <PackagePath>html\SupportUI.html</PackagePath>
+      <Modified>2012-11-09T05:55:26.705</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorPage.html">
       <PackagePath>pages\editor\editorPage.html</PackagePath>
-      <Modified>2012-11-09T04:59:10.834</Modified>
+      <Modified>2012-11-09T05:55:33.689</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\home\homePage.html">
       <PackagePath>pages\home\homePage.html</PackagePath>
-      <Modified>2012-11-09T02:47:57.901</Modified>
+      <Modified>2012-11-09T05:59:43.819</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\images\logo.png">
       <PackagePath>images\logo.png</PackagePath>
@@ -403,11 +403,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\settings.js">
       <PackagePath>js\settings.js</PackagePath>
-      <Modified>2012-11-06T05:07:50.788</Modified>
+      <Modified>2012-11-09T05:55:26.708</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorPage.js">
       <PackagePath>pages\editor\editorPage.js</PackagePath>
-      <Modified>2012-11-09T05:51:12.864</Modified>
+      <Modified>2012-11-09T05:55:35.226</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorSettingsPage.js">
       <PackagePath>pages\editor\editorSettingsPage.js</PackagePath>
@@ -415,15 +415,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\home\homePage.js">
       <PackagePath>pages\home\homePage.js</PackagePath>
-      <Modified>2012-11-09T05:20:02.763</Modified>
+      <Modified>2012-11-09T06:25:43.455</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\css\default.css">
       <PackagePath>css\default.css</PackagePath>
-      <Modified>2012-11-09T03:37:09.192</Modified>
+      <Modified>2012-11-09T05:55:33.665</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2012-11-07T07:23:07.107</Modified>
+      <Modified>2012-11-09T05:56:58.601</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
