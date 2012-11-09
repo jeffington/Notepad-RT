@@ -12,7 +12,7 @@ var editor,
      editorSession,
      editorCurrentFileToken = null,
      filenameTitle,
-     hasEditorChanged;
+     hasEditorChanged = true;
 
 (function () {
     "use strict";
@@ -160,16 +160,48 @@ var editor,
         unload: function () {
 
             var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
-
-            //saveFileContents(editorSession.getDocument().getValue());
-            editorCurrentFileToken = null;
             dataTransferManager.removeEventListener("datarequested", dataRequested);
             Windows.Storage.ApplicationData.current.removeEventListener("datachanged", configureEditorFromSettings);
+
+            if (hasEditorChanged) {
+
+                unsavedFilePrompt();
+
+            }
+            //saveFileContents(editorSession.getDocument().getValue());
+            editorCurrentFileToken = null;
             editor.destroy();
             
         }
 
     });
+
+    function unsavedFilePrompt() {
+        // Create the message dialog and set its content
+        var msg = new Windows.UI.Popups.MessageDialog("Do you want to save changes to " + "fileName.txt" + "?", "Unsaved Changes");
+
+        // Add commands and set their CommandIds
+        msg.commands.append(new Windows.UI.Popups.UICommand("Save",
+            function () {
+
+                saveFileContents(editorSession.getDocument().getValue());
+            
+            }, 1));
+        msg.commands.append(new Windows.UI.Popups.UICommand("Cancel", null, 2));
+
+        // Set the command that will be invoked by default
+        msg.defaultCommandIndex = 2;
+
+        // Show the message dialog
+        msg.showAsync().done(function (command) {
+            if (command) {
+                //WinJS.log && WinJS.log("The '" + command.label + "' (" + command.id + ") command has been selected.", "sample", "status");
+            }
+        });
+        
+
+
+    }
 
     function detectEditorModeFromExtension(fileName) {
 
@@ -407,8 +439,15 @@ var editor,
         savePicker.fileTypeChoices.insert("JavaScript", [".js"]);
         //savePicker.defaultFileExtension = "";
         // Default file name if the user does not type one in or select a file to replace
-        savePicker.suggestedFileName = filenameInput.innerHTML;
+        if (document && document.getElementById('filename')) {
 
+            savePicker.suggestedFileName = document.getElementById('filename').innerHTML;
+            
+        } else {
+
+            savePicker.suggestedFileName = 'Untitled';
+
+        }
         savePicker.pickSaveFileAsync().then(function (file) {
 
             if (file) {

@@ -136,7 +136,7 @@
                 for (var i = fetchIndex; i <= lastFetchIndex; i++) {
                     var item = that._itemData[i];
                     
-                    if (!item) { // FORGIVE ME JESUS!!!
+                    if (!item) { // FORGIVE ME JESUS!!! TODO:
                         i--;
                         continue;
                     }

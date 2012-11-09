@@ -34,43 +34,6 @@
         text-indent: -9999px;
     }
 </style>
-    <script>
-
-        function configureEditorFromSettings() {
-            var editor = ace.edit("editor"),
-                editorSession = editor.getSession(),
-                settings = Windows.Storage.ApplicationData.current.localSettings.values;
-
-            //console.log(editor);
-            settings['fontSize'] = settings['fontSize'] || 12;
-            settings['highlightActiveLine'] = (settings['highlightActiveLine'] === undefined ? false : settings['highlightActiveLine']);
-            settings['showInvisibleCharacters'] = (settings['showInvisibleCharacters'] === undefined ? false : settings['showInvisibleCharacters']);
-            settings['theme'] = settings['theme'] || 'ace/theme/textmate';
-            settings['mode'] = settings['mode'] || 'ace/mode/text';
-            settings['useHardTabs'] = (settings['useHardTabs'] === undefined ? true : settings['useHardTabs']);
-            settings['showIndentGuides'] = (settings['showIndentGuides'] === undefined ? true : settings['showIndentGuides']);
-            settings['showGutter'] = (settings['showGutter'] === undefined ? true : settings['showGutter']);
-
-            editorSession.setMode(settings['mode']);
-            editor.setTheme(settings['theme']);
-
-            console.log(settings['mode'] + " " + settings['theme']);
-            document.getElementById('editor').style.fontSize = settings['fontSize'] + 'px';
-
-
-            editorSession.setUseWrapMode(true);
-            editorSession.setUseSoftTabs(settings['useHardTabs']);
-            editor.setHighlightActiveLine(settings['highlightActiveLine']);
-            editor.setShowInvisibles(settings['showInvisibleCharacters']);
-
-
-        }
-        function init() {
-            console.log("init");
-            configureEditorFromSettings();
-            Windows.Storage.ApplicationData.current.addEventListener("datachanged", configureEditorFromSettings);
-        }
-    </script>
 </head>
 <body>
     <header aria-label="Header content" role="banner">
