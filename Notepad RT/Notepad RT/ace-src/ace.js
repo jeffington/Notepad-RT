@@ -3547,8 +3547,9 @@ var dom = require("../lib/dom");
 
 var TextInput = function(parentNode, host) {
     var text = dom.createElement("textarea");
-    if (useragent.isTouchPad)
-        text.setAttribute("x-palm-disable-auto-cap", true);
+//    if (useragent.isTouchPad)
+    //
+    text.setAttribute("x-palm-disable-auto-cap", true);
 
     text.setAttribute("wrap", "off");
 

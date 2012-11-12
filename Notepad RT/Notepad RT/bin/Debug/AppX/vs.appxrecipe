@@ -5,18 +5,18 @@
     <WindowsUser>Mark</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>2F735579BD139FF143579E2DFB07C79D65D4DED2CF73179D8987E0F4812BDF86</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>21022MarkSpirek.NotepadRT_1.0.0.1_neutral__gk7k3632sm22a</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>0C5D4C9188B804386677C4E995535AEBD8548EC26835237AFC118D482ABEDDC5</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>21022MarkSpirek.NotepadRT_1.1.0.0_neutral__gk7k3632sm22a</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>21022MarkSpirek.NotepadRT_gk7k3632sm22a!App</RegisteredUserModeAppID>
     <RegisteredPackageID>21022MarkSpirek.NotepadRT</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=3714733F-5D19-41FF-8C3D-D9DF8CBCAFC1</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.0.1</RegisteredVersion>
+    <RegisteredVersion>1.1.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-11-09T21:54:28.817</Modified>
+      <Modified>2012-11-12T02:28:36.922</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -26,7 +26,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\html\DefaultsUI.html">
       <PackagePath>html\DefaultsUI.html</PackagePath>
-      <Modified>2012-11-09T05:55:33.677</Modified>
+      <Modified>2012-11-09T23:44:06.484</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\html\FeedbackUI.html">
       <PackagePath>html\FeedbackUI.html</PackagePath>
@@ -34,11 +34,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\html\LegalUI.html">
       <PackagePath>html\LegalUI.html</PackagePath>
-      <Modified>2012-11-09T20:49:59.089</Modified>
+      <Modified>2012-11-10T00:00:36.943</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorPage.html">
       <PackagePath>pages\editor\editorPage.html</PackagePath>
-      <Modified>2012-11-09T10:20:29.665</Modified>
+      <Modified>2012-11-09T23:41:17.980</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\home\homePage.html">
       <PackagePath>pages\home\homePage.html</PackagePath>
@@ -431,7 +431,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2012-11-09T21:54:28.597</Modified>
+      <Modified>2012-11-12T02:28:36.577</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
