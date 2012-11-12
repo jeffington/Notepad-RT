@@ -6850,7 +6850,8 @@ TokenStream.prototype = mix(new TokenStreamBase(), {
 
         var c,
             reader = this._reader,
-            token   = null,
+            token = null,
+            // TODO: Might have to do with restoring from a suspended state
             startLine   = reader.getLine(),
             startCol    = reader.getCol();
 

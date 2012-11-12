@@ -3571,8 +3571,8 @@ var TextInput = function(parentNode, host) {
                 text.value = PLACEHOLDER;
                 text.selectionStart = 0;
                 text.selectionEnd = 1;
-            } else 
-                text.select();
+            }// else 
+            //    text.select();
         } catch (e) {}
     }
 
