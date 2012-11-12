@@ -10,7 +10,7 @@
     <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
 
     <!-- Notepad_RT references -->
-    <!--<link href="/css/default.css" rel="stylesheet" />-->
+    <link href="/css/default.css" rel="stylesheet" />
     
     <script src="/pages/editor/editorPage.js"></script>
     <script src="/ace-src/ace.js"></script>
@@ -34,50 +34,13 @@
         text-indent: -9999px;
     }
 </style>
-    <script>
-
-        function configureEditorFromSettings() {
-            var editor = ace.edit("editor"),
-                editorSession = editor.getSession(),
-                settings = Windows.Storage.ApplicationData.current.localSettings.values;
-
-            //console.log(editor);
-            settings['fontSize'] = settings['fontSize'] || 12;
-            settings['highlightActiveLine'] = (settings['highlightActiveLine'] === undefined ? false : settings['highlightActiveLine']);
-            settings['showInvisibleCharacters'] = (settings['showInvisibleCharacters'] === undefined ? false : settings['showInvisibleCharacters']);
-            settings['theme'] = settings['theme'] || 'ace/theme/textmate';
-            settings['mode'] = settings['mode'] || 'ace/mode/text';
-            settings['useHardTabs'] = (settings['useHardTabs'] === undefined ? true : settings['useHardTabs']);
-            settings['showIndentGuides'] = (settings['showIndentGuides'] === undefined ? true : settings['showIndentGuides']);
-            settings['showGutter'] = (settings['showGutter'] === undefined ? true : settings['showGutter']);
-
-            editorSession.setMode(settings['mode']);
-            editor.setTheme(settings['theme']);
-
-            console.log(settings['mode'] + " " + settings['theme']);
-            document.getElementById('editor').style.fontSize = settings['fontSize'] + 'px';
-
-
-            editorSession.setUseWrapMode(true);
-            editorSession.setUseSoftTabs(settings['useHardTabs']);
-            editor.setHighlightActiveLine(settings['highlightActiveLine']);
-            editor.setShowInvisibles(settings['showInvisibleCharacters']);
-
-
-        }
-        function init() {
-            console.log("init");
-            configureEditorFromSettings();
-            Windows.Storage.ApplicationData.current.addEventListener("datachanged", configureEditorFromSettings);
-        }
-    </script>
 </head>
 <body>
     <header aria-label="Header content" role="banner">
         
         <h1 class="titlearea win-type-ellipsis" style="padding-left:3%;">
             <button class="win-backbutton" aria-label="Back" disabled></button>
-            <button id="saveButton" style="visibility: hidden;">Save</button>
+            
             
             <span id="filename" class="pagetitle">Untitled</span>
             <!--<span class="chevron win-type-x-large">&#xe099;</span>-->
@@ -87,7 +50,7 @@
     <section aria-label="Main content" role="main">
         <div id="editor"></div>
     </section>
-    <div id="appBar" data-win-control="WinJS.UI.AppBar" data-win-options="" style="border-top: 4px #7cb800 solid;">
+    <div id="appBar" data-win-control="WinJS.UI.AppBar" data-win-options="" style="border-top: 4px #8DC125 solid;">
         <button 
             data-win-control="WinJS.UI.AppBarCommand" 
             data-win-options="{id:'cmdUndo',label:'Undo',icon:'undo',
@@ -116,7 +79,7 @@
         </button>
         <button 
             data-win-control="WinJS.UI.AppBarCommand" 
-            data-win-options="{id:'cmdSearch',label:'Search',icon:'zoom',
+            data-win-options="{id:'cmdSearch',label:'Find',icon:'zoom',
                 section:'selection',tooltip:'Find and Replace'}">
         </button>
         <!--<hr 
@@ -129,9 +92,15 @@
                 section:'global',tooltip:'Pin this document to Start Screen'}">
         </button>-->
     </div>
-    <!--<div id="searchBar" data-win-control="WinJS.UI.AppBar"
-        aria-label="Navigation Bar" data-win-options="{layout:'custom', disabled : true}" style="text-align: center; border-top: 4px #7cb800 solid;">
-        <input id="searchTerms" type="text" placeholder="Search"/> <button id="findPrev">Prev</button> <button id="findNext">Next</button> <input id="replaceTerms" type="text" placeholder="Replace" /> <button>Replace</button> <button>Replace All</button>
-    </div>-->
+    <div id="searchBar" data-win-control="WinJS.UI.AppBar" class="win-appbar"
+       aria-label="Navigation Bar" data-win-options="{layout:'custom', disabled : true}"
+        style="height: 65px; text-align: center; border-top: 4px #8DC125 solid; padding-top: 20px;">
+        <input class="win-command" id="searchTerms" type="text" placeholder="Search" style="display: inline-block;"/>&nbsp;&nbsp;
+        <button id="cmdFindPrev" style="display: inline-block;">Prev</button>
+        <button id="cmdFindNext" style="display: inline-block;">Next</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id="replaceTerms" type="text" placeholder="Replace" style="display: inline-block;" />&nbsp;&nbsp;
+        <button id="cmdReplace" style="display: inline-block;">Replace</button> <button id="cmdReplaceAll" style="display: inline-block;">Replace All</button>
+    </div>
 </body>
 </html>

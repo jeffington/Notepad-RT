@@ -10901,26 +10901,26 @@ exports.HashHandler = HashHandler;
 define('ace/commands/default_commands', ['require', 'exports', 'module' , 'ace/lib/lang'], function(require, exports, module) {
 
 
-var lang = require("../lib/lang");
+    var lang = require("../lib/lang");
 
-function bindKey(win, mac) {
-    return {
-        win: win,
-        mac: mac
-    };
-}
+    function bindKey(win, mac) {
+        return {
+            win: win,
+            mac: mac
+        };
+    }
 
-exports.commands = [{
-    name: "selectall",
-    bindKey: bindKey("Ctrl-A", "Command-A"),
-    exec: function(editor) { editor.selectAll(); },
-    readOnly: true
-}, {
-    name: "centerselection",
-    bindKey: bindKey(null, "Ctrl-L"),
-    exec: function(editor) { editor.centerSelection(); },
-    readOnly: true
-}, {
+    exports.commands = [{
+        name: "selectall",
+        bindKey: bindKey("Ctrl-A", "Command-A"),
+        exec: function(editor) { editor.selectAll(); },
+        readOnly: true
+    }, {
+        name: "centerselection",
+        bindKey: bindKey(null, "Ctrl-L"),
+        exec: function(editor) { editor.centerSelection(); },
+        readOnly: true
+    },/*{
     name: "gotoline",
     bindKey: bindKey("Ctrl-L", "Command-L"),
     exec: function(editor) {
@@ -10930,7 +10930,36 @@ exports.commands = [{
         }
     },
     readOnly: true
+},*/
+{
+    name: "copytext",
+    bindKey: bindKey("Ctrl-C"),
+    exec: function (editor) {
+        var dataPackage = new Windows.ApplicationModel.DataTransfer.DataPackage(),
+            selectionString = editor.getCopyText();
+
+        if (selectionString && selectionString.length > 0) {
+
+            dataPackage.setText(selectionString);
+            Windows.ApplicationModel.DataTransfer.Clipboard.setContent(dataPackage);
+            
+        }
+
+    },
+    readyOnly: true
 }, {
+    name: "cuttext",
+    bindKey: bindKey("Ctrl-X"),
+    exec: function (editor) {
+        var dataPackage = new Windows.ApplicationModel.DataTransfer.DataPackage();
+
+        dataPackage.setText(editor.getCopyText());
+        Windows.ApplicationModel.DataTransfer.Clipboard.setContent(dataPackage);
+        editor.insert('');
+        
+    },
+    readyOnly: true
+},{
     name: "fold",
     bindKey: bindKey("Alt-L|Ctrl-F1", "Command-Alt-L|Command-F1"),
     exec: function(editor) { editor.session.toggleFold(false); },
@@ -10960,12 +10989,13 @@ exports.commands = [{
     bindKey: bindKey("Ctrl-Shift-K", "Command-Shift-G"),
     exec: function(editor) { editor.findPrevious(); },
     readOnly: true
-}, {
+},{
     name: "find",
     bindKey: bindKey("Ctrl-F", "Command-F"),
     exec: function(editor) {
-        var needle = prompt("Find:", editor.getCopyText());
-        editor.find(needle);
+        //var needle = prompt("Find:", editor.getCopyText());
+        //editor.find(needle);
+        //openSearch();
     },
     readOnly: true
 }, {
@@ -11196,7 +11226,7 @@ exports.commands = [{
     bindKey: bindKey("Ctrl-/", "Command-/"),
     exec: function(editor) { editor.toggleCommentLines(); },
     multiSelectAction: "forEach"
-}, {
+}, /*{
     name: "replace",
     bindKey: bindKey("Ctrl-R", "Command-Option-F"),
     exec: function(editor) {
@@ -11220,7 +11250,7 @@ exports.commands = [{
             return;
         editor.replaceAll(replacement, {needle: needle});
     }
-}, {
+},*/{
     name: "undo",
     bindKey: bindKey("Ctrl-Z", "Command-Z"),
     exec: function(editor) { editor.undo(); }

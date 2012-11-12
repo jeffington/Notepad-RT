@@ -57,7 +57,9 @@
     </AppxManifest>
     <Content Include="default.html" />
     <Content Include="html\DefaultsUI.html" />
-    <Content Include="html\AboutUI.html" />
+    <Content Include="html\FeedbackUI.html" />
+    <Content Include="html\LegalUI.html" />
+    <Content Include="images\filelogo.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\smallogo.png" />
     <Content Include="images\splashscreen.png" />
@@ -146,7 +148,6 @@
     <Content Include="ace-src\worker-json.js" />
     <Content Include="ace-src\worker-xquery.js" />
     <Content Include="js\navigator.js" />
-    <Content Include="js\pickFile.js" />
     <Content Include="js\readFile.js" />
     <Content Include="js\saveFile.js" />
     <Content Include="js\settings.js" />

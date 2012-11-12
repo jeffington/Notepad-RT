@@ -80,8 +80,10 @@ ace-src\worker-json.js
 ace-src\worker-xquery.js
 css\default.css
 default.html
-html\AboutUI.html
 html\DefaultsUI.html
+html\FeedbackUI.html
+html\LegalUI.html
+images\filelogo.png
 images\logo.png
 images\smallogo.png
 images\splashscreen.png
@@ -89,7 +91,6 @@ images\storelogo.png
 images\widelogo.png
 js\default.js
 js\navigator.js
-js\pickFile.js
 js\readFile.js
 js\saveFile.js
 js\settings.js

@@ -1,26 +1,64 @@
 ﻿body {
 }
+div.fragment {
+    padding: 3%;
+}
+button.btn {
+    width:250px;
+    height: 60px;
+    margin-bottom: 20px;
+    border: 2px white dashed;
+}
+#firstCol {
+    float: left;
+    width: 17%;
+    padding-right: 3%;
+}
+#secondCol {
+    float: left;
+    width: 74%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+#filesListView {
+    padding: 0;
+    margin: 0;
+}
 
 .notepadrt-background {
     background: #7cb800;
 }
 
 .fullScreenLayout {
-    column-count: 4;
+    /*column-count: 4;*/
 }
 
 @media screen and (-ms-view-state: fullscreen-landscape) {
 }
 
 @media screen and (-ms-view-state: filled) {
-    .fullScreenLayout {
-        column-count: 2;
+    #firstCol {
+        
+
+    }
+    #secondCol {
+        clear: both;
+
     }
 }
 
 @media screen and (-ms-view-state: snapped) {
-    .fullScreenLayout {
-        column-count: 1;
+    #firstCol {
+        width: 100%;
+        height: 10%;
+        padding: 0;
+    }
+    #secondCol {
+        width: 96%;
+        height: 80%;
+        padding: 0;
+        bottom: 0;
     }
 }
 
