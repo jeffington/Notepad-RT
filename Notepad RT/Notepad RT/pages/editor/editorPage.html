@@ -39,13 +39,28 @@
             
             <span id="filename" class="pagetitle">Untitled</span>
             <!--<span class="chevron win-type-x-large">&#xe099;</span>-->
-            <button class="win-backbutton" aria-label="Back" disabled stlye="float: right;"></button>
+            
         </h1>
     </header>
     <section aria-label="Main content" role="main">
         <div id="editor"></div>
     </section>
     <div id="appBar" data-win-control="WinJS.UI.AppBar" data-win-options="" style="border-top: 4px #8DC125 solid;">
+        <button 
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{id:'cmdCopy',label:'Copy',icon:'copy',
+                section:'selection',tooltip:'Copy Selection'}">
+        </button>
+        <button 
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{id:'cmdCut',label:'Cut',icon:'cut',
+                section:'selection',tooltip:'Cut Selection'}">
+        </button>
+        <button 
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{id:'cmdPaste',label:'Paste',icon:'paste',
+                section:'selection',tooltip:'Paste at Selection'}">
+        </button>
         <button 
             data-win-control="WinJS.UI.AppBarCommand" 
             data-win-options="{id:'cmdUndo',label:'Undo',icon:'undo',

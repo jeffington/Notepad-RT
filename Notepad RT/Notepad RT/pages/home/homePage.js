@@ -49,6 +49,7 @@
             });
             
             console.log("Page viewed.");
+            //setTimeout(function () { recentFilesListView.forceLayout(); }, 4000);
         },
        _pickFile: function () {
 
@@ -73,15 +74,7 @@
 
                     token = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, file.name);
                     Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.add(file);
-                    WinJS.Navigation.navigate("/pages/editor/editorPage.html", {filetoken: token});//.done(function () {
-                        //document.getElementById('filename').innerHTML = file.name;
-                        //editorCurrentFileToken = file;
-                        //document.getElementById('editor').innerHTML = contents;
-                        //editor.getDocument().setContents(contents);
-                    //});
-
-
-                    
+                    WinJS.Navigation.navigate("/pages/editor/editorPage.html", {filetoken: token});
 
                 } // Do nothing if a file wasn't picked
 
@@ -120,9 +113,10 @@
             itemsFromIndex: function (requestIndex, countBefore, countAfter) {
                 var mruList = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList,
                     entries = mruList.entries,
-                    count = mruList.entries.length;
-
-                if (requestIndex >= count) {//that._itemData.length) {
+                    count = mruList.entries.length,
+                    that = this;
+                console.log("Requested: " + requestIndex);
+                if (requestIndex >= count || count == 0) {//that._itemData.length) {
                     return WinJS.Promise.wrapError(new WinJS.ErrorFromName(WinJS.UI.FetchError.doesNotExist));
                 }
 
@@ -172,6 +166,7 @@
                             groupKey: "R", // the key for the group for the item
                             data: fileInfo// the data fields for the item
                         });
+                        
                         return {
                             items: results, // The array of items
                             offset: requestIndex - fetchIndex, // The offset into the array for the requested item
