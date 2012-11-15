@@ -21,7 +21,7 @@
         { key: "R", type: "Recent", firstItemIndex: 0 },
     ];
 
-    var fileListHeaders = [{ key: "R", type: "Recent" }, ], files;
+    var fileListHeaders = [{ key: "R", type: "Recent" }, ];
 
     var page = WinJS.UI.Pages.define("/pages/home/homePage.html", {
         ready: function (element, options) {
@@ -48,7 +48,7 @@
                 tapBehavior: WinJS.UI.TapBehavior.invokeOnly,
             });
             
-            
+            console.log("Page viewed.");
         },
        _pickFile: function () {
 
@@ -90,9 +90,9 @@
     });
 
     var flavorsDataAdapter = WinJS.Class.define(
-        function (data) {
+        function () {
             // Constructor
-            this._itemData = data;
+           // this._itemData = data;
         },
 
         // Data Adapter interface methods
@@ -118,43 +118,74 @@
             //   offset: The offset into the array for the requested item
             //   totalCount: (optional) Update the count for the collection
             itemsFromIndex: function (requestIndex, countBefore, countAfter) {
-                var that = this;
+                var mruList = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList,
+                    entries = mruList.entries,
+                    count = mruList.entries.length;
 
-                if (requestIndex >= that._itemData.length) {
+                if (requestIndex >= count) {//that._itemData.length) {
                     return WinJS.Promise.wrapError(new WinJS.ErrorFromName(WinJS.UI.FetchError.doesNotExist));
                 }
 
-                /*if (!that._itemData[requestIndex]) {
-                    return WinJS.Promise.wrapError(new WinJS.ErrorFromName("Data for this row is undefined or null."));
-                }*/
 
-                var lastFetchIndex = Math.min(requestIndex + countAfter, that._itemData.length - 1);
+
+                var currentFileEntry = entries.getAt(requestIndex),
+                    currentFileData = currentFileEntry.metadata,
+                    currentFileToken = currentFileEntry.token;
+                
+                var lastFetchIndex = Math.min(requestIndex + countAfter, count - 1);
                 var fetchIndex = Math.max(requestIndex - countBefore, 0);
-                var results = [];
+                var fileInfo;
 
-                // iterate and form the collection of items
-                for (var i = fetchIndex; i <= lastFetchIndex; i++) {
-                    var item = that._itemData[i];
-                    
-                    if (!item) { // FORGIVE ME JESUS!!! TODO:
-                        i--;
-                        continue;
-                    }
+                return Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(currentFileToken).then(
+                    function (currentFile) {
+                        fileInfo = {
+                            icon: "images/smallogo.png",
+                            title: "",
+                            textType: "",
+                            kind: "R"
+                        };
 
+                        if (currentFile) {
+                            fileInfo.title = currentFile.name;
+                            fileInfo.textType = currentFile.displayType;
+
+                            return currentFile.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.documentsView);
+                        }
+
+                    }, function (error) { // Deleted or possibly corrupted file, get it out of here
+                        //var index = fet;
+                        //console.log("Files length: " + files.length + " Index: " + x + " Token: " + currentFileToken + " " + error);
+                        //files.splice(index, 1);
+                        Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(currentFileToken);
+
+                        console.log("Files length: " + files.length + " Index: " + x + " Token: " + currentFileToken + " " + error);
+                    }).then(function (thumb) {
+                        var results = [];
+
+                        if (thumb) {
+
+                            fileInfo.icon = URL.createObjectURL(thumb, { oneTimeOnly: false });
+
+                        }
                         results.push({
-                            key: i.toString(), // the key for the item itself
-                            groupKey: item.kind, // the key for the group for the item
-                            data: item || {}// the data fields for the item
+                            key: currentFileToken, // the key for the item itself
+                            groupKey: "R", // the key for the group for the item
+                            data: fileInfo// the data fields for the item
                         });
+                        return {
+                            items: results, // The array of items
+                            offset: requestIndex - fetchIndex, // The offset into the array for the requested item
+                            
+                        };
+                    });
+
+
                     
-                }
+
+
 
                 // return a promise for the results
-                return WinJS.Promise.wrap({
-                    items: results, // The array of items
-                    offset: requestIndex - fetchIndex, // The offset into the array for the requested item
-                    totalCount: that._itemData.length // the total count
-                });
+                
             }
         });
 
@@ -285,66 +316,10 @@
 
     function initData() {
 
-        // form an array of the keys to help with the sort
-        /*var groupKeys = [];
-        for (var i = 0; i < desertTypes.length; i++) {
-            groupKeys[i] = desertTypes[i].key;
-        }*/
-
-        //var itemData = flavors;
-
-        var mruCount = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.size,
-            x;
-
-        files = new Array(mruCount);
-        // icon, textName, textSize, textDate
-        /*for (x = 0; x < mruCount; x++) {
-
-            var currentFileEntry = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(x),
-                currentFileData = currentFileEntry.metadata,
-                currentFileToken = currentFileEntry.token;
-
-            console.log("Token " + currentFileToken + " ");
-
-            Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(currentFileToken).then(function (currentFile) {
-                var index = x;
-                files[index] = {
-                    icon: "images/smallogo.png",
-                    title: "",
-                    textType: "",
-                    kind: "R"
-                };
-
-                if (currentFile && files[index]) {
-                    files[index].title = currentFile.name;
-                    files[index].textType = currentFile.displayType;
-
-                    return currentFile.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.documentsView);
-                }
-
-            }, function (error) { // Deleted or possibly corrupted file, get it out of here
-                var index = x;
-                console.log("Files length: " + files.length + " Index: " + x + " Token: " + currentFileToken + " " + error);
-                files.splice(index, 1);
-                Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(currentFileToken);
-
-                console.log("Files length: " + files.length + " Index: " + x + " Token: " + currentFileToken + " " + error);
-            }).then(function (thumb) {
-
-                if (files[x] && thumb) {
-
-                    files[x].icon = URL.createObjectURL(thumb, { oneTimeOnly: false });
-
-                }
-
-            });
-
-        }*/
-
-        console.log("Files: " + files.length + " " + JSON.stringify(files));
+        //console.log("Files: " + files.length + " " + JSON.stringify(files));
         //console.log("Flavors: " + JSON.stringify(flavors));
         // Create the datasources that will then be set on the datasource
-        itemDataSource = new flavorsDataSource(files);//flavors
+        itemDataSource = new flavorsDataSource();//flavors
         groupDataSource = new desertsDataSource(desertTypes);
     }
 })();
