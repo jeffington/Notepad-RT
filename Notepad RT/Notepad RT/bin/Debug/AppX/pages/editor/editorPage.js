@@ -481,7 +481,7 @@ var editor,
 
                             filenameInput.innerHTML = file.name;
                             
-                            setImmediate(function () {
+                            /*setImmediate(function () {
                                 // TODO: 
                                 var mruList = document.getElementById("filesListView");
                                 if (mruList) {
@@ -491,7 +491,7 @@ var editor,
 
                                 }
 
-                            });
+                            });*/
 
                         } else {
 

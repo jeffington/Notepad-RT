@@ -3551,6 +3551,7 @@ var TextInput = function(parentNode, host) {
         text.setAttribute("x-palm-disable-auto-cap", true);
 
     text.setAttribute("wrap", "off");
+    text.setAttribute("spellcheck", "false");
 
     text.style.top = "-2em";
     parentNode.insertBefore(text, parentNode.firstChild);
