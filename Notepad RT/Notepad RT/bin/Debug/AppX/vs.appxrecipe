@@ -5,7 +5,7 @@
     <WindowsUser>Mark</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>2F735579BD139FF143579E2DFB07C79D65D4DED2CF73179D8987E0F4812BDF86</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>C5C66E642ACDE731D4AFE94FAD0EC328BF1E92484C85593C87B3D007A58826CE</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>21022MarkSpirek.NotepadRT_1.0.0.1_neutral__gk7k3632sm22a</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>21022MarkSpirek.NotepadRT_gk7k3632sm22a!App</RegisteredUserModeAppID>
     <RegisteredPackageID>21022MarkSpirek.NotepadRT</RegisteredPackageID>
@@ -16,7 +16,7 @@
     <AppXManifest Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-11-15T04:46:27.867</Modified>
+      <Modified>2012-11-15T21:10:16.018</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -423,7 +423,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\home\homePage.js">
       <PackagePath>pages\home\homePage.js</PackagePath>
-      <Modified>2012-11-15T09:40:53.788</Modified>
+      <Modified>2012-11-15T21:12:28.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\css\default.css">
       <PackagePath>css\default.css</PackagePath>
@@ -431,7 +431,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2012-11-15T04:46:26.145</Modified>
+      <Modified>2012-11-15T21:10:13.180</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

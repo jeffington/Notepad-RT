@@ -34,7 +34,7 @@
                 WinJS.Navigation.navigate("/pages/editor/editorPage.html");
 
             }); // Pass them directory to editorPage.html with no arguments
-
+            
             initData();
             
             recentFilesListView = new WinJS.UI.ListView(document.getElementById("filesListView"), {
@@ -314,8 +314,14 @@
         //console.log("Files: " + files.length + " " + JSON.stringify(files));
         //console.log("Flavors: " + JSON.stringify(flavors));
         // Create the datasources that will then be set on the datasource
-        itemDataSource = new flavorsDataSource();//flavors
-        groupDataSource = new desertsDataSource(desertTypes);
+        if (itemDataSource === undefined) {
+            console.log("itemDataSource was undefined");
+            itemDataSource = new flavorsDataSource();//flavors
+            groupDataSource = new desertsDataSource(desertTypes);
+
+        } else {
+            console.log("itemDataSource was defined: " + itemDataSource);
+        }
     }
 })();
 

@@ -36,6 +36,23 @@
               <FileType>.js</FileType>
               <FileType>.md</FileType>
               <FileType>.java</FileType>
+              <FileType>.c</FileType>
+              <FileType>.cpp</FileType>
+              <FileType>.h</FileType>
+              <FileType>.jsp</FileType>
+              <FileType>.html</FileType>
+              <FileType>.htm</FileType>
+              <FileType>.pl</FileType>
+              <FileType>.py</FileType>
+              <FileType>.cs</FileType>
+              <FileType>.php</FileType>
+              <FileType>.xml</FileType>
+              <FileType>.json</FileType>
+              <FileType>.rb</FileType>
+              <FileType>.rbw</FileType>
+              <FileType>.sql</FileType>
+              <FileType>.psql</FileType>
+              <FileType>.rss</FileType>
             </SupportedFileTypes>
           </FileTypeAssociation>
         </Extension>
