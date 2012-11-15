@@ -3701,7 +3701,7 @@ var TextInput = function(parentNode, host) {
         }
     });
 
-    /*if ("onbeforecopy" in text && typeof clipboardData !== "undefined") {
+    if ("onbeforecopy" in text && typeof clipboardData !== "undefined") {
         event.addListener(text, "beforecopy", function(e) {
             if (tempStyle)
                 return; // without this text is copied when contextmenu is shown
@@ -3723,7 +3723,7 @@ var TextInput = function(parentNode, host) {
         });
         event.addListener(text, "cut", onCut); // for ie9 context menu
     }
-    else if (useragent.isOpera && !("KeyboardEvent" in window)) {
+    /*else if (useragent.isOpera && !("KeyboardEvent" in window)) {
         event.addListener(parentNode, "keydown", function(e) {
             if ((useragent.isMac && !e.metaKey) || !e.ctrlKey)
                 return;
@@ -3738,11 +3738,11 @@ var TextInput = function(parentNode, host) {
                 }
             }
         });
-    }
-    else {*/
+    }*/
+    else {
         event.addListener(text, "copy", onCopy);
         event.addListener(text, "cut", onCut);
-    //}
+    }
 
     event.addListener(text, "compositionstart", onCompositionStart);
     if (useragent.isGecko) {

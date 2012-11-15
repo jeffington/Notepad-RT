@@ -281,7 +281,10 @@ var editor,
             cmdFindNext = document.getElementById('cmdFindNext'),
             cmdFindPrev = document.getElementById('cmdFindPrev'),
             cmdReplace = document.getElementById('cmdReplace'),
-            cmdReplaceAll = document.getElementById('cmdReplaceAll');
+            cmdReplaceAll = document.getElementById('cmdReplaceAll'),
+            cmdCut = document.getElementById('cmdCut'),
+            cmdCopy = document.getElementById('cmdCopy'),
+            cmdPaste = document.getElementById('cmdPaste');
 
 
 
@@ -295,6 +298,9 @@ var editor,
         cmdFindPrev.addEventListener('click', findPrev);
         cmdReplace.addEventListener('click', replace);
         cmdReplaceAll.addEventListener('click', replaceAll);
+        cmdCopy.addEventListener('click', doCopy);
+        cmdCut.addEventListener('click', doCut);
+        cmdPaste.addEventListener('click', doPaste);
         
     }
     
@@ -411,9 +417,35 @@ var editor,
 
     }
 
-    function saveFileAs() {
+    function doCopy() {
 
+        var dataPackage = new Windows.ApplicationModel.DataTransfer.DataPackage(),
+                    selectionString = editor.getCopyText();
 
+        if (selectionString && selectionString.length > 0) {
+
+            dataPackage.setText(selectionString);
+            Windows.ApplicationModel.DataTransfer.Clipboard.setContent(dataPackage);
+
+        }
+
+    }
+
+    function doCut() {
+
+        var dataPackage = new Windows.ApplicationModel.DataTransfer.DataPackage();
+
+        dataPackage.setText(editor.getCopyText());
+        Windows.ApplicationModel.DataTransfer.Clipboard.setContent(dataPackage);
+        editor.insert('');
+
+    }
+
+    function doPaste() {
+
+        Windows.ApplicationModel.DataTransfer.Clipboard.getContent().getTextAsync().done(function(text){
+            editor.onPaste(text);
+        });
 
     }
 
