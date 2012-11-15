@@ -103,8 +103,8 @@
 
             // Called to get a count of the items, result should be a promise for the items
             getCount: function () {
-                var that = this;
-                return WinJS.Promise.wrap(that._itemData.length);
+                //var that = this;
+                return WinJS.Promise.wrap(Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.length);//that._itemData.length);
             },
 
             // Called by the virtualized datasource to fetch items
@@ -298,7 +298,7 @@
 
         files = new Array(mruCount);
         // icon, textName, textSize, textDate
-        for (x = 0; x < mruCount; x++) {
+        /*for (x = 0; x < mruCount; x++) {
 
             var currentFileEntry = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(x),
                 currentFileData = currentFileEntry.metadata,
@@ -339,7 +339,7 @@
 
             });
 
-        }
+        }*/
 
         console.log("Files: " + files.length + " " + JSON.stringify(files));
         //console.log("Flavors: " + JSON.stringify(flavors));

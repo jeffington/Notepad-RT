@@ -8,4 +8,7 @@
     <AppxShowAllApps>True</AppxShowAllApps>
     <AppxBuildConfigurationSelection>neutral</AppxBuildConfigurationSelection>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebuggerFlavor>AppHostLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
 </Project>

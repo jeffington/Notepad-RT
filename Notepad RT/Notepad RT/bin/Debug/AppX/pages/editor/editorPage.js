@@ -127,7 +127,7 @@ var editor,
 
                 filenameTitle.innerHTML = options.shareData.properties.title;
                 
-                document.getElementById('saveButton').style.visibility = 'visible';
+                //document.getElementById('saveButton').style.visibility = 'visible';
 
                 if (options.shareData.contains(Windows.ApplicationModel.DataTransfer.StandardDataFormats.text)) {
 
@@ -149,8 +149,9 @@ var editor,
                 // Loaded with no options, i.e. New File
 
                 console.log("New document");
-                
-                
+                setTimeout(function () {
+                    configureEditorFromSettings();
+                }, 1200);
             }
             
             
@@ -312,7 +313,6 @@ var editor,
     function findNext() {
 
         var searchTerms = document.getElementById('searchTerms').value,
-            editorSession = editor.getSession(),
             options = {};
         
         options.needle = searchTerms;
@@ -382,6 +382,8 @@ var editor,
     }
 
     function cmdNewFile() {
+
+        // TODO: Unsaved changes
 
         editorCurrentFileToken = null;
         editor.getSession().getDocument().setValue('');
@@ -584,7 +586,7 @@ var editor,
                         //delete newString;
                         editor.navigateTo(0, 0);
                     }, 1200);
-
+                    // Possible optimization here with newString, which could be eating a lot of memory.
 
                     //document.getElementById('outputhere').innerHTML = "New York Population: " + newYorkPopulation;
 
