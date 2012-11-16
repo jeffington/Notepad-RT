@@ -16,12 +16,13 @@
     var recentFilesListView;
 
 
-    var desertTypes = [
+    /*var desertTypes = [
         //{ key: "IC", type: "Ice Cream" },
         { key: "R", type: "Recent", firstItemIndex: 0 },
-    ];
+    ];*/
 
-    var fileListHeaders = [{ key: "R", type: "Recent" }, ];
+    var fileListHeaders = [{ key: "R", type: "Recent" }, ],
+        files = [];
 
     var page = WinJS.UI.Pages.define("/pages/home/homePage.html", {
         ready: function (element, options) {
@@ -47,6 +48,7 @@
                 oniteminvoked: recentFilesSelection,
                 tapBehavior: WinJS.UI.TapBehavior.invokeOnly,
             });
+            recentFilesListView.forceLayout();
             
             console.log("Page viewed.");
             //setTimeout(function () { recentFilesListView.forceLayout(); }, 4000);
@@ -83,28 +85,17 @@
     });
 
     var flavorsDataAdapter = WinJS.Class.define(
-        function () {
+        function (data) {
             // Constructor
-           // this._itemData = data;
+            this._itemData = data;
         },
-
-        // Data Adapter interface methods
-        // These define the contract between the virtualized datasource and the data adapter.
-        // These methods will be called by virtualized datasource to fetch items, count etc.
         {
-            // This example only implements the itemsFromIndex and count methods
-
-            // Called to get a count of the items, result should be a promise for the items
             getCount: function () {
-                //var that = this;
-                return WinJS.Promise.wrap(Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.length);//that._itemData.length);
+                var that = this;
+                return WinJS.Promise.wrap(that._itemData.length);
+                //return WinJS.Promise.wrap(Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.length);//that._itemData.length);
             },
 
-            // Called by the virtualized datasource to fetch items
-            // It will request a specific item index and hints for a number of items either side of it
-            // The implementation should return the specific item, and can choose how many either side.
-            // to also send back. It can be more or less than those requested.
-            //
             // Must return back an object containing fields:
             //   items: The array of items of the form:
             //      [{ key: key1, groupKey: group1, data : { field1: value, field2: value, ... }}, { key: key2, groupKey: group1, data : {...}}, ...]
@@ -112,25 +103,24 @@
             //   totalCount: (optional) Update the count for the collection
             itemsFromIndex: function (requestIndex, countBefore, countAfter) {
                 var mruList = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList,
-                    entries = mruList.entries,
-                    count = mruList.entries.length,
-                    that = this;
+                    entries = mruList.entries;
+                 //   count = mruList.entries.length,
+                var that = this;
                 console.log("Requested: " + requestIndex);
-                if (requestIndex >= count || count == 0) {//that._itemData.length) {
+                if (requestIndex >= that._itemData.length) {// || count == 0) {//that._itemData.length) {
                     return WinJS.Promise.wrapError(new WinJS.ErrorFromName(WinJS.UI.FetchError.doesNotExist));
                 }
-
 
 
                 var currentFileEntry = entries.getAt(requestIndex),
                     currentFileData = currentFileEntry.metadata,
                     currentFileToken = currentFileEntry.token;
-                
-                var lastFetchIndex = Math.min(requestIndex + countAfter, count - 1);
+                //var results = [];
+                var lastFetchIndex = Math.min(requestIndex + countAfter, that._itemData.length - 1);
                 var fetchIndex = Math.max(requestIndex - countBefore, 0);
-                var fileInfo;
+                //var fileInfo;
 
-                return Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(currentFileToken).then(
+                /*return Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(currentFileToken).then(
                     function (currentFile) {
                         fileInfo = {
                             icon: "images/smallogo.png",
@@ -172,15 +162,27 @@
                             offset: requestIndex - fetchIndex, // The offset into the array for the requested item
                             
                         };
-                    });
+                    });*/
 
-
-                    
+                /*results.push({
+                    key: currentFileToken, // the key for the item itself
+                    groupKey: "R", // the key for the group for the item
+                    data: files[requestIndex]// the data fields for the item
+                });
+                */
 
 
 
                 // return a promise for the results
-                
+                return WinJS.Promise.wrap({
+                    items: [{
+                        key: currentFileToken, // the key for the item itself
+                        groupKey: "R", // the key for the group for the item
+                        data: files[requestIndex]// the data fields for the item
+                    }], // The array of items
+                    offset: requestIndex - fetchIndex, // The offset into the array for the requested item
+                                
+                });
             }
         });
 
@@ -311,17 +313,82 @@
 
     function initData() {
 
+        var promiseArray = [];
+        var fileInfo = [];
+
+        var mruList = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList,
+            entries = mruList.entries,
+            count = mruList.entries.length,
+            that = this;
+        
+        
+        for (var x = 0; x < count; x++) {
+
+            var currentFileEntry = entries.getAt(x),
+                currentFileData = currentFileEntry.metadata,
+                currentFileToken = currentFileEntry.token;
+
+            promiseArray.push(Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(currentFileToken).then(
+                    function (currentFile) {
+
+                        fileInfo[x] = {
+                            icon: "images/smallogo.png",
+                            title: "",
+                            textType: "",
+                            kind: "R"
+                        };
+
+                        if (currentFile) {
+
+                            fileInfo[x].title = currentFile.name;
+                            fileInfo[x].textType = currentFile.displayType;
+
+                            return currentFile.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.documentsView);
+                        }
+
+                    }, function (error) { // Deleted or possibly corrupted file, get it out of here and don't add it to the list
+                        
+                        Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(currentFileToken);
+                        console.log(error + ' Error retrieving file, removed it from the mostRecentlyUsedList.');
+                        
+                    }).done(function (thumb) {
+                        
+                        console.log("Retrived thumbnail.");
+                        if (thumb) {
+
+                            fileInfo[x].icon = URL.createObjectURL(thumb, { oneTimeOnly: false });
+
+                        }
+                        files.push({
+                            key: currentFileToken, // the key for the item itself
+                            groupKey: "R", // the key for the group for the item
+                            data: fileInfo[x]// the data fields for the item
+                        });
+
+                        //return WinJS.Promise.wrap(fileInfo);
+                    })
+            );
+        }
+
+
+        WinJS.Promise.join(promiseArray).done(function () {
+            console.log("Setting up the data after all the promises have completed.");
+            console.log("Files: "+JSON.stringify(files));
+            itemDataSource = new flavorsDataSource(files);
+            groupDataSource = new desertsDataSource(fileListHeaders);
+
+        });
         //console.log("Files: " + files.length + " " + JSON.stringify(files));
         //console.log("Flavors: " + JSON.stringify(flavors));
         // Create the datasources that will then be set on the datasource
-        if (itemDataSource === undefined) {
+        /*if (itemDataSource === undefined) {
             console.log("itemDataSource was undefined");
-            itemDataSource = new flavorsDataSource();//flavors
-            groupDataSource = new desertsDataSource(desertTypes);
+            itemDataSource = new flavorsDataSource(files);//flavors
+            groupDataSource = new desertsDataSource(fileListHeaders);
 
         } else {
             console.log("itemDataSource was defined: " + itemDataSource);
-        }
+        }*/
     }
 })();
 
