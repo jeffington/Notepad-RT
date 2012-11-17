@@ -12,16 +12,10 @@
     "use strict";
 
     var recentFilesDataSource, groupDataSource;
-    var itemDataSource, groupDataSource;
     var recentFilesListView;
 
 
-    /*var desertTypes = [
-        //{ key: "IC", type: "Ice Cream" },
-        { key: "R", type: "Recent", firstItemIndex: 0 },
-    ];*/
-
-    var fileListHeaders = [{ key: "R", type: "Recent" }, ],
+    var fileListHeaders = [{ key: "R", type: "Recent", firstItemIndex: 0 }, ],
         files = [];
 
     var page = WinJS.UI.Pages.define("/pages/home/homePage.html", {
@@ -35,22 +29,10 @@
                 WinJS.Navigation.navigate("/pages/editor/editorPage.html");
 
             }); // Pass them directory to editorPage.html with no arguments
-            
+            console.log("Page shown");
             initData();
             
-            recentFilesListView = new WinJS.UI.ListView(document.getElementById("filesListView"), {
-                itemDataSource: itemDataSource,
-                groupDataSource: groupDataSource,
-                itemTemplate: document.getElementById("imageTextListFileTemplate"),
-                groupHeaderTemplate: document.getElementById("groupTemplate"),
-                layout: new WinJS.UI.GridLayout(),
-                selectionMode: WinJS.UI.SelectionMode.single,
-                oniteminvoked: recentFilesSelection,
-                tapBehavior: WinJS.UI.TapBehavior.invokeOnly,
-            });
-            recentFilesListView.forceLayout();
             
-            console.log("Page viewed.");
             //setTimeout(function () { recentFilesListView.forceLayout(); }, 4000);
         },
        _pickFile: function () {
@@ -93,7 +75,6 @@
             getCount: function () {
                 var that = this;
                 return WinJS.Promise.wrap(that._itemData.length);
-                //return WinJS.Promise.wrap(Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.length);//that._itemData.length);
             },
 
             // Must return back an object containing fields:
@@ -106,83 +87,32 @@
                     entries = mruList.entries;
                  //   count = mruList.entries.length,
                 var that = this;
-                console.log("Requested: " + requestIndex);
+                //console.log("Requested: " + requestIndex);
                 if (requestIndex >= that._itemData.length) {// || count == 0) {//that._itemData.length) {
                     return WinJS.Promise.wrapError(new WinJS.ErrorFromName(WinJS.UI.FetchError.doesNotExist));
                 }
 
 
                 var currentFileEntry = entries.getAt(requestIndex),
-                    currentFileData = currentFileEntry.metadata,
                     currentFileToken = currentFileEntry.token;
-                //var results = [];
+                
                 var lastFetchIndex = Math.min(requestIndex + countAfter, that._itemData.length - 1);
                 var fetchIndex = Math.max(requestIndex - countBefore, 0);
-                //var fileInfo;
-
-                /*return Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(currentFileToken).then(
-                    function (currentFile) {
-                        fileInfo = {
-                            icon: "images/smallogo.png",
-                            title: "",
-                            textType: "",
-                            kind: "R"
-                        };
-
-                        if (currentFile) {
-                            fileInfo.title = currentFile.name;
-                            fileInfo.textType = currentFile.displayType;
-
-                            return currentFile.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.documentsView);
-                        }
-
-                    }, function (error) { // Deleted or possibly corrupted file, get it out of here
-                        //var index = fet;
-                        //console.log("Files length: " + files.length + " Index: " + x + " Token: " + currentFileToken + " " + error);
-                        //files.splice(index, 1);
-                        Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(currentFileToken);
-
-                        console.log("Files length: " + files.length + " Index: " + x + " Token: " + currentFileToken + " " + error);
-                    }).then(function (thumb) {
-                        var results = [];
-
-                        if (thumb) {
-
-                            fileInfo.icon = URL.createObjectURL(thumb, { oneTimeOnly: false });
-
-                        }
-                        results.push({
-                            key: currentFileToken, // the key for the item itself
-                            groupKey: "R", // the key for the group for the item
-                            data: fileInfo// the data fields for the item
-                        });
-                        
-                        return {
-                            items: results, // The array of items
-                            offset: requestIndex - fetchIndex, // The offset into the array for the requested item
-                            
-                        };
-                    });*/
-
-                /*results.push({
-                    key: currentFileToken, // the key for the item itself
-                    groupKey: "R", // the key for the group for the item
-                    data: files[requestIndex]// the data fields for the item
-                });
-                */
-
-
-
+                
+                console.log("File info: " + JSON.stringify(files[requestIndex]));
+                
                 // return a promise for the results
+                console.log("Returning data promise for index " + requestIndex);
                 return WinJS.Promise.wrap({
                     items: [{
-                        key: currentFileToken, // the key for the item itself
+                        key: requestIndex, // the key for the item itself
                         groupKey: "R", // the key for the group for the item
                         data: files[requestIndex]// the data fields for the item
                     }], // The array of items
                     offset: requestIndex - fetchIndex, // The offset into the array for the requested item
                                 
                 });
+                
             }
         });
 
@@ -296,6 +226,7 @@
                 }
 
                 // Results can be async so the result is supplied as a promise
+                
                 return WinJS.Promise.wrap({
                     items: results, // The array of items
                     offset: requestIndex - fetchIndex, // The offset into the array for the requested item
@@ -332,7 +263,7 @@
                     function (currentFile) {
 
                         fileInfo[x] = {
-                            icon: "images/smallogo.png",
+                            //icon: "images/smallogo.png",
                             title: "",
                             textType: "",
                             kind: "R"
@@ -353,17 +284,17 @@
                         
                     }).done(function (thumb) {
                         
-                        console.log("Retrived thumbnail.");
                         if (thumb) {
-
+                            console.log("Index: " + x + " " + (fileInfo ? JSON.stringify(fileInfo[x]) : "fileInfo is undefined"));
                             fileInfo[x].icon = URL.createObjectURL(thumb, { oneTimeOnly: false });
 
                         }
-                        files.push({
+                        /*files.push({
                             key: currentFileToken, // the key for the item itself
                             groupKey: "R", // the key for the group for the item
                             data: fileInfo[x]// the data fields for the item
-                        });
+                        });*/
+                        files = fileInfo;
 
                         //return WinJS.Promise.wrap(fileInfo);
                     })
@@ -372,24 +303,51 @@
 
 
         WinJS.Promise.join(promiseArray).done(function () {
-            console.log("Setting up the data after all the promises have completed.");
-            console.log("Files: "+JSON.stringify(files));
-            itemDataSource = new flavorsDataSource(files);
-            groupDataSource = new desertsDataSource(fileListHeaders);
+            /*console.log("Setting up the data after all the promises have completed.");
+            console.log("Files: "+JSON.stringify(files));*/
+            recentFilesDataSource = new WinJS.Binding.List(files); //new flavorsDataSource(files);
+            groupDataSource = recentFilesDataSource.createGrouped(getGroupKey, getGroupData, compareGroups);//new desertsDataSource(fileListHeaders);
+
+            
+
+            recentFilesListView = new WinJS.UI.ListView(document.getElementById("filesListView"), {
+                itemDataSource: recentFilesDataSource.dataSource,
+                //groupDataSource: groupDataSource.groups.dataSource,
+                itemTemplate: document.getElementById("imageTextListFileTemplate"),
+                groupHeaderTemplate: document.getElementById("groupTemplate"),
+                layout: new WinJS.UI.GridLayout(),
+                selectionMode: WinJS.UI.SelectionMode.single,
+                oniteminvoked: recentFilesSelection,
+                tapBehavior: WinJS.UI.TapBehavior.invokeOnly,
+                swipeBehavior: 'none',
+            });
+
 
         });
-        //console.log("Files: " + files.length + " " + JSON.stringify(files));
-        //console.log("Flavors: " + JSON.stringify(flavors));
-        // Create the datasources that will then be set on the datasource
-        /*if (itemDataSource === undefined) {
-            console.log("itemDataSource was undefined");
-            itemDataSource = new flavorsDataSource(files);//flavors
-            groupDataSource = new desertsDataSource(fileListHeaders);
-
-        } else {
-            console.log("itemDataSource was defined: " + itemDataSource);
-        }*/
     }
+
+    function compareGroups(left, right) {
+        return 0;//left.toUpperCase().charCodeAt(0) - right.toUpperCase().charCodeAt(0);
+    }
+
+    // Function which returns the group key that an item belongs to
+    function getGroupKey(dataItem) {
+        //console.log(JSON.stringify(dataItem));
+        return 'R';
+    }
+
+    // Function which returns the data for a group
+    function getGroupData(dataItem) {
+        /*return {
+            // the key for the item itself
+            groupKey: "R", // the key for the group for the item
+            item: dataItem,// the data fields for the item
+            title: 'Recent',
+            //groupDescription: 'Recent Group'//dataItem.title.toUpperCase().charAt(0)
+        };*/
+        return { groupKey: "R", groupTitle: "Recent", firstItemIndex: 0 }
+    }
+
 })();
 
 

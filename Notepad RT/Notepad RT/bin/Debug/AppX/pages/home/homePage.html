@@ -31,37 +31,32 @@
                     </li>
                 </ul>
 <!-- List Header template -->
-<div id="groupTemplate" data-win-control="WinJS.Binding.Template">
-    <div class="groupHeader">
-        <h2 data-win-bind="innerText: type"></h2>
+<div id="groupTemplate" data-win-control="WinJS.Binding.Template" style="display: none;">
+    <div class="simpleHeaderItem">
+        <h1 data-win-bind="innerText: groupTitle"></h1>
     </div>
 </div>
 <!-- Item template -->
 <div id="imageTextListFileTemplate" 
      data-win-control="WinJS.Binding.Template">
     <div style="width: 250px; height: 55px; padding: 10px;">
-        <img class="imageTextListFileImage" style="margin-right: 20px;" data-win-bind="src: icon"/>
+        <img class="mediumListIconTextItem-Image" style="margin-right: 10px;" data-win-bind="src: icon"/>
         <div style="display: inline-block; ">
-            <span data-win-bind="innerText: title"></span>
-            <br />
-            <span data-win-bind="innerText: textType"></span>
+            <h4 data-win-bind="innerText: title"></h4>
+            
+            <h6 data-win-bind="innerText: textType"></h6>
         </div>
     </div>
-    <!--<table style="width: 250px !important; height: 80px; padding: 10px;">
-        <tr>
-            <td rowspan="2" style="padding-right: 10px; vertical-align: middle;"><img class="imageTextListFileImage" data-win-bind="src: icon"/></td>
-            <td data-win-bind="innerText: title" style="vertical-align: top; font-size: 18px; text-align: left;" align="left"></td>
-        </tr>
-        <tr><td data-win-bind="innerText: textType" style="color: #CCC; text-align: left;" align="left"></td></tr>
-    </table>-->
 </div>
-<!-- ListView-->
-<!--<div id="imageTextListFile" 
-     style="width: 350px; border: none; margin-top: 20px;"
-    data-win-control="WinJS.UI.ListView"
-    data-win-options="{ layout : {type: WinJS.UI.ListLayout}, itemTemplate : select('#imageTextListFileTemplate'), selectionMode: 'none'}">
-    
-</div>-->
+<div id="mediumListIconTextTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+            <div class="mediumListIconTextItem">
+                <img src="#" class="mediumListIconTextItem-Image" data-win-bind="src: icon" />
+                <div class="mediumListIconTextItem-Detail">
+                    <h4 data-win-bind="innerText: title"></h4>
+                    <h6 data-win-bind="innerText: textType"></h6>
+                </div>
+            </div>
+        </div>
 
             </section>
         </div>
