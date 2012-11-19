@@ -249,8 +249,8 @@
 
         var mruList = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList,
             entries = mruList.entries,
-            count = mruList.entries.length,
-            that = this;
+            count = mruList.entries.length;
+            //that = this;
         
         
         for (var x = 0; x < count; x++) {
@@ -263,7 +263,7 @@
                     function (currentFile) {
 
                         fileInfo[x] = {
-                            //icon: "images/smallogo.png",
+                            icon: "images/smallogo.png",
                             title: "",
                             textType: "",
                             kind: "R"

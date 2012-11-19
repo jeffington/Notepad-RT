@@ -563,69 +563,100 @@ var editor,
     function loadFromToken(fileToken) {
 
         editorCurrentFileToken = fileToken;
-// Configure and prepare the editor to receive the file's content
-        configureEditorFromSettings();                
+        // Configure and prepare the editor to receive the file's content
+        configureEditorFromSettings();
 
         Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(fileToken).then(function (retrievedFile) {
 
             filenameTitle.innerHTML = retrievedFile.name;
             detectEditorModeFromExtension(retrievedFile.name);
 
-            return retrievedFile.openAsync(Windows.Storage.FileAccessMode.read);
+            //return retrievedFile.openAsync(Windows.Storage.FileAccessMode.read);
+            return Windows.Storage.FileIO.readBufferAsync(retrievedFile);
 
-        }).then(function (stream) {
+        }).then(function (buffer) {
 
-            var size = stream.size;
-            if (size == 0) {
-                // Data not found
-            } else {
-                var inputStream = stream.getInputStreamAt(0);
-                var reader = new Windows.Storage.Streams.DataReader(inputStream);
+            var dataReader = Windows.Storage.Streams.DataReader.fromBuffer(buffer),
+                array = new Array(buffer.length),
+                output = dataReader.readBytes(array),
+                x;
 
-                reader.loadAsync(size).then(function () {
+            dataReader.close();
 
-                    //var contents = reader.readString(size); // fails with multibyte error if bad data (see legislators.getList.json)
-                    // allocate the full array so readBytes can insert it in full
-                    var array = new Array(size);
-                    reader.readBytes(array);
+            for (x = 0; x < array.length; x++) {
 
-                    var newString = "";
+                array[x] = String.fromCharCode(array[x]);
 
-                    for (var i = 0; i < array.length; i++) {
-                        // only printable characters (include spaces because could be part of names) (very rough here)
-                        // http://www.csgnetwork.com/asciiset.html
-                        //if (array[i] >= 32 && array[i] <= 126) {
-
-                        // Byte-order mark in UTF-8 files: ï»¿
-                        
-                        var c = String.fromCharCode(array[i]);
-
-                        if (i == 0 && c == 'ï' ||
-                            i == 1 && c == '»' || i == 2 && c == '¿') {
-                            continue;
-                        }
-                            newString += c;
-                        //}
-                    }
-                    //newString = array.join('');
-                    console.log("File contents: " + newString);
-
-                    setTimeout(function () {
-                        
-                        
-                        editor.getSession().getDocument().setValue(newString);
-                        newString = null;
-                        //delete newString;
-                        editor.navigateTo(0, 0);
-                    }, 1200);
-                    // Possible optimization here with newString, which could be eating a lot of memory.
-
-                    //document.getElementById('outputhere').innerHTML = "New York Population: " + newYorkPopulation;
-
-                });
             }
+
+            editor.getSession().getDocument().setValue(array.join(''));
+            
+            return WinJS.Promise.timeout(1200);
+
+        }).then(function (complete) {
+
+            configureEditorFromSettings();
+
+            //detectEditorModeFromExtension(retrievedFile.name);
+
+            //editor.getSession().getDocument().setValue(contents);
+            editor.navigateTo(0, 0);
+
         });
 
+
+    }
+
+/*.then(function (stream) {
+
+    var size = stream.size;
+    if (size == 0) {
+        // Data not found
+    } else {
+        var inputStream = stream.getInputStreamAt(0);
+        var reader = new Windows.Storage.Streams.DataReader(inputStream);
+
+        reader.loadAsync(size).then(function () {
+
+            //var contents = reader.readString(size); // fails with multibyte error if bad data (see legislators.getList.json)
+            // allocate the full array so readBytes can insert it in full
+            var array = new Array(size);
+            reader.readBytes(array);
+
+            var newString = "";
+
+            for (var i = 0; i < array.length; i++) {
+                // only printable characters (include spaces because could be part of names) (very rough here)
+                // http://www.csgnetwork.com/asciiset.html
+                //if (array[i] >= 32 && array[i] <= 126) {
+
+                // Byte-order mark in UTF-8 files: ï»¿
+                
+                var c = String.fromCharCode(array[i]);
+
+                if (i == 0 && c == 'ï' ||
+                    i == 1 && c == '»' || i == 2 && c == '¿') {
+                    continue;
+                }
+                    newString += c;
+                //}
+            }
+            //newString = array.join('');
+            console.log("File contents: " + newString);
+
+            setTimeout(function () {
+                
+                
+                editor.getSession().getDocument().setValue(newString);
+                newString = null;
+                //delete newString;
+                editor.navigateTo(0, 0);
+            }, 1200);
+            // Possible optimization here with newString, which could be eating a lot of memory.
+
+            //document.getElementById('outputhere').innerHTML = "New York Population: " + newYorkPopulation;
+
+        });*/
         //});
         
         /*.done(function (contents) {
@@ -649,7 +680,7 @@ var editor,
             console.log("FUCKED " + error);
         });*/
 
-    }
+//    }
 
 
     function saveFileContents(contents) {
@@ -756,12 +787,26 @@ var editor,
         settings['useHardTabs'] = (settings['useHardTabs'] === undefined ? true : settings['useHardTabs']);
         settings['showIndentGuides'] = (settings['showIndentGuides'] === undefined ? true : settings['showIndentGuides']);
         settings['showGutter'] = (settings['showGutter'] === undefined ? true : settings['showGutter']);
+        settings['showPrintMargin'] = (settings['showPrintMargin'] === undefined ? true : settings['showPrintMargin']);
+
 
         editorSession.setMode(settings['mode']);
         editor.setTheme(settings['theme']);
         
+        var gutter = document.querySelector('.ace_gutter-layer');
+
+        if (settings['showGutter']) {
+
+            gutter.style.display = 'inherit';
+
+        } else {
+
+            gutter.style.display = 'none';
+
+        }
         
         
+
         //setTimeout(function () {
             
         //}, 2000);
@@ -773,8 +818,10 @@ var editor,
         editorSession.setUseWrapMode(true);
         editorSession.setTabSize(4);
         editorSession.setUseSoftTabs(settings['useHardTabs']);
+
         editor.setHighlightActiveLine(settings['highlightActiveLine']);
         editor.setShowInvisibles(settings['showInvisibleCharacters']);
+        editor.setShowPrintMargin(settings['showPrintMargin']);
         editor.setTheme(settings['theme']);
         editorSession.setMode('ace/mode/text');
         editorSession.setMode(settings['mode']);

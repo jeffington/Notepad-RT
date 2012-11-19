@@ -100,8 +100,12 @@
                 </div>
                 <br />
                 <div>
-                    
-                    <input id="highlight-active-line" type="checkbox" onchange="Windows.Storage.ApplicationData.current.localSettings.values['highlightActiveLine'] = this.checked;Windows.Storage.ApplicationData.current.signalDataChanged();"/>
+                    <div id="highlight-active-line" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Highlight Active Line'}"></div>
+                    <div id="show-invisible-characters" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Show Invisible Characters'}"></div>
+                    <div id="show-gutter" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Show Gutter'}"></div>
+                    <div id="show-print-margin" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Show Print Margin'}"></div>
+                </div>
+                 <!--<input id="highlight-active-line" type="checkbox" onchange="Windows.Storage.ApplicationData.current.localSettings.values['highlightActiveLine'] = this.checked;Windows.Storage.ApplicationData.current.signalDataChanged();"/>
                     <label for="highlight-active-line">Highlight Active Line</label>
                 </div>
                 <div>
@@ -124,6 +128,7 @@
                     <input id="show-gutter" type="checkbox" onchange="Windows.Storage.ApplicationData.current.localSettings.values['showGutter'] = this.checked;Windows.Storage.ApplicationData.current.signalDataChanged();"/>
                     <label for="show-gutter">Show Gutter</label>
                 </div>-->
+            </div>
             </div>
         <!-- ENDTEMPLATE -->
     </body>

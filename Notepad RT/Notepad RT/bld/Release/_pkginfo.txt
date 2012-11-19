@@ -1,1 +1,1 @@
-C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\AppPackages\Notepad RT_1.0.0.1_AnyCPU_Test\Notepad RT_1.0.0.1_AnyCPU.appx
+C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\AppPackages\Notepad RT_1.1.1.0_AnyCPU_Test\Notepad RT_1.1.1.0_AnyCPU.appx

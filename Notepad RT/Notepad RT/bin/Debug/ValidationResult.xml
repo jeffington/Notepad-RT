@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type='text/xsl' href='C:\ProgramData\Windows App Certification Kit\results.xsl'?>
-<REPORT OVERALL_RESULT="PASS" VERSION="2.0.9200" TOOLSET_ARCHITECTURE="X86" SecureBoot="FALSE" APP_TYPE="WindowsStore" PUBLISHER_DISPLAY_NAME="JDM Labs, LLC" OSVERSION="6.2.9200.0" OS="Microsoft Windows 8 Enterprise Evaluation" PER_USER_APPLICATION="" PARTIAL_RUN="FALSE" LCID="1033" VALIDATION_TYPE="CommandLine" ReportGenerationTime="10/30/2012 11:33:31 PM" ID="c04b0d7bd6234e89c5dac192963b49ec">
+<REPORT OVERALL_RESULT="PASS" VERSION="2.0.9200" TOOLSET_ARCHITECTURE="X86" SecureBoot="FALSE" APP_TYPE="WindowsStore" PUBLISHER_DISPLAY_NAME="JDM Labs, LLC" OSVERSION="6.2.9200.0" OS="Microsoft Windows 8 Enterprise Evaluation" PER_USER_APPLICATION="" PARTIAL_RUN="FALSE" LCID="1033" VALIDATION_TYPE="CommandLine" ReportGenerationTime="11/17/2012 6:08:38 PM" ID="0357b19761d1fe79695b4ba779535210">
   <REQUIREMENTS>
     <REQUIREMENT NUMBER="1" TITLE="Clean reversible install test" RATIONALE="A clean, reversible, installation allows users to successfully manage (deploy, and remove) applications on their system." />
     <REQUIREMENT NUMBER="2" TITLE="Install to the correct folders test" RATIONALE="Windows provides specific locations in the file system to store programs and software components, shared application data, and application data specific to a user." />
@@ -12,101 +12,101 @@
     <REQUIREMENT NUMBER="8" TITLE="Safe mode test" RATIONALE="By default, most drivers and services that did not come preinstalled with Windows are not started in Safe Mode. They should remain disabled unless they are needed for basic operations of the system or for diagnostic and recovery purposes." />
     <REQUIREMENT NUMBER="9" TITLE="Multiuser session test" RATIONALE="Windows users should be able to run concurrent sessions without conflict or disruption.  Applications must ensure that when running in multiple sessions either locally or remotely, the normal functionality of the application should not be impacted. Application settings and data files should not be persisted across users. A user’s privacy and preferences should be isolated to the user’s session." />
     <REQUIREMENT NUMBER="10" TITLE="Crashes and hangs test" RATIONALE="Application failures such as crashes and hangs are a major disruption to users and cause frustration. Eliminating such failures improves application stability and reliability, and overall, provides users with a better application experience.">
-      <TEST INDEX="47" NAME="App launch tests" DESCRIPTION="App launch tests." EXECUTIONTIME="00h:00m:24s.52ms">
+      <TEST INDEX="47" NAME="App launch tests" DESCRIPTION="App launch tests." EXECUTIONTIME="00h:00m:22s.63ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
-      <TEST INDEX="21" NAME="Crashes and hangs" DESCRIPTION="Do not crash or hang during the testing process." EXECUTIONTIME="00h:00m:07s.34ms">
+      <TEST INDEX="21" NAME="Crashes and hangs" DESCRIPTION="Do not crash or hang during the testing process." EXECUTIONTIME="00h:00m:04s.61ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="11" TITLE="Compatibility and resiliency test" RATIONALE="When Windows detects that an application has operated in an incompatible manner, it applies a compatibility fix that causes the application to behave correctly, ensuring a positive user experience. Applications should not rely on this behavior since it is only provided to allow legacy applications to work correctly on Windows." />
     <REQUIREMENT NUMBER="12" TITLE="App manifest compliance test" RATIONALE="The package manifest was missing one or more required attributes.">
-      <TEST INDEX="31" NAME="App manifest" DESCRIPTION="App manifest must include valid entries for all required fields." EXECUTIONTIME="00h:00m:03s.47ms">
+      <TEST INDEX="31" NAME="App manifest" DESCRIPTION="App manifest must include valid entries for all required fields." EXECUTIONTIME="00h:00m:02s.30ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="13" TITLE="Windows security best practices test" RATIONALE="An application should not change the default Windows security settings." />
     <REQUIREMENT NUMBER="14" TITLE="Windows security features test" RATIONALE="Applications must opt-into Windows security features.">
-      <TEST INDEX="33" NAME="Binary analyzer" DESCRIPTION="Analysis of security features enabled on binaries" EXECUTIONTIME="00h:00m:03s.67ms">
+      <TEST INDEX="33" NAME="Binary analyzer" DESCRIPTION="Analysis of security features enabled on binaries" EXECUTIONTIME="00h:00m:02s.31ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="15" TITLE="Supported API test" RATIONALE="The application should only refer to the APIs allowed by the Windows SDK for Windows Store Apps.">
-      <TEST INDEX="38" NAME="Supported APIs" DESCRIPTION="Windows Store App must only use supported platform APIs." EXECUTIONTIME="00h:00m:05s.98ms">
+      <TEST INDEX="38" NAME="Supported APIs" DESCRIPTION="Windows Store App must only use supported platform APIs." EXECUTIONTIME="00h:00m:04s.56ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="17" TITLE="Performance test" RATIONALE="The application should have a fast and responsive launch and suspend experience while consuming a reasonable amount of system resources (CPU, File IO, Memory etc.) to enable fast switching and multitasking between previously unopened applications.">
-      <TEST INDEX="50" NAME="Bytecode generation" DESCRIPTION="Byte code generation should be able to complete successfully for packages containing an HTML5 Windows Store app." EXECUTIONTIME="00h:00m:01s.97ms">
+      <TEST INDEX="50" NAME="Bytecode generation" DESCRIPTION="Byte code generation should be able to complete successfully for packages containing an HTML5 Windows Store app." EXECUTIONTIME="00h:00m:01s.87ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
-      <TEST INDEX="43" NAME="Performance launch" DESCRIPTION="Application should have a responsive launch time with reasonable CPU, File IO and Memory usage" EXECUTIONTIME="00h:02m:02s.25ms">
+      <TEST INDEX="43" NAME="Performance launch" DESCRIPTION="Application should have a responsive launch time with reasonable CPU, File IO and Memory usage" EXECUTIONTIME="00h:01m:33s.40ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
-      <TEST INDEX="44" NAME="Performance suspend" DESCRIPTION="Application should have a responsive suspend with reasonable CPU and File IO usage" EXECUTIONTIME="00h:01m:25s.32ms">
+      <TEST INDEX="44" NAME="Performance suspend" DESCRIPTION="Application should have a responsive suspend with reasonable CPU and File IO usage" EXECUTIONTIME="00h:01m:21s.82ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="19" TITLE="App manifest resources test" RATIONALE="The Appx Package Manifest should have valid resources defined in the resources.pri file, as per the Appx Packaging Specification and Appx Manifest Schema.">
-      <TEST INDEX="45" NAME="App resources validation" DESCRIPTION="The package should have valid resources defined in the resources.pri file." EXECUTIONTIME="00h:00m:01s.40ms">
+      <TEST INDEX="45" NAME="App resources validation" DESCRIPTION="The package should have valid resources defined in the resources.pri file." EXECUTIONTIME="00h:00m:01s.18ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="20" TITLE="Debug configuration test" RATIONALE="The App should not install any debug binaries.">
-      <TEST INDEX="46" NAME="Debug configuration" DESCRIPTION="The App should not install any debug binaries." EXECUTIONTIME="00h:00m:02s.40ms">
+      <TEST INDEX="46" NAME="Debug configuration" DESCRIPTION="The App should not install any debug binaries." EXECUTIONTIME="00h:00m:02s.39ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="21" TITLE="File encoding" RATIONALE="Packages containing an HTML5 Windows Store app must have correct file encoding.">
-      <TEST INDEX="49" NAME="UTF-8 file encoding" DESCRIPTION="Packages containing an HTML5 Windows Store app must have correct file encoding." EXECUTIONTIME="00h:00m:01s.72ms">
+      <TEST INDEX="49" NAME="UTF-8 file encoding" DESCRIPTION="Packages containing an HTML5 Windows Store app must have correct file encoding." EXECUTIONTIME="00h:00m:01s.73ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="22" TITLE="Direct3D feature level support" RATIONALE="Applications must render content on Direct3D feature level 9.1 hardware.">
-      <TEST INDEX="51" NAME="Direct3D feature level support" DESCRIPTION="Applications must render content on Direct3D feature level 9.1 hardware." EXECUTIONTIME="00h:00m:01s.53ms">
+      <TEST INDEX="51" NAME="Direct3D feature level support" DESCRIPTION="Applications must render content on Direct3D feature level 9.1 hardware." EXECUTIONTIME="00h:00m:01s.34ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="23" TITLE="App Capabilities test" RATIONALE="Packages declaring special-use capabilities will have to provide justifications during the onboarding process.">
-      <TEST INDEX="52" NAME="Special Use Capabilities" DESCRIPTION="Packages declaring special-use capabilities will have to provide justifications during the onboarding process." EXECUTIONTIME="00h:00m:01s.76ms">
+      <TEST INDEX="52" NAME="Special Use Capabilities" DESCRIPTION="Packages declaring special-use capabilities will have to provide justifications during the onboarding process." EXECUTIONTIME="00h:00m:01s.68ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
     </REQUIREMENT>
     <REQUIREMENT NUMBER="24" TITLE="Windows Runtime metadata validation" RATIONALE="Metadata needs to be conformant and consistent across all generation sources.">
-      <TEST INDEX="56" NAME="ExclusiveTo attribute test" DESCRIPTION="A class must not implement an interface that is marked ExclusiveTo another class." EXECUTIONTIME="00h:00m:02s.36ms">
+      <TEST INDEX="56" NAME="ExclusiveTo attribute test" DESCRIPTION="A class must not implement an interface that is marked ExclusiveTo another class." EXECUTIONTIME="00h:00m:02s.28ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
-      <TEST INDEX="57" NAME="Type location test" DESCRIPTION="Types must be defined in the metadata file with the longest matching namespace." EXECUTIONTIME="00h:00m:01s.25ms">
+      <TEST INDEX="57" NAME="Type location test" DESCRIPTION="Types must be defined in the metadata file with the longest matching namespace." EXECUTIONTIME="00h:00m:01s.20ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
-      <TEST INDEX="55" NAME="Type name case-sensitivity test" DESCRIPTION="Namespace and type names must not vary only by casing." EXECUTIONTIME="00h:00m:01s.25ms">
+      <TEST INDEX="55" NAME="Type name case-sensitivity test" DESCRIPTION="Namespace and type names must not vary only by casing." EXECUTIONTIME="00h:00m:01s.15ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
-      <TEST INDEX="54" NAME="Type name correctness test" DESCRIPTION="Only system types can be in the Windows namespace and no types can be in the global namespace." EXECUTIONTIME="00h:00m:01s.17ms">
+      <TEST INDEX="54" NAME="Type name correctness test" DESCRIPTION="Only system types can be in the Windows namespace and no types can be in the global namespace." EXECUTIONTIME="00h:00m:01s.20ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
-      <TEST INDEX="58" NAME="General metadata correctness test" DESCRIPTION="Metadata files must meet various requirements in order to be valid and correct." EXECUTIONTIME="00h:00m:02s.45ms">
+      <TEST INDEX="58" NAME="General metadata correctness test" DESCRIPTION="Metadata files must meet various requirements in order to be valid and correct." EXECUTIONTIME="00h:00m:02s.57ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
-      <TEST INDEX="53" NAME="Properties test" DESCRIPTION="Write-only and indexer properties may not be used. Corresponding getter and setter methods must match in type." EXECUTIONTIME="00h:00m:01s.17ms">
+      <TEST INDEX="53" NAME="Properties test" DESCRIPTION="Write-only and indexer properties may not be used. Corresponding getter and setter methods must match in type." EXECUTIONTIME="00h:00m:01s.18ms">
         <RESULT><![CDATA[PASS]]></RESULT>
         <MESSAGES />
       </TEST>
@@ -114,29 +114,46 @@
   </REQUIREMENTS>
   <APPLICATIONS>
     <Installed_Programs>
-      <Program Name="21022MarkSpirek.NotepadRT" Type="Application" Source="AppxPackage" Publisher="CN=3714733F-5D19-41FF-8C3D-D9DF8CBCAFC1" Version="1.0.0.1" Language="1033" OnSystemDrive="true" RootDirPath="C:\Program Files\WindowsApps\21022MarkSpirek.NotepadRT_1.0.0.1_neutral__gk7k3632sm22a" PathEvidenceId="0x1f2d" RNP="0x1" DNP="0xd" EvidenceId="0x1f2d" Id="0000208e7cb524f7d5fd25616cf415e59d9b00000904">
+      <Program Name="21022MarkSpirek.NotepadRT" Type="Application" Source="AppxPackage" Publisher="CN=3714733F-5D19-41FF-8C3D-D9DF8CBCAFC1" Version="1.1.1.0" Language="1033" OnSystemDrive="true" RootDirPath="C:\Program Files\WindowsApps\21022MarkSpirek.NotepadRT_1.1.1.0_neutral__gk7k3632sm22a" PathEvidenceId="0x246e" RNP="0x1" DNP="0xd" EvidenceId="0x246e" Id="00005e81885a6007476cb838e722cad9a93000000904">
         <Indicators>
           <DirectoryIndicators>
-            <Directory Name="21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a" RNP="0x9" DNP="0xb" UniqueId="0x1f2e" Id="0000498fe326c74e0214af387425542b3c4709af1a18" />
-            <Directory Name="ace-src" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0x9" DNP="0xb" UniqueId="0x1f30" Id="000030418e5052d7d134d139f44a71648e017af116f8" />
-            <Directory Name="html" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\html" RNP="0x9" DNP="0xb" UniqueId="0x1f82" Id="0000d3e4c1f8626b92089a7c0d3e2755c6835f64c222" />
-            <Directory Name="editor" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\pages\editor" RNP="0x9" DNP="0xb" UniqueId="0x1f90" Id="0000ccf8e0e533a09b88c6106f8db09fd5d68ddc4ebc" />
-            <Directory Name="js" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\js" RNP="0x9" DNP="0xb" UniqueId="0x1f86" Id="0000ed830a2cad918e620bb3cae846c3985ea8ddae26" />
-            <Directory Name="pages" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\pages" RNP="0x9" DNP="0xb" UniqueId="0x1f8f" Id="000019ff601290dc13568ff4c70ea07fd47a73f13ab3" />
-            <Directory Name="home" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\pages\home" RNP="0x9" DNP="0xb" UniqueId="0x1f94" Id="00007eb0baafbaaf8336d49e7c3224114d4f05b6a749" />
+            <Directory Name="html" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\html" RNP="0x9" DNP="0xb" UniqueId="0x24c3" Id="0000d3e4c1f8626b92089a7c0d3e2755c6835f64c222" />
+            <Directory Name="pages" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\pages" RNP="0x9" DNP="0xb" UniqueId="0x24d0" Id="000019ff601290dc13568ff4c70ea07fd47a73f13ab3" />
+            <Directory Name="21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a" RNP="0x9" DNP="0xb" UniqueId="0x246f" Id="00004b2ebf1610d60e9ef58340d47a99ac7fbe79ac9f" />
+            <Directory Name="home" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\pages\home" RNP="0x9" DNP="0xb" UniqueId="0x24d5" Id="00007eb0baafbaaf8336d49e7c3224114d4f05b6a749" />
+            <Directory Name="ace-src" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0x9" DNP="0xb" UniqueId="0x2471" Id="000030418e5052d7d134d139f44a71648e017af116f8" />
+            <Directory Name="js" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\js" RNP="0x9" DNP="0xb" UniqueId="0x24c8" Id="0000ed830a2cad918e620bb3cae846c3985ea8ddae26" />
+            <Directory Name="editor" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\pages\editor" RNP="0x9" DNP="0xb" UniqueId="0x24d1" Id="0000ccf8e0e533a09b88c6106f8db09fd5d68ddc4ebc" />
           </DirectoryIndicators>
           <PackageManifestIndicator>
-            <PackageManifest PackageFullName="21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a" />
-            <Identity Name="21022MarkSpirek.NotepadRT" Version="1.0.0.1" Publisher="CN=3714733F-5D19-41FF-8C3D-D9DF8CBCAFC1" ProcessorArchitecture="neutral" />
+            <PackageManifest PackageFullName="21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a" />
+            <Identity Name="21022MarkSpirek.NotepadRT" Version="1.1.1.0" Publisher="CN=3714733F-5D19-41FF-8C3D-D9DF8CBCAFC1" ProcessorArchitecture="neutral" />
             <Extension Category="windows.fileTypeAssociation">
               <FileTypeAssociation Name=".txt">
-                <Logo>images\logo.png</Logo>
+                <Logo>images\filelogo.png</Logo>
                 <SupportedFileTypes>
                   <FileType>.txt</FileType>
                   <FileType>.css</FileType>
                   <FileType>.js</FileType>
                   <FileType>.md</FileType>
                   <FileType>.java</FileType>
+                  <FileType>.c</FileType>
+                  <FileType>.cpp</FileType>
+                  <FileType>.h</FileType>
+                  <FileType>.jsp</FileType>
+                  <FileType>.html</FileType>
+                  <FileType>.htm</FileType>
+                  <FileType>.pl</FileType>
+                  <FileType>.py</FileType>
+                  <FileType>.cs</FileType>
+                  <FileType>.php</FileType>
+                  <FileType>.xml</FileType>
+                  <FileType>.json</FileType>
+                  <FileType>.rb</FileType>
+                  <FileType>.rbw</FileType>
+                  <FileType>.sql</FileType>
+                  <FileType>.psql</FileType>
+                  <FileType>.rss</FileType>
                 </SupportedFileTypes>
               </FileTypeAssociation>
             </Extension>
@@ -161,108 +178,108 @@
           </PackageManifestIndicator>
         </Indicators>
         <StaticProperties>
-          <Files Id="0000bb7aef04106df5e54a8dd018d1579cf79ea949c3">
-            <File Name="mode-java.js" Id="000008caabdc58634239856fa6963d38a467d8ef1aaa" ShortName="MODE-J~2.JS" Size="0xacca" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-java.js" LongPathHash="0000429312ef8f4972688619a1fe2734af939e946950" UniqueId="0x1f42" />
-            <File Name="mode-liquid.js" Id="0000de5ec37660c8d73cd78c9034dbfd3ba5f87d9846" ShortName="MODE-L~3.JS" Size="0xaa86" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-liquid.js" LongPathHash="000063a68270b47f1f699fb68a1162c99444ec4cdd73" UniqueId="0x1f49" />
-            <File Name="mode-lua.js" Id="0000d988e578d943aa53534c75dd6a2d1451aa80026e" Size="0x47e6" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-lua.js" LongPathHash="000057c91db8c4949a8a06531b89fe394087b848b872" UniqueId="0x1f4a" />
-            <File Name="mode-markdown.js" Id="0000bf0a5aeeae6ee1c3c831d4fb1b7656ebfa74c397" ShortName="MODE-M~1.JS" Size="0x14e17" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-markdown.js" LongPathHash="0000a6d8e7377877b9844e8c4e5d11e2bc502b435695" UniqueId="0x1f4c" />
-            <File Name="mode-jsx.js" Id="000074854a5bd415ae5f18e4846cad34d4195b0f087b" Size="0x5860" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-jsx.js" LongPathHash="00001f3719e1047f5524768c2ba7e8a43745a2c1064d" UniqueId="0x1f46" />
-            <File Name="mode-javascript.js" Id="0000b29be29d1421164fd2ef741357c2d565039df78a" ShortName="MODE-J~3.JS" Size="0x9a8f" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-javascript.js" LongPathHash="00000bedc34cea191a2a7bdb0e2ce2acf5a14ba09638" UniqueId="0x1f43" />
-            <File Name="mode-json.js" Id="00005d6be221421bde667415ec8bb18f8a68041499c9" ShortName="MODE-J~4.JS" Size="0x4f17" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-json.js" LongPathHash="000001df9601634c23c70719d1141d38aa8cbf1beb79" UniqueId="0x1f44" />
-            <File Name="mode-less.js" Id="0000a78164056f702d4003e1ac53cf1c89b9db835b1a" ShortName="MODE-L~2.JS" Size="0x4e5b" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-less.js" LongPathHash="0000bac7757a8e0983c32e04dd4eb62778ea0b5b2706" UniqueId="0x1f48" />
-            <File Name="mode-ocaml.js" Id="0000f14c87710441b3e7302cd4fc5793f1481a3cd909" ShortName="MODE-O~1.JS" Size="0x5b4e" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-ocaml.js" LongPathHash="0000a92a593d956ea357e9502136c49dc9c5faef7b0f" UniqueId="0x1f4d" />
-            <File Name="mode-perl.js" Id="000005a55ef636c347e5d75828185b59f61a83f760ea" ShortName="MODE-P~1.JS" Size="0x38f5" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-perl.js" LongPathHash="0000aff63cfaf02bd539be16073566b00aaed18204fa" UniqueId="0x1f4e" />
-            <File Name="mode-php.js" Id="00005430a0b039e606ed93873026bfe4ad7d6584310d" Size="0x2bf5e" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-php.js" LongPathHash="0000f0c0afacfbd93d2db56f29a4f936cb13511dbed1" UniqueId="0x1f50" />
-            <File Name="mode-ruby.js" Id="00006ce15acb9a300c0623f2cfdba7cb01223b6101a5" ShortName="MODE-R~1.JS" Size="0x310e" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-ruby.js" LongPathHash="0000e1a98c94e62c654b230721d479d2915973b5e1c5" UniqueId="0x1f53" />
-            <File Name="mode-scad.js" Id="00003f3256702dd70a5ace5ff8cbe4d166980bba363a" ShortName="MODE-S~1.JS" Size="0x5ec3" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-scad.js" LongPathHash="00001bb95256f3cb6f35e6da8f9c9f17b412183afbac" UniqueId="0x1f54" />
-            <File Name="mode-scala.js" Id="0000f91bc45c68ec96fd1449031ea6b1e64f98c6020c" ShortName="MODE-S~2.JS" Size="0xb08f" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-scala.js" LongPathHash="000064d304e3990a436cf41e625d6c63c3e467246a55" UniqueId="0x1f55" />
-            <File Name="mode-sql.js" Id="0000a31c6a4a63b99d9b400ee991da2c25558790016e" Size="0x1388" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-sql.js" LongPathHash="0000a547979b3b9e1d7e6747f9899c97204776d38a85" UniqueId="0x1f58" />
-            <File Name="mode-svg.js" Id="0000a7b3a9b8ebb293ccc48fe4bd12ff4194abbf0775" Size="0xe50c" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-svg.js" LongPathHash="00008512a3de9d7de69ef007a603742688938e5bca3e" UniqueId="0x1f59" />
-            <File Name="mode-textile.js" Id="0000fa82874548373a7a0eed4535d7938a53a81b4a91" ShortName="MODE-T~2.JS" Size="0x1638" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-textile.js" LongPathHash="00005d1aee93ca1e35af0bba2924fe0188ca3cb59701" UniqueId="0x1f5c" />
-            <File Name="mode-tcl.js" Id="0000cac37bf8614d87def04b50838206102d52bd3852" Size="0x387a" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-tcl.js" LongPathHash="0000058b1e1cffd4836ce2c4ab4942791a6684dc69c8" UniqueId="0x1f5a" />
-            <File Name="mode-xquery.js" Id="000038eb42a8e1371f103a7a4caaa16fb9fabd414234" ShortName="MODE-X~1.JS" Size="0x5792" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-xquery.js" LongPathHash="00004ca6565b474600008641a5e604f2aee1ffe71376" UniqueId="0x1f5e" />
-            <File Name="theme-ambiance.js" Id="0000b1a668f55e6ca02f4973ebc982720853183a1e83" ShortName="THEME-~1.JS" Size="0x756e" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-ambiance.js" LongPathHash="000033fe63502382766f6751eabda028781da276733f" UniqueId="0x1f60" />
-            <File Name="mode-scss.js" Id="0000f7efb12cf92b3c41c259ef1915ad4f6311307e6c" ShortName="MODE-S~3.JS" Size="0x51a0" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-scss.js" LongPathHash="000019eca64c1da2d063729ea676c9b4809152aeddc9" UniqueId="0x1f56" />
-            <File Name="mode-jade.js" Id="000094f375407bbeed544733607288e885c69b174535" ShortName="MODE-J~1.JS" Size="0x14a14" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-jade.js" LongPathHash="00007e074366ed8e90009bb1fbba2275b4712dedb025" UniqueId="0x1f41" />
-            <File Name="mode-powershell.js" Id="0000cd48960df4d5e53916d991a7c26fe551440c2460" ShortName="MODE-P~3.JS" Size="0x5b93" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-powershell.js" LongPathHash="0000884efe885c4c54c100ffad2a6d66af61b6a9e312" UniqueId="0x1f51" />
-            <File Name="mode-sh.js" Id="0000a59c5391a62ccc987738f9bcf1376dcd4355c6b9" Size="0x1f6a" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-sh.js" LongPathHash="00002ead817b7907b2cc1c06886cf0ab22dc5a83d543" UniqueId="0x1f57" />
-            <File Name="mode-jsp.js" Id="00005a558e95fe4035de464b3702f8aac6d434d9d8ac" Size="0x106f2" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-jsp.js" LongPathHash="0000b50a8584c29e613ca55949d684d9f736d0e633d5" UniqueId="0x1f45" />
-            <File Name="mode-text.js" Id="0000baccc989a51c6a8f7d22a3ba48a16caf1d0e1adf" ShortName="MODE-T~1.JS" Size="0x4" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-text.js" LongPathHash="000085fa3188d38e46c3ab90644a87633608ef2dc2bb" UniqueId="0x1f5b" />
-            <File Name="mode-pgsql.js" Id="0000cc9af357927536e2edb96a85f8a1d0af17b41b7d" ShortName="MODE-P~2.JS" Size="0xd675" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-pgsql.js" LongPathHash="0000f2c97abb39d4b0e28ac1cf30af1c7f54d6f93ad9" UniqueId="0x1f4f" />
-            <File Name="mode-yaml.js" Id="00003ed431085f6c5884f98885ab2e1f89e53ddfa135" ShortName="MODE-Y~1.JS" Size="0x2e18" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-yaml.js" LongPathHash="0000bac901bbf4b52461ee6e6e92e6653551529cff1e" UniqueId="0x1f5f" />
-            <File Name="mode-latex.js" Id="0000ae6770b324187a4cff914a8a23b80c0a389913cc" ShortName="MODE-L~1.JS" Size="0xbc1" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-latex.js" LongPathHash="000043552ef2635e9bae3f5d5ad6233cc6802950d948" UniqueId="0x1f47" />
-            <File Name="mode-python.js" Id="0000b1a2695720b1d8bc61923f535eafe456bb9dbdbc" ShortName="MODE-P~4.JS" Size="0x330c" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-python.js" LongPathHash="000000ee5221e17d76c7fd31b884e4f6f6427ebe68dd" UniqueId="0x1f52" />
-            <File Name="mode-xml.js" Id="0000d262aaf86cfc4d709907c66755136a26cff6acdc" Size="0x6d5c" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-xml.js" LongPathHash="00001e19f1bba62248cf4f24325bb0850c3d3f92490d" UniqueId="0x1f5d" />
-            <File Name="mode-luapage.js" Id="00005531071a463c5187e81adefcde8e21cf1b3f3e25" ShortName="MODE-L~4.JS" Size="0x16a41" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-luapage.js" LongPathHash="00009e6bc93c0d1718ad9c0a529eb7b164999f810768" UniqueId="0x1f4b" />
-            <File Name="theme-dreamweaver.js" Id="0000cf433eec7bf799fea05736b0b3bd85cc9b51b1b4" ShortName="TH2D38~1.JS" Size="0x16ba" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-dreamweaver.js" LongPathHash="000069018e7f0d9810c13777e8fa6141a593a96e83a8" UniqueId="0x1f67" />
-            <File Name="theme-tomorrow_night_eighties.js" Id="00003addc2d20456cf96573e2ebc0b7e1377575155f2" ShortName="THF7DA~1.JS" Size="0x161c" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-tomorrow_night_eighties.js" LongPathHash="0000d5fe59449d14fdcd99de457678ff353294cf1ebe" UniqueId="0x1f78" />
-            <File Name="theme-xcode.js" Id="000043c2d4d4509283db07aaf35be96832006570cd15" ShortName="TH680A~1.JS" Size="0x1104" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-xcode.js" LongPathHash="000010d261b8adf3d39c2a4323a4a5a61aecc980c062" UniqueId="0x1f7b" />
-            <File Name="worker-coffee.js" Id="00004658ad4741057c2122c3ad69fe5a7fafd3db102d" ShortName="WORKER~1.JS" Size="0x4f7ac" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\worker-coffee.js" LongPathHash="0000e5af0511486f710eeb94635e64aeac1ce944e85f" UniqueId="0x1f7c" />
-            <File Name="theme-tomorrow_night.js" Id="000081033960c040dac344611bd3f2870be5ac350f83" ShortName="TH88AE~1.JS" Size="0x14b4" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-tomorrow_night.js" LongPathHash="00000550e0c7de9457a734769f731e26b30448a5fa05" UniqueId="0x1f75" />
-            <File Name="worker-javascript.js" Id="0000fbcbea7ebb3139d136ee0b96793fb03d901affea" ShortName="WORKER~3.JS" Size="0x53af4" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\worker-javascript.js" LongPathHash="00008203bf49fc1c4f5cb05ce96cc210037750bc1fd7" UniqueId="0x1f7e" />
-            <File Name="theme-clouds.js" Id="0000c6bab0932f2476b8c72a8925bd006ac6a5ba533b" ShortName="THEME-~3.JS" Size="0x11b1" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-clouds.js" LongPathHash="00008a62202c070f37111198254441504edc5f78a585" UniqueId="0x1f62" />
-            <File Name="theme-kr_theme.js" Id="00003e91ae5dbf9917f2b1a0830bd483d154a834169f" ShortName="TH7737~1.JS" Size="0x1252" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-kr_theme.js" LongPathHash="0000707d00daa609d601941da8e97e02c2c9af851b29" UniqueId="0x1f6b" />
-            <File Name="theme-eclipse.js" Id="00009369f31167c58e62a8d7d3369783c8e9815cf69d" ShortName="TH8C69~1.JS" Size="0x1122" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-eclipse.js" LongPathHash="0000ce1882edb775c8b8616bb05d13238d9530cba2f3" UniqueId="0x1f68" />
-            <File Name="theme-monokai.js" Id="0000db5d1faa7599c6ba905415e51c7e526c209528e8" ShortName="TH2A61~1.JS" Size="0x126b" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-monokai.js" LongPathHash="0000113b1f330b1d7ca32d8e4fdc8305c7b73b483365" UniqueId="0x1f6e" />
-            <File Name="theme-tomorrow_night_blue.js" Id="00000df97a5bdf806bf081a39d64999e94166bc15eb1" ShortName="THDAAA~1.JS" Size="0x1593" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-tomorrow_night_blue.js" LongPathHash="0000253f0885b2272e54551253be8e7cb0161928d56c" UniqueId="0x1f76" />
-            <File Name="theme-vibrant_ink.js" Id="0000d383bff0e0deb25b6afab201fe4ca53a7fe1309a" ShortName="TH7D6E~1.JS" Size="0x11ef" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-vibrant_ink.js" LongPathHash="0000315d95e3860f3d0d47abead7e67522d176a40be7" UniqueId="0x1f7a" />
-            <File Name="worker-css.js" Id="00002deb440696ff67cfaff219b13ed1714392c72b45" ShortName="WORKER~2.JS" Size="0x5c6d9" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\worker-css.js" LongPathHash="0000188ab6380aaec433a064c0e8bfc906c081f6f685" UniqueId="0x1f7d" />
-            <File Name="theme-mono_industrial.js" Id="000049c97afb8ac58e4dfadcd4727a7c47c027fb6d58" ShortName="THAED1~1.JS" Size="0x1470" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-mono_industrial.js" LongPathHash="00003d24098a7fd9fb61b1c8e1a628dde4e7ecd12aa6" UniqueId="0x1f6f" />
-            <File Name="worker-xquery.js" Id="0000992b4e0312f140ac226641ea2a56dc293cc432e4" ShortName="WO91EF~1.JS" Size="0x2ad09c" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:54" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\worker-xquery.js" LongPathHash="0000bece2255d7fc6a37f7ffea38c8d5d1cc09489062" UniqueId="0x1f80" />
-            <File Name="theme-dawn.js" Id="00003639fab6f06d9646f7efa018b33880d6ce75bd91" ShortName="TH43BA~1.JS" Size="0x1249" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-dawn.js" LongPathHash="0000f886b9da0460fe71b33710f55e887766477ada4f" UniqueId="0x1f66" />
-            <File Name="theme-github.js" Id="0000bf59f67c28ea324a2829a47d17e5b36316fe637a" ShortName="TH6DCD~1.JS" Size="0x12fe" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-github.js" LongPathHash="00007618d6e1d1ec30be94d770d6ae02536a6b40c16c" UniqueId="0x1f69" />
-            <File Name="theme-merbivore.js" Id="0000a3c0174ac3eb08da4fd02d6c1f518851e6bb3a29" ShortName="TH7C9D~1.JS" Size="0x1254" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-merbivore.js" LongPathHash="0000248d607c5fd484083375a71efd2a8391cdf59ae4" UniqueId="0x1f6c" />
-            <File Name="theme-merbivore_soft.js" Id="00001cfaedd3e5add322afd6fc562268650e3281ee89" ShortName="TH0794~1.JS" Size="0x1343" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-merbivore_soft.js" LongPathHash="000069c2f5379d63c6e99af8ec84105649d16d96d672" UniqueId="0x1f6d" />
-            <File Name="theme-solarized_dark.js" Id="00006eb10924eeb3c213b38c2cdf6fa66e87f7a35a67" ShortName="THF82C~1.JS" Size="0x12a1" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-solarized_dark.js" LongPathHash="0000dc3de93b82c0ea5ca1f67f106311325d30b3c88f" UniqueId="0x1f71" />
-            <File Name="theme-cobalt.js" Id="0000ac10574fe5290361f70cac293394d8501e0f6815" ShortName="THA580~1.JS" Size="0x1257" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-cobalt.js" LongPathHash="00006518c074ffafca29e6a2f9df3c1ac40a0fe1451c" UniqueId="0x1f64" />
-            <File Name="theme-textmate.js" Id="0000dcad93de86af70b99540ae5718e75fd17865611a" ShortName="THF2F0~1.JS" Size="0x146f" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-textmate.js" LongPathHash="00006fe1f450ab4026679a04214256f2f6fc7d4ae66e" UniqueId="0x1f73" />
-            <File Name="worker-json.js" Id="0000273336aeba43d3d770747f9bf2c546cccec78676" ShortName="WORKER~4.JS" Size="0x17844" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\worker-json.js" LongPathHash="000000ab93dbcb025c79feb89926f902217ac9f9c294" UniqueId="0x1f7f" />
-            <File Name="theme-twilight.js" Id="0000ec49fd5e08f2a3f9d3354c14f3b7218d54ce437c" ShortName="TH30FA~1.JS" Size="0x134f" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-twilight.js" LongPathHash="000006253ae0f6985a71680da79f745ca4134f0787b0" UniqueId="0x1f79" />
-            <File Name="theme-crimson_editor.js" Id="00008a5d1eee34a34b8b9e915392f27a98ad66e37ed4" ShortName="TH25A1~1.JS" Size="0x1574" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-crimson_editor.js" LongPathHash="0000b56e2e4e822cfbe1a41d1dd3e396c6efabf74afb" UniqueId="0x1f65" />
-            <File Name="theme-idle_fingers.js" Id="0000f85cd1e3fa5d18571a862795a4ebecb96d193c6f" ShortName="THFB47~1.JS" Size="0x126f" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-idle_fingers.js" LongPathHash="000091a11d66928f7e9640024a77af0fc49ba3d8906f" UniqueId="0x1f6a" />
-            <File Name="theme-pastel_on_dark.js" Id="000025989bbbe3308835b85d6809842e61d0dab34d02" ShortName="TH277C~1.JS" Size="0x142e" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-pastel_on_dark.js" LongPathHash="0000bc2d440037fcb6d1f9b53bfa53b369c4a91eb977" UniqueId="0x1f70" />
-            <File Name="theme-chrome.js" Id="00001a36cf358dea53993c9a6d6864414401048f7652" ShortName="THEME-~2.JS" Size="0x14ee" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-chrome.js" LongPathHash="00001ba9659498c32b7acb90af364ea7f5d94301df5d" UniqueId="0x1f61" />
-            <File Name="theme-clouds_midnight.js" Id="00004564e26031907f0eadfea4c09c8fc46fa2968864" ShortName="THEME-~4.JS" Size="0x1341" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-clouds_midnight.js" LongPathHash="0000bf2309d460c813c093d79182333f3de4f35b1469" UniqueId="0x1f63" />
-            <File Name="theme-solarized_light.js" Id="00000bf6883f5d7857f0c9cc17657757074a38b47c07" ShortName="THEB42~1.JS" Size="0x12d9" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-solarized_light.js" LongPathHash="000047c9d6436ebc6d8d199646d1af0f18a27106dd61" UniqueId="0x1f72" />
-            <File Name="theme-tomorrow.js" Id="00005b1e6d176ecf2712d998e9a018cd3c186282728f" ShortName="TH9279~1.JS" Size="0x1395" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-tomorrow.js" LongPathHash="0000bebc5e704bf7af88114fdc060cc345f1cb15c246" UniqueId="0x1f74" />
-            <File Name="theme-tomorrow_night_bright.js" Id="0000188c05c0e4c602a46f4aa91292d8b3cd00af4068" ShortName="THE24F~1.JS" Size="0x160b" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:51" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\theme-tomorrow_night_bright.js" LongPathHash="0000411a27eac9357b43cfe02b86af7b7a8165e20c95" UniqueId="0x1f77" />
-            <File Name="homePage.js" Id="0000cea331cb72c711ef5b01cec033e08f4282e39a0e" Size="0x1792" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:54" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\pages\home" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\pages\home\homepage.js" LongPathHash="00002a158ef825479e50b23ac531f7cf26d03d4e3c8f" UniqueId="0x1f96" />
-            <File Name="editorPage.html" Id="0000ab7aa8abbd210220a260e5c45a32b26def47597b" ShortName="EDITOR~1.HTM" Size="0x177e" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:54" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\pages\editor" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\pages\editor\editorpage.html" LongPathHash="0000f726417d7403c1c22452a745d067864970c72aaf" UniqueId="0x1f91" />
-            <File Name="navigator.js" Id="00009102e1c7ef5a7b8b0def8b7c83d765f01239c3a9" ShortName="NAVIGA~1.JS" Size="0x18ed" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:54" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\js\navigator.js" LongPathHash="000034255073751fad72b919eb6b5be2c1edd5a59abf" UniqueId="0x1f88" />
-            <File Name="readFile.js" Id="00003fb9e760937e91780e23c1e06c8fc4b63df7a39f" Size="0x8b" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:54" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\js\readfile.js" LongPathHash="00003a2b7f57636bcd3797b29195e7222ec96ddbae74" UniqueId="0x1f8a" />
-            <File Name="saveFile.js" Id="00003b3d11df609774e29c4b27b0d25811c9fbc0577f" Size="0x328" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:54" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\js\savefile.js" LongPathHash="0000c77a8ec15bc766a28a2c9a2244a1d22f3e6db2b4" UniqueId="0x1f8b" />
-            <File Name="AboutUI.html" Id="00001b5f8fc62878a26a3977f9a67f1678bead79dba1" ShortName="ABOUTU~1.HTM" Size="0x56a" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:54" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\html" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\html\aboutui.html" LongPathHash="0000380cc25bfa3bb01962e74862d973e31b9c071eaf" UniqueId="0x1f83" />
-            <File Name="editorPage.js" Id="00009a506c0201deeab9306b46c8ef72d54585836dbc" ShortName="EDITOR~1.JS" Size="0x3d80" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:54" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\pages\editor" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\pages\editor\editorpage.js" LongPathHash="000042bfe01e29dcd308cf774016b404d279303e652b" UniqueId="0x1f92" />
-            <File Name="settings.js" Id="000079453a70dfe104ac9b77ebbaa550111d585537f0" Size="0x252" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:54" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\js\settings.js" LongPathHash="0000851a0f23e80c0fb564225b2998cd3870c5d4f51f" UniqueId="0x1f8c" />
-            <File Name="pickFile.js" Id="0000b0cfe7f9c9090e6c4f67a262adac5aedffb0c97c" Size="0x894" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:54" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\js\pickfile.js" LongPathHash="0000658273ac1c95046e88935d1f04ddfb6b68198362" UniqueId="0x1f89" />
-            <File Name="homePage.html" Id="0000d731a8249fb2c072821c4dee1734b564963776ee" ShortName="HOMEPA~1.HTM" Size="0x775" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:54" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\pages\home" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\pages\home\homepage.html" LongPathHash="00005e903a79c91db59c63e9f320c922f554334395fc" UniqueId="0x1f95" />
-            <File Name="default.js" Id="0000008b252e69954dc5c4ad50b2c2b68285ccdc0bc8" Size="0xc73" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:54" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\js\default.js" LongPathHash="0000c8960abd4c2687309b0dc2d621aff9dfd6283921" UniqueId="0x1f87" />
-            <File Name="DefaultsUI.html" Id="00007ed3e583935e311844798a63e9c3bb4e9eb7098a" ShortName="DEFAUL~1.HTM" Size="0x2199" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:54" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\html" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\html\defaultsui.html" LongPathHash="0000244a9a45389962ad95af91557f6bee2163ac6421" UniqueId="0x1f84" />
-            <File Name="editorSettingsPage.js" Id="00006f26cad1fecc3c3dd02d7cd0d847602b620a0517" ShortName="EDITOR~2.JS" Size="0x49c" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:54" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\pages\editor" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\pages\editor\editorsettingspage.js" LongPathHash="0000a9902cbdfcde1b51b873499a355cfcea727c25ca" UniqueId="0x1f93" />
-            <File Name="mode-csharp.js" Id="0000df3b5f9cadc211b44f475779e7b6195592447fa4" ShortName="MO61E6~1.JS" Size="0x5329" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-csharp.js" LongPathHash="000016de22a4057695bf06a39382908903eef6db19d7" UniqueId="0x1f38" />
-            <File Name="mode-golang.js" Id="00005d9a4e73cc9918bfa6b963c43246b3735fea65a2" ShortName="MODE-G~2.JS" Size="0x5b1b" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-golang.js" LongPathHash="00008a7f166216140a405c710ff2fcb8a99a01fb4498" UniqueId="0x1f3d" />
-            <File Name="keybinding-emacs.js" Id="0000433fef018ad19ca98b41bc94e5bb631fa83e5309" ShortName="KEYBIN~1.JS" Size="0x2ca5" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\keybinding-emacs.js" LongPathHash="0000b871bdf5f158a710461b14557b928e6a26188285" UniqueId="0x1f32" />
-            <File Name="mode-c9search.js" Id="0000b62ed5f7674bb3aaa10c6ae12ac5b69850e35315" ShortName="MODE-C~2.JS" Size="0x21d2" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-c9search.js" LongPathHash="0000c6f69c68ee6831392c0e020757d6f828d266a227" UniqueId="0x1f34" />
-            <File Name="mode-clojure.js" Id="000018f7697d28865fb8f70b70e414fc2dd26f667af0" ShortName="MODE-C~3.JS" Size="0x38da" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-clojure.js" LongPathHash="0000a6751662525f193e80ced9b777fd6e0ed9269cb5" UniqueId="0x1f35" />
-            <File Name="mode-coldfusion.js" Id="0000f1fac1820f8ee397110898e6809ab1e007bef873" ShortName="MO4DB9~1.JS" Size="0x119eb" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-coldfusion.js" LongPathHash="0000790c99268425bcac754814d0bce243319eaad16d" UniqueId="0x1f37" />
-            <File Name="mode-groovy.js" Id="0000d33a68f7c1ac4a8636d777b186d475271af900d1" ShortName="MODE-G~3.JS" Size="0xb1a9" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-groovy.js" LongPathHash="0000a0a45e78274aa0b0e8bd554cd492616e1fb24198" UniqueId="0x1f3e" />
-            <File Name="mode-haxe.js" Id="0000663dd8d76be45141eac02dc25dfde4d907b5d3e5" ShortName="MODE-H~1.JS" Size="0x5263" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-haxe.js" LongPathHash="00005818a91043b059bca0983a762ca66f6265a63f79" UniqueId="0x1f3f" />
-            <File Name="default.html" Id="0000bf01d5926f412129cf8fd9ad7f6056942165c223" ShortName="DEFAUL~1.HTM" Size="0x47a" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:54" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\default.html" LongPathHash="0000b745165f584446a3a6f1f2425b91056b8048417c" UniqueId="0x1f2f" />
-            <File Name="ace.js" Id="0000e1251a0f82a6be62be479c05a6bd5abbb9fffd76" Size="0x889b4" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\ace.js" LongPathHash="000091a77db0074b63b3d007b495a75efa3b03f2bf67" UniqueId="0x1f31" />
-            <File Name="keybinding-vim.js" Id="00008e5081925a284eb02885c1f34e51fc4990e938d5" ShortName="KEYBIN~2.JS" Size="0xd555" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\keybinding-vim.js" LongPathHash="00000f1cd39dbbdf7e539572782ca5a2e26a84f89363" UniqueId="0x1f33" />
-            <File Name="mode-diff.js" Id="00007237fb82cbc0ba8d72f047639e6566b4d525e8b5" ShortName="MODE-D~1.JS" Size="0x20e0" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-diff.js" LongPathHash="00003f786f41a9ae1472f7c240978780e4cbf61d23dc" UniqueId="0x1f3b" />
-            <File Name="mode-c_cpp.js" Id="00007b59917ca196b19415fd6b39cf5c4a8d8d26b42e" ShortName="MODE-C~1.JS" Size="0x6fa2" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-c_cpp.js" LongPathHash="000021a535353f0d2374072b46039bcd455c0ad27a4b" UniqueId="0x1f3a" />
-            <File Name="mode-coffee.js" Id="0000a872988c1191724e666add798953bf46b6873878" ShortName="MODE-C~4.JS" Size="0x4210" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-coffee.js" LongPathHash="0000a16515ce1ce103d30fed6c615d5505b729ac3c46" UniqueId="0x1f36" />
-            <File Name="mode-glsl.js" Id="000083448cdf627760073c71d3f0460a1736a98cd1b3" ShortName="MODE-G~1.JS" Size="0x7c62" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-glsl.js" LongPathHash="000015e0cd6b9ef7218aa9194f3bc650f1bafed595db" UniqueId="0x1f3c" />
-            <File Name="mode-html.js" Id="0000fe9c6035b236009fdd9911247cdaede5c89a3b93" ShortName="MODE-H~2.JS" Size="0x1274c" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-html.js" LongPathHash="0000a0f95c01ccfa1672d61481db38cd56247f1b0949" UniqueId="0x1f40" />
-            <File Name="mode-css.js" Id="00006b189f1a60b4775dffa531e41aba08e16798734d" Size="0x4ff1" BinaryType="UNKNOWN" Created="10/31/2012 04:26:49" Modified="10/31/2012 04:26:50" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.0.0.1_neutral__gk7k3632sm22a\ace-src\mode-css.js" LongPathHash="00004ee8481852a8f4b702b831141663acab78619aad" UniqueId="0x1f39" />
+          <Files Id="0000e6a99dc44647372c6cb4e266d0da54f5931240e9">
+            <File Name="mode-coffee.js" Id="000016604e8c46d1f582dc35e3123ca20893a4bbd8dd" ShortName="MODE-C~4.JS" Size="0x4411" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-coffee.js" LongPathHash="0000bf23311eda685b53dfa9e951f5e3454814fd962a" UniqueId="0x2477" />
+            <File Name="mode-clojure.js" Id="0000cccb88ab30b1291deaf4a0e8bca968313dcb2067" ShortName="MODE-C~3.JS" Size="0x3a35" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-clojure.js" LongPathHash="00001fd60f76216cf89052f92a7ed0df750c236f8494" UniqueId="0x2476" />
+            <File Name="keybinding-emacs.js" Id="000052a02285860e6b56a2033bb874b0cf74d3a83e82" ShortName="KEYBIN~1.JS" Size="0x2e1b" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\keybinding-emacs.js" LongPathHash="000071c753e2118907b2ce09958a0e370a707a5160b1" UniqueId="0x2473" />
+            <File Name="default.html" Id="00004d29f6a5f25b2d727c1aa4d605b3652e402d6564" ShortName="DEFAUL~1.HTM" Size="0x3d4" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:59" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\default.html" LongPathHash="000051fdc2465c99071986a75116741180d388431202" UniqueId="0x2470" />
+            <File Name="mode-c9search.js" Id="000066eff9f9030ee817d40452f6f02b8c77bc9c190b" ShortName="MODE-C~2.JS" Size="0x22de" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-c9search.js" LongPathHash="00001077da3ccee9a075abaf5f9e8cad94d1ec4a0a98" UniqueId="0x2475" />
+            <File Name="mode-coldfusion.js" Id="0000f4d6a9d7799c7ef5186d919c05a7f7ea56665a51" ShortName="MO4DB9~1.JS" Size="0x12127" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-coldfusion.js" LongPathHash="0000155e9cea007906e5aea04ea60eba4c62160de882" UniqueId="0x2478" />
+            <File Name="mode-css.js" Id="00004df1eb21a234984ee467685e2f084f6ce6417e38" Size="0x51ba" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-css.js" LongPathHash="0000fa393f02c57878a7ca777072dc1dd214a70ceb50" UniqueId="0x247a" />
+            <File Name="mode-csharp.js" Id="0000249d7ed67ba44ca26430e58396f86b3837974138" ShortName="MO61E6~1.JS" Size="0x5594" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-csharp.js" LongPathHash="000063bce87dc01071b631570f59ea78e7009b9d23b5" UniqueId="0x2479" />
+            <File Name="mode-golang.js" Id="000061cccf96893b05a4955db1687b2e791091126e85" ShortName="MODE-G~2.JS" Size="0x5dbd" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-golang.js" LongPathHash="00004175736216879f089d767942e37246d703048211" UniqueId="0x247e" />
+            <File Name="mode-groovy.js" Id="00008666f5e082bcc2664473509ec01b32c132cd487d" ShortName="MODE-G~3.JS" Size="0xb631" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-groovy.js" LongPathHash="000036bc2de21c81da3206f7080c439a2d61c863f6be" UniqueId="0x247f" />
+            <File Name="mode-glsl.js" Id="00001f4674d4945b118994459f80eaf68953cdf150c9" ShortName="MODE-G~1.JS" Size="0x7fa4" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-glsl.js" LongPathHash="0000b5d229de22560c1299ad55759795e41b9c822f4c" UniqueId="0x247d" />
+            <File Name="mode-haxe.js" Id="00001b597d54e42b1747a96a2457488e617cfbeefed7" ShortName="MODE-H~1.JS" Size="0x54d3" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-haxe.js" LongPathHash="000075fcc2a54f56710c24878678d34bad6b13630332" UniqueId="0x2480" />
+            <File Name="mode-html.js" Id="00001629c4753876c897bc80a3b09eac600c1943688a" ShortName="MODE-H~2.JS" Size="0x12eea" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-html.js" LongPathHash="0000c08828469139657d4707896f254c7ad7bc1965c9" UniqueId="0x2481" />
+            <File Name="mode-jade.js" Id="0000da38c3577807babe58bb815c1a5ed6df54ec0a45" ShortName="MODE-J~1.JS" Size="0x1520a" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-jade.js" LongPathHash="000049c6ac3cdc0d74a67619990812ce2a7c61fbe827" UniqueId="0x2482" />
+            <File Name="mode-diff.js" Id="0000992e81e16587a2b6468b8837267d4ae7e6fd699d" ShortName="MODE-D~1.JS" Size="0x21d4" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-diff.js" LongPathHash="0000322e7e2aa8c6eb73eb75128ac45dcd11ca0e40d7" UniqueId="0x247c" />
+            <File Name="mode-java.js" Id="0000434ffba5d06c421db0f4786e64e1ed73aad76e1e" ShortName="MODE-J~2.JS" Size="0xb12a" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-java.js" LongPathHash="0000d8d3c6b28bcdc6eaba271800aa04d53d68bb0e26" UniqueId="0x2483" />
+            <File Name="ace.js" Id="0000c7f8d6200ef428bc640f9bbd839bf443431b83e1" Size="0x8cbbb" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\ace.js" LongPathHash="0000c3750990fa66ba11cfe2d39fb8c7e2ea0e113da9" UniqueId="0x2472" />
+            <File Name="mode-javascript.js" Id="0000e025dea3124b7e7f814119bc04601ed6904fdd4f" ShortName="MODE-J~3.JS" Size="0x9e6d" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-javascript.js" LongPathHash="0000d1b588096d4f962b1a83cc026f865d46ad68c8ca" UniqueId="0x2484" />
+            <File Name="keybinding-vim.js" Id="0000fd27fb6fc92c9aa804240276fa24302463f7024c" ShortName="KEYBIN~2.JS" Size="0xdbe4" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\keybinding-vim.js" LongPathHash="0000a5f53812f91a60c4ae25f3d4ebdee57c39756148" UniqueId="0x2474" />
+            <File Name="mode-c_cpp.js" Id="00000e61e976ff13805990d8cf2be149925219eaaa51" ShortName="MODE-C~1.JS" Size="0x7299" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-c_cpp.js" LongPathHash="000092bfb8700281ca6618298919fc2e7c391a9df375" UniqueId="0x247b" />
+            <File Name="mode-textile.js" Id="00005494d54d79355137163ddb8ca13e245622d064bf" ShortName="MODE-T~2.JS" Size="0x16e7" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-textile.js" LongPathHash="00007176cb986eebbe11e65d832047cb12a3f15187c3" UniqueId="0x249d" />
+            <File Name="mode-xquery.js" Id="00005f8c8d52b9f2e2bcc5526b4d77cbda6281b67882" ShortName="MODE-X~1.JS" Size="0x59e1" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-xquery.js" LongPathHash="0000a0fd368db2745a09ff28f45314ea93a0ebe41604" UniqueId="0x249f" />
+            <File Name="mode-sh.js" Id="000034f2519c288eff28ef60762c9fcef88c9ca1f1bf" Size="0x2058" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-sh.js" LongPathHash="000090cbb535f10dbf9bf64b791e4667789161869c4c" UniqueId="0x2498" />
+            <File Name="mode-markdown.js" Id="00000d2519c9dbbf1f788140e1684f044f82672875a2" ShortName="MODE-M~1.JS" Size="0x156e3" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-markdown.js" LongPathHash="00006af63ae933e30c408d524783b8bf30e0a09f0ef1" UniqueId="0x248d" />
+            <File Name="mode-luapage.js" Id="0000faab0591c758557a895d04c5c0f6cba32899ca76" ShortName="MODE-L~4.JS" Size="0x173f0" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-luapage.js" LongPathHash="0000817c68bd517fea2ea25fb45436849c6ece37c3f2" UniqueId="0x248c" />
+            <File Name="mode-less.js" Id="00001bb05d3eae48937c4474a19c4de68b9378027967" ShortName="MODE-L~2.JS" Size="0x5053" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-less.js" LongPathHash="00009252573d88e46f2957b0e7e0f585cbf0bd828821" UniqueId="0x2489" />
+            <File Name="mode-pgsql.js" Id="000082f5f33864e1e2571243554a318cd155accfa744" ShortName="MODE-P~2.JS" Size="0xda38" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-pgsql.js" LongPathHash="00001a8fdf79ed1da841ee58a39e35f0fd3da54f42df" UniqueId="0x2490" />
+            <File Name="mode-ruby.js" Id="00004619819f7471e5b1155fa847dc0acace05a55b1a" ShortName="MODE-R~1.JS" Size="0x323c" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-ruby.js" LongPathHash="0000d7eefe8dfd95396dacfd4188edca1a02a0b2621a" UniqueId="0x2494" />
+            <File Name="mode-json.js" Id="0000f9fb11d3ffdd75d3e35ecc17e0b6583396cc3a8f" ShortName="MODE-J~4.JS" Size="0x515c" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-json.js" LongPathHash="0000240270beb03a1a8f4d776ba95131dcedfb3e53b2" UniqueId="0x2485" />
+            <File Name="mode-scss.js" Id="00001fb44b7d7eef29e781507d214f386d8da1e38eb5" ShortName="MODE-S~3.JS" Size="0x53b2" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-scss.js" LongPathHash="0000dc8e2cd8747ee435fe74d97b3b367b5f4269c54b" UniqueId="0x2497" />
+            <File Name="mode-yaml.js" Id="00007074c43eca7cd023657c6ea1f694a2d356eaef39" ShortName="MODE-Y~1.JS" Size="0x2f8b" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-yaml.js" LongPathHash="0000b4eefae268868edd6698a233231608a0d418c54e" UniqueId="0x24a0" />
+            <File Name="mode-lua.js" Id="00009685740055228e5abea19f5efe63c7bd14a9fb6a" Size="0x49f2" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-lua.js" LongPathHash="00008912b4466aba5b5cca759f8c237bb59e9fba145d" UniqueId="0x248b" />
+            <File Name="mode-scala.js" Id="00009bf55510f735503b82c5dbdecc7de7b03cbbe7a6" ShortName="MODE-S~2.JS" Size="0xb50e" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-scala.js" LongPathHash="000065071ae424b20bafc198c31158db8c69c8520bc8" UniqueId="0x2496" />
+            <File Name="theme-ambiance.js" Id="0000a5a32bf025b93771daa75932124f042aa09864f7" ShortName="THEME-~1.JS" Size="0x767b" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-ambiance.js" LongPathHash="000030b5f6a0342ef9aaa21ee1e272aa9190cee31474" UniqueId="0x24a1" />
+            <File Name="theme-chrome.js" Id="00007e9d0188e38fe166846b04c964aaa73e1ea861d5" ShortName="THEME-~2.JS" Size="0x15bb" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-chrome.js" LongPathHash="00003a6b6925d25b6e60c2a95ba2b4dcf0807ce3e391" UniqueId="0x24a2" />
+            <File Name="mode-xml.js" Id="0000f2e4f25956e6a8fad8cc0ffd1a8ace2bab633a62" Size="0x7092" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-xml.js" LongPathHash="0000839ca358960e743be7175337c5225334cafec506" UniqueId="0x249e" />
+            <File Name="theme-clouds.js" Id="0000e18dd1d7a776c57cf38acaf3c9c6f013b2762ac8" ShortName="THEME-~3.JS" Size="0x125b" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-clouds.js" LongPathHash="0000969ac8c646b7055568781c8d99919d18534e0cd7" UniqueId="0x24a3" />
+            <File Name="theme-clouds_midnight.js" Id="00000eac66d373b6871773c9edc332dff5f6ab8ec8f4" ShortName="THEME-~4.JS" Size="0x13ec" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-clouds_midnight.js" LongPathHash="00004940ada8995bb529db1f968c8f564a046dfc0f5d" UniqueId="0x24a4" />
+            <File Name="mode-powershell.js" Id="0000c78ed1b48b46cf84c5ed6e642ff649a171e93d14" ShortName="MODE-P~3.JS" Size="0x5df3" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-powershell.js" LongPathHash="0000b809c44fc7b65e823157d57bb27c12d862d20a41" UniqueId="0x2492" />
+            <File Name="mode-latex.js" Id="0000d10de74d6ea168a5d8e7eb487f0d3b5b8df47520" ShortName="MODE-L~1.JS" Size="0xc20" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-latex.js" LongPathHash="00002ce1ac9b40ca6d02bc4919bc7be337ebfd681f25" UniqueId="0x2488" />
+            <File Name="mode-ocaml.js" Id="00007e82fe7f89e3e5675baee9c13ebafba322ee421c" ShortName="MODE-O~1.JS" Size="0x5d12" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-ocaml.js" LongPathHash="00009d4b95d67cfb6d56325cf3ec94c93643321b4d36" UniqueId="0x248e" />
+            <File Name="mode-jsp.js" Id="000056d803111af7ddb3a61a95422b8b522823902dfe" Size="0x10d72" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-jsp.js" LongPathHash="000090c3d7080380bed152e8ec9351a9689767360f26" UniqueId="0x2486" />
+            <File Name="mode-liquid.js" Id="000052f692443c3946b2396d89c693a31b4eae7024bd" ShortName="MODE-L~3.JS" Size="0xae71" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-liquid.js" LongPathHash="00004bb7f58c2986aa7d5952f9897919da5a27814579" UniqueId="0x248a" />
+            <File Name="mode-jsx.js" Id="0000f7301dec73c9ee697eb3369d2fc12af779c25595" Size="0x5ae6" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-jsx.js" LongPathHash="0000f2a8f2afa6cfd8aaa8d6d906f832d98924d82e93" UniqueId="0x2487" />
+            <File Name="mode-perl.js" Id="0000d971651a941b8db040ea2f15636dcbc76442a637" ShortName="MODE-P~1.JS" Size="0x3a98" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-perl.js" LongPathHash="00005e8d570b7fa4997fb6b27bd4ef2fd9619813b5d5" UniqueId="0x248f" />
+            <File Name="mode-python.js" Id="0000b1367ba3a3f9e645606c0a4e43b725a22a517541" ShortName="MODE-P~4.JS" Size="0x348b" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-python.js" LongPathHash="0000ffc25b495d431fc9c8c86a75f2430b33ffc1c034" UniqueId="0x2493" />
+            <File Name="mode-scad.js" Id="0000ebd139729d47d000383a11ce001972fbe8f0446a" ShortName="MODE-S~1.JS" Size="0x618b" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-scad.js" LongPathHash="00003521a172c581e3da4ee853332923b5e3bc028faa" UniqueId="0x2495" />
+            <File Name="mode-sql.js" Id="0000a51091b51f77806bf2cb644f8e5e61cc8f6d2bee" Size="0x1419" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-sql.js" LongPathHash="0000ece0bc01c49720f44e60b26b3dec69ebe8666ee5" UniqueId="0x2499" />
+            <File Name="mode-svg.js" Id="0000f5b742969f50e8b2595b425af2faf07dbef84e95" Size="0xeb4e" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-svg.js" LongPathHash="0000049869b477a292d18e694be288042c01ca465bc6" UniqueId="0x249a" />
+            <File Name="mode-php.js" Id="00005b5707ae410cd74fc8b2c68a12485083d097a923" Size="0x2c895" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-php.js" LongPathHash="0000afd60cb521d77785f8a7a57039498703c9745667" UniqueId="0x2491" />
+            <File Name="mode-tcl.js" Id="00009776580d7d61cf5b6b81d805ee9f5ac58b5059fd" Size="0x3a36" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-tcl.js" LongPathHash="0000dcf3014d32edbc1ef56eddaefecd48d26abde1bf" UniqueId="0x249b" />
+            <File Name="mode-text.js" Id="0000baccc989a51c6a8f7d22a3ba48a16caf1d0e1adf" ShortName="MODE-T~1.JS" Size="0x4" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\mode-text.js" LongPathHash="0000aec37c625c8dd2404bdddec5cceef5bc26ed6309" UniqueId="0x249c" />
+            <File Name="worker-xquery.js" Id="00005abd9f3547e6cb70e3541c92b5b86fd014278dba" ShortName="WO91EF~1.JS" Size="0x2bde39" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:59" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\worker-xquery.js" LongPathHash="0000db3eb48a333763a3f5c6cf3d374d6581e41155c3" UniqueId="0x24c1" />
+            <File Name="LegalUI.html" Id="0000f944d5d458e3c73d18c989805d9432cfdccdcfcb" ShortName="LEGALU~1.HTM" Size="0xcab" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:59" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\html" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\html\legalui.html" LongPathHash="0000d200f100ff29f9f1055c5fe79c82894d17a24cea" UniqueId="0x24c6" />
+            <File Name="theme-solarized_dark.js" Id="00003833d99ade4ddbf7fd611b5703c5394949df5a78" ShortName="THF82C~1.JS" Size="0x1340" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-solarized_dark.js" LongPathHash="00001b204cdd1f043099668541050092326eed80e672" UniqueId="0x24b2" />
+            <File Name="theme-pastel_on_dark.js" Id="00008cc150cb2d94c4254eece61e17d61f02729ea09c" ShortName="TH277C~1.JS" Size="0x14e9" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-pastel_on_dark.js" LongPathHash="0000c8750d8193ea501c3f770169e7d4371f57a0c3ee" UniqueId="0x24b1" />
+            <File Name="theme-merbivore.js" Id="00000625aff69a1040368a4f5c97bd036417fc2914ae" ShortName="TH7C9D~1.JS" Size="0x12fc" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-merbivore.js" LongPathHash="000054f312dd4585bdf55af311f2b15b3a9484d809fe" UniqueId="0x24ad" />
+            <File Name="theme-tomorrow.js" Id="000082ad85de003f150bd211f5674f28abfc0eac58fd" ShortName="TH9279~1.JS" Size="0x144b" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-tomorrow.js" LongPathHash="0000a515ecff07dde9ed8a2c0503f1ccba56790beeb9" UniqueId="0x24b5" />
+            <File Name="theme-merbivore_soft.js" Id="0000c6b1779b055edc12299ac08814cad58286a2aaf5" ShortName="TH0794~1.JS" Size="0x13ec" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-merbivore_soft.js" LongPathHash="0000351c842f11f5a67dcc50d9f7e3386a99a9553f50" UniqueId="0x24ae" />
+            <File Name="theme-tomorrow_night_bright.js" Id="0000c5b1fd1db082909a9d57746ea6b9dcee0e02a100" ShortName="THE24F~1.JS" Size="0x16c1" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-tomorrow_night_bright.js" LongPathHash="00006110d94bf851262a8a2dbe62dcf3da166926c4b0" UniqueId="0x24b8" />
+            <File Name="theme-tomorrow_night_eighties.js" Id="0000b2203e88fc2adffdef2b1361399216a0896677fc" ShortName="THF7DA~1.JS" Size="0x16ce" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-tomorrow_night_eighties.js" LongPathHash="0000a0157ee2795979b4bea2e1e3e46e3bd46bd99a88" UniqueId="0x24b9" />
+            <File Name="theme-kr_theme.js" Id="000059aa208caba173ae836a8cbe113e9e4a4926bac8" ShortName="TH7737~1.JS" Size="0x1303" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-kr_theme.js" LongPathHash="00009b19e0a08de20725ed093d7668ebd0065a6f7ce8" UniqueId="0x24ac" />
+            <File Name="theme-github.js" Id="0000b154bba26fd035d97b5a703738e184ab278d738d" ShortName="TH6DCD~1.JS" Size="0x13ad" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-github.js" LongPathHash="0000b667e0e8d004d8f1af32992e449e8bc8055bfadd" UniqueId="0x24aa" />
+            <File Name="theme-tomorrow_night_blue.js" Id="000059c93e2e6b139766f727137091ac088f916c6485" ShortName="THDAAA~1.JS" Size="0x1646" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-tomorrow_night_blue.js" LongPathHash="00001ab0312d578512f15ea1aa76756295a467187b84" UniqueId="0x24b7" />
+            <File Name="worker-json.js" Id="000065668a574f30e1dc8de985ee6a9959ddb315bc0c" ShortName="WORKER~4.JS" Size="0x183c6" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:58" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\worker-json.js" LongPathHash="000010724889a77f72b1084056d034e0738b95d19921" UniqueId="0x24c0" />
+            <File Name="theme-xcode.js" Id="000003b1714af25fbffa8ecc71a3da4697739e22b3ca" ShortName="TH680A~1.JS" Size="0x11a0" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-xcode.js" LongPathHash="0000af5275e776ea93af79a59cc2695fe6bf3350424d" UniqueId="0x24bc" />
+            <File Name="theme-idle_fingers.js" Id="00004fb22ec4d41cdd399ca021339a7c372d46c5738e" ShortName="THFB47~1.JS" Size="0x131a" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-idle_fingers.js" LongPathHash="000076a5dd082cd40a0139ff8b3a5a3e2c7ac5ed3cf2" UniqueId="0x24ab" />
+            <File Name="theme-cobalt.js" Id="000037f6e5d3825b700a1446521b8b43ebc6cd07b8c8" ShortName="THA580~1.JS" Size="0x130d" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-cobalt.js" LongPathHash="0000fe3b8e740a601c5b3d1eb70663475100e296de89" UniqueId="0x24a5" />
+            <File Name="theme-eclipse.js" Id="0000a26c990443fb700c2575790a80d3857023a42ec5" ShortName="TH8C69~1.JS" Size="0x11bc" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-eclipse.js" LongPathHash="000020269dd762fb9d4b3c91638cad2710248ee7ba52" UniqueId="0x24a9" />
+            <File Name="theme-vibrant_ink.js" Id="000072b0dc488ffbb8f666b256ada48b1cbd389f2f51" ShortName="TH7D6E~1.JS" Size="0x1293" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-vibrant_ink.js" LongPathHash="0000891e920cd2584b93b74cf8457a9cffdf3447c667" UniqueId="0x24bb" />
+            <File Name="theme-solarized_light.js" Id="00009470ff1132b3d21695d57b996108e02f533418b6" ShortName="THEB42~1.JS" Size="0x137d" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-solarized_light.js" LongPathHash="0000b287850742e6d3a65007ab45c2c5a100b6c89d28" UniqueId="0x24b3" />
+            <File Name="theme-textmate.js" Id="0000d76eb6be9d6393f6d95c6c8ee37d66ad26cd17ed" ShortName="THF2F0~1.JS" Size="0x153e" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-textmate.js" LongPathHash="00001eca3e1e38b8e65b6e444c3a08a3c9eb9c012b28" UniqueId="0x24b4" />
+            <File Name="worker-javascript.js" Id="0000707e261ef31a8184f4156fbb3f7ce818bc49a0d6" ShortName="WORKER~3.JS" Size="0x56343" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:58" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\worker-javascript.js" LongPathHash="0000af4f544c18251c20f1a9e46905180bb593a49069" UniqueId="0x24bf" />
+            <File Name="theme-mono_industrial.js" Id="00009f68e0b39f4cf44f54a992c0c6bcbc18f1d2b843" ShortName="THAED1~1.JS" Size="0x1524" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-mono_industrial.js" LongPathHash="0000c2fb8f297a8aa6ef644be381584542647163544b" UniqueId="0x24b0" />
+            <File Name="theme-tomorrow_night.js" Id="000001766ec0b809bc7f2d2f4ff802fde0c16c921da1" ShortName="TH88AE~1.JS" Size="0x156a" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-tomorrow_night.js" LongPathHash="0000deeec78653fec1df368c86e3ec2546c3ba151f67" UniqueId="0x24b6" />
+            <File Name="worker-css.js" Id="00009ccae9eb9d2716525e5485c1715c114a2ef07697" ShortName="WORKER~2.JS" Size="0x5f1df" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:58" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\worker-css.js" LongPathHash="0000c233ce08a2353bea77a07088bd2688c8ab91f4f5" UniqueId="0x24be" />
+            <File Name="worker-coffee.js" Id="00007edc3aeebeef3037ec34f7c4462ad2da3fe58067" ShortName="WORKER~1.JS" Size="0x513d9" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:58" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\worker-coffee.js" LongPathHash="000049a49bae0bdff0455df94998c24d8b5b79b08f92" UniqueId="0x24bd" />
+            <File Name="DefaultsUI.html" Id="00000f7923f986fdbf535b67adc721f7eb5fade30dca" ShortName="DEFAUL~1.HTM" Size="0x2138" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:59" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\html" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\html\defaultsui.html" LongPathHash="00005766749ae6d29ce1f61fc777e9826592505efdef" UniqueId="0x24c4" />
+            <File Name="FeedbackUI.html" Id="000062fca5d45448069b74a7c9e59ab6943c78a2e254" ShortName="FEEDBA~1.HTM" Size="0x7f6" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:59" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\html" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\html\feedbackui.html" LongPathHash="000050d0552d54da298666cc098e792f88f380837aa2" UniqueId="0x24c5" />
+            <File Name="theme-dreamweaver.js" Id="0000e586ceb8d933098ce55bf26bd3c3ccb9b63ea8be" ShortName="TH2D38~1.JS" Size="0x179a" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-dreamweaver.js" LongPathHash="00003ea5249f6c67dc1dc25c2abe798493d66e250c66" UniqueId="0x24a8" />
+            <File Name="theme-crimson_editor.js" Id="00008a9c091e12be712c3bea6ac2890033dc28c1373f" ShortName="TH25A1~1.JS" Size="0x1639" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-crimson_editor.js" LongPathHash="0000533509bf1cb4500c5ed853831005324179aa8bd7" UniqueId="0x24a6" />
+            <File Name="theme-dawn.js" Id="00001fc74b2b1b65e22c172bd7d5332e56cc0e256aca" ShortName="TH43BA~1.JS" Size="0x1300" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-dawn.js" LongPathHash="0000513ae362b722005e7d9ef5ac0311570b321bef88" UniqueId="0x24a7" />
+            <File Name="theme-monokai.js" Id="0000ca1a1c00c00e82484b811d1c5aac0d7b03d6b8c4" ShortName="TH2A61~1.JS" Size="0x1319" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-monokai.js" LongPathHash="000024d44265cef829281e85a471faeaae8c0acd1dac" UniqueId="0x24af" />
+            <File Name="theme-twilight.js" Id="0000d994495abd598b2801c6c5d848f55526508ff05c" ShortName="TH30FA~1.JS" Size="0x1407" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:57" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\ace-src\theme-twilight.js" LongPathHash="0000d58cce15bcadf98e34053df24cb1094e10b2daf0" UniqueId="0x24ba" />
+            <File Name="default.js" Id="0000008b252e69954dc5c4ad50b2c2b68285ccdc0bc8" Size="0xc73" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:59" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\js\default.js" LongPathHash="00007e5beb66b674ca2cfd7051e69b079c4a0066c9f1" UniqueId="0x24c9" />
+            <File Name="navigator.js" Id="00009102e1c7ef5a7b8b0def8b7c83d765f01239c3a9" ShortName="NAVIGA~1.JS" Size="0x18ed" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:59" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\js\navigator.js" LongPathHash="000065431dae9c2ef24b3f97c0e89994d98d9623fc39" UniqueId="0x24ca" />
+            <File Name="readFile.js" Id="00003fb9e760937e91780e23c1e06c8fc4b63df7a39f" Size="0x8b" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:59" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\js\readfile.js" LongPathHash="00001ebd5429196f53a9186de11d6bcee4a98e53eac9" UniqueId="0x24cb" />
+            <File Name="editorSettingsPage.js" Id="00006f26cad1fecc3c3dd02d7cd0d847602b620a0517" ShortName="EDITOR~2.JS" Size="0x49c" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:59" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\pages\editor" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\pages\editor\editorsettingspage.js" LongPathHash="0000a7446f80460590f928318b4d28e6db1faee8f1df" UniqueId="0x24d4" />
+            <File Name="settings.js" Id="00002b9534cc44ad32d18d9a95347aa662239f9bd61c" Size="0x2ac" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:59" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\js\settings.js" LongPathHash="0000c9ed2e9d084df8fc7581b1606b0876d3b78d84ee" UniqueId="0x24cd" />
+            <File Name="editorPage.html" Id="000005a67a82ca2d817bd91b7cccf70c71b5ea3c4717" ShortName="EDITOR~1.HTM" Size="0x1304" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:59" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\pages\editor" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\pages\editor\editorpage.html" LongPathHash="0000f6f5424dc3d553db0c3953d063b5ed04fb18cc40" UniqueId="0x24d2" />
+            <File Name="editorPage.js" Id="0000e698ac25ad7ce970a2ae870f71af274278b0e46a" ShortName="EDITOR~1.JS" Size="0x67fa" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:59" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\pages\editor" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\pages\editor\editorpage.js" LongPathHash="00003fd501bc772db8bbaca8eba90446d57211b00700" UniqueId="0x24d3" />
+            <File Name="homePage.html" Id="0000460a19c494d471e8a730817d01958c9114623d33" ShortName="HOMEPA~1.HTM" Size="0x985" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:59" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\pages\home" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\pages\home\homepage.html" LongPathHash="0000d0d2d7a9af2941b4052dc4e5956bbba5fd95d56b" UniqueId="0x24d6" />
+            <File Name="homePage.js" Id="00009efc53ccc8bde9a297949d91dec8ea787802138b" Size="0x447d" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:59" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\pages\home" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\pages\home\homepage.js" LongPathHash="0000ffaea2870be3ddf29a11e1b8ff248231e7a1943b" UniqueId="0x24d7" />
+            <File Name="saveFile.js" Id="00003b3d11df609774e29c4b27b0d25811c9fbc0577f" Size="0x328" BinaryType="UNKNOWN" Created="11/18/2012 00:03:56" Modified="11/18/2012 00:03:59" Path="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\21022markspirek.notepadrt_1.1.1.0_neutral__gk7k3632sm22a\js\savefile.js" LongPathHash="000080456b47eeb2a218a49e748c13dd92ba80d95325" UniqueId="0x24cc" />
           </Files>
         </StaticProperties>
       </Program>
     </Installed_Programs>
   </APPLICATIONS>
   <DEPENDENCY_INFORMATION>
-    <AitStaticAnalysis ProgramId="0000208e7cb524f7d5fd25616cf415e59d9b00000904" AnalysisVersion="1.54" DictionaryVersion="1.6" Type="Package" Id="21022MarkSpirek.NotepadRT_1.0.0.1_neutral__gk7k3632sm22a">
+    <AitStaticAnalysis ProgramId="00005e81885a6007476cb838e722cad9a93000000904" AnalysisVersion="1.54" DictionaryVersion="1.6" Type="Package" Id="21022MarkSpirek.NotepadRT_1.1.1.0_neutral__gk7k3632sm22a">
       <AitFile ErrorCode="0" Name="default.js" Id="0000008b252e69954dc5c4ad50b2c2b68285ccdc0bc8">
         <AitCategory Id="WRTJavaScript">
           <AitFeature Name="WinJS.Application" />
@@ -275,65 +292,37 @@
           <AitFeature Name="Windows.ApplicationModel.DataTransfer.StandardDataFormats.storageItems" />
         </AitCategory>
       </AitFile>
-      <AitFile ErrorCode="0" Name="mode-perl.js" Id="000005a55ef636c347e5d75828185b59f61a83f760ea" />
-      <AitFile ErrorCode="0" Name="mode-java.js" Id="000008caabdc58634239856fa6963d38a467d8ef1aaa" />
-      <AitFile ErrorCode="0" Name="theme-solarized_light.js" Id="00000bf6883f5d7857f0c9cc17657757074a38b47c07" />
-      <AitFile ErrorCode="0" Name="theme-tomorrow_night_blue.js" Id="00000df97a5bdf806bf081a39d64999e94166bc15eb1" />
-      <AitFile ErrorCode="0" Name="theme-tomorrow_night_bright.js" Id="0000188c05c0e4c602a46f4aa91292d8b3cd00af4068" />
-      <AitFile ErrorCode="0" Name="mode-clojure.js" Id="000018f7697d28865fb8f70b70e414fc2dd26f667af0" />
-      <AitFile ErrorCode="0" Name="theme-chrome.js" Id="00001a36cf358dea53993c9a6d6864414401048f7652" />
-      <AitFile ErrorCode="0" Name="AboutUI.html" Id="00001b5f8fc62878a26a3977f9a67f1678bead79dba1">
+      <AitFile ErrorCode="0" Name="theme-tomorrow_night.js" Id="000001766ec0b809bc7f2d2f4ff802fde0c16c921da1" />
+      <AitFile ErrorCode="0" Name="theme-xcode.js" Id="000003b1714af25fbffa8ecc71a3da4697739e22b3ca" />
+      <AitFile ErrorCode="0" Name="editorPage.html" Id="000005a67a82ca2d817bd91b7cccf70c71b5ea3c4717">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="WinJS.1.0" />
+          <AitFeature Name="WinJS.UI.AppBar" />
+          <AitFeature Name="WinJS.UI.AppBarCommand" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="theme-merbivore.js" Id="00000625aff69a1040368a4f5c97bd036417fc2914ae" />
+      <AitFile ErrorCode="0" Name="mode-markdown.js" Id="00000d2519c9dbbf1f788140e1684f044f82672875a2" />
+      <AitFile ErrorCode="0" Name="mode-c_cpp.js" Id="00000e61e976ff13805990d8cf2be149925219eaaa51" />
+      <AitFile ErrorCode="0" Name="theme-clouds_midnight.js" Id="00000eac66d373b6871773c9edc332dff5f6ab8ec8f4" />
+      <AitFile ErrorCode="0" Name="DefaultsUI.html" Id="00000f7923f986fdbf535b67adc721f7eb5fade30dca">
         <AitCategory Id="WRTJavaScript">
           <AitFeature Name="WinJS.UI.SettingsFlyout" />
           <AitFeature Name="WinJS.UI.SettingsFlyout.show" />
-        </AitCategory>
-      </AitFile>
-      <AitFile ErrorCode="0" Name="theme-merbivore_soft.js" Id="00001cfaedd3e5add322afd6fc562268650e3281ee89" />
-      <AitFile ErrorCode="0" Name="theme-pastel_on_dark.js" Id="000025989bbbe3308835b85d6809842e61d0dab34d02" />
-      <AitFile ErrorCode="0" Name="worker-json.js" Id="0000273336aeba43d3d770747f9bf2c546cccec78676" />
-      <AitFile ErrorCode="0" Name="worker-css.js" Id="00002deb440696ff67cfaff219b13ed1714392c72b45" />
-      <AitFile ErrorCode="32" Name="JSByteCodeCache_32" Id="00003000000000000000000000000000000000000000" />
-      <AitFile ErrorCode="0" Name="theme-dawn.js" Id="00003639fab6f06d9646f7efa018b33880d6ce75bd91" />
-      <AitFile ErrorCode="0" Name="mode-xquery.js" Id="000038eb42a8e1371f103a7a4caaa16fb9fabd414234" />
-      <AitFile ErrorCode="0" Name="theme-tomorrow_night_eighties.js" Id="00003addc2d20456cf96573e2ebc0b7e1377575155f2" />
-      <AitFile ErrorCode="0" Name="saveFile.js" Id="00003b3d11df609774e29c4b27b0d25811c9fbc0577f">
-        <AitCategory Id="WRTJavaScript">
-          <AitFeature Name="Windows.Storage.FileIO.writeTextAsync" />
-          <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync" />
-        </AitCategory>
-      </AitFile>
-      <AitFile ErrorCode="0" Name="theme-kr_theme.js" Id="00003e91ae5dbf9917f2b1a0830bd483d154a834169f" />
-      <AitFile ErrorCode="0" Name="mode-yaml.js" Id="00003ed431085f6c5884f98885ab2e1f89e53ddfa135" />
-      <AitFile ErrorCode="0" Name="mode-scad.js" Id="00003f3256702dd70a5ace5ff8cbe4d166980bba363a" />
-      <AitFile ErrorCode="0" Name="readFile.js" Id="00003fb9e760937e91780e23c1e06c8fc4b63df7a39f">
-        <AitCategory Id="WRTJavaScript">
-          <AitFeature Name="Windows.Storage.FileIO.readTextAsync" />
-        </AitCategory>
-      </AitFile>
-      <AitFile ErrorCode="0" Name="keybinding-emacs.js" Id="0000433fef018ad19ca98b41bc94e5bb631fa83e5309" />
-      <AitFile ErrorCode="0" Name="theme-xcode.js" Id="000043c2d4d4509283db07aaf35be96832006570cd15" />
-      <AitFile ErrorCode="0" Name="theme-clouds_midnight.js" Id="00004564e26031907f0eadfea4c09c8fc46fa2968864" />
-      <AitFile ErrorCode="0" Name="worker-coffee.js" Id="00004658ad4741057c2122c3ad69fe5a7fafd3db102d" />
-      <AitFile ErrorCode="0" Name="theme-mono_industrial.js" Id="000049c97afb8ac58e4dfadcd4727a7c47c027fb6d58" />
-      <AitFile ErrorCode="0" Name="mode-php.js" Id="00005430a0b039e606ed93873026bfe4ad7d6584310d" />
-      <AitFile ErrorCode="0" Name="mode-luapage.js" Id="00005531071a463c5187e81adefcde8e21cf1b3f3e25" />
-      <AitFile ErrorCode="0" Name="mode-jsp.js" Id="00005a558e95fe4035de464b3702f8aac6d434d9d8ac" />
-      <AitFile ErrorCode="0" Name="theme-tomorrow.js" Id="00005b1e6d176ecf2712d998e9a018cd3c186282728f" />
-      <AitFile ErrorCode="0" Name="mode-json.js" Id="00005d6be221421bde667415ec8bb18f8a68041499c9" />
-      <AitFile ErrorCode="0" Name="mode-golang.js" Id="00005d9a4e73cc9918bfa6b963c43246b3735fea65a2" />
-      <AitFile ErrorCode="0" Name="mode-haxe.js" Id="0000663dd8d76be45141eac02dc25dfde4d907b5d3e5" />
-      <AitFile ErrorCode="0" Name="mode-css.js" Id="00006b189f1a60b4775dffa531e41aba08e16798734d" />
-      <AitFile ErrorCode="0" Name="mode-ruby.js" Id="00006ce15acb9a300c0623f2cfdba7cb01223b6101a5" />
-      <AitFile ErrorCode="0" Name="theme-solarized_dark.js" Id="00006eb10924eeb3c213b38c2cdf6fa66e87f7a35a67" />
-      <AitFile ErrorCode="0" Name="editorSettingsPage.js" Id="00006f26cad1fecc3c3dd02d7cd0d847602b620a0517">
-        <AitCategory Id="WRTJavaScript">
-          <AitFeature Name="WinJS.UI.Pages.define" />
           <AitFeature Name="Windows.Storage.ApplicationData.current.localSettings.values" />
+          <AitFeature Name="Windows.Storage.ApplicationData.current.signalDataChanged" />
         </AitCategory>
       </AitFile>
-      <AitFile ErrorCode="0" Name="mode-diff.js" Id="00007237fb82cbc0ba8d72f047639e6566b4d525e8b5" />
-      <AitFile ErrorCode="0" Name="mode-jsx.js" Id="000074854a5bd415ae5f18e4846cad34d4195b0f087b" />
-      <AitFile ErrorCode="0" Name="settings.js" Id="000079453a70dfe104ac9b77ebbaa550111d585537f0">
+      <AitFile ErrorCode="0" Name="mode-html.js" Id="00001629c4753876c897bc80a3b09eac600c1943688a" />
+      <AitFile ErrorCode="0" Name="mode-coffee.js" Id="000016604e8c46d1f582dc35e3123ca20893a4bbd8dd" />
+      <AitFile ErrorCode="0" Name="mode-haxe.js" Id="00001b597d54e42b1747a96a2457488e617cfbeefed7" />
+      <AitFile ErrorCode="0" Name="mode-less.js" Id="00001bb05d3eae48937c4474a19c4de68b9378027967" />
+      <AitFile ErrorCode="0" Name="mode-glsl.js" Id="00001f4674d4945b118994459f80eaf68953cdf150c9" />
+      <AitFile ErrorCode="0" Name="mode-scss.js" Id="00001fb44b7d7eef29e781507d214f386d8da1e38eb5" />
+      <AitFile ErrorCode="0" Name="theme-dawn.js" Id="00001fc74b2b1b65e22c172bd7d5332e56cc0e256aca" />
+      <AitFile ErrorCode="0" Name="mode-csharp.js" Id="0000249d7ed67ba44ca26430e58396f86b3837974138" />
+      <AitFile ErrorCode="0" Name="settings.js" Id="00002b9534cc44ad32d18d9a95347aa662239f9bd61c">
         <AitCategory Id="WRTJavaScript">
           <AitFeature Name="WinJS" />
           <AitFeature Name="WinJS.Application.onsettings" />
@@ -342,19 +331,71 @@
           <AitFeature Name="WinJS.UI.processAll" />
         </AitCategory>
       </AitFile>
-      <AitFile ErrorCode="0" Name="mode-c_cpp.js" Id="00007b59917ca196b19415fd6b39cf5c4a8d8d26b42e" />
-      <AitFile ErrorCode="0" Name="DefaultsUI.html" Id="00007ed3e583935e311844798a63e9c3bb4e9eb7098a">
+      <AitFile ErrorCode="32" Name="JSByteCodeCache_32" Id="00003000000000000000000000000000000000000000" />
+      <AitFile ErrorCode="0" Name="mode-sh.js" Id="000034f2519c288eff28ef60762c9fcef88c9ca1f1bf" />
+      <AitFile ErrorCode="0" Name="theme-cobalt.js" Id="000037f6e5d3825b700a1446521b8b43ebc6cd07b8c8" />
+      <AitFile ErrorCode="0" Name="theme-solarized_dark.js" Id="00003833d99ade4ddbf7fd611b5703c5394949df5a78" />
+      <AitFile ErrorCode="0" Name="saveFile.js" Id="00003b3d11df609774e29c4b27b0d25811c9fbc0577f">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="Windows.Storage.FileIO.writeTextAsync" />
+          <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="readFile.js" Id="00003fb9e760937e91780e23c1e06c8fc4b63df7a39f">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="Windows.Storage.FileIO.readTextAsync" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="mode-java.js" Id="0000434ffba5d06c421db0f4786e64e1ed73aad76e1e" />
+      <AitFile ErrorCode="0" Name="homePage.html" Id="0000460a19c494d471e8a730817d01958c9114623d33">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.Binding.Template" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="mode-ruby.js" Id="00004619819f7471e5b1155fa847dc0acace05a55b1a" />
+      <AitFile ErrorCode="0" Name="default.html" Id="00004d29f6a5f25b2d727c1aa4d605b3652e402d6564">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="WinJS.1.0" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="mode-css.js" Id="00004df1eb21a234984ee467685e2f084f6ce6417e38" />
+      <AitFile ErrorCode="0" Name="theme-idle_fingers.js" Id="00004fb22ec4d41cdd399ca021339a7c372d46c5738e" />
+      <AitFile ErrorCode="0" Name="keybinding-emacs.js" Id="000052a02285860e6b56a2033bb874b0cf74d3a83e82" />
+      <AitFile ErrorCode="0" Name="mode-liquid.js" Id="000052f692443c3946b2396d89c693a31b4eae7024bd" />
+      <AitFile ErrorCode="0" Name="mode-textile.js" Id="00005494d54d79355137163ddb8ca13e245622d064bf" />
+      <AitFile ErrorCode="0" Name="mode-jsp.js" Id="000056d803111af7ddb3a61a95422b8b522823902dfe" />
+      <AitFile ErrorCode="0" Name="theme-kr_theme.js" Id="000059aa208caba173ae836a8cbe113e9e4a4926bac8" />
+      <AitFile ErrorCode="0" Name="theme-tomorrow_night_blue.js" Id="000059c93e2e6b139766f727137091ac088f916c6485" />
+      <AitFile ErrorCode="0" Name="worker-xquery.js" Id="00005abd9f3547e6cb70e3541c92b5b86fd014278dba" />
+      <AitFile ErrorCode="0" Name="mode-php.js" Id="00005b5707ae410cd74fc8b2c68a12485083d097a923" />
+      <AitFile ErrorCode="0" Name="mode-xquery.js" Id="00005f8c8d52b9f2e2bcc5526b4d77cbda6281b67882" />
+      <AitFile ErrorCode="0" Name="mode-golang.js" Id="000061cccf96893b05a4955db1687b2e791091126e85" />
+      <AitFile ErrorCode="0" Name="FeedbackUI.html" Id="000062fca5d45448069b74a7c9e59ab6943c78a2e254">
         <AitCategory Id="WRTJavaScript">
           <AitFeature Name="WinJS.UI.SettingsFlyout" />
           <AitFeature Name="WinJS.UI.SettingsFlyout.show" />
-          <AitFeature Name="Windows.Storage.ApplicationData.current.localSettings.values" />
-          <AitFeature Name="Windows.Storage.ApplicationData.current.signalDataChanged" />
         </AitCategory>
       </AitFile>
-      <AitFile ErrorCode="0" Name="theme-tomorrow_night.js" Id="000081033960c040dac344611bd3f2870be5ac350f83" />
-      <AitFile ErrorCode="0" Name="mode-glsl.js" Id="000083448cdf627760073c71d3f0460a1736a98cd1b3" />
-      <AitFile ErrorCode="0" Name="theme-crimson_editor.js" Id="00008a5d1eee34a34b8b9e915392f27a98ad66e37ed4" />
-      <AitFile ErrorCode="0" Name="keybinding-vim.js" Id="00008e5081925a284eb02885c1f34e51fc4990e938d5" />
+      <AitFile ErrorCode="0" Name="worker-json.js" Id="000065668a574f30e1dc8de985ee6a9959ddb315bc0c" />
+      <AitFile ErrorCode="0" Name="mode-c9search.js" Id="000066eff9f9030ee817d40452f6f02b8c77bc9c190b" />
+      <AitFile ErrorCode="0" Name="editorSettingsPage.js" Id="00006f26cad1fecc3c3dd02d7cd0d847602b620a0517">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.UI.Pages.define" />
+          <AitFeature Name="Windows.Storage.ApplicationData.current.localSettings.values" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="mode-yaml.js" Id="00007074c43eca7cd023657c6ea1f694a2d356eaef39" />
+      <AitFile ErrorCode="0" Name="worker-javascript.js" Id="0000707e261ef31a8184f4156fbb3f7ce818bc49a0d6" />
+      <AitFile ErrorCode="0" Name="theme-vibrant_ink.js" Id="000072b0dc488ffbb8f666b256ada48b1cbd389f2f51" />
+      <AitFile ErrorCode="0" Name="mode-ocaml.js" Id="00007e82fe7f89e3e5675baee9c13ebafba322ee421c" />
+      <AitFile ErrorCode="0" Name="theme-chrome.js" Id="00007e9d0188e38fe166846b04c964aaa73e1ea861d5" />
+      <AitFile ErrorCode="0" Name="worker-coffee.js" Id="00007edc3aeebeef3037ec34f7c4462ad2da3fe58067" />
+      <AitFile ErrorCode="0" Name="theme-tomorrow.js" Id="000082ad85de003f150bd211f5674f28abfc0eac58fd" />
+      <AitFile ErrorCode="0" Name="mode-pgsql.js" Id="000082f5f33864e1e2571243554a318cd155accfa744" />
+      <AitFile ErrorCode="0" Name="mode-groovy.js" Id="00008666f5e082bcc2664473509ec01b32c132cd487d" />
+      <AitFile ErrorCode="0" Name="theme-crimson_editor.js" Id="00008a9c091e12be712c3bea6ac2890033dc28c1373f" />
+      <AitFile ErrorCode="0" Name="theme-pastel_on_dark.js" Id="00008cc150cb2d94c4254eece61e17d61f02729ea09c" />
       <AitFile ErrorCode="0" Name="navigator.js" Id="00009102e1c7ef5a7b8b0def8b7c83d765f01239c3a9">
         <AitCategory Id="WRTJavaScript">
           <AitFeature Name="WinJS.Class.define" />
@@ -368,97 +409,37 @@
           <AitFeature Name="Windows.UI.ViewManagement.ApplicationView" />
         </AitCategory>
       </AitFile>
-      <AitFile ErrorCode="0" Name="theme-eclipse.js" Id="00009369f31167c58e62a8d7d3369783c8e9815cf69d" />
-      <AitFile ErrorCode="0" Name="mode-jade.js" Id="000094f375407bbeed544733607288e885c69b174535" />
-      <AitFile ErrorCode="0" Name="worker-xquery.js" Id="0000992b4e0312f140ac226641ea2a56dc293cc432e4" />
-      <AitFile ErrorCode="0" Name="editorPage.js" Id="00009a506c0201deeab9306b46c8ef72d54585836dbc">
-        <AitCategory Id="WRTJavaScript">
-          <AitFeature Name="WinJS.0.6" />
-          <AitFeature Name="WinJS.UI.Pages.define" />
-          <AitFeature Name="Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView" />
-          <AitFeature Name="Windows.ApplicationModel.DataTransfer.StandardDataFormats.text" />
-          <AitFeature Name="Windows.Storage.ApplicationData.current.addEventListener" />
-          <AitFeature Name="Windows.Storage.ApplicationData.current.localSettings.values" />
-          <AitFeature Name="Windows.Storage.ApplicationData.current.removeEventListener" />
-          <AitFeature Name="Windows.Storage.CachedFileManager.completeUpdatesAsync" />
-          <AitFeature Name="Windows.Storage.CachedFileManager.deferUpdates" />
-          <AitFeature Name="Windows.Storage.FileIO.readTextAsync" />
-          <AitFeature Name="Windows.Storage.FileIO.writeTextAsync" />
-          <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add" />
-          <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries" />
-          <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync" />
-          <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove" />
-          <AitFeature Name="Windows.Storage.Pickers.FileSavePicker" />
-          <AitFeature Name="Windows.Storage.Pickers.PickerLocationId.documentsLibrary" />
-          <AitFeature Name="Windows.Storage.Provider.FileUpdateStatus.complete" />
-          <AitFeature Name="Windows.UI.ViewManagement.ApplicationView.tryUnsnap" />
-          <AitFeature Name="Windows.UI.ViewManagement.ApplicationView.value" />
-          <AitFeature Name="Windows.UI.ViewManagement.ApplicationViewState.snapped" />
-        </AitCategory>
-      </AitFile>
-      <AitFile ErrorCode="0" Name="mode-sql.js" Id="0000a31c6a4a63b99d9b400ee991da2c25558790016e" />
-      <AitFile ErrorCode="0" Name="theme-merbivore.js" Id="0000a3c0174ac3eb08da4fd02d6c1f518851e6bb3a29" />
-      <AitFile ErrorCode="0" Name="mode-sh.js" Id="0000a59c5391a62ccc987738f9bcf1376dcd4355c6b9" />
-      <AitFile ErrorCode="0" Name="mode-less.js" Id="0000a78164056f702d4003e1ac53cf1c89b9db835b1a" />
-      <AitFile ErrorCode="0" Name="mode-svg.js" Id="0000a7b3a9b8ebb293ccc48fe4bd12ff4194abbf0775" />
-      <AitFile ErrorCode="0" Name="mode-coffee.js" Id="0000a872988c1191724e666add798953bf46b6873878" />
-      <AitFile ErrorCode="0" Name="editorPage.html" Id="0000ab7aa8abbd210220a260e5c45a32b26def47597b">
-        <AitCategory Id="WRTJavaScript">
-          <AitFeature Name="WinJS" />
-          <AitFeature Name="WinJS.1.0" />
-          <AitFeature Name="WinJS.UI.AppBar" />
-          <AitFeature Name="WinJS.UI.AppBarCommand" />
-          <AitFeature Name="Windows.Storage.ApplicationData.current.addEventListener" />
-          <AitFeature Name="Windows.Storage.ApplicationData.current.localSettings.values" />
-        </AitCategory>
-      </AitFile>
-      <AitFile ErrorCode="0" Name="theme-cobalt.js" Id="0000ac10574fe5290361f70cac293394d8501e0f6815" />
-      <AitFile ErrorCode="0" Name="mode-latex.js" Id="0000ae6770b324187a4cff914a8a23b80c0a389913cc" />
-      <AitFile ErrorCode="0" Name="pickFile.js" Id="0000b0cfe7f9c9090e6c4f67a262adac5aedffb0c97c">
-        <AitCategory Id="WRTJavaScript">
-          <AitFeature Name="WinJS.Navigation.navigate" />
-          <AitFeature Name="Windows.Storage.FileIO.readTextAsync" />
-          <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.add" />
-          <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add" />
-          <AitFeature Name="Windows.Storage.Pickers.FileOpenPicker" />
-          <AitFeature Name="Windows.Storage.Pickers.PickerLocationId.documentsLibrary" />
-          <AitFeature Name="Windows.Storage.Pickers.PickerViewMode.list" />
-          <AitFeature Name="Windows.UI.ViewManagement.ApplicationView.tryUnsnap" />
-          <AitFeature Name="Windows.UI.ViewManagement.ApplicationView.value" />
-          <AitFeature Name="Windows.UI.ViewManagement.ApplicationViewState.snapped" />
-        </AitCategory>
-      </AitFile>
-      <AitFile ErrorCode="0" Name="mode-python.js" Id="0000b1a2695720b1d8bc61923f535eafe456bb9dbdbc" />
-      <AitFile ErrorCode="0" Name="theme-ambiance.js" Id="0000b1a668f55e6ca02f4973ebc982720853183a1e83" />
-      <AitFile ErrorCode="0" Name="mode-javascript.js" Id="0000b29be29d1421164fd2ef741357c2d565039df78a" />
-      <AitFile ErrorCode="0" Name="mode-c9search.js" Id="0000b62ed5f7674bb3aaa10c6ae12ac5b69850e35315" />
-      <AitFile ErrorCode="0" Name="mode-text.js" Id="0000baccc989a51c6a8f7d22a3ba48a16caf1d0e1adf" />
-      <AitFile ErrorCode="0" Name="default.html" Id="0000bf01d5926f412129cf8fd9ad7f6056942165c223">
-        <AitCategory Id="WRTJavaScript">
-          <AitFeature Name="WinJS" />
-          <AitFeature Name="WinJS.1.0" />
-        </AitCategory>
-      </AitFile>
-      <AitFile ErrorCode="0" Name="mode-markdown.js" Id="0000bf0a5aeeae6ee1c3c831d4fb1b7656ebfa74c397" />
-      <AitFile ErrorCode="0" Name="theme-github.js" Id="0000bf59f67c28ea324a2829a47d17e5b36316fe637a" />
-      <AitFile ErrorCode="0" Name="theme-clouds.js" Id="0000c6bab0932f2476b8c72a8925bd006ac6a5ba533b" />
-      <AitFile ErrorCode="0" Name="mode-tcl.js" Id="0000cac37bf8614d87def04b50838206102d52bd3852" />
-      <AitFile ErrorCode="0" Name="mode-pgsql.js" Id="0000cc9af357927536e2edb96a85f8a1d0af17b41b7d" />
-      <AitFile ErrorCode="0" Name="mode-powershell.js" Id="0000cd48960df4d5e53916d991a7c26fe551440c2460" />
-      <AitFile ErrorCode="0" Name="homePage.js" Id="0000cea331cb72c711ef5b01cec033e08f4282e39a0e">
+      <AitFile ErrorCode="0" Name="theme-solarized_light.js" Id="00009470ff1132b3d21695d57b996108e02f533418b6" />
+      <AitFile ErrorCode="0" Name="mode-lua.js" Id="00009685740055228e5abea19f5efe63c7bd14a9fb6a" />
+      <AitFile ErrorCode="0" Name="mode-tcl.js" Id="00009776580d7d61cf5b6b81d805ee9f5ac58b5059fd" />
+      <AitFile ErrorCode="0" Name="mode-diff.js" Id="0000992e81e16587a2b6468b8837267d4ae7e6fd699d" />
+      <AitFile ErrorCode="0" Name="mode-scala.js" Id="00009bf55510f735503b82c5dbdecc7de7b03cbbe7a6" />
+      <AitFile ErrorCode="0" Name="worker-css.js" Id="00009ccae9eb9d2716525e5485c1715c114a2ef07697" />
+      <AitFile ErrorCode="0" Name="homePage.js" Id="00009efc53ccc8bde9a297949d91dec8ea787802138b">
         <AitCategory Id="WRTJavaScript">
           <AitFeature Name="WinJS.0.6" />
           <AitFeature Name="WinJS.Binding.List" />
+          <AitFeature Name="WinJS.Class.define" />
+          <AitFeature Name="WinJS.Class.derive" />
+          <AitFeature Name="WinJS.ErrorFromName" />
           <AitFeature Name="WinJS.Navigation.navigate" />
-          <AitFeature Name="WinJS.UI.ListLayout" />
+          <AitFeature Name="WinJS.Promise.join" />
+          <AitFeature Name="WinJS.Promise.wrap" />
+          <AitFeature Name="WinJS.Promise.wrapError" />
+          <AitFeature Name="WinJS.UI.FetchError.doesNotExist" />
+          <AitFeature Name="WinJS.UI.GridLayout" />
+          <AitFeature Name="WinJS.UI.ListView" />
           <AitFeature Name="WinJS.UI.Pages.define" />
           <AitFeature Name="WinJS.UI.SelectionMode.single" />
           <AitFeature Name="WinJS.UI.TapBehavior.invokeOnly" />
+          <AitFeature Name="WinJS.UI.VirtualizedDataSource" />
           <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.add" />
+          <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList" />
           <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add" />
           <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt" />
           <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.size" />
           <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync" />
+          <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove" />
           <AitFeature Name="Windows.Storage.FileProperties.ThumbnailMode.documentsView" />
           <AitFeature Name="Windows.Storage.Pickers.FileOpenPicker" />
           <AitFeature Name="Windows.Storage.Pickers.PickerLocationId.documentsLibrary" />
@@ -468,32 +449,78 @@
           <AitFeature Name="Windows.UI.ViewManagement.ApplicationViewState.snapped" />
         </AitCategory>
       </AitFile>
-      <AitFile ErrorCode="0" Name="theme-dreamweaver.js" Id="0000cf433eec7bf799fea05736b0b3bd85cc9b51b1b4" />
-      <AitFile ErrorCode="0" Name="mode-xml.js" Id="0000d262aaf86cfc4d709907c66755136a26cff6acdc" />
-      <AitFile ErrorCode="0" Name="mode-groovy.js" Id="0000d33a68f7c1ac4a8636d777b186d475271af900d1" />
-      <AitFile ErrorCode="0" Name="theme-vibrant_ink.js" Id="0000d383bff0e0deb25b6afab201fe4ca53a7fe1309a" />
-      <AitFile ErrorCode="0" Name="homePage.html" Id="0000d731a8249fb2c072821c4dee1734b564963776ee">
+      <AitFile ErrorCode="0" Name="theme-mono_industrial.js" Id="00009f68e0b39f4cf44f54a992c0c6bcbc18f1d2b843" />
+      <AitFile ErrorCode="0" Name="theme-eclipse.js" Id="0000a26c990443fb700c2575790a80d3857023a42ec5" />
+      <AitFile ErrorCode="0" Name="mode-sql.js" Id="0000a51091b51f77806bf2cb644f8e5e61cc8f6d2bee" />
+      <AitFile ErrorCode="0" Name="theme-ambiance.js" Id="0000a5a32bf025b93771daa75932124f042aa09864f7" />
+      <AitFile ErrorCode="0" Name="mode-python.js" Id="0000b1367ba3a3f9e645606c0a4e43b725a22a517541" />
+      <AitFile ErrorCode="0" Name="theme-github.js" Id="0000b154bba26fd035d97b5a703738e184ab278d738d" />
+      <AitFile ErrorCode="0" Name="theme-tomorrow_night_eighties.js" Id="0000b2203e88fc2adffdef2b1361399216a0896677fc" />
+      <AitFile ErrorCode="0" Name="mode-text.js" Id="0000baccc989a51c6a8f7d22a3ba48a16caf1d0e1adf" />
+      <AitFile ErrorCode="0" Name="theme-tomorrow_night_bright.js" Id="0000c5b1fd1db082909a9d57746ea6b9dcee0e02a100" />
+      <AitFile ErrorCode="0" Name="theme-merbivore_soft.js" Id="0000c6b1779b055edc12299ac08814cad58286a2aaf5" />
+      <AitFile ErrorCode="0" Name="mode-powershell.js" Id="0000c78ed1b48b46cf84c5ed6e642ff649a171e93d14" />
+      <AitFile ErrorCode="0" Name="ace.js" Id="0000c7f8d6200ef428bc640f9bbd839bf443431b83e1">
         <AitCategory Id="WRTJavaScript">
-          <AitFeature Name="WinJS.Binding.Template" />
-          <AitFeature Name="WinJS.UI.ListLayout" />
-          <AitFeature Name="WinJS.UI.ListView" />
+          <AitFeature Name="Windows.ApplicationModel.DataTransfer.Clipboard.setContent" />
+          <AitFeature Name="Windows.ApplicationModel.DataTransfer.DataPackage" />
         </AitCategory>
       </AitFile>
-      <AitFile ErrorCode="0" Name="mode-lua.js" Id="0000d988e578d943aa53534c75dd6a2d1451aa80026e" />
-      <AitFile ErrorCode="0" Name="theme-monokai.js" Id="0000db5d1faa7599c6ba905415e51c7e526c209528e8" />
-      <AitFile ErrorCode="0" Name="theme-textmate.js" Id="0000dcad93de86af70b99540ae5718e75fd17865611a" />
-      <AitFile ErrorCode="0" Name="mode-liquid.js" Id="0000de5ec37660c8d73cd78c9034dbfd3ba5f87d9846" />
-      <AitFile ErrorCode="0" Name="mode-csharp.js" Id="0000df3b5f9cadc211b44f475779e7b6195592447fa4" />
-      <AitFile ErrorCode="0" Name="ace.js" Id="0000e1251a0f82a6be62be479c05a6bd5abbb9fffd76" />
-      <AitFile ErrorCode="0" Name="theme-twilight.js" Id="0000ec49fd5e08f2a3f9d3354c14f3b7218d54ce437c" />
-      <AitFile ErrorCode="0" Name="mode-ocaml.js" Id="0000f14c87710441b3e7302cd4fc5793f1481a3cd909" />
-      <AitFile ErrorCode="0" Name="mode-coldfusion.js" Id="0000f1fac1820f8ee397110898e6809ab1e007bef873" />
-      <AitFile ErrorCode="0" Name="mode-scss.js" Id="0000f7efb12cf92b3c41c259ef1915ad4f6311307e6c" />
-      <AitFile ErrorCode="0" Name="theme-idle_fingers.js" Id="0000f85cd1e3fa5d18571a862795a4ebecb96d193c6f" />
-      <AitFile ErrorCode="0" Name="mode-scala.js" Id="0000f91bc45c68ec96fd1449031ea6b1e64f98c6020c" />
-      <AitFile ErrorCode="0" Name="mode-textile.js" Id="0000fa82874548373a7a0eed4535d7938a53a81b4a91" />
-      <AitFile ErrorCode="0" Name="worker-javascript.js" Id="0000fbcbea7ebb3139d136ee0b96793fb03d901affea" />
-      <AitFile ErrorCode="0" Name="mode-html.js" Id="0000fe9c6035b236009fdd9911247cdaede5c89a3b93" />
+      <AitFile ErrorCode="0" Name="theme-monokai.js" Id="0000ca1a1c00c00e82484b811d1c5aac0d7b03d6b8c4" />
+      <AitFile ErrorCode="0" Name="mode-clojure.js" Id="0000cccb88ab30b1291deaf4a0e8bca968313dcb2067" />
+      <AitFile ErrorCode="0" Name="mode-latex.js" Id="0000d10de74d6ea168a5d8e7eb487f0d3b5b8df47520" />
+      <AitFile ErrorCode="0" Name="theme-textmate.js" Id="0000d76eb6be9d6393f6d95c6c8ee37d66ad26cd17ed" />
+      <AitFile ErrorCode="0" Name="mode-perl.js" Id="0000d971651a941b8db040ea2f15636dcbc76442a637" />
+      <AitFile ErrorCode="0" Name="theme-twilight.js" Id="0000d994495abd598b2801c6c5d848f55526508ff05c" />
+      <AitFile ErrorCode="0" Name="mode-jade.js" Id="0000da38c3577807babe58bb815c1a5ed6df54ec0a45" />
+      <AitFile ErrorCode="0" Name="mode-javascript.js" Id="0000e025dea3124b7e7f814119bc04601ed6904fdd4f" />
+      <AitFile ErrorCode="0" Name="theme-clouds.js" Id="0000e18dd1d7a776c57cf38acaf3c9c6f013b2762ac8" />
+      <AitFile ErrorCode="0" Name="theme-dreamweaver.js" Id="0000e586ceb8d933098ce55bf26bd3c3ccb9b63ea8be" />
+      <AitFile ErrorCode="0" Name="editorPage.js" Id="0000e698ac25ad7ce970a2ae870f71af274278b0e46a">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.0.6" />
+          <AitFeature Name="WinJS.UI.Pages.define" />
+          <AitFeature Name="WinJS.log" />
+          <AitFeature Name="Windows.ApplicationModel.DataTransfer.Clipboard.getContent" />
+          <AitFeature Name="Windows.ApplicationModel.DataTransfer.Clipboard.setContent" />
+          <AitFeature Name="Windows.ApplicationModel.DataTransfer.DataPackage" />
+          <AitFeature Name="Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView" />
+          <AitFeature Name="Windows.ApplicationModel.DataTransfer.StandardDataFormats.text" />
+          <AitFeature Name="Windows.Storage.ApplicationData.current.addEventListener" />
+          <AitFeature Name="Windows.Storage.ApplicationData.current.localSettings.values" />
+          <AitFeature Name="Windows.Storage.ApplicationData.current.removeEventListener" />
+          <AitFeature Name="Windows.Storage.CachedFileManager.completeUpdatesAsync" />
+          <AitFeature Name="Windows.Storage.CachedFileManager.deferUpdates" />
+          <AitFeature Name="Windows.Storage.FileAccessMode.read" />
+          <AitFeature Name="Windows.Storage.FileIO.writeTextAsync" />
+          <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add" />
+          <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync" />
+          <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove" />
+          <AitFeature Name="Windows.Storage.Pickers.FileSavePicker" />
+          <AitFeature Name="Windows.Storage.Pickers.PickerLocationId.documentsLibrary" />
+          <AitFeature Name="Windows.Storage.Provider.FileUpdateStatus.complete" />
+          <AitFeature Name="Windows.Storage.Streams.DataReader" />
+          <AitFeature Name="Windows.UI.Popups.MessageDialog" />
+          <AitFeature Name="Windows.UI.Popups.UICommand" />
+          <AitFeature Name="Windows.UI.ViewManagement.ApplicationView.tryUnsnap" />
+          <AitFeature Name="Windows.UI.ViewManagement.ApplicationView.value" />
+          <AitFeature Name="Windows.UI.ViewManagement.ApplicationViewState.snapped" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="mode-scad.js" Id="0000ebd139729d47d000383a11ce001972fbe8f0446a" />
+      <AitFile ErrorCode="0" Name="mode-xml.js" Id="0000f2e4f25956e6a8fad8cc0ffd1a8ace2bab633a62" />
+      <AitFile ErrorCode="0" Name="mode-coldfusion.js" Id="0000f4d6a9d7799c7ef5186d919c05a7f7ea56665a51" />
+      <AitFile ErrorCode="0" Name="mode-svg.js" Id="0000f5b742969f50e8b2595b425af2faf07dbef84e95" />
+      <AitFile ErrorCode="0" Name="mode-jsx.js" Id="0000f7301dec73c9ee697eb3369d2fc12af779c25595" />
+      <AitFile ErrorCode="0" Name="LegalUI.html" Id="0000f944d5d458e3c73d18c989805d9432cfdccdcfcb">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.UI.SettingsFlyout" />
+          <AitFeature Name="WinJS.UI.SettingsFlyout.show" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="mode-json.js" Id="0000f9fb11d3ffdd75d3e35ecc17e0b6583396cc3a8f" />
+      <AitFile ErrorCode="0" Name="mode-luapage.js" Id="0000faab0591c758557a895d04c5c0f6cba32899ca76" />
+      <AitFile ErrorCode="0" Name="keybinding-vim.js" Id="0000fd27fb6fc92c9aa804240276fa24302463f7024c" />
     </AitStaticAnalysis>
   </DEPENDENCY_INFORMATION>
 </REPORT>

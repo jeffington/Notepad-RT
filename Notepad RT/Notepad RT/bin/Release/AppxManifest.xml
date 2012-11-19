@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="21022MarkSpirek.NotepadRT" Version="1.0.0.1" Publisher="CN=3714733F-5D19-41FF-8C3D-D9DF8CBCAFC1" ProcessorArchitecture="neutral" />
+  <Identity Name="21022MarkSpirek.NotepadRT" Version="1.1.1.0" Publisher="CN=3714733F-5D19-41FF-8C3D-D9DF8CBCAFC1" ProcessorArchitecture="neutral" />
   <Properties>
     <DisplayName>Notepad RT</DisplayName>
     <PublisherDisplayName>JDM Labs, LLC</PublisherDisplayName>
@@ -29,13 +29,30 @@
       <Extensions>
         <Extension Category="windows.fileTypeAssociation">
           <FileTypeAssociation Name=".txt">
-            <Logo>images\logo.png</Logo>
+            <Logo>images\filelogo.png</Logo>
             <SupportedFileTypes>
               <FileType>.txt</FileType>
               <FileType>.css</FileType>
               <FileType>.js</FileType>
               <FileType>.md</FileType>
               <FileType>.java</FileType>
+              <FileType>.c</FileType>
+              <FileType>.cpp</FileType>
+              <FileType>.h</FileType>
+              <FileType>.jsp</FileType>
+              <FileType>.html</FileType>
+              <FileType>.htm</FileType>
+              <FileType>.pl</FileType>
+              <FileType>.py</FileType>
+              <FileType>.cs</FileType>
+              <FileType>.php</FileType>
+              <FileType>.xml</FileType>
+              <FileType>.json</FileType>
+              <FileType>.rb</FileType>
+              <FileType>.rbw</FileType>
+              <FileType>.sql</FileType>
+              <FileType>.psql</FileType>
+              <FileType>.rss</FileType>
             </SupportedFileTypes>
           </FileTypeAssociation>
         </Extension>
