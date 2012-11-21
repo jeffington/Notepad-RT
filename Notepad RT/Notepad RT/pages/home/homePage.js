@@ -253,6 +253,45 @@
             //that = this;
         
         
+        /*var library = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries;
+        var query = library.createFileQuery(Windows.Storage.Search.CommonFileQuery.orderByDate);
+        var delayLoad = true; // Depends on if/when/how fast you want your thumbnails
+        var access = new Windows.Storage.BulkAccess.FileInformationFactory(
+            query, Windows.Storage.FileProperties.ThumbnailMode.picturesView,
+            Math.max(app.settings.itemHeight, app.settings.itemWidth),
+            Windows.Storage.FileProperties.ThumbnailOptions.returnOnlyIfCached,
+            delayLoad);
+
+        access.getFilesAsync(start, page).then(function (files) {
+
+            var count = files.length;
+            for (var i = 0; i < count; i++) {
+
+                console.log(files[i].name + " - " + files[i].imageProperties.dateTaken);
+                // The more 'extra' properties you're accessing, the better the perf gains
+                fileInfo[x] = {
+                    icon: files[i].imageProperties,
+                    title: files[i].name,
+                    textType: files[i].displayType,
+                    kind: "R"
+                };
+                console.log(files[i].imageProperties);
+            }
+            files = fileInfo;
+
+            recentFilesListView = new WinJS.UI.ListView(document.getElementById("filesListView"), {
+                itemDataSource: recentFilesDataSource.dataSource,
+                //groupDataSource: groupDataSource.groups.dataSource,
+                itemTemplate: document.getElementById("imageTextListFileTemplate"),
+                groupHeaderTemplate: document.getElementById("groupTemplate"),
+                layout: new WinJS.UI.GridLayout(),
+                selectionMode: WinJS.UI.SelectionMode.single,
+                oniteminvoked: recentFilesSelection,
+                tapBehavior: WinJS.UI.TapBehavior.invokeOnly,
+                swipeBehavior: 'none',
+            });
+        });*/
+
         for (var x = 0; x < count; x++) {
 
             var currentFileEntry = entries.getAt(x),
@@ -282,29 +321,25 @@
                         Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(currentFileToken);
                         console.log(error + ' Error retrieving file, removed it from the mostRecentlyUsedList.');
                         
-                    }).done(function (thumb) {
+                    }).then(function (thumb) {
                         
-                        if (thumb) {
+                        if (thumb && fileInfo[x]) {
                             console.log("Index: " + x + " " + (fileInfo ? JSON.stringify(fileInfo[x]) : "fileInfo is undefined"));
                             fileInfo[x].icon = URL.createObjectURL(thumb, { oneTimeOnly: false });
 
                         }
-                        /*files.push({
-                            key: currentFileToken, // the key for the item itself
-                            groupKey: "R", // the key for the group for the item
-                            data: fileInfo[x]// the data fields for the item
-                        });*/
-                        files = fileInfo;
+                        
+                        
 
-                        //return WinJS.Promise.wrap(fileInfo);
+                        
                     })
             );
         }
 
 
         WinJS.Promise.join(promiseArray).done(function () {
-            /*console.log("Setting up the data after all the promises have completed.");
-            console.log("Files: "+JSON.stringify(files));*/
+
+            files = fileInfo;
             recentFilesDataSource = new WinJS.Binding.List(files); //new flavorsDataSource(files);
             groupDataSource = recentFilesDataSource.createGrouped(getGroupKey, getGroupData, compareGroups);//new desertsDataSource(fileListHeaders);
 
@@ -321,6 +356,8 @@
                 tapBehavior: WinJS.UI.TapBehavior.invokeOnly,
                 swipeBehavior: 'none',
             });
+
+            recentFilesListView.forceLayout();
 
 
         });

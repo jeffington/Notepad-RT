@@ -3547,14 +3547,22 @@ var dom = require("../lib/dom");
 
 var TextInput = function(parentNode, host) {
     var text = dom.createElement("textarea");
-    if (useragent.isTouchPad)
-        text.setAttribute("x-palm-disable-auto-cap", true);
+    //if (useragent.isTouchPad)
+    //    text.setAttribute("x-palm-disable-auto-cap", true);
 
     text.setAttribute("wrap", "off");
     text.setAttribute("spellcheck", "false");
+    //text.setAttribute("disabled", "disabled");
+    /*text.onclick = function() {
+        
+        console.log("textarea clicked");
+
+    };*/
 
     text.style.top = "-2em";
     parentNode.insertBefore(text, parentNode.firstChild);
+
+    text.blur();
 
     var PLACEHOLDER = useragent.isIE ? "\x01" : "\x00";
     reset(true);
@@ -3745,12 +3753,12 @@ var TextInput = function(parentNode, host) {
     }
 
     event.addListener(text, "compositionstart", onCompositionStart);
-    if (useragent.isGecko) {
+    /*if (useragent.isGecko) {
         event.addListener(text, "text", onCompositionUpdate);
     }
     if (useragent.isWebKit) {
         event.addListener(text, "keyup", onCompositionUpdate);
-    }
+    }*/
     event.addListener(text, "compositionend", onCompositionEnd);
 
     event.addListener(text, "blur", function() {

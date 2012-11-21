@@ -4,14 +4,17 @@
     <meta charset="utf-8" />
     <title>Notepad&nbsp;RT</title>
 
-    <!-- WinJS references -->
+    <!-- WinJS references
+
+        All of these things should have already been loaded by the default.html host page
+
     <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
     <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
     <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
-
-    <!-- Notepad_RT references -->
+    -->
+    <!-- Notepad_RT references 
     <link href="/css/default.css" rel="stylesheet" />
-    
+    -->
     <script src="/pages/editor/editorPage.js"></script>
     <script src="/ace-src/ace.js"></script>
 
@@ -24,25 +27,44 @@
         left: 0;
         
     }
-
+    .ace_editor {
+        /*overflow-y: scroll;*/
+        -ms-overflow-style: scrollbar;
+        
+    }
+    
+    /*    
+        
+        Working on fixing scrolling here    
+        
+    
+    .ace_scrollbar {
+        z-index: 100;
+        visibility: visible;
+        
+    }*/
     textarea {
         text-indent: -9999px;
+        
+        
     }
 </style>
 </head>
-<body>
+<body style="background-color: black;">
     <header aria-label="Header content" role="banner">
         
-        <h1 class="titlearea win-type-ellipsis" style="padding-left:3%;">
-            <button class="win-backbutton" aria-label="Back" disabled></button>
-            
+        <h1 class="titlearea win-type-ellipsis" style="padding-left:3%;" style="clear: none;">
+            <button id="backbutton" class="win-backbutton" aria-label="Back" disabled></button>
             
             <span id="filename" class="pagetitle">Untitled</span>
             <!--<span class="chevron win-type-x-large">&#xe099;</span>
             <progress></progress>
             <button></button>-->
         </h1>
-        
+        <!--<button style="float: right;"
+            data-win-control="WinJS.UI.MenuCommand" 
+            data-win-options="{id:'otherCmd',label:'Save As',icon:'savelocal',
+                section:'selection',tooltip:'Remove item'}">-->
     </header>
     <section aria-label="Main content" role="main">
         <div id="editor"></div>

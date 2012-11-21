@@ -22,7 +22,7 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\default.html">
       <PackagePath>default.html</PackagePath>
-      <Modified>2012-11-09T05:55:33.670</Modified>
+      <Modified>2012-11-21T22:35:45.256</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\html\DefaultsUI.html">
       <PackagePath>html\DefaultsUI.html</PackagePath>
@@ -38,11 +38,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorPage.html">
       <PackagePath>pages\editor\editorPage.html</PackagePath>
-      <Modified>2012-11-18T23:31:40.352</Modified>
+      <Modified>2012-11-21T22:34:46.055</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\home\homePage.html">
       <PackagePath>pages\home\homePage.html</PackagePath>
-      <Modified>2012-11-16T23:18:42.041</Modified>
+      <Modified>2012-11-21T22:35:59.096</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\images\filelogo.png">
       <PackagePath>images\filelogo.png</PackagePath>
@@ -79,7 +79,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\ace.js">
       <PackagePath>ace-src\ace.js</PackagePath>
-      <Modified>2012-11-15T19:27:36.585</Modified>
+      <Modified>2012-11-21T07:39:47.834</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\keybinding-emacs.js">
       <PackagePath>ace-src\keybinding-emacs.js</PackagePath>
@@ -415,7 +415,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorPage.js">
       <PackagePath>pages\editor\editorPage.js</PackagePath>
-      <Modified>2012-11-19T01:41:21.752</Modified>
+      <Modified>2012-11-20T23:08:27.778</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorSettingsPage.js">
       <PackagePath>pages\editor\editorSettingsPage.js</PackagePath>
@@ -423,7 +423,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\home\homePage.js">
       <PackagePath>pages\home\homePage.js</PackagePath>
-      <Modified>2012-11-18T22:53:27.046</Modified>
+      <Modified>2012-11-21T22:34:56.466</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\css\default.css">
       <PackagePath>css\default.css</PackagePath>

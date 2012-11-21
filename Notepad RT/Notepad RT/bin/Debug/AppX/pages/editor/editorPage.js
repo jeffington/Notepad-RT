@@ -11,7 +11,7 @@
 var editor,
      editorSession,
      editorCurrentFileToken = null,
-     filenameTitle,
+     editorCurrentFileName = null,
      hasEditorChanged = false;
 
 (function () {
@@ -100,7 +100,7 @@ var editor,
             editorSession = editor.getSession();
             configureEditorFromSettings();
             
-            filenameTitle = document.getElementById('filename');
+            var filenameTitle = document.getElementById('filename');
             filenameTitle.addEventListener('click', fileNameClick);
 
             Windows.Storage.ApplicationData.current.addEventListener("datachanged", configureEditorFromSettings);
@@ -108,6 +108,14 @@ var editor,
             var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
             dataTransferManager.addEventListener("datarequested", dataRequested);
 
+            /*var backBtn = document.getElementById('backbutton');
+            backBtn.addEventListener('click', function (e) {
+                console.log("UGH");
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                e.stopPropagation();
+                return false;
+            }, true);*/
 
             if (options && options.filetoken) {
                 // Load from recent opened files
@@ -125,20 +133,21 @@ var editor,
                 // Load content being shared to this app
                 // We current only accept text, but are looking to accept files soon
 
-                filenameTitle.innerHTML = options.shareData.properties.title;
-                
+                //filenameTitle.innerHTML = options.shareData.properties.title;
+                setFileName(options.shareData.properties.title);
                 //document.getElementById('saveButton').style.visibility = 'visible';
 
                 if (options.shareData.contains(Windows.ApplicationModel.DataTransfer.StandardDataFormats.text)) {
 
-                    options.shareData.getTextAsync().done(function (text) {
+                    options.shareData.getTextAsync().then(function (text) {
                         
-                        setTimeout(function () {
+                        return WinJS.Promise.timeout(1200);
+                        
+
+                    }).done(function () {
                             //configureEditorFromSettings();
                             editor.getSession().getDocument().setValue(text);
                             editor.navigateTo(0, 0);
-                        }, 1200);
-
                     });
 
                 } else {
@@ -149,9 +158,9 @@ var editor,
                 // Loaded with no options, i.e. New File
 
                 console.log("New document");
-                setTimeout(function () {
+                WinJS.Promise.timeout(1200, function () {
                     configureEditorFromSettings();
-                }, 1200);
+                });
             }
             
             
@@ -169,8 +178,9 @@ var editor,
                 unsavedFilePrompt();
 
             }
-            //saveFileContents(editorSession.getDocument().getValue());
+            
             editorCurrentFileToken = null;
+            editorCurrentFileName = null;
             editor.destroy();
             
         }
@@ -189,7 +199,7 @@ var editor,
             
             }, 1));
         msg.commands.append(new Windows.UI.Popups.UICommand("Cancel", null, 2));
-
+        console.log(editor);
         // Set the command that will be invoked by default
         msg.defaultCommandIndex = 2;
 
@@ -220,6 +230,7 @@ var editor,
             for (y = 0; y < numExtensions; y++) {
 
                 if (fileExtension == extensions[y]) {
+                    console.log("Detected mode: " + fileTypes[x].mode);
                     // If the extension matches, set the editor's mode
                     // Set the found flag to true so we can stop looking for a match
                     editorSession.setMode(fileTypes[x].mode);
@@ -393,7 +404,8 @@ var editor,
 
         editorCurrentFileToken = null;
         editor.getSession().getDocument().setValue('');
-        document.getElementById("filename").innerHTML = 'Untitled';
+        setFileName('Untitled');
+        //document.getElementById("filename").innerHTML = 'Untitled';
         dismissAppBar();
 
     }
@@ -449,7 +461,96 @@ var editor,
 
     }
 
+    //
+    //
+    // File Management Functions
+    //
+    //
+
+    /*
+        filenameTitle = document.getElementById('filename');
+        filenameTitle.addEventListener('click', fileNameClick);
+    */
+    function getFileName() {
+
+        var fileName = '',
+            titleHead = document.getElementById('filename');
+
+        if (!editorCurrentFileToken) {
+
+            fileName = 'Untitled';
+
+        } else {
+
+            fileName = editorCurrentFileName;
+
+        }
+
+        return fileName;
+
+    }
+
+    function setFileName(name) {
+
+        if (name != editorCurrentFileName) {
+            console.log("Current name: " + editorCurrentFileName + " new name: " + name);
+            //detectEditorModeFromExtension(name);
+
+            editorCurrentFileName = name;
+            document.getElementById('filename').innerHTML = name;
+        }
+        
+    }
+
+
+    function hideFileNameInput() {
+        var titleVal = getFileName();
+        if (editorCurrentFileToken && titleVal != editorCurrentFileName) {
+
+            Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(editorCurrentFileToken).then(function (retrievedFile) {
+
+                return retrievedFile.renameAsync(titleVal);
+
+            }).done(function () {
+
+                // Need to refresh the file in the mruList
+                Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(editorCurrentFileToken);
+                editorCurrentFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(retrievedFile, retrievedFile.name);
+
+                setFileName(titleVal);
+                //filenameTitle.innerHTML = titleVal;
+
+            });
+
+        } else {
+            // Don't worry about it, just change the name and we'll use it later with the save dialog
+            //filenameTitle.innerHTML = titleVal;
+            setFileName(titleVal);
+
+        }
+
+    }
+
+    function fileNameClick() {
+        var fileNameHead = document.getElementById('filename');
+        if (fileNameHead.firstChild.nodeType !== 1) {
+
+            var name = getFileName();
+            fileNameHead.innerHTML = '';
+            var textInput = document.createElement('input');
+            textInput.setAttribute('type', 'text');
+            textInput.setAttribute('value', name);
+
+            textInput.addEventListener('blur', hideFileNameInput);
+            fileNameHead.appendChild(textInput);
+            textInput.focus();
+
+        }
+        
+    }
+
     function saveFileToLocation() {
+
         var filenameInput = document.getElementById('filename'),
             contents = editor.getSession().getDocument().getValue();
         
@@ -487,75 +588,73 @@ var editor,
         savePicker.fileTypeChoices.insert(".rb", [".rb"]);
 
         savePicker.fileTypeChoices.insert(".xml", [".xml"]);
-        //savePicker.defaultFileExtension = "";
-        // Default file name if the user does not type one in or select a file to replace
-        if (filenameInput) {
+        
+        savePicker.suggestedFileName = getFileName();
 
-            savePicker.suggestedFileName = filenameInput.innerHTML;
-            
-        } else {
-
-            savePicker.suggestedFileName = 'Untitled';
-
-        }
         savePicker.pickSaveFileAsync().then(function (file) {
 
             if (file) {
                 // Prevent updates to the remote version of the file until we finish making changes and call CompleteUpdatesAsync.
                 Windows.Storage.CachedFileManager.deferUpdates(file);
-                // write to file
-                Windows.Storage.FileIO.writeTextAsync(file, contents).done(function () {
-                    // Let Windows know that we're finished changing the file so the other app can update the remote version of the file.
-                    // Completing updates may require Windows to ask for user input.
-                    Windows.Storage.CachedFileManager.completeUpdatesAsync(file).done(function (updateStatus) {
+                return Windows.Storage.FileIO.writeTextAsync(file, contents).then(function () {
 
-                        if (updateStatus === Windows.Storage.Provider.FileUpdateStatus.complete) {
-                            // Store the file in the MRU List
-                            editorCurrentFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, file.name);
+                    return Windows.Storage.CachedFileManager.completeUpdatesAsync(file);
 
-                            filenameInput.innerHTML = file.name;
-                            
-                            /*setImmediate(function () {
-                                // TODO: 
-                                var mruList = document.getElementById("filesListView");
-                                if (mruList) {
-
-                                    initData();
-
-
-                                }
-
-                            });*/
-
-                        } else {
-
-                            
-
-                        }
-
-                    });
-
-                    
                 });
-            } else {
+            }
+        }).then(function (updateStatus) {
 
-                
+            if (updateStatus === Windows.Storage.Provider.FileUpdateStatus.complete) {
+                // Store the file in the MRU List
+                editorCurrentFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, file.name);
+                setFileName(file.name);
 
             }
+
         });
+                    
+    }
+
+    /*function documentChanged() {
+
+        setUnsaved();
+
+        editorSession.removeEventListener('change', documentChanged);
+
+
+    }*/
+
+    function setSaved() {
+
+        var titleHeader = document.getElementById('filename');
+        titleHeader.style.fontStyle = 'normal';
+        hasEditorChanged = false;
+
+        editorSession.addEventListener('change', setUnsaved);
+    }
+
+    function setUnsaved() {
+
+        var titleHeader = document.getElementById('filename');
+        titleHeader.style.fontStyle = 'italic';
+        hasEditorChanged = true;
+        editorSession.removeEventListener('change', setUnsaved);
+
     }
 
     function dataRequested(e) {
         var request = e.request;
        
-        // Title is required
-        var dataPackageTitle = document.getElementById("filename").innerHTML;
-        request.data.properties.title = dataPackageTitle;
-
         try {
+
+            var dataPackageTitle = getFileName();
+            request.data.properties.title = dataPackageTitle;
             request.data.setText(editorSession.getDocument().getValue());
+
         } catch (e) {
+
             request.failWithDisplayText("There's no text to share in the document.");
+
         }
         
     }
@@ -563,14 +662,14 @@ var editor,
     function loadFromToken(fileToken) {
 
         editorCurrentFileToken = fileToken;
+        
         // Configure and prepare the editor to receive the file's content
         configureEditorFromSettings();
 
         Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(fileToken).then(function (retrievedFile) {
 
-            filenameTitle.innerHTML = retrievedFile.name;
-            detectEditorModeFromExtension(retrievedFile.name);
-
+            setFileName(retrievedFile.name);
+            
             //return retrievedFile.openAsync(Windows.Storage.FileAccessMode.read);
             return Windows.Storage.FileIO.readBufferAsync(retrievedFile);
 
@@ -589,6 +688,13 @@ var editor,
 
             }
 
+            // Cut off the characters: ï»¿
+            if (array[0] == "ï" || array[1] == "»" || array[2] == "¿") {
+
+                array.splice(0, 3);
+
+            }
+
             editor.getSession().getDocument().setValue(array.join(''));
             
             return WinJS.Promise.timeout(1200);
@@ -597,90 +703,16 @@ var editor,
 
             configureEditorFromSettings();
 
-            //detectEditorModeFromExtension(retrievedFile.name);
+            detectEditorModeFromExtension(getFileName());
 
             //editor.getSession().getDocument().setValue(contents);
             editor.navigateTo(0, 0);
+            setSaved();
 
         });
 
 
     }
-
-/*.then(function (stream) {
-
-    var size = stream.size;
-    if (size == 0) {
-        // Data not found
-    } else {
-        var inputStream = stream.getInputStreamAt(0);
-        var reader = new Windows.Storage.Streams.DataReader(inputStream);
-
-        reader.loadAsync(size).then(function () {
-
-            //var contents = reader.readString(size); // fails with multibyte error if bad data (see legislators.getList.json)
-            // allocate the full array so readBytes can insert it in full
-            var array = new Array(size);
-            reader.readBytes(array);
-
-            var newString = "";
-
-            for (var i = 0; i < array.length; i++) {
-                // only printable characters (include spaces because could be part of names) (very rough here)
-                // http://www.csgnetwork.com/asciiset.html
-                //if (array[i] >= 32 && array[i] <= 126) {
-
-                // Byte-order mark in UTF-8 files: ï»¿
-                
-                var c = String.fromCharCode(array[i]);
-
-                if (i == 0 && c == 'ï' ||
-                    i == 1 && c == '»' || i == 2 && c == '¿') {
-                    continue;
-                }
-                    newString += c;
-                //}
-            }
-            //newString = array.join('');
-            console.log("File contents: " + newString);
-
-            setTimeout(function () {
-                
-                
-                editor.getSession().getDocument().setValue(newString);
-                newString = null;
-                //delete newString;
-                editor.navigateTo(0, 0);
-            }, 1200);
-            // Possible optimization here with newString, which could be eating a lot of memory.
-
-            //document.getElementById('outputhere').innerHTML = "New York Population: " + newYorkPopulation;
-
-        });*/
-        //});
-        
-        /*.done(function (contents) {
-            console.log("loaded the file contents");
-            document.getElementById('filename').innerHTML = retrievedFile.name;
-            //var doc = editor.getSession().getDocument();
-            //.log(contents);
-                
-            setTimeout(function () {
-                configureEditorFromSettings();
-
-                detectEditorModeFromExtension(retrievedFile.name);
-
-                editor.getSession().getDocument().setValue(contents);
-                editor.navigateTo(0, 0);
-            }, 1200);
-            //console.log("Should have loaded the file contents at this point.");
-            //console.log(editor.getSession().getDocument().getValue());
-
-        }, function (error) {
-            console.log("FUCKED " + error);
-        });*/
-
-//    }
 
 
     function saveFileContents(contents) {
@@ -697,7 +729,7 @@ var editor,
                 Windows.Storage.FileIO.writeTextAsync(retrievedFile, contents).then(function () {
 
                     console.log("Saved.");
-
+                    setSaved();
 
                 });
 
@@ -713,63 +745,6 @@ var editor,
             saveFileToLocation();
 
 
-        }
-    }
-
-
-    function fileNameClick() {
-        
-        if (filenameTitle.firstChild.nodeType !== 1) {
-            
-            var name = filenameTitle.innerHTML;
-            filenameTitle.innerHTML = '';
-            var textInput = document.createElement('input');
-            textInput.setAttribute('type', 'text');
-            textInput.setAttribute('value', name);
-
-            textInput.addEventListener('blur', function () {
-
-                var titleVal = textInput.value;
-                if (titleVal.length == 0) {
-
-                    filenameTitle.innerHTML = name;
-
-                } else if (titleVal.toLowerCase() !== name.toLowerCase()) {
-
-                    if (editorCurrentFileToken) {
-
-                        Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(editorCurrentFileToken).done(function (retrievedFile) {
-
-                            retrievedFile.renameAsync(titleVal).done(function () {
-
-                                // Need to refresh the file in the mruList
-                                Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(editorCurrentFileToken);
-                                editorCurrentFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(retrievedFile, retrievedFile.name);
-
-                                filenameTitle.innerHTML = titleVal;
-
-                            });
-
-                        });
-
-                    } else {
-                        // Don't worry about it, just change the name and we'll use it later with the save dialog
-                        filenameTitle.innerHTML = titleVal;
-
-                    }
-                     
-
-                } else {
-
-                    filenameTitle.innerHTML = name;
-
-                }
-                            
-            });
-                        
-            filenameTitle.appendChild(textInput);
-            textInput.focus();
-            
         }
     }
 
@@ -825,7 +800,7 @@ var editor,
         editor.setTheme(settings['theme']);
         editorSession.setMode('ace/mode/text');
         editorSession.setMode(settings['mode']);
-        //asdf
+        
 
     }
 
