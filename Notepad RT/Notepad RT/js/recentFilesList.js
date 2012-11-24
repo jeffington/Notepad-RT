@@ -62,51 +62,43 @@ function initData() {
 
         files = fileInfo;
         recentFilesDataSource = new WinJS.Binding.List(files); //new flavorsDataSource(files);
-        //groupDataSource = new desertsDataSource(fileListHeaders);//recentFilesDataSource.createGrouped(getGroupKey, getGroupData, compareGroups);//new desertsDataSource(fileListHeaders);
+        groupDataSource = new desertsDataSource(fileListHeaders);// recentFilesDataSource.createGrouped(getGroupKey, getGroupData, compareGroups);//new desertsDataSource(fileListHeaders);//new WinJS.Binding.List(fileListHeaders);//recentFilesDataSource.createGrouped(getGroupKey, getGroupData, compareGroups);//new desertsDataSource(fileListHeaders);//new desertsDataSource(fileListHeaders);
         
 
-        //console.log(document.getElementById("filesListView"));
+        //console.log(groupDataSource.groups);
         recentFilesListView = new WinJS.UI.ListView(document.getElementById("filesListView"), {
             itemDataSource: recentFilesDataSource.dataSource,//recentFilesDataSource.dataSource,
-            //groupDataSource: groupDataSource,//groupDataSource.groups.dataSource,
+            //groupDataSource: groupDataSource,//.groupDataSource,//DataSource.dataSource,//groupDataSource.groups.dataSource,
             itemTemplate: document.getElementById("imageTextListFileTemplate"),
-            //groupHeaderTemplate: document.getElementById("groupTemplate"),
+            groupHeaderTemplate: document.getElementById("groupTemplate"),
             layout: new WinJS.UI.GridLayout(),
             selectionMode: WinJS.UI.SelectionMode.single,
             oniteminvoked: recentFilesSelection,
             tapBehavior: WinJS.UI.TapBehavior.invokeOnly,
             swipeBehavior: 'none',
         });
-        //console.log("1");
         //recentFilesListView.forceLayout();
-        //console.log("2");
-
+        
     });
 
 }
 
+// Sorts the groups by first letter
 function compareGroups(left, right) {
     return 0;//left.toUpperCase().charCodeAt(0) - right.toUpperCase().charCodeAt(0);
 }
 
-// Function which returns the group key that an item belongs to
+// Gets the key of the group that an item belongs to
 function getGroupKey(dataItem) {
-    //console.log(JSON.stringify(dataItem));
-    return 'R';
+    return dataItem.key;
 }
 
-// Function which returns the data for a group
+// Gets the data for a group
 function getGroupData(dataItem) {
-    /*return {
-        // the key for the item itself
-        groupKey: "R", // the key for the group for the item
-        item: dataItem,// the data fields for the item
-        title: 'Recent',
-        //groupDescription: 'Recent Group'//dataItem.title.toUpperCase().charAt(0)
-    };*/
-    return { groupKey: "R", groupTitle: "Recent", firstItemIndex: 0 }
+    return {
+        groupDescription: dataItem.species + " group",
+    };
 }
-
 
 function recentFilesSelection(event) {
 
@@ -121,102 +113,6 @@ function recentFilesSelection(event) {
     WinJS.Navigation.navigate("/pages/editor/editorPage.html", { filetoken: selectedFileToken });
 
 }
-
-/*var filesDataAdapter = WinJS.Class.define(
-    function () {
-        // Constructor
-        this.mruList = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList;
-        this.entries = this.mruList.entries;
-        this.size = this.entries.size;
-        //this._itemData = data;
-    },
-    {
-        getCount: function () {
-            var that = this;
-            return WinJS.Promise.wrap(that.size);
-        },
-
-        // Must return back an object containing fields:
-        //   items: The array of items of the form:
-        //      [{ key: key1, groupKey: group1, data : { field1: value, field2: value, ... }}, { key: key2, groupKey: group1, data : {...}}, ...]
-        //   offset: The offset into the array for the requested item
-        //   totalCount: (optional) Update the count for the collection
-        itemsFromIndex: function (requestIndex, countBefore, countAfter) {
-
-            var that = this;
-            console.log("Requested index: " + requestIndex + " Before: " + countBefore + " After: " + countAfter);
-            if (requestIndex >= that.size) {
-
-                return WinJS.Promise.wrapError(new WinJS.ErrorFromName(WinJS.UI.FetchError.doesNotExist));
-
-            }
-
-            var promiseArray = [];
-            var currentFileEntry = that.entries.getAt(requestIndex),
-                currentFileToken = currentFileEntry.token;
-            var currentFileInfo, currentFile;
-
-            var lastFetchIndex = Math.min(requestIndex + countAfter, that.size - 1);
-            var fetchIndex = Math.max(requestIndex - countBefore, 0);
-
-            console.log("File info: " + JSON.stringify(files[requestIndex]));
-
-            // return a promise for the results
-            console.log("Returning data promise for index " + requestIndex);
-
-
-            promiseArray.push(that.mruList.getFileAsync(currentFileToken).then(
-                function (retrievedFile) {
-                    currentFile = retrievedFile;
-                    currentFileInfo = {
-                        icon: "images/smallogo.png",
-                        title: "",
-                        textType: "",
-                        kind: "R"
-                    };
-
-                    if (retrievedFile) {
-
-                        currentFileInfo.title = retrievedFile.name;
-                        currentFileInfo.textType = retrievedFile.displayType;
-
-                        currentFile.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.documentsView).then(function (thumb) {
-
-                            currentFileInfo.icon = URL.createObjectURL(thumb, { oneTimeOnly: false });
-
-                        });
-                    }
-
-                }, function (error) { // Deleted or possibly corrupted file, get it out of here and don't add it to the list
-
-                    Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(currentFileToken);
-                    console.log(error + ' Error retrieving file, removed it from the mostRecentlyUsedList.');
-
-                })
-            );
-
-
-
-            WinJS.Promise.join(promiseArray).then(function () {
-
-                return WinJS.Promise.wrap({
-                    items: [{
-                        key: requestIndex, // the key for the item itself
-                        groupKey: "R", // the key for the group for the item
-                        data: currentFileInfo// the data fields for the item
-                    }], // The array of items
-                    offset: requestIndex - fetchIndex, // The offset into the array for the requested item
-                });
-
-            });
-
-        }
-    });
-
-// Create a DataSource by deriving and wrapping the data adapter with a VirtualizedDataSource
-var filesDataSource = WinJS.Class.derive(WinJS.UI.VirtualizedDataSource, function (data) {
-    this._baseDataSourceConstructor(new filesDataAdapter(data));
-});
 
 var desertsDataAdapter = WinJS.Class.define(
     function (groupData) {
@@ -313,7 +209,6 @@ var desertsDataAdapter = WinJS.Class.define(
             }
 
             // Results can be async so the result is supplied as a promise
-
             return WinJS.Promise.wrap({
                 items: results, // The array of items
                 offset: requestIndex - fetchIndex, // The offset into the array for the requested item
@@ -328,4 +223,3 @@ var desertsDataAdapter = WinJS.Class.define(
 var desertsDataSource = WinJS.Class.derive(WinJS.UI.VirtualizedDataSource, function (data) {
     this._baseDataSourceConstructor(new desertsDataAdapter(data));
 });
-*/

@@ -56,7 +56,7 @@ function pickFile() {
 
             token = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, file.name);
             Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.add(file);
-            WinJS.Navigation.navigate("/pages/editor/editorPage.html", {filetoken: token});
+            WinJS.Navigation.navigate("/pages/editor/editorPage.html", { filetoken: token } );
 
         } // Do nothing if a file wasn't picked
 
