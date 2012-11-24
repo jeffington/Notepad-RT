@@ -158,7 +158,7 @@ var editor,
                 // Loaded with no options, i.e. New File
 
                 console.log("New document");
-                WinJS.Promise.timeout(1200, function () {
+                WinJS.Promise.timeout(1200).then(function () {
                     configureEditorFromSettings();
                 });
             }
@@ -189,17 +189,27 @@ var editor,
 
     function unsavedFilePrompt() {
         // Create the message dialog and set its content
-        var msg = new Windows.UI.Popups.MessageDialog("Do you want to save changes to " + "fileName.txt" + "?", "Unsaved Changes");
+        
+        var msg = new Windows.UI.Popups.MessageDialog("Do you want to save changes to " + editorCurrentFileName + "?", "Unsaved Changes");
 
         // Add commands and set their CommandIds
-        msg.commands.append(new Windows.UI.Popups.UICommand("Save",
-            function () {
+        msg.commands.append(new Windows.UI.Popups.UICommand("Save", function () {
 
                 saveFileContents(editorSession.getDocument().getValue());
             
-            }, 1));
-        msg.commands.append(new Windows.UI.Popups.UICommand("Cancel", null, 2));
-        console.log(editor);
+        }, 1));
+        msg.commands.append(new Windows.UI.Popups.UICommand("Don't Save", function () {
+
+            setSaved();
+            WinJS.Navigation.back();
+
+        }, 2));
+        msg.commands.append(new Windows.UI.Popups.UICommand("Cancel", function () {
+
+
+
+        }, 3));
+        //console.log(editor);
         // Set the command that will be invoked by default
         msg.defaultCommandIndex = 2;
 
@@ -210,7 +220,7 @@ var editor,
             }
         });
         
-
+        
 
     }
 
@@ -248,6 +258,12 @@ var editor,
                 break;
 
             }
+
+        }
+
+        if (!foundFlag) {
+
+            editorSession.setMode('ace/mode/text');
 
         }
 
@@ -494,37 +510,41 @@ var editor,
 
         if (name != editorCurrentFileName) {
             console.log("Current name: " + editorCurrentFileName + " new name: " + name);
-            //detectEditorModeFromExtension(name);
+            detectEditorModeFromExtension(name);
 
-            editorCurrentFileName = name;
-            document.getElementById('filename').innerHTML = name;
         }
-        
+
+        editorCurrentFileName = name;
+        document.getElementById('filename').innerHTML = name;
     }
 
 
     function hideFileNameInput() {
-        var titleVal = getFileName();
+
+        console.log("Here!");
+        var titleVal = document.getElementById('fileNameInput').value;
+        console.log(titleVal+' '+editorCurrentFileName+' '+editorCurrentFileToken);
         if (editorCurrentFileToken && titleVal != editorCurrentFileName) {
 
             Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(editorCurrentFileToken).then(function (retrievedFile) {
 
-                return retrievedFile.renameAsync(titleVal);
+                retrievedFile.renameAsync(titleVal).done(function () {
 
-            }).done(function () {
+                    // Need to refresh the file in the mruList
+                    Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(editorCurrentFileToken);
+                    editorCurrentFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(retrievedFile, retrievedFile.name);
 
-                // Need to refresh the file in the mruList
-                Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(editorCurrentFileToken);
-                editorCurrentFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(retrievedFile, retrievedFile.name);
+                    setFileName(titleVal);
+                    //filenameTitle.innerHTML = titleVal;
 
-                setFileName(titleVal);
-                //filenameTitle.innerHTML = titleVal;
+                });
 
             });
 
         } else {
             // Don't worry about it, just change the name and we'll use it later with the save dialog
             //filenameTitle.innerHTML = titleVal;
+            console.log("HERE");
             setFileName(titleVal);
 
         }
@@ -538,6 +558,7 @@ var editor,
             var name = getFileName();
             fileNameHead.innerHTML = '';
             var textInput = document.createElement('input');
+            textInput.setAttribute('id', 'fileNameInput');
             textInput.setAttribute('type', 'text');
             textInput.setAttribute('value', name);
 
@@ -626,11 +647,18 @@ var editor,
 
     function setSaved() {
 
-        var titleHeader = document.getElementById('filename');
+        var titleHeader = document.getElementById('filename'),
+            backButton = document.querySelector("header[role=banner] .win-backbutton");
+        //backButton.removeAttribute("disabled");
         titleHeader.style.fontStyle = 'normal';
         hasEditorChanged = false;
 
         editorSession.addEventListener('change', setUnsaved);
+        var backBtn = document.getElementById('backbutton');
+        backBtn.addEventListener('click', function () {
+            console.log("WHAT?!");
+            unsavedFilePrompt();
+        });
     }
 
     function setUnsaved() {
@@ -640,6 +668,10 @@ var editor,
         hasEditorChanged = true;
         editorSession.removeEventListener('change', setUnsaved);
 
+        var backBtn = document.getElementById('backbutton');
+        backBtn.removeEventListener('click', unsavedFilePrompt);
+        //var backButton = document.querySelector("header[role=banner] .win-backbutton");
+        //backButton.setAttribute("disabled", "disabled");
     }
 
     function dataRequested(e) {

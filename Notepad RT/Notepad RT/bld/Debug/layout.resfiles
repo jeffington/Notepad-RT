@@ -92,6 +92,7 @@ images\widelogo.png
 js\default.js
 js\navigator.js
 js\readFile.js
+js\recentFilesList.js
 js\saveFile.js
 js\settings.js
 pages\editor\editorPage.html

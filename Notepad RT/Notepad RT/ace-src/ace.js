@@ -11004,7 +11004,7 @@ define('ace/commands/default_commands', ['require', 'exports', 'module' , 'ace/l
     exec: function(editor) {
         //var needle = prompt("Find:", editor.getCopyText());
         //editor.find(needle);
-        //openSearch();
+        openSearch();
     },
     readOnly: true
 }, {

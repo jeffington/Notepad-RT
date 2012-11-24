@@ -125,7 +125,15 @@
                 _updateBackButton: function () {
                     var backButton = this.pageElement.querySelector("header[role=banner] .win-backbutton");
                     if (backButton) {
-                        backButton.onclick = function () { nav.back(); };
+                        backButton.onclick = function () {
+
+                            if (hasEditorChanged !== undefined && !hasEditorChanged) {
+
+                                nav.back();
+
+                            }
+
+                        };
 
                         if (nav.canGoBack) {
                             backButton.removeAttribute("disabled");

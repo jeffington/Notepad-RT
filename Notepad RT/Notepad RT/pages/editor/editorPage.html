@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿ <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -19,6 +19,10 @@
     <!--<script src="/ace-src/ace.js"></script>-->
 
 <style type="text/css">
+    body {
+        /*background-color: #F5F5F5;
+        color: black;*/
+    }
     #editor { 
         position: absolute;
         top: 80px;
@@ -50,17 +54,44 @@
     }
 </style>
 </head>
-<body style="background-color: black;">
+<body>
     <header aria-label="Header content" role="banner">
         
-        <h1 class="titlearea win-type-ellipsis" style="padding-left:3%;" style="clear: none;">
-            <button id="backbutton" class="win-backbutton" aria-label="Back" disabled></button>
+        <h1 class="win-type-ellipsis" style="padding-left: 3%; padding-right: 3%;" >
             
+            <button id="backbutton" class="win-backbutton" aria-label="Back" disabled></button>
+            <!--<button class="action">&#xe160;</button>
+            <button class="action">&#xe160;</button>-->
             <span id="filename" class="pagetitle">Untitled</span>
             <!--<span class="chevron win-type-x-large">&#xe099;</span>
             <progress></progress>
             <button></button>-->
+            
+            <!--<table style="float: right; display: inline-block; border: 1px solid white; margin-top: -2%;">
+                <tr>
+                    <td>
+                        <button class="action">&#xe160;</button>
+                    </td>
+                    <td>
+                        <button class="action">&#xe105;</button>
+                    </td>
+                    <td>
+                        <button id="saveAsBtn" class="action">&#xe159;</button>
+                        <label for="saveAsBtn">Save As</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color: white;">New</td>
+                    <td>Save</td>
+                    <td>Save As</td>
+                </tr>
+            </table>-->
+            
+            
         </h1>
+        
+            
+            
         <!--<button style="float: right;"
             data-win-control="WinJS.UI.MenuCommand" 
             data-win-options="{id:'otherCmd',label:'Save As',icon:'savelocal',
@@ -99,17 +130,17 @@
         <button 
             data-win-control="WinJS.UI.AppBarCommand" 
             data-win-options="{id:'cmdNew',label:'New',icon:'page2',
-                section:'global',tooltip:'Add item'}">
+                section:'global',tooltip:'New File'}">
         </button>
         <button 
             data-win-control="WinJS.UI.AppBarCommand" 
             data-win-options="{id:'cmdSave',label:'Save',icon:'save',
-                section:'selection',tooltip:'Add item'}">
+                section:'selection',tooltip:'Save File'}">
         </button>
         <button 
             data-win-control="WinJS.UI.AppBarCommand" 
             data-win-options="{id:'cmdSaveAs',label:'Save As',icon:'savelocal',
-                section:'selection',tooltip:'Remove item'}">
+                section:'selection',tooltip:'Save as new file'}">
         </button>
         <button 
             data-win-control="WinJS.UI.AppBarCommand" 
@@ -122,8 +153,8 @@
         
         <button 
             data-win-control="WinJS.UI.AppBarCommand" 
-            data-win-options="{id:'cmdPinFile',label:'Pin File',icon:'pin',
-                section:'global',tooltip:'Pin this document to Start Screen'}">
+            data-win-options="{id:'cmdOpenSettings',label:'Pin File',icon:'pin',
+                section:'global',tooltip:'Notepad RT Settings'}">
         </button>-->
     </div>
     <div id="searchBar" data-win-control="WinJS.UI.AppBar" class="win-appbar"

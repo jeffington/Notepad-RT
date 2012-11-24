@@ -149,6 +149,7 @@
     <Content Include="ace-src\worker-xquery.js" />
     <Content Include="js\navigator.js" />
     <Content Include="js\readFile.js" />
+    <Content Include="js\recentFilesList.js" />
     <Content Include="js\saveFile.js" />
     <Content Include="js\settings.js" />
     <None Include="Package.StoreAssociation.xml" />
