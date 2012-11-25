@@ -47,6 +47,9 @@ table {
 	border-spacing: 0;
 }
 
+group{
+	overflow: hidden;
+}
 
 body{
  	background: #151515 url('../images/start.png') no-repeat left top;
@@ -70,11 +73,31 @@ body{
  	font-weight: 100;
  	font-size: 55px;
  	position: fixed;
- 	top: 25px;
+ 	top: 33px;
  	left: 33px;
  	
  }
  
+ h2{
+ 	color: #fff;
+ 	font-weight: 100;
+ 	font-size: 16px;
+ 	position: fixed;
+ 	top: 4%;
+ 	left: 350px;
+ }
+ 
+ aside{
+ 	position: fixed;
+ 	top: 8px;
+ 	right: 33px;
+ }
+ 
+ aside li{
+ 	padding: 0;
+ 	margin: 3px 0;
+ }
+  
  #wrap{
 		margin-top: 100px;
 		margin-left: 25px;
@@ -180,7 +203,7 @@ body{
  }
  
  #features h3{
-	line-height: 3em;
+	line-height: 2.5em;
  }
  
  #features ul{
@@ -188,7 +211,7 @@ body{
  	margin-left: 20px;
  }
  #features li{
- 	margin: 15px 0;	
+ 	margin: 6px 0;	
  }
  
  #screenshots{
