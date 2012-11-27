@@ -93,7 +93,7 @@ var editor,
         },
     ];
     
-    var page = WinJS.UI.Pages.define("/pages/editor/editorPage.html", {
+    var editorPage = WinJS.UI.Pages.define("/pages/editor/editorPage.html", {
         ready: function (element, options) {
             
             editor = ace.edit("editor");
@@ -173,6 +173,10 @@ var editor,
             dataTransferManager.removeEventListener("datarequested", dataRequested);
             Windows.Storage.ApplicationData.current.removeEventListener("datachanged", configureEditorFromSettings);
 
+            hideAppBar();
+            hideSearch();
+
+
             if (hasEditorChanged) {
 
                 unsavedFilePrompt();
@@ -183,7 +187,7 @@ var editor,
             editorCurrentFileName = null;
             editor.destroy();
             
-        }
+        },
 
     });
 
@@ -276,27 +280,6 @@ var editor,
 
     }
 
-    function hideAppBar() {
-
-        var appBar = document.getElementById("appBar").winControl;
-        appBar.disabled = true;
-    }
-
-    function dismissAppBar() {
-
-        var appBar = document.getElementById("appBar").winControl;
-        appBar.hide();
-
-    }
-
-    function showAppBar() {
-
-        var appBar = document.getElementById("appBar").winControl;
-        appBar.disabled = false;
-        appBar.show();
-
-    }
-
     function setupAppBar() {
         var cmdNew = document.getElementById('cmdNew'),
             cmdUndo = document.getElementById('cmdUndo'),
@@ -311,8 +294,9 @@ var editor,
             cmdReplaceAll = document.getElementById('cmdReplaceAll'),
             cmdCut = document.getElementById('cmdCut'),
             cmdCopy = document.getElementById('cmdCopy'),
-            cmdPaste = document.getElementById('cmdPaste');
-
+            cmdPaste = document.getElementById('cmdPaste'),
+            inputSearchTerms = document.getElementById('searchTerms'),
+            inputReplaceTerms = document.getElementById('replaceTerms');
 
 
         cmdNew.addEventListener('click', cmdNewFile);
@@ -328,19 +312,24 @@ var editor,
         cmdCopy.addEventListener('click', doCopy);
         cmdCut.addEventListener('click', doCut);
         cmdPaste.addEventListener('click', doPaste);
-        
-    }
-    
-    function openSearch() {
+        searchTerms.addEventListener('keydown', function (e) {
 
-        var searchBar = document.getElementById('searchBar').winControl;
-        searchBar.disabled = false;
-        hideAppBar();
-        searchBar.onafterhide = function () {
-            hideSearch();
-        };
-        searchBar.show();
+            if (e.key == 'Enter') {
 
+                findNext();
+                e.preventDefault();
+            }
+            
+        });
+        inputReplaceTerms.addEventListener('keydown', function (e) {
+
+            if (e.key == 'Enter') {
+
+                replace();
+                e.preventDefault();
+            }
+            
+    });
     }
 
     function findNext() {
@@ -402,15 +391,6 @@ var editor,
             editor.replaceAll(replaceTerms, options);
 
         }
-
-    }
-
-    function hideSearch() {
-
-        var searchBar = document.getElementById('searchBar').winControl,
-            appBar = document.getElementById('appBar').winControl;
-        searchBar.disabled = true;
-        appBar.disabled = false;
 
     }
 
@@ -483,10 +463,6 @@ var editor,
     //
     //
 
-    /*
-        filenameTitle = document.getElementById('filename');
-        filenameTitle.addEventListener('click', fileNameClick);
-    */
     function getFileName() {
 
         var fileName = '',
@@ -544,7 +520,7 @@ var editor,
         } else {
             // Don't worry about it, just change the name and we'll use it later with the save dialog
             //filenameTitle.innerHTML = titleVal;
-            console.log("HERE");
+            //console.log("HERE");
             setFileName(titleVal);
 
         }
@@ -748,6 +724,7 @@ var editor,
 
 
     function saveFileContents(contents) {
+
         var fileToken = editorCurrentFileToken;
 
         if (fileToken) {
@@ -778,6 +755,7 @@ var editor,
 
 
         }
+
     }
 
     function configureEditorFromSettings() {
@@ -836,4 +814,47 @@ var editor,
 
     }
 
+
+    
 })();
+
+//
+function openSearch () {
+
+    var searchBar = document.getElementById('searchBar').winControl;
+    searchBar.disabled = false;
+    hideAppBar();
+    searchBar.onafterhide = hideSearch;
+    searchBar.show();
+
+}
+// Hides the search app bar
+function hideSearch () {
+
+    var searchBar = document.getElementById('searchBar').winControl,
+        appBar = document.getElementById('appBar').winControl;
+    searchBar.disabled = true;
+    appBar.disabled = false;
+
+}
+
+function hideAppBar() {
+
+    var appBar = document.getElementById("appBar").winControl;
+    appBar.disabled = true;
+}
+
+function dismissAppBar() {
+
+    var appBar = document.getElementById("appBar").winControl;
+    appBar.hide();
+
+}
+
+function showAppBar() {
+
+    var appBar = document.getElementById("appBar").winControl;
+    appBar.disabled = false;
+    appBar.show();
+
+}

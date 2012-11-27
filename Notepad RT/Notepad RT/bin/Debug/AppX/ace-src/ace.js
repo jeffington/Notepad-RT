@@ -3708,7 +3708,7 @@ var TextInput = function(parentNode, host) {
             onPropertyChange();
         }
     });
-
+    // TODO: This is where the suspended problem is
     if ("onbeforecopy" in text && typeof clipboardData !== "undefined") {
         event.addListener(text, "beforecopy", function(e) {
             if (tempStyle)
@@ -11002,9 +11002,9 @@ define('ace/commands/default_commands', ['require', 'exports', 'module' , 'ace/l
     name: "find",
     bindKey: bindKey("Ctrl-F", "Command-F"),
     exec: function(editor) {
-        //var needle = prompt("Find:", editor.getCopyText());
-        //editor.find(needle);
+        
         openSearch();
+        
     },
     readOnly: true
 }, {

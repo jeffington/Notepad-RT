@@ -75,11 +75,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\default.js">
       <PackagePath>js\default.js</PackagePath>
-      <Modified>2012-11-06T05:07:50.775</Modified>
+      <Modified>2012-11-27T03:09:40.309</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\ace.js">
       <PackagePath>ace-src\ace.js</PackagePath>
-      <Modified>2012-11-23T23:02:26.230</Modified>
+      <Modified>2012-11-27T07:36:00.258</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\keybinding-emacs.js">
       <PackagePath>ace-src\keybinding-emacs.js</PackagePath>
@@ -407,7 +407,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\recentFilesList.js">
       <PackagePath>js\recentFilesList.js</PackagePath>
-      <Modified>2012-11-24T08:20:47.697</Modified>
+      <Modified>2012-11-24T08:22:14.377</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\saveFile.js">
       <PackagePath>js\saveFile.js</PackagePath>
@@ -419,7 +419,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorPage.js">
       <PackagePath>pages\editor\editorPage.js</PackagePath>
-      <Modified>2012-11-24T05:37:10.656</Modified>
+      <Modified>2012-11-27T07:57:12.531</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorSettingsPage.js">
       <PackagePath>pages\editor\editorSettingsPage.js</PackagePath>

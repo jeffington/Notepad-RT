@@ -18,7 +18,7 @@
             var newFileButton = document.getElementById('newfile');
             openFileButton.addEventListener('click', pickFile);
             newFileButton.addEventListener('click', launchEditor); // Pass them directory to editorPage.html with no arguments
-            console.log("Page shown");
+            
             initData();
             
         }

@@ -20,7 +20,8 @@
 
                 // TODO: This application has been newly launched. Initialize
                 // your application here.
-                initializeSettings();
+                WinJS.UI.processAll();
+                WinJS.Application.start();
 
 
             } else {
@@ -82,6 +83,15 @@
 
     };
 
+    app.onsettings = function (e) {
+        e.detail.applicationcommands = {
+            "defaultsDiv": { href: "/html/DefaultsUI.html", title: "Editor" },
+            "feedbackDiv": { href: "/html/FeedbackUI.html", title: "Feedback" },
+            "copyrightDiv": { href: "/html/LegalUI.html", title: "Copyright" }
+        };
+        WinJS.UI.SettingsFlyout.populateSettings(e);
+    };
+
     app.oncheckpoint = function (args) {
         // TODO: This application is about to be suspended. Save any state
         // that needs to persist across suspensions here. You might use the
@@ -89,7 +99,15 @@
         // saved and restored across suspension. If you need to complete an
         // asynchronous operation before your application is suspended, call
         // args.setPromise().
+        /*var sessionInfo = {
+            '': 
 
+        };
+        WinJS.Application.sessionState = sessionInfo;
+        window.localStorage*/
+        
+        // TODO: sessionState will already contain the following: editorCurrentFileToken, editorCurrentFileName, hasEditorChanged
+        // We should check if hasEditorChanged is true and ONLY if it's true, write the text to a temporary file
 
     };
 
