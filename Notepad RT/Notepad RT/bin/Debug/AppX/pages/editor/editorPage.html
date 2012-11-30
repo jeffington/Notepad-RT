@@ -2,26 +2,13 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Notepad&nbsp;RT</title>
-
-    <!-- WinJS references
-
-        All of these things should have already been loaded by the default.html host page
-
-    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
-    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
-    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
-    -->
-    <!-- Notepad_RT references 
-    <link href="/css/default.css" rel="stylesheet" />
-    -->
     <script src="/pages/editor/editorPage.js"></script>
-    <!--<script src="/ace-src/ace.js"></script>-->
-
 <style type="text/css">
     body {
         /*background-color: #F5F5F5;
-        color: black;*/
+        color: black;
+        /* TODO: This is the "Light" app theme.    
+        */
     }
     #editor { 
         position: absolute;
@@ -32,25 +19,17 @@
         
     }
     .ace_editor {
-        /*overflow-y: scroll;*/
+        /*
+           This was the code that added a scrollbar.    
+        */
         -ms-overflow-style: scrollbar;
         
     }
     
-    /*    
-        
-        Working on fixing scrolling here    
-        
-    
-    .ace_scrollbar {
-        z-index: 100;
-        visibility: visible;
-        
-    }*/
     textarea {
         text-indent: -9999px;
         
-        
+        /* TODO: Need to get rid of that fucking flashing pixel. */
     }
 </style>
 </head>

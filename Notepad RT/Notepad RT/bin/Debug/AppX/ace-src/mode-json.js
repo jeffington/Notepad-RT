@@ -28,7 +28,7 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-define('ace/mode/json', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text', 'ace/tokenizer', 'ace/mode/json_highlight_rules', 'ace/mode/matching_brace_outdent', 'ace/mode/behaviour/cstyle', 'ace/mode/folding/cstyle', 'ace/worker/worker_client'], function(require, exports, module) {
+define('ace/mode/json', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text', 'ace/tokenizer', 'ace/mode/json_highlight_rules', 'ace/mode/matching_brace_outdent', 'ace/mode/behaviour/cstyle', 'ace/mode/folding/cstyle'/*, 'ace/worker/worker_client'*/], function(require, exports, module) {
 
 
 var oop = require("../lib/oop");
@@ -38,7 +38,7 @@ var HighlightRules = require("./json_highlight_rules").JsonHighlightRules;
 var MatchingBraceOutdent = require("./matching_brace_outdent").MatchingBraceOutdent;
 var CstyleBehaviour = require("./behaviour/cstyle").CstyleBehaviour;
 var CStyleFoldMode = require("./folding/cstyle").FoldMode;
-var WorkerClient = require("../worker/worker_client").WorkerClient;
+//var WorkerClient = require("../worker/worker_client").WorkerClient;
 
 var Mode = function() {
     this.$tokenizer = new Tokenizer(new HighlightRules().getRules());
@@ -71,7 +71,7 @@ oop.inherits(Mode, TextMode);
         this.$outdent.autoOutdent(doc, row);
     };
 
-    this.createWorker = function(session) {
+    /*this.createWorker = function(session) {
         var worker = new WorkerClient(["ace"], "ace/mode/json_worker", "JsonWorker");
         worker.attachToDocument(session.getDocument());
 
@@ -84,8 +84,10 @@ oop.inherits(Mode, TextMode);
         });
 
         return worker;
+    };/* Disabling workers for JSON */
+    this.createWorker = function (session) {
+        return null;
     };
-
 
 }).call(Mode.prototype);
 

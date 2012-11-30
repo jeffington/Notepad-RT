@@ -38,10 +38,11 @@ function initData() {
                     }
 
                 }, function (error) { // Deleted or possibly corrupted file, get it out of here and don't add it to the list
-                    //console.log('x: '+x);
+                    console.log('x: ' + x);
+                    //console.log(''+Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries[x].token);
                     //Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(x).token);
                     console.log(error + ' Error retrieving file, removed it from the mostRecentlyUsedList.');
-
+                    fileInfo.splice(x, 1);
                 }).then(function (thumb) {
 
                     if (thumb && fileInfo[x]) {

@@ -36,7 +36,7 @@ var TextMode = require("./text").Mode;
 var Tokenizer = require("../tokenizer").Tokenizer;
 var CssHighlightRules = require("./css_highlight_rules").CssHighlightRules;
 var MatchingBraceOutdent = require("./matching_brace_outdent").MatchingBraceOutdent;
-var WorkerClient = require("../worker/worker_client").WorkerClient;
+//var WorkerClient = require("../worker/worker_client").WorkerClient;
 var CStyleFoldMode = require("./folding/cstyle").FoldMode;
 
 var Mode = function() {
@@ -75,7 +75,7 @@ oop.inherits(Mode, TextMode);
         this.$outdent.autoOutdent(doc, row);
     };
     
-    this.createWorker = function(session) {
+    /*this.createWorker = function(session) {
         var worker = new WorkerClient(["ace"], "ace/mode/css_worker", "Worker");
         worker.attachToDocument(session.getDocument());
         
@@ -94,6 +94,9 @@ oop.inherits(Mode, TextMode);
             session.setAnnotations(errors);
         });
         return worker;
+    };/* Disabling workers for CSS */
+    this.createWorker = function (session) {
+        return null;
     };
 
 }).call(Mode.prototype);

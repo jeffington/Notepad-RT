@@ -24,7 +24,7 @@ var editor,
         },
         {
             exts: ["txt"],
-            mode: "",
+            mode: "ace/mode/text",
         },
         {
             exts: ["css"],
@@ -96,31 +96,27 @@ var editor,
     var editorPage = WinJS.UI.Pages.define("/pages/editor/editorPage.html", {
         ready: function (element, options) {
             
+            var that = this;
+
             editor = ace.edit("editor");
             editorSession = editor.getSession();
-            configureEditorFromSettings();
+            this.configureEditorFromSettings();
             
             var filenameTitle = document.getElementById('filename');
             filenameTitle.addEventListener('click', fileNameClick);
 
-            Windows.Storage.ApplicationData.current.addEventListener("datachanged", configureEditorFromSettings);
+            Windows.Storage.ApplicationData.current.addEventListener("datachanged", this.configureEditorFromSettings);
 
             var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
-            dataTransferManager.addEventListener("datarequested", dataRequested);
+            dataTransferManager.addEventListener("datarequested", this.dataRequestedForSharing);
 
-            /*var backBtn = document.getElementById('backbutton');
-            backBtn.addEventListener('click', function (e) {
-                console.log("UGH");
-                e.preventDefault();
-                e.stopImmediatePropagation();
-                e.stopPropagation();
-                return false;
-            }, true);*/
+            // Keyboard events
+            this.addKeyboardShortcuts();
 
             if (options && options.filetoken) {
                 // Load from recent opened files
 
-                loadFromToken(options.filetoken);
+                this.loadFromToken(options.filetoken);
 
             } else if (options && options.files) {
                 // Load from file from outside (like Explorer in Desktop)
@@ -145,90 +141,335 @@ var editor,
                         
 
                     }).done(function () {
-                            //configureEditorFromSettings();
-                            editor.getSession().getDocument().setValue(text);
-                            editor.navigateTo(0, 0);
+                        //configureEditorFromSettings();
+                        editor.getSession().getDocument().setValue(text);
+                        editor.navigateTo(0, 0);
                     });
 
-                } else {
-                    //editor.getSession().getDocument().setValue("STUFF");
                 }
 
             } else {
                 // Loaded with no options, i.e. New File
 
-                console.log("New document");
+                
                 WinJS.Promise.timeout(1200).then(function () {
-                    configureEditorFromSettings();
+                    that.configureEditorFromSettings();
                 });
             }
             
             
-            setupAppBar();
+            this.setupAppBar();
             
         },
+        // Cleans up the page
         unload: function () {
 
             var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
-            dataTransferManager.removeEventListener("datarequested", dataRequested);
-            Windows.Storage.ApplicationData.current.removeEventListener("datachanged", configureEditorFromSettings);
+            dataTransferManager.removeEventListener("datarequested", this.dataRequestedForSharing);
+            Windows.Storage.ApplicationData.current.removeEventListener("datachanged", this.configureEditorFromSettings);
 
+            this.removeKeyboardShortcuts();
             hideAppBar();
             hideSearch();
+            
 
+//            if (hasEditorChanged) {
 
-            if (hasEditorChanged) {
+//               this.unsavedFilePrompt();
 
-                unsavedFilePrompt();
-
-            }
+//            }
             
             editorCurrentFileToken = null;
             editorCurrentFileName = null;
             editor.destroy();
+            editor = null;
+
+        },
+        //
+        dataRequestedForSharing: function(e) {
+            var request = e.request;
+       
+            try {
+
+                var dataPackageTitle = getFileName();
+                request.data.properties.title = dataPackageTitle;
+                request.data.setText(editorSession.getDocument().getValue());
+            
+            } catch (e) {
+
+                request.failWithDisplayText("There's no text to share in the document.");
+
+            }
             
         },
+        //
+        // This is the start of all of the callbacks for buttons/appbar commands
+        // 
+        //
+        //
+        addKeyboardShortcuts: function () {
 
+            WinJS.Application.addEventListener('Ctrl-N', cmdNewFile);
+            WinJS.Application.addEventListener('Ctrl-F', openSearch);
+            WinJS.Application.addEventListener('Ctrl-S', saveFile);
+            WinJS.Application.addEventListener('Ctrl-Shift-S', saveFileToLocation);
+
+        },
+        //
+        removeKeyboardShortcuts: function () {
+
+            WinJS.Application.removeEventListener('Ctrl-N', cmdNewFile);
+            WinJS.Application.removeEventListener('Ctrl-F', openSearch);
+            WinJS.Application.removeEventListener('Ctrl-S', saveFile);
+            WinJS.Application.removeEventListener('Ctrl-Shift-S', saveFileToLocation);
+
+        },
+        // 
+        setupAppBar: function () {
+            var cmdNew = document.getElementById('cmdNew'),
+                cmdUndo = document.getElementById('cmdUndo'),
+                cmdRedo = document.getElementById('cmdRedo'),
+                cmdSave = document.getElementById('cmdSave'),
+                cmdSaveAs = document.getElementById('cmdSaveAs'),
+                cmdSearch = document.getElementById('cmdSearch'),
+                cmdPin = document.getElementById('cmdPinFile'),
+                cmdFindNext = document.getElementById('cmdFindNext'),
+                cmdFindPrev = document.getElementById('cmdFindPrev'),
+                cmdReplace = document.getElementById('cmdReplace'),
+                cmdReplaceAll = document.getElementById('cmdReplaceAll'),
+                cmdCut = document.getElementById('cmdCut'),
+                cmdCopy = document.getElementById('cmdCopy'),
+                cmdPaste = document.getElementById('cmdPaste'),
+                inputSearchTerms = document.getElementById('searchTerms'),
+                inputReplaceTerms = document.getElementById('replaceTerms');
+
+
+            cmdNew.addEventListener('click', cmdNewFile);
+            cmdSave.addEventListener('click', saveFile);
+            cmdSearch.addEventListener('click', openSearch);
+            cmdSaveAs.addEventListener('click', saveFileToLocation);
+            cmdUndo.addEventListener('click', doUndo);
+            cmdRedo.addEventListener('click', doRedo);
+            cmdFindNext.addEventListener('click', this.findNext);
+            cmdFindPrev.addEventListener('click', this.findPrev);
+            cmdReplace.addEventListener('click', this.replace);
+            cmdReplaceAll.addEventListener('click', this.replaceAll);
+            cmdCopy.addEventListener('click', doCopy);
+            cmdCut.addEventListener('click', doCut);
+            cmdPaste.addEventListener('click', doPaste);
+            searchTerms.addEventListener('keydown', this.inputSearchTermsKeydown);
+
+            inputReplaceTerms.addEventListener('keydown', this.inputReplaceTermsKeydown);
+
+        },
+        // 
+        inputReplaceTermsKeydown: function(e) {
+
+            if (e.key === 'Enter') {
+
+                this.replace();
+                e.preventDefault();
+
+            }
+
+        },
+        // 
+        inputSearchTermsKeydown: function (e) {
+
+            if (e.key === 'Enter') {
+
+                this.findNext();
+                e.preventDefault();
+            }
+
+        },
+        //
+        // This is the start of all the app bar set-up methods and callbacks
+        // 
+        // 
+        loadFromToken: function (fileToken) {
+
+            var that = this;
+            editorCurrentFileToken = fileToken;
+        // this.editorCurrentFileToken = fileToken;
+            // Configure and prepare the editor to receive the file's content
+            this.configureEditorFromSettings();
+
+            Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(fileToken).then(function (retrievedFile) {
+
+                setFileName(retrievedFile.name);
+            
+                //return retrievedFile.openAsync(Windows.Storage.FileAccessMode.read);
+                return Windows.Storage.FileIO.readBufferAsync(retrievedFile);
+
+            }).then(function (buffer) {
+
+                var dataReader = Windows.Storage.Streams.DataReader.fromBuffer(buffer),
+                    array = new Array(buffer.length),
+                    output = dataReader.readBytes(array),
+                    x;
+
+                dataReader.close();
+
+                for (x = 0; x < array.length; x++) {
+
+                    array[x] = String.fromCharCode(array[x]);
+
+                }
+
+                // Cut off the characters: ï»¿
+                if (array[0] == "ï" || array[1] == "»" || array[2] == "¿") {
+
+                    array.splice(0, 3);
+
+                }
+
+                editor.getSession().getDocument().setValue(array.join(''));
+            
+                return WinJS.Promise.timeout(1200);
+
+            }).then(function (complete) {
+
+                that.configureEditorFromSettings();
+
+                detectEditorModeFromExtension(getFileName());
+
+                //editor.getSession().getDocument().setValue(contents);
+                //that.editor.navigateTo(0, 0);
+                editor.navigateTo(0, 0);
+                setSaved();
+
+            });
+
+
+        },
+        //
+        configureEditorFromSettings: function () {
+
+            var editor = ace.edit("editor"),
+                editorSession = editor.getSession(),
+                settings = Windows.Storage.ApplicationData.current.localSettings.values;
+        
+            //console.log(editor);
+            settings['fontSize'] = settings['fontSize'] || 12;
+            settings['highlightActiveLine'] = (settings['highlightActiveLine'] === undefined ? false : settings['highlightActiveLine']);
+            settings['showInvisibleCharacters'] = (settings['showInvisibleCharacters'] === undefined ? false : settings['showInvisibleCharacters']);
+            settings['theme'] = settings['theme'] || 'ace/theme/textmate';
+            settings['mode'] = settings['mode'] || 'ace/mode/text';
+            settings['useHardTabs'] = (settings['useHardTabs'] === undefined ? true : settings['useHardTabs']);
+            settings['showIndentGuides'] = (settings['showIndentGuides'] === undefined ? true : settings['showIndentGuides']);
+            settings['showGutter'] = (settings['showGutter'] === undefined ? true : settings['showGutter']);
+            settings['showPrintMargin'] = (settings['showPrintMargin'] === undefined ? true : settings['showPrintMargin']);
+
+            //editorSession.setUseWorkers(false);
+            editorSession.setMode(settings['mode']);
+            editor.setTheme(settings['theme']);
+        
+            var gutter = document.querySelector('.ace_gutter-layer');
+
+            if (settings['showGutter']) {
+
+                gutter.style.display = 'inherit';
+
+            } else {
+
+                gutter.style.display = 'none';
+
+            }
+        
+        
+
+            //setTimeout(function () {
+            
+            //}, 2000);
+        
+            //console.log('Settings mode: ' + settings['mode'] + ' Theme: ' + settings['theme']);
+            document.getElementById('editor').style.fontSize = settings['fontSize'] + 'px';
+        
+        
+            editorSession.setUseWrapMode(true);
+            editorSession.setTabSize(4);
+            editorSession.setUseSoftTabs(settings['useHardTabs']);
+
+            editor.setHighlightActiveLine(settings['highlightActiveLine']);
+            editor.setShowInvisibles(settings['showInvisibleCharacters']);
+            editor.setShowPrintMargin(settings['showPrintMargin']);
+            editor.setTheme(settings['theme']);
+            editorSession.setMode('ace/mode/text');
+            editorSession.setMode(settings['mode']);
+        
+
+        },
+        //
+        findNext: function () {
+
+            var searchTerms = document.getElementById('searchTerms').value,
+                options = {};
+        
+            options.needle = searchTerms;
+            options.backwards = false;
+
+            if (searchTerms && searchTerms.length > 0) {
+
+                editor.find(searchTerms, options, true);
+
+            }
+
+        },
+        //
+        findPrev: function () {
+
+            var searchTerms = document.getElementById('searchTerms').value,
+                options = {};
+
+            options.needle = searchTerms;
+            options.backwards = true;
+            if (searchTerms && searchTerms.length > 0) {
+
+                editor.findPrevious(searchTerms, options, true);
+
+            }
+
+        },
+        //
+        replace: function () {
+
+            var searchTerms = document.getElementById('searchTerms').value,
+                replaceTerms = document.getElementById('replaceTerms').value,
+                options = {};
+        
+            options.needle = searchTerms;
+
+            if (searchTerms && searchTerms.length > 0 && replaceTerms && replaceTerms.length > 0) {
+
+                editor.replace(replaceTerms, options);
+
+            }
+
+        },
+        // 
+        replaceAll: function () {
+
+            var searchTerms = document.getElementById('searchTerms').value,
+                replaceTerms = document.getElementById('replaceTerms').value,
+                options = {};
+
+            options.needle = searchTerms;
+            if (searchTerms && searchTerms.length > 0 && replaceTerms && replaceTerms.length > 0) {
+
+                editor.replaceAll(replaceTerms, options);
+
+            }
+
+        },
+        //
     });
 
-    function unsavedFilePrompt() {
-        // Create the message dialog and set its content
-        
-        var msg = new Windows.UI.Popups.MessageDialog("Do you want to save changes to " + editorCurrentFileName + "?", "Unsaved Changes");
+    // Callbacks need to be accessible to everybody within the (function{ ... })();
+    // But functions that related to Ace/Editor can be either here or within the Page's scope
 
-        // Add commands and set their CommandIds
-        msg.commands.append(new Windows.UI.Popups.UICommand("Save", function () {
-
-                saveFileContents(editorSession.getDocument().getValue());
-            
-        }, 1));
-        msg.commands.append(new Windows.UI.Popups.UICommand("Don't Save", function () {
-
-            setSaved();
-            WinJS.Navigation.back();
-
-        }, 2));
-        msg.commands.append(new Windows.UI.Popups.UICommand("Cancel", function () {
-
-
-
-        }, 3));
-        //console.log(editor);
-        // Set the command that will be invoked by default
-        msg.defaultCommandIndex = 2;
-
-        // Show the message dialog
-        msg.showAsync().done(function (command) {
-            if (command) {
-                //WinJS.log && WinJS.log("The '" + command.label + "' (" + command.id + ") command has been selected.", "sample", "status");
-            }
-        });
-        
-        
-
-    }
-
-    function detectEditorModeFromExtension(fileName) {
+    // This method is used to both detect and set the mode (programming language) for Ace
+    function detectEditorModeFromExtension (fileName) {
 
         var x, y,
             numTypes = fileTypes.length,
@@ -254,7 +495,7 @@ var editor,
                     break;
 
                 }
-                
+
             }
 
             if (foundFlag) {
@@ -271,131 +512,106 @@ var editor,
 
         }
 
+    }
+
+    function setFileName (name) {
+
+        if (name != editorCurrentFileName) {
+            console.log("Current name: " + editorCurrentFileName + " new name: " + name);
+            detectEditorModeFromExtension(name);
+
+        }
+
+        editorCurrentFileName = name;
+        document.getElementById('filename').innerHTML = name;
 
     }
 
-    function setEditorContents(text) {
+    function getFileName () {
 
-        editor.getSession().getDocument().setValue(text);
+        var fileName = '',
+            titleHead = document.getElementById('filename');
+
+        if (!editorCurrentFileToken) {
+
+            fileName = 'Untitled';
+
+        } else {
+
+            fileName = editorCurrentFileName;
+
+        }
+
+        return fileName;
 
     }
 
-    function setupAppBar() {
-        var cmdNew = document.getElementById('cmdNew'),
-            cmdUndo = document.getElementById('cmdUndo'),
-            cmdRedo = document.getElementById('cmdRedo'),
-            cmdSave = document.getElementById('cmdSave'),
-            cmdSaveAs = document.getElementById('cmdSaveAs'),
-            cmdSearch = document.getElementById('cmdSearch'),
-            cmdPin = document.getElementById('cmdPinFile'),
-            cmdFindNext = document.getElementById('cmdFindNext'),
-            cmdFindPrev = document.getElementById('cmdFindPrev'),
-            cmdReplace = document.getElementById('cmdReplace'),
-            cmdReplaceAll = document.getElementById('cmdReplaceAll'),
-            cmdCut = document.getElementById('cmdCut'),
-            cmdCopy = document.getElementById('cmdCopy'),
-            cmdPaste = document.getElementById('cmdPaste'),
-            inputSearchTerms = document.getElementById('searchTerms'),
-            inputReplaceTerms = document.getElementById('replaceTerms');
+    function setUnsaved () {
 
+        var titleHeader = document.getElementById('filename'),
+            backBtn = document.getElementById('backbutton');
+        titleHeader.style.fontStyle = 'italic';
+        hasEditorChanged = true;
 
-        cmdNew.addEventListener('click', cmdNewFile);
-        cmdSave.addEventListener('click', saveFile);
-        cmdSearch.addEventListener('click', openSearch);
-        cmdSaveAs.addEventListener('click', saveFileToLocation);
-        cmdUndo.addEventListener('click', doUndo);
-        cmdRedo.addEventListener('click', doRedo);
-        cmdFindNext.addEventListener('click', findNext);
-        cmdFindPrev.addEventListener('click', findPrev);
-        cmdReplace.addEventListener('click', replace);
-        cmdReplaceAll.addEventListener('click', replaceAll);
-        cmdCopy.addEventListener('click', doCopy);
-        cmdCut.addEventListener('click', doCut);
-        cmdPaste.addEventListener('click', doPaste);
-        searchTerms.addEventListener('keydown', function (e) {
-
-            if (e.key == 'Enter') {
-
-                findNext();
-                e.preventDefault();
-            }
+        editorSession.removeEventListener('change', setUnsaved);
             
-        });
-        inputReplaceTerms.addEventListener('keydown', function (e) {
+        backBtn.addEventListener('click', unsavedFilePrompt);
 
-            if (e.key == 'Enter') {
+    }
+    // 
+    function setSaved () {
 
-                replace();
-                e.preventDefault();
-            }
+        var titleHeader = document.getElementById('filename'),
+            backBtn = document.getElementById('backbutton');
             
-    });
+        titleHeader.style.fontStyle = 'normal';
+        hasEditorChanged = false;
+
+        editorSession.addEventListener('change', setUnsaved);
+            
+        backBtn.removeEventListener('click', unsavedFilePrompt);
+
+    }
+    // 
+    function saveFile () {
+            
+        saveFileContents(editor.getSession().getDocument().getValue());
+        dismissAppBar();
+
     }
 
-    function findNext() {
+    function saveFileContents (contents) {
 
-        var searchTerms = document.getElementById('searchTerms').value,
-            options = {};
-        
-        options.needle = searchTerms;
-        options.backwards = false;
+        var fileToken = editorCurrentFileToken;
 
-        if (searchTerms && searchTerms.length > 0) {
+        if (fileToken) {
 
-            editor.find(searchTerms, options, true);
+            Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(fileToken).done(
+                function (retrievedFile) {
+
+                    Windows.Storage.FileIO.writeTextAsync(retrievedFile, contents).then(function () {
+
+                        console.log("Saved.");
+                        setSaved();
+
+                    });
+
+                },
+                function (error) {
+                    // Handle errors 
+
+                }
+            );
+
+        } else {
+
+            saveFileToLocation();
 
         }
 
     }
 
-    function findPrev() {
-
-        var searchTerms = document.getElementById('searchTerms').value,
-            options = {};
-
-        options.needle = searchTerms;
-        options.backwards = true;
-        if (searchTerms && searchTerms.length > 0) {
-
-            editor.findPrevious(searchTerms, options, true);
-
-        }
-
-    }
-
-    function replace() {
-
-        var searchTerms = document.getElementById('searchTerms').value,
-            replaceTerms = document.getElementById('replaceTerms').value,
-            options = {};
-        
-        options.needle = searchTerms;
-
-        if (searchTerms && searchTerms.length > 0 && replaceTerms && replaceTerms.length > 0) {
-
-            editor.replace(replaceTerms, options);
-
-        }
-
-    }
-
-    function replaceAll() {
-
-        var searchTerms = document.getElementById('searchTerms').value,
-            replaceTerms = document.getElementById('replaceTerms').value,
-            options = {};
-
-        options.needle = searchTerms;
-        if (searchTerms && searchTerms.length > 0 && replaceTerms && replaceTerms.length > 0) {
-
-            editor.replaceAll(replaceTerms, options);
-
-        }
-
-    }
-
-    function cmdNewFile() {
-
+    function cmdNewFile () {
         // TODO: Unsaved changes
 
         editorCurrentFileToken = null;
@@ -403,8 +619,49 @@ var editor,
         setFileName('Untitled');
         //document.getElementById("filename").innerHTML = 'Untitled';
         dismissAppBar();
+            
+    }
+
+    function openSearch () {
+
+        var searchBar = document.getElementById('searchBar').winControl;
+        searchBar.disabled = false;
+        hideAppBar();
+        searchBar.onafterhide = hideSearch;
+        searchBar.show();
 
     }
+    // Hides the search app bar
+    function hideSearch () {
+
+        var searchBar = document.getElementById('searchBar').winControl,
+            appBar = document.getElementById('appBar').winControl;
+        searchBar.disabled = true;
+        appBar.disabled = false;
+        
+    }
+    //
+    function hideAppBar () {
+
+        var appBar = document.getElementById("appBar").winControl;
+        appBar.disabled = true;
+    }
+    //
+    function dismissAppBar () {
+
+        var appBar = document.getElementById("appBar").winControl;
+        appBar.hide();
+
+    }
+    // 
+    function showAppBar () {
+
+        var appBar = document.getElementById("appBar").winControl;
+        appBar.disabled = false;
+        appBar.show();
+
+    }
+    //
 
     function doUndo() {
         
@@ -415,13 +672,6 @@ var editor,
     function doRedo() {
 
         editor.redo();
-
-    }
-
-    function saveFile() {
-
-        saveFileContents(editor.getSession().getDocument().getValue());
-        dismissAppBar();
 
     }
 
@@ -462,37 +712,6 @@ var editor,
     // File Management Functions
     //
     //
-
-    function getFileName() {
-
-        var fileName = '',
-            titleHead = document.getElementById('filename');
-
-        if (!editorCurrentFileToken) {
-
-            fileName = 'Untitled';
-
-        } else {
-
-            fileName = editorCurrentFileName;
-
-        }
-
-        return fileName;
-
-    }
-
-    function setFileName(name) {
-
-        if (name != editorCurrentFileName) {
-            console.log("Current name: " + editorCurrentFileName + " new name: " + name);
-            detectEditorModeFromExtension(name);
-
-        }
-
-        editorCurrentFileName = name;
-        document.getElementById('filename').innerHTML = name;
-    }
 
 
     function hideFileNameInput() {
@@ -546,11 +765,12 @@ var editor,
         
     }
 
+
     function saveFileToLocation() {
 
         var filenameInput = document.getElementById('filename'),
             contents = editor.getSession().getDocument().getValue();
-        
+
 
         // Verify that we are currently not snapped, or that we can unsnap to open the picker
         var currentState = Windows.UI.ViewManagement.ApplicationView.value;
@@ -567,25 +787,24 @@ var editor,
         savePicker.fileTypeChoices.insert(".txt", [".txt"]);
         savePicker.fileTypeChoices.insert(".c", [".c"]);
         savePicker.fileTypeChoices.insert(".cs", [".cs"]);
-        savePicker.fileTypeChoices.insert(".h", [".h"]);
-        savePicker.fileTypeChoices.insert(".cpp", [".cpp"]);
-        savePicker.fileTypeChoices.insert(".html", [".html"]);
         savePicker.fileTypeChoices.insert(".css", [".css"]);
-        savePicker.fileTypeChoices.insert(".js", [".js"]);
-        savePicker.fileTypeChoices.insert(".md", [".md"]);
+        savePicker.fileTypeChoices.insert(".cpp", [".cpp"]);
+        savePicker.fileTypeChoices.insert(".h", [".h"]);
+        savePicker.fileTypeChoices.insert(".html", [".html"]);
         savePicker.fileTypeChoices.insert(".java", [".java"]);
         savePicker.fileTypeChoices.insert(".js", [".js"]);
-        savePicker.fileTypeChoices.insert(".jsp", [".jsp"]);
         savePicker.fileTypeChoices.insert(".json", [".json"]);
+        savePicker.fileTypeChoices.insert(".jsp", [".jsp"]);
+        savePicker.fileTypeChoices.insert(".md", [".md"]);
         savePicker.fileTypeChoices.insert(".sql", [".sql"]);
-        savePicker.fileTypeChoices.insert(".psql", [".psql"]);
         savePicker.fileTypeChoices.insert(".php", [".php"]);
         savePicker.fileTypeChoices.insert(".pl", [".pl"]);
+        savePicker.fileTypeChoices.insert(".ps1", [".ps1"]);
+        savePicker.fileTypeChoices.insert(".psql", [".psql"]);
         savePicker.fileTypeChoices.insert(".py", [".py"]);
         savePicker.fileTypeChoices.insert(".rb", [".rb"]);
-
         savePicker.fileTypeChoices.insert(".xml", [".xml"]);
-        
+
         savePicker.suggestedFileName = getFileName();
 
         savePicker.pickSaveFileAsync().then(function (file) {
@@ -609,252 +828,45 @@ var editor,
             }
 
         });
-                    
+
     }
 
-    /*function documentChanged() {
+    // 
+    // Generate the dialog for attempting to navigate away from the page while the document is unsaved
+    // 
+    function unsavedFilePrompt () {
+        // Create the message dialog and set its content
 
-        setUnsaved();
+        var msg = new Windows.UI.Popups.MessageDialog("Do you want to save changes to " + editorCurrentFileName + "?", "Unsaved Changes"),
+            that = this;
 
-        editorSession.removeEventListener('change', documentChanged);
+        // Add commands and set their CommandIds
+        msg.commands.append(new Windows.UI.Popups.UICommand("Save", function () {
 
+            saveFileContents(editorSession.getDocument().getValue());
 
-    }*/
+        }, 1));
 
-    function setSaved() {
-
-        var titleHeader = document.getElementById('filename'),
-            backButton = document.querySelector("header[role=banner] .win-backbutton");
-        //backButton.removeAttribute("disabled");
-        titleHeader.style.fontStyle = 'normal';
-        hasEditorChanged = false;
-
-        editorSession.addEventListener('change', setUnsaved);
-        var backBtn = document.getElementById('backbutton');
-        backBtn.addEventListener('click', function () {
-            console.log("WHAT?!");
-            unsavedFilePrompt();
-        });
-    }
-
-    function setUnsaved() {
-
-        var titleHeader = document.getElementById('filename');
-        titleHeader.style.fontStyle = 'italic';
-        hasEditorChanged = true;
-        editorSession.removeEventListener('change', setUnsaved);
-
-        var backBtn = document.getElementById('backbutton');
-        backBtn.removeEventListener('click', unsavedFilePrompt);
-        //var backButton = document.querySelector("header[role=banner] .win-backbutton");
-        //backButton.setAttribute("disabled", "disabled");
-    }
-
-    function dataRequested(e) {
-        var request = e.request;
-       
-        try {
-
-            var dataPackageTitle = getFileName();
-            request.data.properties.title = dataPackageTitle;
-            request.data.setText(editorSession.getDocument().getValue());
-
-        } catch (e) {
-
-            request.failWithDisplayText("There's no text to share in the document.");
-
-        }
-        
-    }
-
-    function loadFromToken(fileToken) {
-
-        editorCurrentFileToken = fileToken;
-        
-        // Configure and prepare the editor to receive the file's content
-        configureEditorFromSettings();
-
-        Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(fileToken).then(function (retrievedFile) {
-
-            setFileName(retrievedFile.name);
-            
-            //return retrievedFile.openAsync(Windows.Storage.FileAccessMode.read);
-            return Windows.Storage.FileIO.readBufferAsync(retrievedFile);
-
-        }).then(function (buffer) {
-
-            var dataReader = Windows.Storage.Streams.DataReader.fromBuffer(buffer),
-                array = new Array(buffer.length),
-                output = dataReader.readBytes(array),
-                x;
-
-            dataReader.close();
-
-            for (x = 0; x < array.length; x++) {
-
-                array[x] = String.fromCharCode(array[x]);
-
-            }
-
-            // Cut off the characters: ï»¿
-            if (array[0] == "ï" || array[1] == "»" || array[2] == "¿") {
-
-                array.splice(0, 3);
-
-            }
-
-            editor.getSession().getDocument().setValue(array.join(''));
-            
-            return WinJS.Promise.timeout(1200);
-
-        }).then(function (complete) {
-
-            configureEditorFromSettings();
-
-            detectEditorModeFromExtension(getFileName());
-
-            //editor.getSession().getDocument().setValue(contents);
-            editor.navigateTo(0, 0);
+        msg.commands.append(new Windows.UI.Popups.UICommand("Don't Save", function () {
+                
             setSaved();
+            // Set the saved flag, even though we don't save the file's content
+            WinJS.Navigation.back();
 
-        });
+        }, 2));
 
+        msg.commands.append(new Windows.UI.Popups.UICommand("Cancel", function () {
 
-    }
+            // Do nothing, just cancel
 
-
-    function saveFileContents(contents) {
-
-        var fileToken = editorCurrentFileToken;
-
-        if (fileToken) {
-
-            //console.log("Saving file...");
-            //editorSession.removeEventListener("change");
-
-            Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(fileToken).done(function (retrievedFile) {
-                // Process retrieved file
-
-                Windows.Storage.FileIO.writeTextAsync(retrievedFile, contents).then(function () {
-
-                    console.log("Saved.");
-                    setSaved();
-
-                });
-
-            },
-                function (error) {
-                    // Handle errors 
-
-                }
-            );
-
-        } else {
-
-            saveFileToLocation();
-
-
-        }
-
-    }
-
-    function configureEditorFromSettings() {
-        var editor = ace.edit("editor"),
-            editorSession = editor.getSession(),
-            settings = Windows.Storage.ApplicationData.current.localSettings.values;
-        
-        //console.log(editor);
-        settings['fontSize'] = settings['fontSize'] || 12;
-        settings['highlightActiveLine'] = (settings['highlightActiveLine'] === undefined ? false : settings['highlightActiveLine']);
-        settings['showInvisibleCharacters'] = (settings['showInvisibleCharacters'] === undefined ? false : settings['showInvisibleCharacters']);
-        settings['theme'] = settings['theme'] || 'ace/theme/textmate';
-        settings['mode'] = settings['mode'] || 'ace/mode/text';
-        settings['useHardTabs'] = (settings['useHardTabs'] === undefined ? true : settings['useHardTabs']);
-        settings['showIndentGuides'] = (settings['showIndentGuides'] === undefined ? true : settings['showIndentGuides']);
-        settings['showGutter'] = (settings['showGutter'] === undefined ? true : settings['showGutter']);
-        settings['showPrintMargin'] = (settings['showPrintMargin'] === undefined ? true : settings['showPrintMargin']);
-
-
-        editorSession.setMode(settings['mode']);
-        editor.setTheme(settings['theme']);
-        
-        var gutter = document.querySelector('.ace_gutter-layer');
-
-        if (settings['showGutter']) {
-
-            gutter.style.display = 'inherit';
-
-        } else {
-
-            gutter.style.display = 'none';
-
-        }
-        
-        
-
-        //setTimeout(function () {
+        }, 3));
             
-        //}, 2000);
-        
-        //console.log('Settings mode: ' + settings['mode'] + ' Theme: ' + settings['theme']);
-        document.getElementById('editor').style.fontSize = settings['fontSize'] + 'px';
-        
-        
-        editorSession.setUseWrapMode(true);
-        editorSession.setTabSize(4);
-        editorSession.setUseSoftTabs(settings['useHardTabs']);
+        // Set the command that will be invoked by default (Cancel)
+        msg.defaultCommandIndex = 3;
 
-        editor.setHighlightActiveLine(settings['highlightActiveLine']);
-        editor.setShowInvisibles(settings['showInvisibleCharacters']);
-        editor.setShowPrintMargin(settings['showPrintMargin']);
-        editor.setTheme(settings['theme']);
-        editorSession.setMode('ace/mode/text');
-        editorSession.setMode(settings['mode']);
-        
+        // Show the message dialog
+        msg.showAsync();
 
     }
 
-
-    
 })();
-
-//
-function openSearch () {
-
-    var searchBar = document.getElementById('searchBar').winControl;
-    searchBar.disabled = false;
-    hideAppBar();
-    searchBar.onafterhide = hideSearch;
-    searchBar.show();
-
-}
-// Hides the search app bar
-function hideSearch () {
-
-    var searchBar = document.getElementById('searchBar').winControl,
-        appBar = document.getElementById('appBar').winControl;
-    searchBar.disabled = true;
-    appBar.disabled = false;
-
-}
-
-function hideAppBar() {
-
-    var appBar = document.getElementById("appBar").winControl;
-    appBar.disabled = true;
-}
-
-function dismissAppBar() {
-
-    var appBar = document.getElementById("appBar").winControl;
-    appBar.hide();
-
-}
-
-function showAppBar() {
-
-    var appBar = document.getElementById("appBar").winControl;
-    appBar.disabled = false;
-    appBar.show();
-
-}

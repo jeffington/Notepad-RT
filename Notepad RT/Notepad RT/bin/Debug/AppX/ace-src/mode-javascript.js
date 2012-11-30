@@ -37,7 +37,7 @@ var Tokenizer = require("../tokenizer").Tokenizer;
 var JavaScriptHighlightRules = require("./javascript_highlight_rules").JavaScriptHighlightRules;
 var MatchingBraceOutdent = require("./matching_brace_outdent").MatchingBraceOutdent;
 var Range = require("../range").Range;
-var WorkerClient = require("../worker/worker_client").WorkerClient;
+//var WorkerClient = require("../worker/worker_client").WorkerClient;
 var CstyleBehaviour = require("./behaviour/cstyle").CstyleBehaviour;
 var CStyleFoldMode = require("./folding/cstyle").FoldMode;
 
@@ -120,7 +120,7 @@ oop.inherits(Mode, TextMode);
         this.$outdent.autoOutdent(doc, row);
     };
     
-    this.createWorker = function(session) {
+    /*this.createWorker = function(session) {
         var worker = new WorkerClient(["ace"], "ace/mode/javascript_worker", "JavaScriptWorker");
         worker.attachToDocument(session.getDocument());
             
@@ -149,6 +149,9 @@ oop.inherits(Mode, TextMode);
         });
         
         return worker;
+    };/* We're getting rid of workers and the version of Ace I have does not implement editorSession.setUseWorkers(boolean) */
+    this.createWorker = function (session) {
+        return null;
     };
 
 }).call(Mode.prototype);

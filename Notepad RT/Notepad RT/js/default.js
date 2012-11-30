@@ -20,13 +20,16 @@
 
                 // TODO: This application has been newly launched. Initialize
                 // your application here.
-                WinJS.UI.processAll();
-                WinJS.Application.start();
+                //WinJS.UI.processAll();
+                //WinJS.Application.start();
 
 
             } else {
                 // TODO: This application has been reactivated from suspension.
                 // Restore application state here.
+
+
+
             }
             
             //WinJS.Application.addEventListener('onsettingschanged', );
@@ -83,6 +86,14 @@
 
     };
 
+    function onThemeChanged() {
+
+        // TODO:
+        // Code to switch from light-ui.css to dark-ui.css
+
+
+    }
+
     app.onsettings = function (e) {
         e.detail.applicationcommands = {
             "defaultsDiv": { href: "/html/DefaultsUI.html", title: "Editor" },
@@ -99,15 +110,39 @@
         // saved and restored across suspension. If you need to complete an
         // asynchronous operation before your application is suspended, call
         // args.setPromise().
-        /*var sessionInfo = {
-            '': 
-
-        };
-        WinJS.Application.sessionState = sessionInfo;
-        window.localStorage*/
         
+        var session = app.sessionState;
+        session.editorCurrentFileToken = editorCurrentFileToken;
+        session.editorCurrentFileName = editorCurrentFileName;
+        session.hasEditorChanged = hasEditorChanged;
+        session.tempFileName = session.editorCurrentFileName + ' ' + new Date().getTime();
+        var fileContent = editorSession.getDocument().getValue();
+        
+        Windows.Storage.ApplicationData.current;
+        var temporaryFolder = applicationData.temporaryFolder
+                
+        editorCurrentFileToken = null;
+        editorCurrentFilename = null;
+        if (editor) {
+
+            editor.destroy();
+            editor = null;
+
+        }
+
         // TODO: sessionState will already contain the following: editorCurrentFileToken, editorCurrentFileName, hasEditorChanged
         // We should check if hasEditorChanged is true and ONLY if it's true, write the text to a temporary file
+
+        if (session.hasEditorChanged) {
+            
+            args.setPromise(temporaryFolder.createFileAsync(session.tempFileName, Windows.Storage.CreationCollisionOption.replaceExisting).then(
+                function (file) {
+
+                    return Windows.Storage.FileIO.writeTextAsync(file, fileContent);
+
+                })
+            );
+        }
 
     };
 

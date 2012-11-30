@@ -27,10 +27,10 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * ***** END LICENSE BLOCK ***** */
-define('ace/mode/xquery', ['require', 'exports', 'module' , 'ace/worker/worker_client', 'ace/lib/oop', 'ace/mode/text', 'ace/tokenizer', 'ace/mode/xquery_highlight_rules', 'ace/mode/behaviour/xquery', 'ace/range'], function(require, exports, module) {
+define('ace/mode/xquery', ['require', 'exports', 'module' , /*'ace/worker/worker_client',*/ 'ace/lib/oop', 'ace/mode/text', 'ace/tokenizer', 'ace/mode/xquery_highlight_rules', 'ace/mode/behaviour/xquery', 'ace/range'], function(require, exports, module) {
 
 
-var WorkerClient = require("../worker/worker_client").WorkerClient;
+//var WorkerClient = require("../worker/worker_client").WorkerClient;
 var oop = require("../lib/oop");
 var TextMode = require("./text").Mode;
 var Tokenizer = require("../tokenizer").Tokenizer;
@@ -110,7 +110,7 @@ oop.inherits(Mode, TextMode);
         }
     };
     
-    this.createWorker = function(session) {
+    /*this.createWorker = function(session) {
         this.$deltas = [];
         var worker = new WorkerClient(["ace"], "ace/mode/xquery_worker", "XQueryWorker");
         var that = this;
@@ -186,6 +186,9 @@ oop.inherits(Mode, TextMode);
         });
         
         return worker;
+    };/* Disabling workers for JSON */
+    this.createWorker = function (session) {
+        return null;
     };
     
 }).call(Mode.prototype);

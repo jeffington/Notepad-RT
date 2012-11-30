@@ -20,8 +20,8 @@
 
                 // TODO: This application has been newly launched. Initialize
                 // your application here.
-                WinJS.UI.processAll();
-                WinJS.Application.start();
+                //WinJS.UI.processAll();
+                //WinJS.Application.start();
 
 
             } else {
@@ -82,6 +82,14 @@
         }
 
     };
+
+    function onThemeChanged() {
+
+        // TODO:
+        // Code to switch from light-ui.css to dark-ui.css
+
+
+    }
 
     app.onsettings = function (e) {
         e.detail.applicationcommands = {

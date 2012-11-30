@@ -16,13 +16,13 @@
     <AppXManifest Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-11-21T23:57:12.188</Modified>
+      <Modified>2012-11-28T09:58:23.340</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\default.html">
       <PackagePath>default.html</PackagePath>
-      <Modified>2012-11-21T22:41:57.463</Modified>
+      <Modified>2012-11-30T00:32:12.375</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\html\DefaultsUI.html">
       <PackagePath>html\DefaultsUI.html</PackagePath>
@@ -38,7 +38,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorPage.html">
       <PackagePath>pages\editor\editorPage.html</PackagePath>
-      <Modified>2012-11-24T04:29:08.860</Modified>
+      <Modified>2012-11-30T00:33:53.810</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\home\homePage.html">
       <PackagePath>pages\home\homePage.html</PackagePath>
@@ -75,11 +75,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\default.js">
       <PackagePath>js\default.js</PackagePath>
-      <Modified>2012-11-27T03:09:40.309</Modified>
+      <Modified>2012-11-30T01:46:45.490</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\ace.js">
       <PackagePath>ace-src\ace.js</PackagePath>
-      <Modified>2012-11-27T07:36:00.258</Modified>
+      <Modified>2012-11-30T03:24:35.353</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\keybinding-emacs.js">
       <PackagePath>ace-src\keybinding-emacs.js</PackagePath>
@@ -111,7 +111,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-css.js">
       <PackagePath>ace-src\mode-css.js</PackagePath>
-      <Modified>2012-11-06T04:28:05.380</Modified>
+      <Modified>2012-11-30T02:16:28.763</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-c_cpp.js">
       <PackagePath>ace-src\mode-c_cpp.js</PackagePath>
@@ -151,11 +151,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-javascript.js">
       <PackagePath>ace-src\mode-javascript.js</PackagePath>
-      <Modified>2012-11-06T04:28:05.517</Modified>
+      <Modified>2012-11-30T02:17:21.634</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-json.js">
       <PackagePath>ace-src\mode-json.js</PackagePath>
-      <Modified>2012-11-06T04:28:05.531</Modified>
+      <Modified>2012-11-30T02:19:01.180</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-jsp.js">
       <PackagePath>ace-src\mode-jsp.js</PackagePath>
@@ -259,7 +259,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-xquery.js">
       <PackagePath>ace-src\mode-xquery.js</PackagePath>
-      <Modified>2012-11-06T04:28:06.073</Modified>
+      <Modified>2012-11-30T02:20:16.508</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-yaml.js">
       <PackagePath>ace-src\mode-yaml.js</PackagePath>
@@ -401,25 +401,13 @@
       <PackagePath>js\navigator.js</PackagePath>
       <Modified>2012-11-24T05:21:54.486</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\readFile.js">
-      <PackagePath>js\readFile.js</PackagePath>
-      <Modified>2012-11-06T05:07:50.781</Modified>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\recentFilesList.js">
       <PackagePath>js\recentFilesList.js</PackagePath>
-      <Modified>2012-11-24T08:22:14.377</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\saveFile.js">
-      <PackagePath>js\saveFile.js</PackagePath>
-      <Modified>2012-11-06T05:07:50.785</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\settings.js">
-      <PackagePath>js\settings.js</PackagePath>
-      <Modified>2012-11-09T20:49:59.159</Modified>
+      <Modified>2012-11-30T01:05:08.592</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorPage.js">
       <PackagePath>pages\editor\editorPage.js</PackagePath>
-      <Modified>2012-11-27T07:57:12.531</Modified>
+      <Modified>2012-11-30T02:41:41.506</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorSettingsPage.js">
       <PackagePath>pages\editor\editorSettingsPage.js</PackagePath>
@@ -427,15 +415,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\home\homePage.js">
       <PackagePath>pages\home\homePage.js</PackagePath>
-      <Modified>2012-11-24T06:15:49.079</Modified>
+      <Modified>2012-11-30T03:19:08.412</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\css\default.css">
       <PackagePath>css\default.css</PackagePath>
-      <Modified>2012-11-24T05:17:18.034</Modified>
+      <Modified>2012-11-28T08:06:23.122</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2012-11-21T23:57:11.029</Modified>
+      <Modified>2012-11-28T09:58:20.994</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

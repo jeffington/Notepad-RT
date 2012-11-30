@@ -3709,7 +3709,7 @@ var TextInput = function(parentNode, host) {
         }
     });
     // TODO: This is where the suspended problem is
-    if ("onbeforecopy" in text && typeof clipboardData !== "undefined") {
+    /*if ("onbeforecopy" in text && typeof clipboardData !== "undefined") {
         event.addListener(text, "beforecopy", function(e) {
             if (tempStyle)
                 return; // without this text is copied when contextmenu is shown
@@ -3731,7 +3731,7 @@ var TextInput = function(parentNode, host) {
         });
         event.addListener(text, "cut", onCut); // for ie9 context menu
     }
-    /*else if (useragent.isOpera && !("KeyboardEvent" in window)) {
+    else if (useragent.isOpera && !("KeyboardEvent" in window)) {
         event.addListener(parentNode, "keydown", function(e) {
             if ((useragent.isMac && !e.metaKey) || !e.ctrlKey)
                 return;
@@ -3746,11 +3746,11 @@ var TextInput = function(parentNode, host) {
                 }
             }
         });
-    }*/
-    else {
+    }/* Commented this code out because it was giving me problems when suspended. */
+    //else {
         event.addListener(text, "copy", onCopy);
         event.addListener(text, "cut", onCut);
-    }
+    //}
 
     event.addListener(text, "compositionstart", onCompositionStart);
     /*if (useragent.isGecko) {
@@ -10998,16 +10998,50 @@ define('ace/commands/default_commands', ['require', 'exports', 'module' , 'ace/l
     bindKey: bindKey("Ctrl-Shift-K", "Command-Shift-G"),
     exec: function(editor) { editor.findPrevious(); },
     readOnly: true
-},{
-    name: "find",
-    bindKey: bindKey("Ctrl-F", "Command-F"),
+},
+// This is where I added some key commands -J
+{
+    name: 'newfile',
+    bindKey: bindKey('Ctrl-N'),
+    exec: function (editor) {
+
+        WinJS.Application.queueEvent({ type: 'Ctrl-N' });
+
+    },
+    readOnly: true
+},
+{
+    name: 'find',
+    bindKey: bindKey('Ctrl-F', 'Command-F'),
     exec: function(editor) {
         
-        openSearch();
+        WinJS.Application.queueEvent({ type: 'Ctrl-F' });
         
     },
     readOnly: true
-}, {
+},
+{
+    name: 'saveFile',
+    bindKey: bindKey('Ctrl-S'),
+    exec: function (editor) {
+
+        WinJS.Application.queueEvent({ type: 'Ctrl-S' });
+
+    },
+    readOnly: true
+},
+{
+    name: 'saveFileAs',
+    bindKey: bindKey('Ctrl-Shift-S'),
+    exec: function (editor) {
+
+        WinJS.Application.queueEvent({ type: 'Ctrl-Shift-S' });
+
+    },
+    readOnly: true
+},
+//
+{
     name: "overwrite",
     bindKey: "Insert",
     exec: function(editor) { editor.toggleOverwrite(); },
