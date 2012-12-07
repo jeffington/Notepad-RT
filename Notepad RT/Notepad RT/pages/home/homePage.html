@@ -32,24 +32,31 @@
                     </li>
                 </ul>
 <!-- List Header template -->
-<div id="groupTemplate" data-win-control="WinJS.Binding.Template" style="display: none;">
+<div id="groupHeaderTemplate" data-win-control="WinJS.Binding.Template" style="display: none;">
     <div class="simpleHeaderItem">
-        <h1 data-win-bind="innerText: groupTitle"></h1>
+        <h1 class="groupHeaderTemplateTitle" data-win-bind="innerText: groupTitle"></h1>
+        <h6 class="groupHeaderTemplateDetails" data-win-bind="innerText: groupDetails"></h6>
     </div>
 </div>
 <!-- Item template -->
 <div id="imageTextListFileTemplate" 
      data-win-control="WinJS.Binding.Template">
-    <div style="width: 250px; height: 55px; padding: 10px;">
-        <img class="mediumListIconTextItem-Image" style="margin-right: 10px;" data-win-bind="src: icon"/>
-        <div style="display: inline-block; ">
-            <h4 data-win-bind="innerText: title"></h4>
-            
-            <h6 data-win-bind="innerText: textType"></h6>
-        </div>
+  <div class="imageTextListFile">
+    <img class="imageTextListFileImage" data-win-bind="src: icon"/>
+    <div class="imageTextListFileTextArea">
+      <h3 class="imageTextListFileTextName" 
+          data-win-bind="innerText: title">        
+      </h3>
+      <h6 class="imageTextListFileTextDate" 
+          data-win-bind="innerText: textType">
+      </h6>
+      <h6 class="imageTextListFileTextSize" 
+          data-win-bind="innerText: size">        
+      </h6>
     </div>
+  </div>
 </div>
-<div id="mediumListIconTextTemplate" data-win-control="WinJS.Binding.Template">
+<!--<div id="mediumListIconTextTemplate" data-win-control="WinJS.Binding.Template">
             <div class="mediumListIconTextItem">
                 <img src="#" class="mediumListIconTextItem-Image" data-win-bind="src: icon" />
                 <div class="mediumListIconTextItem-Detail">
@@ -58,7 +65,7 @@
                 </div>
             </div>
         </div>
-
+<!-- Old item template -->
             </section>
         </div>
     </body>

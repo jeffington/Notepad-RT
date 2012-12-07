@@ -18,9 +18,10 @@
             var newFileButton = document.getElementById('newfile');
             openFileButton.addEventListener('click', pickFile);
             newFileButton.addEventListener('click', launchEditor); // Pass them directory to editorPage.html with no arguments
-            
+            //WinJS.Promise.timeout(10, WinJS.Promise.as(initData));
+            //setTimeout(initData, 100);
             initData();
-            
+
         }
     });
 
@@ -54,6 +55,7 @@ function launchEditor() {
 
 function pickFile() {
 
+    
     var currentState = Windows.UI.ViewManagement.ApplicationView.value;
     if (currentState === Windows.UI.ViewManagement.ApplicationViewState.snapped &&
         !Windows.UI.ViewManagement.ApplicationView.tryUnsnap()) {
@@ -69,16 +71,41 @@ function pickFile() {
 
     // Open the picker for the user to pick a file
     openPicker.pickSingleFileAsync().then(function (file) {
-        var token;
+        var token,
+            fileInfo,
+            sessionFileList = WinJS.Application.sessionState.files;
         
         if (file) {
-            console.log(file.contentType);
+            //console.log(file.contentType);
             
             if (file.contentType.match('text/') || file.contentType.length === 0) {
                 // Application now has read/write access to the picked file(s)
 
                 token = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, file.name);
                 Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.add(file);
+
+                fileInfo = {
+                    icon: "images/filelogo.png",
+                    title: file.name,
+                    textType: file.displayType,
+                    size: "",
+                    kind: "R"
+                };
+
+                if (!sessionFileList) {
+
+                    WinJS.Application.sessionState.files = [fileInfo];
+
+                } else {
+
+                    sessionFileList.push(fileInfo);
+
+                }
+                //WinJS.Application.sessionState.files
+                //sessionState.hasEditorChanged = false;
+                //sessionState.editorCurrentFileToken = token;
+                //sessionState.editorCurrentFileName = file.name;
+
                 WinJS.Navigation.navigate("/pages/editor/editorPage.html", { filetoken: token });
 
             } else {

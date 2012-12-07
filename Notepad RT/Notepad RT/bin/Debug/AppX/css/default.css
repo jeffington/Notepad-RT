@@ -3,6 +3,75 @@
     color: black;
 }
 
+.groupHeaderTemplateTitle {
+    display: -ms-grid;
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    text-overflow: ellipsis;
+}
+/*        <h6 class="groupHeaderTemplateDetails
+
+/* overall list dimensions */
+#imageTextListFile {
+    width: 1366px;
+    height: 578px;
+}
+
+    /*-------------------------------------------------------------------------------------------*/
+    /* imageText-listFile - used in Picker list */
+    /*-------------------------------------------------------------------------------------------*/
+    /*starting margin */
+    #imageTextListFile .win-horizontal.win-viewport .win-surface {
+        margin: 0px 100px;
+    }
+
+    #imageTextListFile .win-horizontal.win-viewport .win-container {
+        margin: 5px 10px;
+    }
+
+/*individual item dimensions */
+.imageTextListFile {
+    display: -ms-grid;
+    width: 290px;
+    height: 60px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+    /* image */
+.imageTextListFile img.imageTextListFileImage {
+    -ms-grid-column: 1;
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+    .imageTextListFile .imageTextListFileTextArea {
+        -ms-grid-column: 2;
+        margin: 0px 5px 0px 5px;
+    }
+
+        /* text line 1 */
+        .imageTextListFile .imageTextListFileTextArea .imageTextListFileTextName {
+            width: 230px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        /* text line 2 */
+        .imageTextListFile .imageTextListFileTextArea .imageTextListFileTextDate {
+            width: 230px;
+            overflow: hidden;
+        }
+
+        /* text line 3 */
+        .imageTextListFile .imageTextListFileTextArea .imageTextListFileTextSize {
+            width: 230px;
+            overflow: hidden;
+        }
+
+
+
 /*
 Back button.
 */
@@ -32,7 +101,7 @@ Back button.
 }
 .win-backbutton:hover, .win-backbutton:hover:active {
     border-color: inherit;
-    background-color: #D2D2D2;
+    /*background-color: #D2D2D2;*/
 }
 .win-backbutton:disabled, .win-backbutton:disabled:active {
     visibility: inherit;
@@ -42,7 +111,7 @@ Back button.
     border-style: solid;
     border-color: inherit;
     border-radius: 50%;
-    background-color: #D2D2D2;
+    /*background-color: #D2D2D2;*/
 }
 .action::before {
     font-family: "Segoe UI Symbol";

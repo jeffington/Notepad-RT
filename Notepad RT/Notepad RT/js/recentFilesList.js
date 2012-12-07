@@ -2,88 +2,127 @@
 var recentFilesListView;
 
 
-var fileListHeaders = [{ key: "R", type: "Recent", firstItemIndex: 0 }, ],
-    files = [];
+var fileListHeaders = [{ key: "R", type: "Recent", firstItemIndex: 0 }, ];
+//    files = [];
 
+function populateSessionFileListFromMRU() {
 
+    var promiseArray = [],
+        fileInfo = [],
+        count = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.length,
+        //sessionFileList = WinJS.Application.sessionState.files,
+        entries = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries,
+        x;
 
-function initData() {
+    for (x = 0; x < count; x++) {
 
-    var promiseArray = [];
-    var fileInfo = [];
-
-    var count = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.length;
-
-    for (var x = 0; x < count; x++) {
-
-        promiseArray.push(
-            Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(
+        promiseArray[x] = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(
                 Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(x).token
-                ).then(
-                function (currentFile) {
-
-                    fileInfo[x] = {
-                        icon: "images/smallogo.png",
+                ).then(function (currentFile) {
+                    var y = fileInfo.length;
+                    fileInfo.push({
+                        icon: "images/filelogo.png",
                         title: "",
                         textType: "",
-                        kind: "R"
-                    };
+                        size: "",
+                        // sourceIcon: "",
+                        kind: "R",
+                        token: Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(y).token,
+                    });
+
 
                     if (currentFile) {
 
-                        fileInfo[x].title = currentFile.name;
-                        fileInfo[x].textType = currentFile.displayType;
+                        fileInfo[y].title = currentFile.name;
+                        fileInfo[y].textType = currentFile.displayType;
 
-                        return currentFile.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.documentsView);
+                        //return currentFile.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.documentsView);
+
                     }
 
                 }, function (error) { // Deleted or possibly corrupted file, get it out of here and don't add it to the list
-                    console.log('x: ' + x);
-                    //console.log(''+Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries[x].token);
+
                     //Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(x).token);
-                    console.log(error + ' Error retrieving file, removed it from the mostRecentlyUsedList.');
-                    fileInfo.splice(x, 1);
-                }).then(function (thumb) {
+                    console.log(error + ' Error retrieving file from the mostRecentlyUsedList at index ' + x + '.');
+                    //fileInfo.splice(x, 1);
+
+                });/*.then(function (thumb) {
 
                     if (thumb && fileInfo[x]) {
-                        console.log("Index: " + x + " " + (fileInfo ? JSON.stringify(fileInfo[x]) : "fileInfo is undefined"));
+
+                        console.log( "Index: " + x + " " + JSON.stringify(fileInfo[x]) );
                         fileInfo[x].icon = URL.createObjectURL(thumb, { oneTimeOnly: false });
 
                     }
 
+                });*/
 
-
-
-                })
-        );
     }
 
 
     WinJS.Promise.join(promiseArray).done(function () {
 
-        files = fileInfo;
-        recentFilesDataSource = new WinJS.Binding.List(files); //new flavorsDataSource(files);
-        groupDataSource = new desertsDataSource(fileListHeaders);// recentFilesDataSource.createGrouped(getGroupKey, getGroupData, compareGroups);//new desertsDataSource(fileListHeaders);//new WinJS.Binding.List(fileListHeaders);//recentFilesDataSource.createGrouped(getGroupKey, getGroupData, compareGroups);//new desertsDataSource(fileListHeaders);//new desertsDataSource(fileListHeaders);
-        
+        var sessionState = WinJS.Application.sessionState;
 
-        //console.log(groupDataSource.groups);
+        sessionState.files = fileInfo;
+        //console.log('WinJS.Application.sessionState.files 1: ' + sessionFileList);
+        if (recentFilesDataSource === undefined) {
+
+            recentFilesDataSource = new WinJS.Binding.List(sessionState.files || []);
+            //groupDataSource = recentFilesDataSource.createGrouped(getGroupKey, getGroupData, compareGroups);//new desertsDataSource(fileListHeaders);//new WinJS.Binding.List(fileListHeaders);//recentFilesDataSource.createGrouped(getGroupKey, getGroupData, compareGroups);//new desertsDataSource(fileListHeaders);//new desertsDataSource(fileListHeaders);
+        }
+
         recentFilesListView = new WinJS.UI.ListView(document.getElementById("filesListView"), {
             itemDataSource: recentFilesDataSource.dataSource,//recentFilesDataSource.dataSource,
-            //groupDataSource: groupDataSource,//.groupDataSource,//DataSource.dataSource,//groupDataSource.groups.dataSource,
+            //groupDataSource: groupDataSource.groups.dataSource,//groupDataSource,//.groupDataSource,//DataSource.dataSource,//groupDataSource.groups.dataSource,
             itemTemplate: document.getElementById("imageTextListFileTemplate"),
-            groupHeaderTemplate: document.getElementById("groupTemplate"),
+            groupHeaderTemplate: document.getElementById("groupHeaderTemplate"),
             layout: new WinJS.UI.GridLayout(),
             selectionMode: WinJS.UI.SelectionMode.single,
             oniteminvoked: recentFilesSelection,
             tapBehavior: WinJS.UI.TapBehavior.invokeOnly,
             swipeBehavior: 'none',
         });
+
+        //WinJS.UI.processAll();
+        //console.log("Should have set up the fucking ListView");
+        //WinJS.Binding.processAll();
         //recentFilesListView.forceLayout();
-        
+
+
     });
 
 }
 
+function initData() {
+    //var sessionFileList = WinJS.Application.sessionState.files;
+    // TODO: Need some logic here to determine whether or not the data changed
+
+    /*if (recentFilesDataSource !== undefined) {
+
+        // Set up the listView from the session data
+        console.log("We have the file info.");
+        recentFilesListView = new WinJS.UI.ListView(document.getElementById("filesListView"), {
+            itemDataSource: recentFilesDataSource.dataSource,//recentFilesDataSource.dataSource,
+            //groupDataSource: groupDataSource.groups.dataSource,//groupDataSource,//.groupDataSource,//DataSource.dataSource,//groupDataSource.groups.dataSource,
+            itemTemplate: document.getElementById("imageTextListFileTemplate"),
+            groupHeaderTemplate: document.getElementById("groupHeaderTemplate"),
+            layout: new WinJS.UI.GridLayout(),
+            selectionMode: WinJS.UI.SelectionMode.single,
+            oniteminvoked: recentFilesSelection,
+            tapBehavior: WinJS.UI.TapBehavior.invokeOnly,
+            swipeBehavior: 'none',
+        });
+
+    } else {
+    /* */
+        console.log("populating from session info");
+        populateSessionFileListFromMRU();
+
+    //}
+
+}
+/*
 // Sorts the groups by first letter
 function compareGroups(left, right) {
     return 0;//left.toUpperCase().charCodeAt(0) - right.toUpperCase().charCodeAt(0);
@@ -97,24 +136,30 @@ function getGroupKey(dataItem) {
 // Gets the data for a group
 function getGroupData(dataItem) {
     return {
-        groupDescription: dataItem.species + " group",
+        groupTitle: "Recent",
+        groupDetails: "7 items",
     };
 }
+/* This is left over from a previous attempt to create the group headers */
 
 function recentFilesSelection(event) {
 
     var recentFilesSelectionIndex = event.detail.itemIndex,
-        mruSize = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.size,
-        mruIndex = mruSize - recentFilesSelectionIndex - 1,
-        selectedFileToken;
+        sessionFileList = WinJS.Application.sessionState.files,
+        //mruSize = sessionFileList.length,//Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.size,
+        //mruIndex = mruSize - recentFilesSelectionIndex - 1,
+        selectedFileToken = sessionFileList[recentFilesSelectionIndex].token,
+        selectedFileName = sessionFileList[recentFilesSelectionIndex].title;
 
+    //console.log('Index: ' + recentFilesSelectionIndex + ' Name: ' + JSON.stringify(sessionFileList));
 
-    selectedFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(mruIndex).token;
+    //selectedFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(mruIndex).token;
     //Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.add(file);
-    WinJS.Navigation.navigate("/pages/editor/editorPage.html", { filetoken: selectedFileToken });
+
+    WinJS.Navigation.navigate("/pages/editor/editorPage.html", { filetoken: selectedFileToken, filename: selectedFileName });
 
 }
-
+/*
 var desertsDataAdapter = WinJS.Class.define(
     function (groupData) {
         // Constructor
@@ -224,3 +269,4 @@ var desertsDataAdapter = WinJS.Class.define(
 var desertsDataSource = WinJS.Class.derive(WinJS.UI.VirtualizedDataSource, function (data) {
     this._baseDataSourceConstructor(new desertsDataAdapter(data));
 });
+/* This is left over. */

@@ -5266,7 +5266,7 @@ var EditSession = function(text, mode) {
         return this.doc.getNewLineMode();
     };
 
-    this.$useWorker = true;
+    this.$useWorker = false;//true;
     this.setUseWorker = function(useWorker) {
         if (this.$useWorker == useWorker)
             return;
@@ -13807,6 +13807,7 @@ define("text!ace/css/editor.css", [], ".ace_editor {\n" +
   "    opacity: 1;\n" +
   "    border: solid lightgray 1px;\n" +
   "    margin: -1px\n" +
+  "    text-index: -9999px;\n" +
   "}\n" +
   "\n" +
   ".ace_layer {\n" +

@@ -15,6 +15,15 @@
                 this.editor = options.editor;
                 this._lastViewstate = appView.value;
 
+                //console.log("Navigation history:");
+
+                if (WinJS.Application.sessionState.navigationHistory && WinJS.Application.sessionState.navigationHistory.length > 0) {
+
+                    //console.log(JSON.stringify(WinJS.Application.sessionState.navigationHistory));
+                    nav.history.backStack = WinJS.Application.sessionState.navigationHistory;
+
+                }
+
                 nav.onnavigated = this._navigated.bind(this);
                 window.onresize = this._resized.bind(this);
 
@@ -94,7 +103,11 @@
                     this._lastNavigationPromise.cancel();
 
                     this._lastNavigationPromise = WinJS.Promise.timeout().then(function () {
+
+                        WinJS.Application.sessionState.lastUrl = args.detail.location;
+
                         return WinJS.UI.Pages.render(args.detail.location, newElement, args.detail.state, parented);
+
                     }).then(function parentElement(control) {
                         var oldElement = this.pageElement;
                         if (oldElement.winControl && oldElement.winControl.unload) {
@@ -127,7 +140,7 @@
                     if (backButton) {
                         backButton.onclick = function () {
 
-                            if (hasEditorChanged !== undefined && !hasEditorChanged) {
+                            if (WinJS.Application.sessionState.hasEditorChanged !== true) {
 
                                 nav.back();
 
@@ -136,10 +149,15 @@
                         };
 
                         if (nav.canGoBack) {
+
                             backButton.removeAttribute("disabled");
+
                         } else {
+
                             backButton.setAttribute("disabled", "disabled");
+
                         }
+
                     }
                 },
             }

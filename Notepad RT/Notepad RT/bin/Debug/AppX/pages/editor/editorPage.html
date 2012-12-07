@@ -16,7 +16,7 @@
         right: 0;
         bottom: 0;
         left: 0;
-        
+        font-family: monospace;
     }
     .ace_editor {
         /*
@@ -27,13 +27,16 @@
     }
     
     textarea {
-        text-indent: -9999px;
-        
+        -ms-overflow: hidden;
+        overflow: hidden;
+        text-indent: -9999px !important;
+        font-family: monospace !important;
         /* TODO: Need to get rid of that fucking flashing pixel. */
     }
 </style>
 </head>
 <body>
+    
     <header aria-label="Header content" role="banner">
         
         <h1 class="win-type-ellipsis" style="padding-left: 3%; padding-right: 3%;" >

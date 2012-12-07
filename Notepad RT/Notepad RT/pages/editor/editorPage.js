@@ -9,10 +9,10 @@
 /// <reference path="//Microsoft.WinJS.0.6/js/ui.js" />
 
 var editor,
-     editorSession,
-     editorCurrentFileToken = null,
-     editorCurrentFileName = null,
-     hasEditorChanged = false;
+     editorSession;
+     //editorCurrentFileToken = null,
+     //editorCurrentFileName = null,
+     //hasEditorChanged = false;
 
 (function () {
     "use strict";
@@ -97,7 +97,9 @@ var editor,
         ready: function (element, options) {
             
             var that = this;
+            var sessionState = WinJS.Application.sessionState;
 
+            
             editor = ace.edit("editor");
             editorSession = editor.getSession();
             this.configureEditorFromSettings();
@@ -117,13 +119,18 @@ var editor,
                 // Load from recent opened files
 
                 this.loadFromToken(options.filetoken);
+                //sessionState.editorCurrentFileToken = options.filetoken;
+                sessionState.editorCurrentFileName = options.filename;
+
 
             } else if (options && options.files) {
                 // Load from file from outside (like Explorer in Desktop)
 
-                var file = options.files[0];
-                editorCurrentFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, { name: file.name, dateCreated: file.dateCreated });
-                loadFromToken(editorCurrentFileToken);
+                var file = options.files[0],
+                    token = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, { name: file.name, dateCreated: file.dateCreated });
+                sessionState.editorCurrentFileName = file.name;
+                this.loadFromToken(token);
+
 
             } else if (options && options.shareData) {
                 // Load content being shared to this app
@@ -148,16 +155,26 @@ var editor,
 
                 }
 
+            } else if (sessionState && sessionState.editorCurrentFileToken && sessionState.editorCurrentFileName) {
+                
+                setFileName(sessionState.editorCurrentFileName);
+
+                this.loadFromToken(sessionState.editorCurrentFileToken);
+ 
             } else {
                 // Loaded with no options, i.e. New File
 
-                
                 WinJS.Promise.timeout(1200).then(function () {
+
                     that.configureEditorFromSettings();
+
                 });
+
             }
             
             
+            sessionState.hasEditorChanged = false;
+
             this.setupAppBar();
             
         },
@@ -179,8 +196,10 @@ var editor,
 
 //            }
             
-            editorCurrentFileToken = null;
-            editorCurrentFileName = null;
+            var sessionState = WinJS.Application.sessionState;
+
+            sessionState.editorCurrentFileToken = null;
+            sessionState.editorCurrentFileName = null;
             editor.destroy();
             editor = null;
 
@@ -289,8 +308,9 @@ var editor,
         // 
         loadFromToken: function (fileToken) {
 
-            var that = this;
-            editorCurrentFileToken = fileToken;
+            var sessionState = WinJS.Application.sessionState,
+                that = this;
+            sessionState.editorCurrentFileToken = fileToken;
         // this.editorCurrentFileToken = fileToken;
             // Configure and prepare the editor to receive the file's content
             this.configureEditorFromSettings();
@@ -336,7 +356,8 @@ var editor,
 
                 //editor.getSession().getDocument().setValue(contents);
                 //that.editor.navigateTo(0, 0);
-                editor.navigateTo(0, 0);
+                //editor.navigateTo(0, 0);
+                editor.navigateFileStart();
                 setSaved();
 
             });
@@ -350,7 +371,7 @@ var editor,
                 editorSession = editor.getSession(),
                 settings = Windows.Storage.ApplicationData.current.localSettings.values;
         
-            //console.log(editor);
+            
             settings['fontSize'] = settings['fontSize'] || 12;
             settings['highlightActiveLine'] = (settings['highlightActiveLine'] === undefined ? false : settings['highlightActiveLine']);
             settings['showInvisibleCharacters'] = (settings['showInvisibleCharacters'] === undefined ? false : settings['showInvisibleCharacters']);
@@ -361,7 +382,7 @@ var editor,
             settings['showGutter'] = (settings['showGutter'] === undefined ? true : settings['showGutter']);
             settings['showPrintMargin'] = (settings['showPrintMargin'] === undefined ? true : settings['showPrintMargin']);
 
-            //editorSession.setUseWorkers(false);
+            
             editorSession.setMode(settings['mode']);
             editor.setTheme(settings['theme']);
         
@@ -485,7 +506,7 @@ var editor,
             for (y = 0; y < numExtensions; y++) {
 
                 if (fileExtension == extensions[y]) {
-                    console.log("Detected mode: " + fileTypes[x].mode);
+                    //console.log("Detected mode: " + fileTypes[x].mode);
                     // If the extension matches, set the editor's mode
                     // Set the found flag to true so we can stop looking for a match
                     editorSession.setMode(fileTypes[x].mode);
@@ -515,14 +536,14 @@ var editor,
     }
 
     function setFileName (name) {
-
-        if (name != editorCurrentFileName) {
-            console.log("Current name: " + editorCurrentFileName + " new name: " + name);
+        var sessionState = WinJS.Application.sessionState;
+        if (name != sessionState.editorCurrentFileName) {
+            
             detectEditorModeFromExtension(name);
 
         }
 
-        editorCurrentFileName = name;
+        sessionState.editorCurrentFileName = name;
         document.getElementById('filename').innerHTML = name;
 
     }
@@ -530,15 +551,16 @@ var editor,
     function getFileName () {
 
         var fileName = '',
-            titleHead = document.getElementById('filename');
+            titleHead = document.getElementById('filename'),
+            sessionState = WinJS.Application.sessionState;
 
-        if (!editorCurrentFileToken) {
+        if (!sessionState.editorCurrentFileToken) {
 
             fileName = 'Untitled';
 
         } else {
 
-            fileName = editorCurrentFileName;
+            fileName = sessionState.editorCurrentFileName;
 
         }
 
@@ -549,9 +571,10 @@ var editor,
     function setUnsaved () {
 
         var titleHeader = document.getElementById('filename'),
-            backBtn = document.getElementById('backbutton');
+            backBtn = document.getElementById('backbutton'),
+            sessionState = WinJS.Application.sessionState;
         titleHeader.style.fontStyle = 'italic';
-        hasEditorChanged = true;
+        sessionState.hasEditorChanged = true;
 
         editorSession.removeEventListener('change', setUnsaved);
             
@@ -562,10 +585,11 @@ var editor,
     function setSaved () {
 
         var titleHeader = document.getElementById('filename'),
-            backBtn = document.getElementById('backbutton');
+            backBtn = document.getElementById('backbutton'),
+            sessionState = WinJS.Application.sessionState;
             
         titleHeader.style.fontStyle = 'normal';
-        hasEditorChanged = false;
+        sessionState.hasEditorChanged = false;
 
         editorSession.addEventListener('change', setUnsaved);
             
@@ -582,7 +606,8 @@ var editor,
 
     function saveFileContents (contents) {
 
-        var fileToken = editorCurrentFileToken;
+        var sessionState = WinJS.Application.sessionState,
+            fileToken = sessionState.editorCurrentFileToken;
 
         if (fileToken) {
 
@@ -737,8 +762,7 @@ var editor,
             });
 
         } else {
-            // Don't worry about it, just change the name and we'll use it later with the save dialog
-            //filenameTitle.innerHTML = titleVal;
+            
             //console.log("HERE");
             setFileName(titleVal);
 
@@ -769,7 +793,8 @@ var editor,
     function saveFileToLocation() {
 
         var filenameInput = document.getElementById('filename'),
-            contents = editor.getSession().getDocument().getValue();
+            contents = editor.getSession().getDocument().getValue(),
+            sessionState = WinJS.Application.sessionState;
 
 
         // Verify that we are currently not snapped, or that we can unsnap to open the picker
@@ -836,8 +861,8 @@ var editor,
     // 
     function unsavedFilePrompt () {
         // Create the message dialog and set its content
-
-        var msg = new Windows.UI.Popups.MessageDialog("Do you want to save changes to " + editorCurrentFileName + "?", "Unsaved Changes"),
+        var sessionState = WinJS.Application.sessionState,
+            msg = new Windows.UI.Popups.MessageDialog("Do you want to save changes to " + sessionState.editorCurrentFileName + "?", "Unsaved Changes"),
             that = this;
 
         // Add commands and set their CommandIds
