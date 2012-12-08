@@ -21,6 +21,9 @@
             themeElem.value = settings['theme'];
             highlightActiveLineElem.checked = settings['highlightActiveLine'];
             showInvisibleCharactersElem.checked = settings['showInvisibleCharacters'];
+            showGutter.checked = settings['showGutter'];
+
+
             //useHardTabsElem.checked = settings['useHardTabs'];
             highlightActiveLineElem.addEventListener('change', function (eventInfo) {
 

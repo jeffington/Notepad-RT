@@ -860,32 +860,32 @@ var editor,
             if (file) {
                 // Prevent updates to the remote version of the file until we finish making changes and call CompleteUpdatesAsync.
                 Windows.Storage.CachedFileManager.deferUpdates(file);
-                return Windows.Storage.FileIO.writeTextAsync(file, contents).then(function () {
+                Windows.Storage.FileIO.writeTextAsync(file, contents).then(function () {
 
-                    return Windows.Storage.CachedFileManager.completeUpdatesAsync(file);
+                    Windows.Storage.CachedFileManager.completeUpdatesAsync(file).then( function (updateStatus) {
+                      
+                        if (updateStatus === Windows.Storage.Provider.FileUpdateStatus.complete) {
+                            // Store the file in the MRU List
+                            sessionState.editorCurrentFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, file.name);
+                            sessionState.editorCurrentFileName = file.name;
+                            sessionState.files.push({
+                                icon: "images/filelogo.png",
+                                title: sessionState.editorCurrentFileName,
+                                textType: file.displayType,
+                                size: "",
+                                // sourceIcon: "",
+                                kind: "R",
+                                token: sessionState.editorCurrentFileToken,
+                            });
+
+                            setFileName(sessionState.editorCurrentFileName);
+
+                        }
+                        
+                    });
 
                 });
             }
-        }).then(function (updateStatus) {
-
-            if (updateStatus === Windows.Storage.Provider.FileUpdateStatus.complete) {
-                // Store the file in the MRU List
-                sessionState.editorCurrentFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, file.name);
-
-                sessionState.files.push({
-                    icon: "images/filelogo.png",
-                    title: file.name,
-                    textType: file.displayType,
-                    size: "",
-                    // sourceIcon: "",
-                    kind: "R",
-                    token: sessionState.editorCurrentFileToken,
-                });
-
-                setFileName(file.name);
-
-            }
-
         });
 
     }
