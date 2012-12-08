@@ -94,6 +94,7 @@ var editor,
     ];
     
     var editorPage = WinJS.UI.Pages.define("/pages/editor/editorPage.html", {
+
         ready: function (element, options) {
             
             var that = this;
@@ -117,7 +118,7 @@ var editor,
 
             if (options && options.filetoken) {
                 // Load from recent opened files
-
+                
                 this.loadFromToken(options.filetoken);
                 //sessionState.editorCurrentFileToken = options.filetoken;
                 sessionState.editorCurrentFileName = options.filename;
@@ -125,7 +126,7 @@ var editor,
 
             } else if (options && options.files) {
                 // Load from file from outside (like Explorer in Desktop)
-
+                
                 var file = options.files[0],
                     token = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, { name: file.name, dateCreated: file.dateCreated });
                 sessionState.editorCurrentFileName = file.name;
@@ -310,6 +311,7 @@ var editor,
 
             var sessionState = WinJS.Application.sessionState,
                 that = this;
+
             sessionState.editorCurrentFileToken = fileToken;
         // this.editorCurrentFileToken = fileToken;
             // Configure and prepare the editor to receive the file's content
@@ -397,14 +399,8 @@ var editor,
                 gutter.style.display = 'none';
 
             }
-        
-        
-
-            //setTimeout(function () {
             
-            //}, 2000);
-        
-            //console.log('Settings mode: ' + settings['mode'] + ' Theme: ' + settings['theme']);
+            
             document.getElementById('editor').style.fontSize = settings['fontSize'] + 'px';
         
         

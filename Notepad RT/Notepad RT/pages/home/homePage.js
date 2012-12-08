@@ -71,7 +71,7 @@ function pickFile() {
 
     // Open the picker for the user to pick a file
     openPicker.pickSingleFileAsync().then(function (file) {
-        var token,
+        var fileToken,
             fileInfo,
             sessionFileList = WinJS.Application.sessionState.files;
         
@@ -81,7 +81,7 @@ function pickFile() {
             if (file.contentType.match('text/') || file.contentType.length === 0) {
                 // Application now has read/write access to the picked file(s)
 
-                token = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, file.name);
+                fileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, file.name);
                 Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.add(file);
 
                 fileInfo = {
@@ -89,7 +89,8 @@ function pickFile() {
                     title: file.name,
                     textType: file.displayType,
                     size: "",
-                    kind: "R"
+                    kind: "R",
+                    token: fileToken,
                 };
 
                 if (!sessionFileList) {
@@ -106,7 +107,7 @@ function pickFile() {
                 //sessionState.editorCurrentFileToken = token;
                 //sessionState.editorCurrentFileName = file.name;
 
-                WinJS.Navigation.navigate("/pages/editor/editorPage.html", { filetoken: token });
+                WinJS.Navigation.navigate("/pages/editor/editorPage.html", { filetoken: fileToken });
 
             } else {
 

@@ -16,61 +16,47 @@ function populateSessionFileListFromMRU() {
 
     for (x = 0; x < count; x++) {
 
-        promiseArray[x] = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(
-                Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(x).token
-                ).then(function (currentFile) {
-                    var y = fileInfo.length;
-                    fileInfo.push({
-                        icon: "images/filelogo.png",
-                        title: "",
-                        textType: "",
-                        size: "",
-                        // sourceIcon: "",
-                        kind: "R",
-                        token: Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(y).token,
-                    });
+        fileInfo[x] = {
+            icon: "images/filelogo.png",
+            title: "",
+            textType: "",
+            size: "",
+            // sourceIcon: "",
+            kind: "R",
+            token: Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(x).token,
+        };
 
+        promiseArray[x] = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(fileInfo[x].token).then(function (currentFile) {
 
-                    if (currentFile) {
+            if (currentFile) {
 
-                        fileInfo[y].title = currentFile.name;
-                        fileInfo[y].textType = currentFile.displayType;
+                fileInfo[x].title = currentFile.name;
+                fileInfo[x].textType = currentFile.displayType;
 
-                        //return currentFile.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.documentsView);
+                //return currentFile.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.documentsView);
+                console.log(JSON.stringify(fileInfo[x]) + ' x: '+ x);
+            }
 
-                    }
+        }, function (error) { // Deleted or possibly corrupted file, get it out of here and don't add it to the list
 
-                }, function (error) { // Deleted or possibly corrupted file, get it out of here and don't add it to the list
+            //Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(x).token);
+            console.log(error + ' Error retrieving file from the mostRecentlyUsedList at index ' + x + '.');
+            //fileInfo.splice(x, 1);
 
-                    //Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(x).token);
-                    console.log(error + ' Error retrieving file from the mostRecentlyUsedList at index ' + x + '.');
-                    //fileInfo.splice(x, 1);
-
-                });/*.then(function (thumb) {
-
-                    if (thumb && fileInfo[x]) {
-
-                        console.log( "Index: " + x + " " + JSON.stringify(fileInfo[x]) );
-                        fileInfo[x].icon = URL.createObjectURL(thumb, { oneTimeOnly: false });
-
-                    }
-
-                });*/
+        });
 
     }
 
 
-    WinJS.Promise.join(promiseArray).done(function () {
+    WinJS.Promise.join(promiseArray).then(function () {
 
         var sessionState = WinJS.Application.sessionState;
 
         sessionState.files = fileInfo;
         //console.log('WinJS.Application.sessionState.files 1: ' + sessionFileList);
-        if (recentFilesDataSource === undefined) {
-
-            recentFilesDataSource = new WinJS.Binding.List(sessionState.files || []);
+        recentFilesDataSource = new WinJS.Binding.List(sessionState.files || []);
             //groupDataSource = recentFilesDataSource.createGrouped(getGroupKey, getGroupData, compareGroups);//new desertsDataSource(fileListHeaders);//new WinJS.Binding.List(fileListHeaders);//recentFilesDataSource.createGrouped(getGroupKey, getGroupData, compareGroups);//new desertsDataSource(fileListHeaders);//new desertsDataSource(fileListHeaders);
-        }
+        //}
 
         recentFilesListView = new WinJS.UI.ListView(document.getElementById("filesListView"), {
             itemDataSource: recentFilesDataSource.dataSource,//recentFilesDataSource.dataSource,
@@ -84,24 +70,54 @@ function populateSessionFileListFromMRU() {
             swipeBehavior: 'none',
         });
 
-        //WinJS.UI.processAll();
-        //console.log("Should have set up the fucking ListView");
-        //WinJS.Binding.processAll();
-        //recentFilesListView.forceLayout();
 
+    }).done(function () {
+
+        loadThumbnails();
 
     });
 
 }
 
+function loadThumbnails() {
+
+    var sessionStateFiles = WinJS.Application.sessionState.files,
+        count = sessionStateFiles.length,
+        x;
+
+    for (x = 0; x < count; x++) {
+
+        Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(sessionStateFiles[x].token).then(function (currentFile) {
+
+            return currentFile.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.documentsView);
+
+
+        }).then(function (thumb) {
+
+            if (thumb && sessionStateFiles[x]) {
+
+                console.log("Index: " + x + " " + JSON.stringify(sessionStateFiles[x]));
+                sessionStateFiles[x].icon = URL.createObjectURL(thumb, { oneTimeOnly: false });
+
+            }
+
+        });
+    }
+
+}
+
 function initData() {
-    //var sessionFileList = WinJS.Application.sessionState.files;
+
+    var sessionFileList = WinJS.Application.sessionState.files;
     // TODO: Need some logic here to determine whether or not the data changed
 
-    /*if (recentFilesDataSource !== undefined) {
+    if (sessionFileList && sessionFileList.length > 0) {
 
         // Set up the listView from the session data
         console.log("We have the file info.");
+
+        recentFilesDataSource = new WinJS.Binding.List(sessionFileList);
+
         recentFilesListView = new WinJS.UI.ListView(document.getElementById("filesListView"), {
             itemDataSource: recentFilesDataSource.dataSource,//recentFilesDataSource.dataSource,
             //groupDataSource: groupDataSource.groups.dataSource,//groupDataSource,//.groupDataSource,//DataSource.dataSource,//groupDataSource.groups.dataSource,
@@ -113,13 +129,18 @@ function initData() {
             tapBehavior: WinJS.UI.TapBehavior.invokeOnly,
             swipeBehavior: 'none',
         });
+        
+        WinJS.Promise.timeout().then(function () {
+
+            loadThumbnails();
+
+        });
 
     } else {
-    /* */
-        console.log("populating from session info");
+        
         populateSessionFileListFromMRU();
 
-    //}
+    }
 
 }
 /*
@@ -146,12 +167,10 @@ function recentFilesSelection(event) {
 
     var recentFilesSelectionIndex = event.detail.itemIndex,
         sessionFileList = WinJS.Application.sessionState.files,
-        //mruSize = sessionFileList.length,//Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.size,
-        //mruIndex = mruSize - recentFilesSelectionIndex - 1,
         selectedFileToken = sessionFileList[recentFilesSelectionIndex].token,
         selectedFileName = sessionFileList[recentFilesSelectionIndex].title;
 
-    //console.log('Index: ' + recentFilesSelectionIndex + ' Name: ' + JSON.stringify(sessionFileList));
+    console.log('Index: ' + recentFilesSelectionIndex + ' Name: ' + selectedFileName + ' Token: ' + selectedFileToken);
 
     //selectedFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(mruIndex).token;
     //Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.add(file);

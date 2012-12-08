@@ -45,16 +45,19 @@
                 //if (eventObject.detail.kind === Windows.ApplicationModel.Activation.ActivationKind.launch) {
                 // Navigate to either the first scenario or to the last running scenario
                 // before suspension or termination.
-                url = WinJS.Application.sessionState.lastUrl || Application.navigator.home;
-                //}
-                console.log('restored url: ' + url);
-                if (url) {
-                    // Use setPromise to indicate to the system that the splash screen must not be torn down
-                    // until after processAll and navigate complete asynchronously.
-                    //args.setPromise(WinJS.UI.processAll().then(function () {
-                        return WinJS.Navigation.navigate(url);
-                    //}));
+                if (WinJS.Application.sessionState.lastUrl) {
+
+                    url = WinJS.Application.sessionState.lastUrl;
+                    WinJS.Application.sessionState.removeKey('lastUrl');
+
+                } else {
+
+                    url = Application.navigator.home;
+
                 }
+
+                return WinJS.Navigation.navigate(url);
+                
             }));
 
             

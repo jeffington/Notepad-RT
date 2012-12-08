@@ -5,7 +5,7 @@
     <WindowsUser>Mark</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>F8E3EDD59CCA63FBA7013150633B8EB8BE554603A5897C44860F773F2D96F0E1</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>FEAD0E9AC3535E666F4CF08DEDF33FE27483E2325330528125C861E098A132D2</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>21022MarkSpirek.NotepadRT_1.1.1.0_neutral__gk7k3632sm22a</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>21022MarkSpirek.NotepadRT_gk7k3632sm22a!App</RegisteredUserModeAppID>
     <RegisteredPackageID>21022MarkSpirek.NotepadRT</RegisteredPackageID>
@@ -16,17 +16,17 @@
     <AppXManifest Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-11-28T09:58:23.340</Modified>
+      <Modified>2012-12-08T00:38:57.072</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\default.html">
       <PackagePath>default.html</PackagePath>
-      <Modified>2012-12-03T01:20:33.040</Modified>
+      <Modified>2012-12-07T03:40:14.164</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\html\DefaultsUI.html">
       <PackagePath>html\DefaultsUI.html</PackagePath>
-      <Modified>2012-11-19T00:15:27.812</Modified>
+      <Modified>2012-12-07T03:40:04.782</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\html\FeedbackUI.html">
       <PackagePath>html\FeedbackUI.html</PackagePath>
@@ -38,11 +38,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorPage.html">
       <PackagePath>pages\editor\editorPage.html</PackagePath>
-      <Modified>2012-12-03T01:19:56.041</Modified>
+      <Modified>2012-12-07T03:40:14.180</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\home\homePage.html">
       <PackagePath>pages\home\homePage.html</PackagePath>
-      <Modified>2012-11-30T23:35:44.673</Modified>
+      <Modified>2012-12-07T03:40:14.195</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\images\filelogo.png">
       <PackagePath>images\filelogo.png</PackagePath>
@@ -75,11 +75,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\default.js">
       <PackagePath>js\default.js</PackagePath>
-      <Modified>2012-12-07T03:09:10.777</Modified>
+      <Modified>2012-12-08T01:54:32.345</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\ace.js">
       <PackagePath>ace-src\ace.js</PackagePath>
-      <Modified>2012-12-03T01:10:06.756</Modified>
+      <Modified>2012-12-07T03:40:13.877</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\keybinding-emacs.js">
       <PackagePath>ace-src\keybinding-emacs.js</PackagePath>
@@ -111,7 +111,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-css.js">
       <PackagePath>ace-src\mode-css.js</PackagePath>
-      <Modified>2012-11-30T02:16:28.763</Modified>
+      <Modified>2012-12-07T03:40:13.887</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-c_cpp.js">
       <PackagePath>ace-src\mode-c_cpp.js</PackagePath>
@@ -151,11 +151,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-javascript.js">
       <PackagePath>ace-src\mode-javascript.js</PackagePath>
-      <Modified>2012-11-30T14:44:04.502</Modified>
+      <Modified>2012-12-07T03:40:13.901</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-json.js">
       <PackagePath>ace-src\mode-json.js</PackagePath>
-      <Modified>2012-11-30T02:19:01.180</Modified>
+      <Modified>2012-12-07T03:40:13.911</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-jsp.js">
       <PackagePath>ace-src\mode-jsp.js</PackagePath>
@@ -259,7 +259,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-xquery.js">
       <PackagePath>ace-src\mode-xquery.js</PackagePath>
-      <Modified>2012-11-30T02:20:16.508</Modified>
+      <Modified>2012-12-07T03:40:13.921</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\mode-yaml.js">
       <PackagePath>ace-src\mode-yaml.js</PackagePath>
@@ -383,7 +383,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\worker-css.js">
       <PackagePath>ace-src\worker-css.js</PackagePath>
-      <Modified>2012-11-15T04:35:06.199</Modified>
+      <Modified>2012-12-07T03:40:04.321</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\worker-javascript.js">
       <PackagePath>ace-src\worker-javascript.js</PackagePath>
@@ -399,31 +399,31 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\navigator.js">
       <PackagePath>js\navigator.js</PackagePath>
-      <Modified>2012-12-07T03:18:03.695</Modified>
+      <Modified>2012-12-07T03:40:14.169</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\recentFilesList.js">
       <PackagePath>js\recentFilesList.js</PackagePath>
-      <Modified>2012-12-07T03:01:31.129</Modified>
+      <Modified>2012-12-08T02:46:29.462</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorPage.js">
       <PackagePath>pages\editor\editorPage.js</PackagePath>
-      <Modified>2012-12-07T01:12:34.690</Modified>
+      <Modified>2012-12-08T02:11:39.877</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorSettingsPage.js">
       <PackagePath>pages\editor\editorSettingsPage.js</PackagePath>
-      <Modified>2012-11-19T00:34:39.505</Modified>
+      <Modified>2012-12-07T03:40:04.827</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\home\homePage.js">
       <PackagePath>pages\home\homePage.js</PackagePath>
-      <Modified>2012-12-06T23:27:43.509</Modified>
+      <Modified>2012-12-08T01:28:03.088</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\css\default.css">
       <PackagePath>css\default.css</PackagePath>
-      <Modified>2012-11-30T23:41:29.047</Modified>
+      <Modified>2012-12-07T03:40:14.161</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2012-11-28T09:58:20.994</Modified>
+      <Modified>2012-12-08T00:38:54.856</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
