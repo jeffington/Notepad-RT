@@ -76,7 +76,7 @@ function pickFile() {
             sessionFileList = WinJS.Application.sessionState.files;
         
         if (file) {
-            //console.log(file.contentType);
+            console.log(file.contentType);
             
             if (file.contentType.match('text/') || file.contentType.length === 0) {
                 // Application now has read/write access to the picked file(s)

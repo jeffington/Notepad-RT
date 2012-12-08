@@ -270,10 +270,10 @@ var editor,
             cmdSaveAs.addEventListener('click', saveFileToLocation);
             cmdUndo.addEventListener('click', doUndo);
             cmdRedo.addEventListener('click', doRedo);
-            cmdFindNext.addEventListener('click', this.findNext);
-            cmdFindPrev.addEventListener('click', this.findPrev);
-            cmdReplace.addEventListener('click', this.replace);
-            cmdReplaceAll.addEventListener('click', this.replaceAll);
+            cmdFindNext.addEventListener('click', findNext);
+            cmdFindPrev.addEventListener('click', findPrev);
+            cmdReplace.addEventListener('click', replace);
+            cmdReplaceAll.addEventListener('click', replaceAll);
             cmdCopy.addEventListener('click', doCopy);
             cmdCut.addEventListener('click', doCut);
             cmdPaste.addEventListener('click', doPaste);
@@ -287,7 +287,7 @@ var editor,
 
             if (e.key === 'Enter') {
 
-                this.replace();
+                replace();
                 e.preventDefault();
 
             }
@@ -298,7 +298,7 @@ var editor,
 
             if (e.key === 'Enter') {
 
-                this.findNext();
+                findNext();
                 e.preventDefault();
             }
 
@@ -418,7 +418,13 @@ var editor,
 
         },
         //
-        findNext: function () {
+    });
+
+    // Callbacks need to be accessible to everybody within the (function{ ... })();
+    // But functions that related to Ace/Editor can be either here or within the Page's scope
+
+        //
+        function findNext () {
 
             var searchTerms = document.getElementById('searchTerms').value,
                 options = {};
@@ -432,9 +438,9 @@ var editor,
 
             }
 
-        },
+        }
         //
-        findPrev: function () {
+        function findPrev () {
 
             var searchTerms = document.getElementById('searchTerms').value,
                 options = {};
@@ -447,9 +453,9 @@ var editor,
 
             }
 
-        },
+        }
         //
-        replace: function () {
+        function replace () {
 
             var searchTerms = document.getElementById('searchTerms').value,
                 replaceTerms = document.getElementById('replaceTerms').value,
@@ -463,9 +469,9 @@ var editor,
 
             }
 
-        },
+        }
         // 
-        replaceAll: function () {
+        function replaceAll () {
 
             var searchTerms = document.getElementById('searchTerms').value,
                 replaceTerms = document.getElementById('replaceTerms').value,
@@ -478,12 +484,7 @@ var editor,
 
             }
 
-        },
-        //
-    });
-
-    // Callbacks need to be accessible to everybody within the (function{ ... })();
-    // But functions that related to Ace/Editor can be either here or within the Page's scope
+        }
 
     // This method is used to both detect and set the mode (programming language) for Ace
     function detectEditorModeFromExtension (fileName) {
@@ -737,18 +738,44 @@ var editor,
 
     function hideFileNameInput() {
 
-        console.log("Here!");
+        var sessionState = WinJS.Application.sessionState,
+            sessionFiles = sessionState.files;
+        //console.log("Here!");
         var titleVal = document.getElementById('fileNameInput').value;
-        console.log(titleVal+' '+editorCurrentFileName+' '+editorCurrentFileToken);
-        if (editorCurrentFileToken && titleVal != editorCurrentFileName) {
+        //console.log(titleVal+' '+editorCurrentFileName+' '+editorCurrentFileToken);
+        if (sessionState.editorCurrentFileToken && titleVal != sessionState.editorCurrentFileName) {
 
-            Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(editorCurrentFileToken).then(function (retrievedFile) {
+            Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(sessionState.editorCurrentFileToken).then(function (retrievedFile) {
 
                 retrievedFile.renameAsync(titleVal).done(function () {
 
                     // Need to refresh the file in the mruList
-                    Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(editorCurrentFileToken);
-                    editorCurrentFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(retrievedFile, retrievedFile.name);
+                    //Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(sessionState.editorCurrentFileToken);
+                    //sessionState.editorCurrentFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(retrievedFile, retrievedFile.name);
+
+                    //
+
+                    for (var x = 0; x < sessionFiles.length; x++) {
+
+                        if (sessionFiles[x].token == sessionState.editorCurrentFileToken) {
+
+                            sessionFiles[x].title = titleVal;
+                            //sessionFiles.splice(x, 1);
+
+                        }
+
+
+                    }
+
+                    /*sessionFiles.push({
+                        icon: "images/filelogo.png",
+                        title: retrievedFile.name,
+                        textType: retrievedFile.displayType,
+                        size: "",
+                        // sourceIcon: "",
+                        kind: "R",
+                        token: sessionState.editorCurrentFileToken,
+                    });*/
 
                     setFileName(titleVal);
                     //filenameTitle.innerHTML = titleVal;
@@ -843,7 +870,18 @@ var editor,
 
             if (updateStatus === Windows.Storage.Provider.FileUpdateStatus.complete) {
                 // Store the file in the MRU List
-                editorCurrentFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, file.name);
+                sessionState.editorCurrentFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, file.name);
+
+                sessionState.files.push({
+                    icon: "images/filelogo.png",
+                    title: file.name,
+                    textType: file.displayType,
+                    size: "",
+                    // sourceIcon: "",
+                    kind: "R",
+                    token: sessionState.editorCurrentFileToken,
+                });
+
                 setFileName(file.name);
 
             }

@@ -26,16 +26,17 @@ function populateSessionFileListFromMRU() {
             token: Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(x).token,
         };
 
+        console.log('Created file item at index '+x);
+
         promiseArray[x] = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(fileInfo[x].token).then(function (currentFile) {
 
-            if (currentFile) {
+            console.log('x: ' + x + ' name: '+currentFile.name);
+            fileInfo[x].title = currentFile.name;
+            fileInfo[x].textType = currentFile.displayType;
 
-                fileInfo[x].title = currentFile.name;
-                fileInfo[x].textType = currentFile.displayType;
-
-                //return currentFile.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.documentsView);
-                console.log(JSON.stringify(fileInfo[x]) + ' x: '+ x);
-            }
+            //return currentFile.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.documentsView);
+            console.log(JSON.stringify(fileInfo[x]) + ' x: '+ x);
+            
 
         }, function (error) { // Deleted or possibly corrupted file, get it out of here and don't add it to the list
 
