@@ -168,6 +168,7 @@ var editor,
                 WinJS.Promise.timeout(1200).then(function () {
 
                     that.configureEditorFromSettings();
+                    setSaved();
 
                 });
 
