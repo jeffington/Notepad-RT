@@ -557,7 +557,16 @@ var editor,
 
         if (!sessionState.editorCurrentFileToken) {
 
-            fileName = 'Untitled';
+            if (titleHead.firstChild.nodeType !== 1) {
+
+                fileName = titleHead.innerHTML;
+
+            } else {
+                
+                fileName = titleHead.firstChild.value;
+                
+            }
+            //fileName = 'Untitled';
 
         } else {
 
@@ -798,6 +807,7 @@ var editor,
     }
 
     function fileNameClick() {
+
         var fileNameHead = document.getElementById('filename');
         if (fileNameHead.firstChild.nodeType !== 1) {
 

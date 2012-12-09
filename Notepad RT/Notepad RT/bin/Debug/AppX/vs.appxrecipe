@@ -407,7 +407,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorPage.js">
       <PackagePath>pages\editor\editorPage.js</PackagePath>
-      <Modified>2012-12-09T03:27:00.697</Modified>
+      <Modified>2012-12-09T04:20:45.922</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorSettingsPage.js">
       <PackagePath>pages\editor\editorSettingsPage.js</PackagePath>
