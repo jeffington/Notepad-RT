@@ -121,7 +121,7 @@ var editor,
                 
                 this.loadFromToken(options.filetoken);
                 //sessionState.editorCurrentFileToken = options.filetoken;
-                sessionState.editorCurrentFileName = options.filename;
+                //sessionState.editorCurrentFileName = options.filename;
 
 
             } else if (options && options.files) {
@@ -129,7 +129,7 @@ var editor,
                 
                 var file = options.files[0],
                     token = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, { name: file.name, dateCreated: file.dateCreated });
-                sessionState.editorCurrentFileName = file.name;
+                //sessionState.editorCurrentFileName = file.name;
                 this.loadFromToken(token);
 
 
@@ -158,7 +158,7 @@ var editor,
 
             } else if (sessionState && sessionState.editorCurrentFileToken && sessionState.editorCurrentFileName) {
                 
-                setFileName(sessionState.editorCurrentFileName);
+                //setFileName(sessionState.editorCurrentFileName);
 
                 this.loadFromToken(sessionState.editorCurrentFileToken);
  
@@ -319,6 +319,7 @@ var editor,
 
             Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(fileToken).then(function (retrievedFile) {
 
+                sessionState.editorCurrentFileName = retrievedFile.name;
                 setFileName(retrievedFile.name);
             
                 //return retrievedFile.openAsync(Windows.Storage.FileAccessMode.read);
@@ -360,6 +361,9 @@ var editor,
                 //that.editor.navigateTo(0, 0);
                 //editor.navigateTo(0, 0);
                 editor.navigateFileStart();
+
+                editor.getSession().getUndoManager().reset();
+
                 setSaved();
 
             });

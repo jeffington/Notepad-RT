@@ -35,14 +35,14 @@
 <div id="groupHeaderTemplate" data-win-control="WinJS.Binding.Template" style="display: none;">
     <div class="simpleHeaderItem">
         <h1 class="groupHeaderTemplateTitle" data-win-bind="innerText: groupTitle"></h1>
-        <h6 class="groupHeaderTemplateDetails" data-win-bind="innerText: groupDetails"></h6>
+        <!--<h6 class="groupHeaderTemplateDetails" data-win-bind="innerText: groupDetails"></h6>-->
     </div>
 </div>
 <!-- Item template -->
 <div id="imageTextListFileTemplate" 
-     data-win-control="WinJS.Binding.Template">
+     data-win-control="WinJS.Binding.Template" style="display: none;">
   <div class="imageTextListFile">
-    <img class="imageTextListFileImage" data-win-bind="src: icon"/>
+    <img class="imageTextListFileImage" data-win-bind="src: icon; style.visibility: thumbReady" style="visibility: hidden;"/>
     <div class="imageTextListFileTextArea">
       <h3 class="imageTextListFileTextName" 
           data-win-bind="innerText: title">        
@@ -56,16 +56,7 @@
     </div>
   </div>
 </div>
-<!--<div id="mediumListIconTextTemplate" data-win-control="WinJS.Binding.Template">
-            <div class="mediumListIconTextItem">
-                <img src="#" class="mediumListIconTextItem-Image" data-win-bind="src: icon" />
-                <div class="mediumListIconTextItem-Detail">
-                    <h4 data-win-bind="innerText: title"></h4>
-                    <h6 data-win-bind="innerText: textType"></h6>
-                </div>
-            </div>
-        </div>
-<!-- Old item template -->
+
             </section>
         </div>
     </body>
