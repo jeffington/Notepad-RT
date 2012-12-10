@@ -53,6 +53,119 @@ function launchEditor() {
 
 }
 
+function isValidFileType(file) {
+
+    var fileTypes = [
+    {
+        exts: ["ps1"],
+        mode: "ace/mode/powershell",
+    },
+    {
+        exts: ["txt"],
+        mode: "ace/mode/text",
+    },
+    {
+        exts: ["css"],
+        mode: "ace/mode/css",
+
+    },
+    {
+        exts: ["java"],
+        mode: "ace/mode/java",
+    },
+    {
+        exts: ["html", "htm"],
+        mode: "ace/mode/html",
+    },
+    {
+        exts: ["jsp"],
+        mode: "ace/mode/jsp",
+    },
+    {
+        exts: ["markdown", "md"],
+        mode: "ace/mode/markdown",
+    },
+    {
+        exts: ["pl"],
+        mode: "ace/mode/perl",
+    },
+    {
+        exts: ["py"],
+        mode: "ace/mode/python",
+    },
+    {
+        exts: ["js"],
+        mode: "ace/mode/javascript",
+    },
+    {
+        exts: ["php"],
+        mode: "ace/mode/php",
+    },
+    {
+        exts: ["xml", "rss"],
+        mode: "ace/mode/xml",
+    },
+    {
+        exts: ["c", "cpp", "h"],
+        mode: "ace/mode/c_cpp",
+    },
+    {
+        exts: ["cs"],
+        mode: "ace/mode/csharp",
+    },
+    {
+        exts: ["json"],
+        mode: "ace/mode/json",
+    },
+    {
+        exts: ["rb", "rbw"],
+        mode: "ace/mode/ruby",
+    },
+    {
+        exts: ["sql"],
+        mode: "ace/mode/sql",
+    },
+    {
+        exts: ["psql"],
+        mode: "ace/mode/pgsql",
+    },
+    ];
+
+    var x, y,
+        numTypes = fileTypes.length,
+        numExtensions,
+        fileName = file.name,
+        fileExtension = fileName.substring(fileName.lastIndexOf('.') + 1),
+        validFileType = false;
+
+    for (x = 0; x < numTypes; x++) {
+
+        var extensions = fileTypes[x].exts,
+            numExtensions = extensions.length;
+
+        for (y = 0; y < numExtensions; y++) {
+
+            if (fileExtension == extensions[y]) {
+
+                validFileType = true;
+                break;
+
+            }
+
+        }
+
+    }
+
+    if (file.contentType.match('text/') || file.contentType.length === 0) {
+
+        validFileType = true;
+
+    }
+
+    return validFileType;
+
+}
+
 function pickFile() {
 
     
@@ -78,7 +191,8 @@ function pickFile() {
         if (file) {
             //console.log(file.contentType);
             
-            if (file.contentType.match('text/') || file.contentType.length === 0) {
+            if (isValidFileType(file)) {
+            //if (file.contentType.match('text/') || file.contentType.length === 0) {
                 // Application now has read/write access to the picked file(s)
 
                 fileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, file.name);

@@ -403,7 +403,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\recentFilesList.js">
       <PackagePath>js\recentFilesList.js</PackagePath>
-      <Modified>2012-12-10T00:17:37.088</Modified>
+      <Modified>2012-12-10T00:21:17.897</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\editor\editorPage.js">
       <PackagePath>pages\editor\editorPage.js</PackagePath>
@@ -415,7 +415,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\pages\home\homePage.js">
       <PackagePath>pages\home\homePage.js</PackagePath>
-      <Modified>2012-12-09T05:03:11.536</Modified>
+      <Modified>2012-12-10T03:55:23.491</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\css\default.css">
       <PackagePath>css\default.css</PackagePath>
