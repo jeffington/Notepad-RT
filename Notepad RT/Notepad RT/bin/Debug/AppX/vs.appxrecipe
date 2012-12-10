@@ -5,18 +5,18 @@
     <WindowsUser>Mark</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>FEAD0E9AC3535E666F4CF08DEDF33FE27483E2325330528125C861E098A132D2</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>21022MarkSpirek.NotepadRT_1.1.1.0_neutral__gk7k3632sm22a</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>27DC084FB1DFD6439AEE1D06013FEF025DCAFE0C06023B173476B4C7F3938584</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>21022MarkSpirek.NotepadRT_1.2.0.0_neutral__gk7k3632sm22a</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>21022MarkSpirek.NotepadRT_gk7k3632sm22a!App</RegisteredUserModeAppID>
     <RegisteredPackageID>21022MarkSpirek.NotepadRT</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=3714733F-5D19-41FF-8C3D-D9DF8CBCAFC1</RegisteredPackagePublisher>
-    <RegisteredVersion>1.1.1.0</RegisteredVersion>
+    <RegisteredVersion>1.2.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-12-08T00:38:57.072</Modified>
+      <Modified>2012-12-10T08:50:02.188</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -75,7 +75,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\js\default.js">
       <PackagePath>js\default.js</PackagePath>
-      <Modified>2012-12-08T01:54:32.345</Modified>
+      <Modified>2012-12-10T08:53:46.607</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\ace-src\ace.js">
       <PackagePath>ace-src\ace.js</PackagePath>
@@ -423,7 +423,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark\Documents\GitHub\Notepad-RT\Notepad RT\Notepad RT\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2012-12-08T00:38:54.856</Modified>
+      <Modified>2012-12-10T08:50:01.739</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="21022MarkSpirek.NotepadRT" Version="1.1.1.0" Publisher="CN=3714733F-5D19-41FF-8C3D-D9DF8CBCAFC1" ProcessorArchitecture="neutral" />
+  <Identity Name="21022MarkSpirek.NotepadRT" Version="1.2.0.0" Publisher="CN=3714733F-5D19-41FF-8C3D-D9DF8CBCAFC1" ProcessorArchitecture="neutral" />
   <Properties>
     <DisplayName>Notepad RT</DisplayName>
     <PublisherDisplayName>JDM Labs, LLC</PublisherDisplayName>
@@ -68,7 +68,7 @@
   <build:Metadata>
     <build:Item Name="VisualStudio" Version="11.0" />
     <build:Item Name="OperatingSystem" Version="6.2.9200.16384 (win8_rtm.120725-1247)" />
-    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="11.0.50727.1" />
+    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="11.0.51106.1" />
     <build:Item Name="MakePri.exe" Version="6.2.9200.16384 (win8_rtm.120725-1247)" />
   </build:Metadata>
 </Package>

@@ -91,9 +91,7 @@ images\storelogo.png
 images\widelogo.png
 js\default.js
 js\navigator.js
-js\readFile.js
-js\saveFile.js
-js\settings.js
+js\recentFilesList.js
 pages\editor\editorPage.html
 pages\editor\editorPage.js
 pages\editor\editorSettingsPage.js

@@ -48,7 +48,7 @@
                 if (WinJS.Application.sessionState.lastUrl) {
 
                     url = WinJS.Application.sessionState.lastUrl;
-                    WinJS.Application.sessionState.removeKey('lastUrl');
+                    delete WinJS.Application.sessionState['lastUrl'];
 
                 } else {
 
@@ -144,64 +144,11 @@
         // asynchronous operation before your application is suspended, call
         // args.setPromise().
         
-        /*
-        var session = app.sessionState,
-            applicationData = Windows.Storage.ApplicationData.current,
-            temporaryFolder = applicationData.temporaryFolder;
-
-        //session.lastUrl = nav.history.current;
-
-        if (editorCurrentFileToken !== undefined && editorCurrentFileToken) {
-
-            session.editorCurrentFileToken = editorCurrentFileToken;
-            editorCurrentFileToken = null;
-
-        }
-        if (editorCurrentFileName) {
-
-            session.editorCurrentFileName = editorCurrentFileName;
-            editorCurrentFileName = null;
-        }
-        if (hasEditorChanged !== undefined) {
-
-            session.hasEditorChanged = hasEditorChanged;
-
-            session.tempFileName = session.editorCurrentFileName + ' ' + new Date().getTime();
-
-        } else {
-
-            session.hasEditorChanged = false;
-
-        }
-        /*  */
-        
-        
-        if (editor) {
-
-            editor.destroy();
-            editor = null;
-
-        }
 
         WinJS.Application.sessionState.navigationHistory = nav.history.backStack;
 
-        var host = document.getElementById("contenthost");
-        host.winControl && host.winControl.checkpoint && host.winControl.checkpoint();
-
-        // TODO: sessionState will already contain the following: editorCurrentFileToken, editorCurrentFileName, hasEditorChanged
-        // We should check if hasEditorChanged is true and ONLY if it's true, write the text to a temporary file
-
-        /* if (session.hasEditorChanged) {
-            var fileContent = editorSession.getDocument().getValue();
-
-            args.setPromise(temporaryFolder.createFileAsync(session.tempFileName, Windows.Storage.CreationCollisionOption.replaceExisting).then(
-                function (file) {
-
-                    return Windows.Storage.FileIO.writeTextAsync(file, fileContent);
-
-                })
-            );
-        } /* Need to rework the saving of session state, we should be storing this information in the session state as we go, to be honest. */
+        //var host = document.getElementById("contenthost");
+        //host.winControl && host.winControl.checkpoint && host.winControl.checkpoint();
 
     };
 
