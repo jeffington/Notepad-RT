@@ -648,11 +648,11 @@ var editor,
     }
 
     function cmdNewFile () {
-        // TODO: Unsaved changes
 
         editorCurrentFileToken = null;
         editor.getSession().getDocument().setValue('');
         setFileName('Untitled');
+        setUnsaved();
         //document.getElementById("filename").innerHTML = 'Untitled';
         dismissAppBar();
             
@@ -820,6 +820,15 @@ var editor,
             textInput.setAttribute('value', name);
 
             textInput.addEventListener('blur', hideFileNameInput);
+            textInput.addEventListener('keydown', function (e) {
+
+                if (e.key === 'Enter') {
+
+                    //findNext();
+                    e.preventDefault();
+                }
+
+            });
             fileNameHead.appendChild(textInput);
             textInput.focus();
 
@@ -894,6 +903,7 @@ var editor,
                             });
 
                             setFileName(sessionState.editorCurrentFileName);
+                            setSaved();
 
                         }
                         
