@@ -22,6 +22,8 @@
             highlightActiveLineElem.checked = settings['highlightActiveLine'];
             showInvisibleCharactersElem.checked = settings['showInvisibleCharacters'];
             showGutter.checked = settings['showGutter'];
+            showPrintMargin.checked = settings['showPrintMargin'];
+            showInvisibleCharactersElem.checked = settings['showInvisibleCharacters'];
 
 
             //useHardTabsElem.checked = settings['useHardTabs'];

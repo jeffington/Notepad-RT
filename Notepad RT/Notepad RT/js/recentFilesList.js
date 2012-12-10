@@ -66,21 +66,17 @@ var recentFilesDataAdapter = WinJS.Class.define(
             var that = this;
 
             var fetchIndex = Math.max(requestIndex - countBefore, 0);
+            var fileTotal = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.size;
 
-            //console.log("Fetching: " + fetchIndex + " " + that.getCount());
-
-            if (fetchIndex >= Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.size) {
+            
+            if (fetchIndex >= fileTotal || fetchIndex < 0) {
 
                 return WinJS.Promise.wrapError(new WinJS.ErrorFromName(WinJS.UI.FetchError.doesNotExist));
 
             }
 
             
-
-            
-            var token = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(fetchIndex).token;
-            
-
+            var token = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(requestIndex).token;//fetchIndex).token;
             
 
             var currentObject;
@@ -106,7 +102,7 @@ var recentFilesDataAdapter = WinJS.Class.define(
                         }
                     ],
                     offset: requestIndex - fetchIndex,
-                    
+                    totalCount: fileTotal,
                 }
 
                 return currentFile.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.documentsView);
@@ -115,8 +111,11 @@ var recentFilesDataAdapter = WinJS.Class.define(
                 
             }).then(function(thumb) {
 
-                currentObject.items[0].data.icon = URL.createObjectURL(thumb, { oneTimeOnly: false });
+                currentObject.items[0].data.icon = URL.createObjectURL(thumb, { oneTimeOnly: true });
                 currentObject.items[0].data.thumbReady = "visible";
+
+                console.log(JSON.stringify(currentObject));
+
                 return WinJS.Promise.wrap(currentObject);
 
             });
@@ -184,7 +183,7 @@ var fileGroupDataAdapter = WinJS.Class.define(
                     
                 ], // The array of items
                 offset: requestIndex - fetchIndex, // The offset into the array for the requested item
-                totalCount: 1//that._groupData.length // The total count
+                totalCount: Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.size//that._groupData.length // The total count
             });
         },
 
