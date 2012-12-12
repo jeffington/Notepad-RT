@@ -730,12 +730,16 @@ var editor,
 
     function doCut() {
 
-        var dataPackage = new Windows.ApplicationModel.DataTransfer.DataPackage();
+        var dataPackage = new Windows.ApplicationModel.DataTransfer.DataPackage(),
+            text = editor.getCopyText();
+        
+        if (text) {
 
-        dataPackage.setText(editor.getCopyText());
-        Windows.ApplicationModel.DataTransfer.Clipboard.setContent(dataPackage);
-        editor.insert('');
+            dataPackage.setText(text);
+            Windows.ApplicationModel.DataTransfer.Clipboard.setContent(dataPackage);
+            editor.insert('');
 
+        }
     }
 
     function doPaste() {
