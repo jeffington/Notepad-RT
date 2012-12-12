@@ -108,12 +108,7 @@
             data-win-options="{id:'cmdRedo',label:'Redo',icon:'redo',
                 section:'selection',tooltip:'Redo Typing'}">
         </button>
-        
-        <button 
-            data-win-control="WinJS.UI.AppBarCommand" 
-            data-win-options="{id:'cmdNew',label:'New',icon:'page2',
-                section:'global',tooltip:'New File'}">
-        </button>
+       
         <button 
             data-win-control="WinJS.UI.AppBarCommand" 
             data-win-options="{id:'cmdSave',label:'Save',icon:'save',
@@ -129,15 +124,21 @@
             data-win-options="{id:'cmdSearch',label:'Find',icon:'zoom',
                 section:'selection',tooltip:'Find and Replace'}">
         </button>
-        <!--<hr 
+
+        <button 
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{id:'cmdNew',label:'New',icon:'page2',
+                section:'global',tooltip:'New File'}">
+        </button>
+        <hr 
             data-win-control="WinJS.UI.AppBarCommand" 
             data-win-options="{type:'separator',section:'global'}" />
         
         <button 
             data-win-control="WinJS.UI.AppBarCommand" 
-            data-win-options="{id:'cmdOpenSettings',label:'Pin File',icon:'pin',
-                section:'global',tooltip:'Notepad RT Settings'}">
-        </button>-->
+            data-win-options="{id:'cmdOpenSettings',label:'Settings',icon:'settings',
+                section:'global',tooltip:'Settings'}">
+        </button>
     </div>
     <div id="searchBar" data-win-control="WinJS.UI.AppBar" class="win-appbar"
        aria-label="Navigation Bar" data-win-options="{layout:'custom', disabled : true}"

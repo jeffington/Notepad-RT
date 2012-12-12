@@ -262,7 +262,8 @@ var editor,
                 cmdCopy = document.getElementById('cmdCopy'),
                 cmdPaste = document.getElementById('cmdPaste'),
                 inputSearchTerms = document.getElementById('searchTerms'),
-                inputReplaceTerms = document.getElementById('replaceTerms');
+                inputReplaceTerms = document.getElementById('replaceTerms'),
+                cmdOpenSettings = document.getElementById('cmdOpenSettings');
 
 
             cmdNew.addEventListener('click', cmdNewFile);
@@ -278,6 +279,9 @@ var editor,
             cmdCopy.addEventListener('click', doCopy);
             cmdCut.addEventListener('click', doCut);
             cmdPaste.addEventListener('click', doPaste);
+
+            cmdOpenSettings.addEventListener('click', doOpenSettings);
+
             searchTerms.addEventListener('keydown', this.inputSearchTermsKeydown);
 
             inputReplaceTerms.addEventListener('keydown', this.inputReplaceTermsKeydown);
@@ -701,6 +705,12 @@ var editor,
 
     }
     //
+
+    function doOpenSettings() {
+                
+        WinJS.UI.SettingsFlyout.showSettings("defaultsDiv", "/html/DefaultsUI.html");//, title: "Editor" },
+
+    }
 
     function doUndo() {
         
