@@ -10960,12 +10960,17 @@ define('ace/commands/default_commands', ['require', 'exports', 'module' , 'ace/l
     name: "cuttext",
     bindKey: bindKey("Ctrl-X"),
     exec: function (editor) {
-        var dataPackage = new Windows.ApplicationModel.DataTransfer.DataPackage();
+        var dataPackage = new Windows.ApplicationModel.DataTransfer.DataPackage(),
+            text = editor.getCopyText();
 
-        dataPackage.setText(editor.getCopyText());
-        Windows.ApplicationModel.DataTransfer.Clipboard.setContent(dataPackage);
-        editor.insert('');
-        
+        if (text) {
+
+            dataPackage.setText(text);
+            Windows.ApplicationModel.DataTransfer.Clipboard.setContent(dataPackage);
+            editor.insert('');
+
+        }
+
     },
     readyOnly: true
 },{

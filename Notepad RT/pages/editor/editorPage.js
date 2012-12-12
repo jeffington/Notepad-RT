@@ -649,10 +649,13 @@ var editor,
 
     function cmdNewFile () {
 
-        editorCurrentFileToken = null;
+        WinJS.Application.sessionState.editorCurrentFileToken = null;
         editor.getSession().getDocument().setValue('');
         setFileName('Untitled');
+
+        editor.getSession().getUndoManager().reset();
         setUnsaved();
+        
         //document.getElementById("filename").innerHTML = 'Untitled';
         dismissAppBar();
             
@@ -891,8 +894,8 @@ var editor,
                         if (updateStatus === Windows.Storage.Provider.FileUpdateStatus.complete) {
                             // Store the file in the MRU List
                             sessionState.editorCurrentFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, file.name);
-                            sessionState.editorCurrentFileName = file.name;
-                            sessionState.files.push({
+                            //sessionState.editorCurrentFileName = file.name;
+                            /*sessionState.files.push({
                                 icon: "images/filelogo.png",
                                 title: sessionState.editorCurrentFileName,
                                 textType: file.displayType,
@@ -900,9 +903,9 @@ var editor,
                                 // sourceIcon: "",
                                 kind: "R",
                                 token: sessionState.editorCurrentFileToken,
-                            });
+                            });*/
 
-                            setFileName(sessionState.editorCurrentFileName);
+                            setFileName(file.name);
                             setSaved();
 
                         }
