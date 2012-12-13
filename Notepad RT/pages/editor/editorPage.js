@@ -263,8 +263,11 @@ var editor,
                 cmdPaste = document.getElementById('cmdPaste'),
                 inputSearchTerms = document.getElementById('searchTerms'),
                 inputReplaceTerms = document.getElementById('replaceTerms'),
-                cmdOpenSettings = document.getElementById('cmdOpenSettings');
+                cmdOpenSettings = document.getElementById('cmdOpenSettings'),
+                cmdMode = document.getElementById('cmdMode').winControl;
 
+
+            cmdMode.flyout = document.getElementById("modeFlyout").winControl;
 
             cmdNew.addEventListener('click', cmdNewFile);
             cmdSave.addEventListener('click', saveFile);
