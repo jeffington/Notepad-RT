@@ -4,7 +4,7 @@
   <Properties>
     <DisplayName>Notepad RT</DisplayName>
     <PublisherDisplayName>JDM Labs, LLC</PublisherDisplayName>
-    <Logo>images\storelogo.png</Logo>
+    <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>
     <OSMinVersion>6.2.1</OSMinVersion>
@@ -15,14 +15,17 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <VisualElements DisplayName="Notepad RT" Logo="images\logo.png" SmallLogo="images\smallogo.png" Description="Notepad RT the missing code editor for developers and geeks for Windows 8 with rich support for text manipulation and syntax highlighting. Built specifically for Windows 8, Notepad RT matches the features and performance of desktop-class editors." ForegroundText="light" BackgroundColor="#7cb800">
-        <DefaultTile ShowName="allLogos" WideLogo="images\widelogo.png" />
-        <SplashScreen Image="images\splashscreen.png" BackgroundColor="#7cb800" />
+      <VisualElements DisplayName="Notepad RT" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Notepad RT the missing code editor for developers and geeks for Windows 8 with rich support for text manipulation and syntax highlighting. Built specifically for Windows 8, Notepad RT matches the features and performance of desktop-class editors." ForegroundText="light" BackgroundColor="#7cb800">
+        <DefaultTile ShowName="allLogos" WideLogo="Assets\WideLogo.png" />
+        <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#7cb800" />
+        <InitialRotationPreference>
+          <Rotation Preference="landscape" />
+          <Rotation Preference="landscapeFlipped" />
+        </InitialRotationPreference>
       </VisualElements>
       <Extensions>
         <Extension Category="windows.fileTypeAssociation">
           <FileTypeAssociation Name=".txt">
-            <Logo>images\filelogo.png</Logo>
             <SupportedFileTypes>
               <FileType>.txt</FileType>
               <FileType>.css</FileType>
