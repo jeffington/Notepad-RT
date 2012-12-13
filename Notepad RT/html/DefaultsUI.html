@@ -33,10 +33,6 @@
                     </select>
                 </div>
                 <div>
-                    <div class="win-label">Mode</div>
-                    
-                </div>
-                <div>
                     <div class="win-label">Theme</div>
                     <select id="setting-theme" onchange="Windows.Storage.ApplicationData.current.localSettings.values['theme'] = this.value;Windows.Storage.ApplicationData.current.signalDataChanged();">
                       <optgroup label="Light">

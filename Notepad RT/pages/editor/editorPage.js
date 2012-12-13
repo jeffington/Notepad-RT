@@ -264,10 +264,13 @@ var editor,
                 inputSearchTerms = document.getElementById('searchTerms'),
                 inputReplaceTerms = document.getElementById('replaceTerms'),
                 cmdOpenSettings = document.getElementById('cmdOpenSettings'),
-                cmdMode = document.getElementById('cmdMode').winControl;
+                cmdMode = document.getElementById('cmdMode').winControl,
+                selectMode = document.getElementById('editor-mode');
 
 
             cmdMode.flyout = document.getElementById("modeFlyout").winControl;
+
+            selectMode.addEventListener('change', function(){});
 
             cmdNew.addEventListener('click', cmdNewFile);
             cmdSave.addEventListener('click', saveFile);
@@ -390,14 +393,14 @@ var editor,
             settings['highlightActiveLine'] = (settings['highlightActiveLine'] === undefined ? false : settings['highlightActiveLine']);
             settings['showInvisibleCharacters'] = (settings['showInvisibleCharacters'] === undefined ? false : settings['showInvisibleCharacters']);
             settings['theme'] = settings['theme'] || 'ace/theme/textmate';
-            settings['mode'] = settings['mode'] || 'ace/mode/text';
+            //settings['mode'] = settings['mode'] || 'ace/mode/text';
             settings['useHardTabs'] = (settings['useHardTabs'] === undefined ? true : settings['useHardTabs']);
             settings['showIndentGuides'] = (settings['showIndentGuides'] === undefined ? true : settings['showIndentGuides']);
             settings['showGutter'] = (settings['showGutter'] === undefined ? true : settings['showGutter']);
             settings['showPrintMargin'] = (settings['showPrintMargin'] === undefined ? true : settings['showPrintMargin']);
 
             
-            editorSession.setMode(settings['mode']);
+            //editorSession.setMode(settings['mode']);
             editor.setTheme(settings['theme']);
         
             var gutter = document.querySelector('.ace_gutter-layer');
@@ -424,8 +427,8 @@ var editor,
             editor.setShowInvisibles(settings['showInvisibleCharacters']);
             editor.setShowPrintMargin(settings['showPrintMargin']);
             editor.setTheme(settings['theme']);
-            editorSession.setMode('ace/mode/text');
-            editorSession.setMode(settings['mode']);
+            //editorSession.setMode('ace/mode/text');
+            //editorSession.setMode(settings['mode']);
         
 
         },
