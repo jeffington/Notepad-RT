@@ -392,7 +392,7 @@ var editor,
             settings['showIndentGuides'] = (settings['showIndentGuides'] === undefined ? true : settings['showIndentGuides']);
             settings['showGutter'] = (settings['showGutter'] === undefined ? true : settings['showGutter']);
             settings['showPrintMargin'] = (settings['showPrintMargin'] === undefined ? true : settings['showPrintMargin']);
-
+            settings['keybinding'] = (settings['keybinding'] || 'ace');
             
             editorSession.setMode(settings['mode']);
             editor.setTheme(settings['theme']);
@@ -417,13 +417,14 @@ var editor,
             editorSession.setTabSize(4);
             editorSession.setUseSoftTabs(settings['useHardTabs']);
 
+            editor.setKeyboardHandler(settings['keybinding']);
             editor.setHighlightActiveLine(settings['highlightActiveLine']);
             editor.setShowInvisibles(settings['showInvisibleCharacters']);
             editor.setShowPrintMargin(settings['showPrintMargin']);
             editor.setTheme(settings['theme']);
             editorSession.setMode('ace/mode/text');
             editorSession.setMode(settings['mode']);
-        
+            
 
         },
         //

@@ -21,7 +21,7 @@
             <div class="win-content">
                  <div>
                     <div class="win-label">Font Size</div>
-                    <select id="font-size" onchange="Windows.Storage.ApplicationData.current.localSettings.values['fontSize'] = this.value;Windows.Storage.ApplicationData.current.signalDataChanged();">
+                    <select id="font-size">
                         <option value="10">10 px</option>
                         <option value="12">12 px</option>
                         <option value="14">14 px</option>
@@ -34,7 +34,7 @@
                 </div>
                 <div>
                     <div class="win-label">Mode</div>
-                    <select id="editor-mode" onchange="Windows.Storage.ApplicationData.current.localSettings.values['mode'] = this.value;Windows.Storage.ApplicationData.current.signalDataChanged();">
+                    <select id="editor-mode">
                         
                         <!--<option value="ace/mode/c9search">C9Search</option>
                         <option value="ace/mode/coffee">CoffeeScript</option>
@@ -84,7 +84,7 @@
                 </div>
                 <div>
                     <div class="win-label">Theme</div>
-                    <select id="setting-theme" onchange="Windows.Storage.ApplicationData.current.localSettings.values['theme'] = this.value;Windows.Storage.ApplicationData.current.signalDataChanged();">
+                    <select id="setting-theme">
                       <optgroup label="Light">
                         <option value="ace/theme/chrome">Chrome</option>
                         <option value="ace/theme/clouds">Clouds</option>
@@ -117,6 +117,14 @@
                         <option value="ace/theme/tomorrow_night_eighties">Tomorrow Night 80s</option>
                         <option value="ace/theme/vibrant_ink">Vibrant Ink</option>
                       </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <div class="win-label">Key Binding</div>
+                    <select id="setting-keybinding">
+                        <option value="ace">Standard</option>
+                        <option value="ace/keybinding-vim">Vim</option>
+                        <option value="ace/keybinding-emacs">Emacs</option>
                     </select>
                 </div>
                 <br />
