@@ -535,6 +535,7 @@ var editor,
                     editorSession.setMode(fileTypes[x].mode);
                     editorSession.setMode('ace/mode/text');
                     editorSession.setMode(fileTypes[x].mode);
+                    document.getElementById('editor-mode').value = fileTypes[x].mode;
                     foundFlag = true;
                     break;
 
