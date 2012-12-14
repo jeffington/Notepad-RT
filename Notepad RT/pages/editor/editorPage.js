@@ -270,7 +270,16 @@ var editor,
 
             cmdMode.flyout = document.getElementById("modeFlyout").winControl;
 
-            selectMode.addEventListener('change', function(){});
+            selectMode.addEventListener('change', function (event) {
+
+                var mode = event.target.value;
+                
+                editorSession.setMode(mode);
+                editorSession.setMode('ace/mode/text');
+                editorSession.setMode(mode);
+
+                
+            });
 
             cmdNew.addEventListener('click', cmdNewFile);
             cmdSave.addEventListener('click', saveFile);
@@ -500,6 +509,8 @@ var editor,
             }
 
         }
+
+
 
     // This method is used to both detect and set the mode (programming language) for Ace
     function detectEditorModeFromExtension (fileName) {
