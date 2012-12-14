@@ -110,9 +110,9 @@
 
     app.onsettings = function (e) {
         e.detail.applicationcommands = {
-            "defaultsDiv": { href: "/html/DefaultsUI.html", title: "Editor" },
-            "feedbackDiv": { href: "/html/FeedbackUI.html", title: "Feedback" },
-            "copyrightDiv": { href: "/html/LegalUI.html", title: "Copyright" }
+            "defaultsDiv": { href: "/html/DefaultsUI.html", title: "Editor Settings" },
+            "feedbackDiv": { href: "/html/FeedbackUI.html", title: "About & Feedback" },
+            "copyrightDiv": { href: "/html/LegalUI.html", title: "Copyright Notice" }
         };
         WinJS.UI.SettingsFlyout.populateSettings(e);
     };

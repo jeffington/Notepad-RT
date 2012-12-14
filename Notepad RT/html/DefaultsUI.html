@@ -1,7 +1,7 @@
 ﻿<!doctype HTML>
 <html>
     <head>
-        <title>Default settings flyout</title>
+        <title>Editor Settings</title>
         <!--<link rel="stylesheet" href="/css/default.css"/>-->
         <script src="/pages/editor/editorSettingsPage.js"></script>
     </head>
@@ -15,7 +15,7 @@
                 data-win-options="{width:'narrow'}">
             <div class="win-header" style="background: #7cb800;">
                 <button type="button" onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton"></button>
-                <div class="win-label">Editor</div>
+                <div class="win-label">Editor Settings</div>
 
             </div>
             <div class="win-content">
@@ -36,50 +36,50 @@
                     <div class="win-label">Mode</div>
                     <select id="editor-mode" onchange="Windows.Storage.ApplicationData.current.localSettings.values['mode'] = this.value;Windows.Storage.ApplicationData.current.signalDataChanged();">
                         
-                        <!--<option value="ace/mode/c9search">C9Search</option>
+                        <option value="ace/mode/c9search">C9Search</option>
                         <option value="ace/mode/coffee">CoffeeScript</option>
-                        <option value="ace/mode/coldfusion">ColdFusion</option>-->
+                        <option value="ace/mode/coldfusion">ColdFusion</option>
                         <option value="ace/mode/csharp">C#</option>
                         <option value="ace/mode/css">CSS</option>
-                        <!--<option value="ace/mode/diff">Diff</option>
+                        <option value="ace/mode/diff">Diff</option>
                         <option value="ace/mode/glsl">Glsl</option>
                         <option value="ace/mode/golang">Go</option>
                         <option value="ace/mode/groovy">Groovy</option>
-                        <option value="ace/mode/haxe">haXe</option>-->
+                        <option value="ace/mode/haxe">haXe</option>
                         <option value="ace/mode/html">HTML</option>
                         <option value="ace/mode/c_cpp">C/C++</option>
-                       <!--<option value="ace/mode/clojure">Clojure</option>
-                        <option value="ace/mode/jade">Jade</option>-->
+                        <option value="ace/mode/clojure">Clojure</option>
+                        <option value="ace/mode/jade">Jade</option>
                         <option value="ace/mode/java">Java</option>
                         <option value="ace/mode/jsp">JSP</option>
                         <option value="ace/mode/javascript">JavaScript</option>
                         <option value="ace/mode/json">JSON</option>
-                        <!--<option value="ace/mode/jsx">JSX</option>
+                        <option value="ace/mode/jsx">JSX</option>
                         <option value="ace/mode/latex">LaTeX</option>
                         <option value="ace/mode/less">LESS</option>
                         <option value="ace/mode/liquid">Liquid</option>
                         <option value="ace/mode/lua">Lua</option>
-                        <option value="ace/mode/luapage">LuaPage</option>-->
+                        <option value="ace/mode/luapage">LuaPage</option>
                         <option value="ace/mode/markdown">Markdown</option>
-                        <!--<option value="ace/mode/ocaml">OCaml</option>-->
+                        <option value="ace/mode/ocaml">OCaml</option>
                         <option value="ace/mode/perl">Perl</option>
                         <option value="ace/mode/pgsql">pgSQL</option>
                         <option value="ace/mode/php">PHP</option>
                         <option value="ace/mode/powershell">Powershell</option>
                         <option value="ace/mode/python">Python</option>
                         <option value="ace/mode/ruby">Ruby</option>
-                        <!--<option value="ace/mode/scad">OpenSCAD</option>
+                        <option value="ace/mode/scad">OpenSCAD</option>
                         <option value="ace/mode/scala">Scala</option>
                         <option value="ace/mode/scss">SCSS</option>
                         <option value="ace/mode/sh">SH</option>
-                        --><option value="ace/mode/sql">SQL</option><!--
+                        <option value="ace/mode/sql">SQL</option>
                         <option value="ace/mode/svg">SVG</option>
-                        <option value="ace/mode/tcl">Tcl</option>-->
+                        <option value="ace/mode/tcl">Tcl</option>
                         <option value="ace/mode/text">Text</option>
-                        <!--<option value="ace/mode/textile">Textile</option>-->
+                        <option value="ace/mode/textile">Textile</option>
                         <option value="ace/mode/xml">XML</option>
-                        <!--<option value="ace/mode/xquery">XQuery</option>
-                        <option value="ace/mode/yaml">YAML</option>-->
+                        <option value="ace/mode/xquery">XQuery</option>
+                        <option value="ace/mode/yaml">YAML</option>
                     </select>
                 </div>
                 <div>
@@ -123,7 +123,7 @@
                 <div>
                     <div id="highlight-active-line" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Highlight Active Line'}"></div>
                     <div id="show-invisible-characters" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Show Invisible Characters'}"></div>
-                    <div id="show-gutter" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Show Gutter'}"></div>
+                    <div id="show-gutter" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Show Line Numbers'}"></div>
                     <div id="show-print-margin" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Show Print Margin'}"></div>
                 </div>
                  <!--<input id="highlight-active-line" type="checkbox" onchange="Windows.Storage.ApplicationData.current.localSettings.values['highlightActiveLine'] = this.checked;Windows.Storage.ApplicationData.current.signalDataChanged();"/>
