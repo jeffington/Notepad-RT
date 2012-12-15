@@ -21,7 +21,7 @@
             <div class="win-content">
                  <div>
                     <div class="win-label">Font Size</div>
-                    <select id="font-size" onchange="Windows.Storage.ApplicationData.current.localSettings.values['fontSize'] = this.value;Windows.Storage.ApplicationData.current.signalDataChanged();">
+                    <select id="font-size">
                         <option value="10">10 px</option>
                         <option value="12">12 px</option>
                         <option value="14">14 px</option>
@@ -34,7 +34,7 @@
                 </div>
                 <div>
                     <div class="win-label">Theme</div>
-                    <select id="setting-theme" onchange="Windows.Storage.ApplicationData.current.localSettings.values['theme'] = this.value;Windows.Storage.ApplicationData.current.signalDataChanged();">
+                    <select id="setting-theme">
                       <optgroup label="Light">
                         <option value="ace/theme/chrome">Chrome</option>
                         <option value="ace/theme/clouds">Clouds</option>
@@ -76,29 +76,7 @@
                     <div id="show-gutter" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Show Line Numbers'}"></div>
                     <div id="show-print-margin" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Show Print Margin'}"></div>
                 </div>
-                 <!--<input id="highlight-active-line" type="checkbox" onchange="Windows.Storage.ApplicationData.current.localSettings.values['highlightActiveLine'] = this.checked;Windows.Storage.ApplicationData.current.signalDataChanged();"/>
-                    <label for="highlight-active-line">Highlight Active Line</label>
-                </div>
-                <div>
-                    
-                    <input id="show-invisible-characters" type="checkbox" onchange="Windows.Storage.ApplicationData.current.localSettings.values['showInvisibleCharacters'] = this.checked;Windows.Storage.ApplicationData.current.signalDataChanged();"/>
-                    <label for="show-invisible-characters">Show Invisible Characters</label>
-                </div>
-                 <!--<div>
-                    
-                    <input id="show-indent-guides" type="checkbox" onchange="Windows.Storage.ApplicationData.current.localSettings.values['showIndentGuides'] = this.checked;Windows.Storage.ApplicationData.current.signalDataChanged();"/>
-                    <label for="show-indent-guides">Show Indent Guides</label>
-                </div>-->
-                <!--<div>
-                    
-                    <input id="use-hard-tabs" type="checkbox" onchange="Windows.Storage.ApplicationData.current.localSettings.values['useHardTabs'] = this.checked;Windows.Storage.ApplicationData.current.signalDataChanged();"/>
-                    <label for="use-hard-tabs">Hard Tabs</label>
-                </div>-->
-                <!--<div>
-                    
-                    <input id="show-gutter" type="checkbox" onchange="Windows.Storage.ApplicationData.current.localSettings.values['showGutter'] = this.checked;Windows.Storage.ApplicationData.current.signalDataChanged();"/>
-                    <label for="show-gutter">Show Gutter</label>
-                </div>-->
+                 
             </div>
             </div>
         <!-- ENDTEMPLATE -->
