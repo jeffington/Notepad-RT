@@ -401,13 +401,8 @@ var editor,
             settings['fontSize'] = settings['fontSize'] || 12;
             settings['highlightActiveLine'] = (settings['highlightActiveLine'] === undefined ? false : settings['highlightActiveLine']);
             settings['showInvisibleCharacters'] = (settings['showInvisibleCharacters'] === undefined ? false : settings['showInvisibleCharacters']);
-<<<<<<< HEAD
-            settings['theme'] = settings['theme'] || 'ace/theme/textmate';
-            //settings['mode'] = settings['mode'] || 'ace/mode/text';
-=======
             settings['theme'] = settings['theme'] || 'ace/theme/tomorrow_night';
             settings['mode'] = settings['mode'] || 'ace/mode/text';
->>>>>>> 638453cde40930faa49d1b02d3ae0e1ffe695808
             settings['useHardTabs'] = (settings['useHardTabs'] === undefined ? true : settings['useHardTabs']);
             settings['showIndentGuides'] = (settings['showIndentGuides'] === undefined ? true : settings['showIndentGuides']);
             settings['showGutter'] = (settings['showGutter'] === undefined ? true : settings['showGutter']);
