@@ -545,9 +545,6 @@ var editor,
 
             if (foundFlag) {
 
-                editorSession.setMode('ace/mode/text');
-                editorSession.setMode('ace/mode/text');
-                document.getElementById('editor-mode').value = 'ace/mode/text';
                 break;
 
             }
@@ -557,6 +554,7 @@ var editor,
         if (!foundFlag) {
 
             editorSession.setMode('ace/mode/text');
+            document.getElementById('editor-mode').value = 'ace/mode/text';
 
         }
 
