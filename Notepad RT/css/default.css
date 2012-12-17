@@ -40,6 +40,21 @@ div.fragment {
 	-ms-grid-columns: minmax(min-content, 1fr);
 }
 
+.chevron {
+    vertical-align:8px;
+    visibility: hidden;
+}
+.titlecontainer {
+    display: inline;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+}
+.titlecontainer:hover, .titlecontainer:disabled, .titlecontainer:active, .titlecontainer:focus {
+    background:transparent;
+    color: inherit;
+}
+
 #homeButtons {
 	display: -ms-grid;
 	-ms-grid-column: 3;
@@ -237,23 +252,6 @@ Back button.
 
 .notepadrt-background {
     background: #7cb800;
-}
-
-.chevron {
-    vertical-align:8px;
-    visibility: hidden;
-}
-.titlecontainer {
-    display: inline;
-    background-color: transparent;
-    border: none;
-}
-.titlecontainer:hover, .titlecontainer:active, .titlecontainer:enabled, .titlecontainer:focus {
-    background:transparent;
-}
-
-#headerMenu {
-    width:200px;
 }
 
 @media screen and (-ms-view-state: fullscreen-landscape) {

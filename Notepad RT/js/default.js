@@ -23,7 +23,6 @@
                 //WinJS.UI.processAll();
                 //WinJS.Application.start();
 
-
             }
             
             //WinJS.Application.addEventListener('onsettingschanged', );

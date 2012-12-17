@@ -18,13 +18,50 @@
             var newFileButton = document.getElementById('newFile');
             openFileButton.addEventListener('click', pickFile);
             newFileButton.addEventListener('click', launchEditor); // Pass them directory to editorPage.html with no arguments
-            document.querySelector(".titlearea").addEventListener("click", showHeaderMenu, false);
+            
             //WinJS.Promise.timeout(10, WinJS.Promise.as(initData));
             //setTimeout(initData, 100);
+            window.addEventListener('resize', resized);
             initData();
+
+        },
+        unload: function () {
+
+            window.removeEventListener('resize', resized);
 
         }
     });
+
+    function resized() {
+
+        var currentState = Windows.UI.ViewManagement.ApplicationView.value;
+        if (currentState === Windows.UI.ViewManagement.ApplicationViewState.snapped) {
+
+            setupSnappedView();
+
+        } else {
+
+            setupStandardView();
+
+        }
+
+    }
+
+    function setupStandardView() {
+
+        document.querySelector('.titlearea').removeEventListener('click', showHeaderMenu);
+        document.querySelector('.titlecontainer').disabled = true;
+    }
+
+    function setupSnappedView() {
+
+        document.querySelector(".titlearea").addEventListener('click', showHeaderMenu);
+        document.querySelector('.titlecontainer').disabled = false;
+        document.getElementById('openFileMenuItem').addEventListener('click', pickFile);
+        document.getElementById('newFileMenuItem').addEventListener('click', launchEditor);
+
+
+    }
 
     function showHeaderMenu() {
         var title = document.querySelector(".titlecontainer");

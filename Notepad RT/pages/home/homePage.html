@@ -11,7 +11,7 @@
         <div id="homePageFragment" class="fragment">
             <header aria-label="Header content" role="banner">
             <div class="titlearea win-type-ellipsis" style="display: -ms-grid; -ms-grid-columns: auto minmax(min-content, 1fr) auto;">
-            <button class="titlecontainer">
+            <button class="titlecontainer" disabled>
                 <h1>
                 <span class="pagetitle">Notepad RT</span>
                 <span class="chevron win-type-x-large">&#xe099</span>
@@ -36,9 +36,9 @@
         </div> <!-- End class="fragment" -->
 
     <div id="headerMenu" data-win-control="WinJS.UI.Menu">
-        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'collectionMenuItem',label:'New File'}">
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'newFileMenuItem',label:'New File'}">
         </button>
-        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'marketplaceMenuItem',label:'Open File'}">
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'openFileMenuItem',label:'Open File'}">
         </button>
     </div>
 
