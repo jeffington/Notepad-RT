@@ -463,10 +463,25 @@ var editor,
 
         document.querySelector('.titlearea').removeEventListener('click', showHeaderMenu);
         document.querySelector('.titlecontainer').disabled = true;
+        document.getElementById('filename').addEventListener('click', fileNameClick);
+
     }
 
     function setupSnappedView() {
 
+        document.querySelector('.titlearea').addEventListener('click', showHeaderMenu);
+        document.querySelector('.titlecontainer').disabled = false;
+        document.getElementById('filename').removeEventListener('click', fileNameClick);
+
+    }
+
+    function showHeaderMenu() {
+        var title = document.querySelector('.titlecontainer');
+        var menu = document.getElementById('editorHeaderMenu').winControl;
+        menu.anchor = title;
+        menu.placement = 'bottom';
+
+        menu.show();
     }
 
     // Callbacks need to be accessible to everybody within the (function{ ... })();

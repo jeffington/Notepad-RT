@@ -14,6 +14,12 @@ div.fragment {
     padding: 3%;
 }
 
+.headerMenu {
+    
+    width: 100%;
+    
+}
+
 /* 
     This is all the CSS for editorPage.html
     If possible, we should move this into a separate file so it can be un/loaded with the page.
@@ -278,9 +284,6 @@ Back button.
     }
     .chevron {
         visibility: visible;
-    }
-    #headerMenu {
-        width: 100%;
     }
 }
 
