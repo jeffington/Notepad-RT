@@ -77,6 +77,7 @@
     <Content Include="Assets\WideLogo.scale-140.png" />
     <Content Include="Assets\WideLogo.scale-180.png" />
     <Content Include="Assets\WideLogo.scale-80.png" />
+    <Content Include="css\homePage.css" />
     <Content Include="default.html" />
     <Content Include="html\DefaultsUI.html" />
     <Content Include="html\FeedbackUI.html" />

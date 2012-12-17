@@ -14,10 +14,11 @@
     var page = WinJS.UI.Pages.define("/pages/home/homePage.html", {
         ready: function (element, options) {
 
-            var openFileButton = document.getElementById('openfile');
-            var newFileButton = document.getElementById('newfile');
+            var openFileButton = document.getElementById('openFile');
+            var newFileButton = document.getElementById('newFile');
             openFileButton.addEventListener('click', pickFile);
             newFileButton.addEventListener('click', launchEditor); // Pass them directory to editorPage.html with no arguments
+            document.querySelector(".titlearea").addEventListener("click", showHeaderMenu, false);
             //WinJS.Promise.timeout(10, WinJS.Promise.as(initData));
             //setTimeout(initData, 100);
             initData();
@@ -25,6 +26,14 @@
         }
     });
 
+    function showHeaderMenu() {
+        var title = document.querySelector(".titlecontainer");
+        var menu = document.getElementById("headerMenu").winControl;
+        menu.anchor = title;
+        menu.placement = "bottom";
+
+        menu.show();
+    }
 
 })();
 
