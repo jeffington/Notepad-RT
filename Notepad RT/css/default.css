@@ -68,6 +68,7 @@ div.fragment {
     -ms-grid-column-align: center;
     -ms-grid-row-align: center;
     -ms-grid-column: 1;
+	
 }
 
 #newFileLabel {
@@ -75,6 +76,7 @@ div.fragment {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     -ms-grid-row-align: center;
+	font-size: 10pt;
 }
 
 #openFile {
@@ -87,6 +89,7 @@ div.fragment {
     -ms-grid-row: 2;
     -ms-grid-column: 2;
     -ms-grid-row-align: center;
+	font-size: 10pt;
 }
 
 #homeButtons button {

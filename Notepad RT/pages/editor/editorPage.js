@@ -176,7 +176,7 @@ var editor,
             
             
             sessionState.hasEditorChanged = false;
-
+            window.addEventListener('resize', resized);
             this.setupAppBar();
             
         },
@@ -186,7 +186,7 @@ var editor,
             var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
             dataTransferManager.removeEventListener("datarequested", this.dataRequestedForSharing);
             Windows.Storage.ApplicationData.current.removeEventListener("datachanged", this.configureEditorFromSettings);
-
+            window.removeEventListener('resize', resized);
             this.removeKeyboardShortcuts();
             hideAppBar();
             hideSearch();
@@ -281,10 +281,10 @@ var editor,
                 
             });
 
-            cmdNew.addEventListener('click', cmdNewFile);
-            cmdSave.addEventListener('click', saveFile);
+            //cmdNew.addEventListener('click', cmdNewFile);
+            //cmdSave.addEventListener('click', saveFile);
             cmdSearch.addEventListener('click', openSearch);
-            cmdSaveAs.addEventListener('click', saveFileToLocation);
+            //cmdSaveAs.addEventListener('click', saveFileToLocation);
             cmdUndo.addEventListener('click', doUndo);
             cmdRedo.addEventListener('click', doRedo);
             cmdFindNext.addEventListener('click', findNext);
@@ -443,6 +443,31 @@ var editor,
         },
         //
     });
+
+    function resized() {
+
+        var currentState = Windows.UI.ViewManagement.ApplicationView.value;
+        if (currentState === Windows.UI.ViewManagement.ApplicationViewState.snapped) {
+
+            setupSnappedView();
+
+        } else {
+
+            setupStandardView();
+
+        }
+
+    }
+
+    function setupStandardView() {
+
+        document.querySelector('.titlearea').removeEventListener('click', showHeaderMenu);
+        document.querySelector('.titlecontainer').disabled = true;
+    }
+
+    function setupSnappedView() {
+
+    }
 
     // Callbacks need to be accessible to everybody within the (function{ ... })();
     // But functions that related to Ace/Editor can be either here or within the Page's scope

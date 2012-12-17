@@ -51,23 +51,24 @@
 
         document.querySelector('.titlearea').removeEventListener('click', showHeaderMenu);
         document.querySelector('.titlecontainer').disabled = true;
+        recentFilesListView.layout = new WinJS.UI.GridLayout();
     }
 
     function setupSnappedView() {
 
-        document.querySelector(".titlearea").addEventListener('click', showHeaderMenu);
+        document.querySelector('.titlearea').addEventListener('click', showHeaderMenu);
         document.querySelector('.titlecontainer').disabled = false;
         document.getElementById('openFileMenuItem').addEventListener('click', pickFile);
         document.getElementById('newFileMenuItem').addEventListener('click', launchEditor);
-
+        recentFilesListView.layout = new WinJS.UI.ListLayout();
 
     }
 
     function showHeaderMenu() {
-        var title = document.querySelector(".titlecontainer");
-        var menu = document.getElementById("headerMenu").winControl;
+        var title = document.querySelector('.titlecontainer');
+        var menu = document.getElementById('homeHeaderMenu').winControl;
         menu.anchor = title;
-        menu.placement = "bottom";
+        menu.placement = 'bottom';
 
         menu.show();
     }
