@@ -128,7 +128,7 @@ var editor,
             document.getElementById('saveFileMenuItem').addEventListener('click', saveFile);
             document.getElementById('saveAsFileMenuItem').addEventListener('click', saveFileToLocation);
 
-            window.addEventListener('resize', resized);
+            
 
             // Keyboard events
             this.addKeyboardShortcuts();

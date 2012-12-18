@@ -20,6 +20,10 @@ div.fragment {
     
 }
 
+.menuItemIcon {
+    margin-right: 10px;
+}
+
 /* 
     This is all the CSS for editorPage.html
     If possible, we should move this into a separate file so it can be un/loaded with the page.
