@@ -21,18 +21,20 @@
             
             //WinJS.Promise.timeout(10, WinJS.Promise.as(initData));
             //setTimeout(initData, 100);
-            window.addEventListener('resize', resized);
             initData();
+            setupStandardOrSnappedView();
+            window.addEventListener('resize', setupStandardOrSnappedView);
+            
 
         },
         unload: function () {
 
-            window.removeEventListener('resize', resized);
+            window.removeEventListener('resize', setupStandardOrSnappedView);
 
         }
     });
 
-    function resized() {
+    function setupStandardOrSnappedView() {
 
         var currentState = Windows.UI.ViewManagement.ApplicationView.value;
         if (currentState === Windows.UI.ViewManagement.ApplicationViewState.snapped) {
