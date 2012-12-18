@@ -127,7 +127,11 @@ var editor,
             document.getElementById('newFileMenuItem').addEventListener('click', cmdNewFile);
             document.getElementById('saveFileMenuItem').addEventListener('click', saveFile);
             document.getElementById('saveAsFileMenuItem').addEventListener('click', saveFileToLocation);
+            document.getElementById('homeMenuItem').addEventListener('click', function () {
 
+                WinJS.Navigation.back();
+
+            });
             
 
             // Keyboard events
