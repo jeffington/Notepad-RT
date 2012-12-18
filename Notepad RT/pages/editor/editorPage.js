@@ -480,15 +480,15 @@ var editor,
     function setupStandardView() {
 
         document.querySelector('.titlearea').removeEventListener('click', showHeaderMenu);
-        document.querySelector('.titlecontainer').disabled = true;
-        filenameButton.addEventListener('click', fileNameClick);
+        //document.querySelector('.titlecontainer').disabled = true;
+        document.getElementById('filenameButton').addEventListener('click', fileNameClick);
 
     }
 
     function setupSnappedView() {
 
         document.querySelector('.titlearea').addEventListener('click', showHeaderMenu);
-        document.querySelector('.titlecontainer').disabled = false;
+        //document.querySelector('.titlecontainer').disabled = false;
         filenameButton.removeEventListener('click', fileNameClick);
 
     }
@@ -871,7 +871,7 @@ var editor,
 
                     //
 
-                    for (var x = 0; x < sessionFiles.length; x++) {
+                    /*for (var x = 0; x < sessionFiles.length; x++) {
 
                         if (sessionFiles[x].token == sessionState.editorCurrentFileToken) {
 
@@ -881,7 +881,7 @@ var editor,
                         }
 
 
-                    }
+                    }*/
 
 
                     setFileName(titleVal);
@@ -1046,6 +1046,14 @@ var editor,
     // 
     function unsavedFilePrompt () {
         // Create the message dialog and set its content
+
+        var currentState = Windows.UI.ViewManagement.ApplicationView.value;
+        if (currentState === Windows.UI.ViewManagement.ApplicationViewState.snapped &&
+            !Windows.UI.ViewManagement.ApplicationView.tryUnsnap()) {
+            // Fail silently if we can't unsnap
+            return;
+        }
+
         var sessionState = WinJS.Application.sessionState,
             msg = new Windows.UI.Popups.MessageDialog("Do you want to save changes to " + sessionState.editorCurrentFileName + "?", "Unsaved Changes"),
             that = this;
