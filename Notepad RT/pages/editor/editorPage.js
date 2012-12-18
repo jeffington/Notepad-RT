@@ -186,7 +186,7 @@ var editor,
 
                     that.configureEditorFromSettings();
                     setSaved();
-
+                    setFileName('Untitled');
                 });
 
             }
@@ -642,7 +642,7 @@ var editor,
 
         if (!sessionState.editorCurrentFileToken) {
 
-            if (fileNameButton.style.visibility == 'visible') {
+            if (fileNameButton.style.display !== 'none') {
 
                 fileName = fileNameSpan.innerHTML;
 
@@ -865,25 +865,6 @@ var editor,
 
                 retrievedFile.renameAsync(titleVal).done(function () {
 
-                    // Need to refresh the file in the mruList
-                    //Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(sessionState.editorCurrentFileToken);
-                    //sessionState.editorCurrentFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(retrievedFile, retrievedFile.name);
-
-                    //
-
-                    /*for (var x = 0; x < sessionFiles.length; x++) {
-
-                        if (sessionFiles[x].token == sessionState.editorCurrentFileToken) {
-
-                            sessionFiles[x].title = titleVal;
-                            //sessionFiles.splice(x, 1);
-
-                        }
-
-
-                    }*/
-
-
                     setFileName(titleVal);
                     //filenameTitle.innerHTML = titleVal;
 
@@ -1051,6 +1032,7 @@ var editor,
         if (currentState === Windows.UI.ViewManagement.ApplicationViewState.snapped &&
             !Windows.UI.ViewManagement.ApplicationView.tryUnsnap()) {
             // Fail silently if we can't unsnap
+            
             return;
         }
 
