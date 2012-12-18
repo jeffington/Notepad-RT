@@ -113,6 +113,12 @@ var editor,
             var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
             dataTransferManager.addEventListener("datarequested", this.dataRequestedForSharing);
 
+            document.getElementById('renameFileMenuItem').addEventListener('click', fileNameClick);
+            document.getElementById('newFileMenuItem').addEventListener('click', cmdNewFile);
+            document.getElementById('saveFileMenuItem').addEventListener('click', saveFile);
+            document.getElementById('saveAsFileMenuItem').addEventListener('click', saveFileToLocation);
+
+
             // Keyboard events
             this.addKeyboardShortcuts();
 

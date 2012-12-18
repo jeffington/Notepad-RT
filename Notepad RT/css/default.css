@@ -35,6 +35,61 @@ div.fragment {
     text-overflow: ellipsis;
 }
 
+#editorButtons {
+	display: -ms-grid;
+	-ms-grid-column: 4;
+	-ms-grid-row-align: center;
+
+	-ms-grid-rows: auto 20px;
+	-ms-grid-columns: 70px 70px 70px;
+}
+
+#newFile {
+    -ms-grid-column-align: center;
+    -ms-grid-row-align: center;
+    -ms-grid-column: 1;
+	
+}
+
+#saveFile {
+    -ms-grid-column-align: center;
+    -ms-grid-row-align: center;
+    -ms-grid-column: 2;
+	
+}
+
+#saveAsFile {
+    -ms-grid-column-align: center;
+    -ms-grid-row-align: center;
+    -ms-grid-column: 3;
+	
+}
+
+#saveAsFileLabel {
+    text-align: center;
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    -ms-grid-row-align: center;
+	font-size: 10pt;
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .titlecontainer {
+        -ms-grid-column-span: 3;
+    }
+    .chevron {
+        vertical-align: 4px;
+        visibility: visible;
+    }
+    #editorButtons {
+        display: none;
+    }
+    #backbutton {
+        display: none;
+    }
+}
+
+
 /* 
     This is all the CSS for homePage.html
     If possible, we should move this into a separate file so it can be un/loaded with the page.
@@ -67,7 +122,7 @@ div.fragment {
 	-ms-grid-row-align: center;
 
 	-ms-grid-rows: auto 20px;
-	-ms-grid-columns: 55px 55px;
+	-ms-grid-columns: 70px 70px;
 }
 
 #newFile {
@@ -271,7 +326,6 @@ Back button.
         display: none;
     }
 }
-
 @media screen and (-ms-view-state: snapped) {
     .titlecontainer {
         -ms-grid-column-span: 3;
@@ -284,6 +338,9 @@ Back button.
     }
     .chevron {
         visibility: visible;
+    }
+    #backbutton {
+        display: none;
     }
 }
 

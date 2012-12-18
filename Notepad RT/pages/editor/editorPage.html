@@ -36,55 +36,46 @@
 </style>
 </head>
 <body>
-    
-    <!--<header aria-label="Header content" role="banner">
-        
-        <h1>
-            
-            
-            <span id="filename" class="pagetitle" style="-ms-grid-column: 2 8;">Untitled</span>
-            <span class="chevron win-type-x-large">&#xe099;</span>
-            
-            
-        </h1>
-    </header>-->
 
-            <header aria-label="Header content" role="banner">
-            <div class="titlearea win-type-ellipsis" style="padding-left: 3%; padding-right: 3%; display: -ms-grid; -ms-grid-columns: auto minmax(min-content, 1fr) auto;">
-            <button class="titlecontainer" disabled>
+    <header aria-label="Header content" role="banner">
+
+        <div class="titlearea win-type-ellipsis" style="padding-left: 3%; padding-right: 3%; display: -ms-grid; -ms-grid-columns: auto auto minmax(min-content, 1fr) auto;">
+            
+            <button id="backbutton" class="win-backbutton" aria-label="Back" disabled style="-ms-grid-column: 1; -ms-grid-row-align: center;"></button>
+            <button id="filenameButton" class="titlecontainer" disabled style="-ms-grid-column: 2;">
                 <h1>
-                <button id="backbutton" class="win-backbutton" aria-label="Back" disabled></button>
-                <span id="filename" class="pagetitle">Notepad RT</span>
-                <span class="chevron win-type-x-large">&#xe099</span>
+                    <span id="filename" class="pagetitle">Notepad RT</span>
+                    <span class="chevron win-type-x-large">&#xe099</span>
                 </h1>
             </button>
+            <input type="text" style="-ms-grid-column: 1; -ms-grid-row-align: center; display: none;" />
+            <div id="editorButtons">
 
-
-                <div id="homeButtons">
-
-                    <button id="newFile" class="action" title="New File">&#xe132;</button>
-					<p id="newFileLabel">New</p>
-                    <button id="openFile" class="action" title="Open File">&#xe1a5;</button>
-					<p id="openFileLabel">Open</p>
-                    
-                </div>
-
+                <button id="newFile" class="action" title="New File">&#xe132;</button>
+				<p id="newFileLabel">New</p>
+                <button id="saveFile" class="action" title="Save File">&#xe105;</button>
+				<p id="openFileLabel">Save</p>
+                <button id="saveAsFile" class="action" title="Save As File">&#xe159;</button>
+				<p id="saveAsFileLabel">Save As</p>
 
             </div>
-            </header>
+
+        </div>
+
+    </header>
 
     <section aria-label="Main content" role="main">
         <div id="editor"></div>
     </section>
 
     <div id="editorHeaderMenu" class="headerMenu" data-win-control="WinJS.UI.Menu">
-        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'newFileMenuItem',label:'Rename'}">
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'renameFileMenuItem',label:'Rename File'}">
         </button>
         <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'newFileMenuItem',label:'New File'}">
         </button>
-        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'openFileMenuItem',label:'Save File'}">
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'saveFileMenuItem',label:'Save File'}">
         </button>
-        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'openFileMenuItem',label:'Save File As'}">
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'saveAsFileMenuItem',label:'Save File As'}">
         </button>
     </div>
 
