@@ -336,9 +336,10 @@ Back button.
     }
 
     .titlecontainer {
-        -ms-grid-column-span: 1;
+        -ms-grid-column-span: 2;
         -ms-grid-row-align: center;
         -ms-grid-column-align: center;
+
     }
 
     .chevron {

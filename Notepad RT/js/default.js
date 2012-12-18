@@ -61,7 +61,7 @@
 
             
 
-        }/*else if (args.detail.kind === activation.ActivationKind.shareTarget) {
+        } else if (args.detail.kind === activation.ActivationKind.shareTarget) {
             
             var arg = {};
             var shareOperation = args.detail.shareOperation;
@@ -84,7 +84,7 @@
             //} else {
               
             //}
-        }*/else if (args.detail.kind === activation.ActivationKind.file) {
+        } else if (args.detail.kind === activation.ActivationKind.file) {
             
             var arg = {};
             arg.files = args.detail.files;

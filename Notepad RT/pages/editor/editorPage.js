@@ -166,12 +166,15 @@ var editor,
 
                     options.shareData.getTextAsync().then(function (text) {
                         
+                        editor.getSession().getDocument().setValue(text);
+                        setUnsaved();
                         return WinJS.Promise.timeout(1200);
                         
 
                     }).done(function () {
-                        //configureEditorFromSettings();
-                        editor.getSession().getDocument().setValue(text);
+                        
+                        
+                        that.configureEditorFromSettings();
                         editor.navigateTo(0, 0);
                     });
 
@@ -469,8 +472,10 @@ var editor,
     function setupStandardOrSnappedView() {
 
         var currentState = Windows.UI.ViewManagement.ApplicationView.value;
+        console.log("Current state: " + currentState);
+        document.getElementById('filename').innerHTML = currentState;
         if (currentState === Windows.UI.ViewManagement.ApplicationViewState.snapped) {
-
+            
             setupSnappedView();
 
         } else {
