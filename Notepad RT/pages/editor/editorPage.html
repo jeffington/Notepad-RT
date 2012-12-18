@@ -42,13 +42,13 @@
         <div class="titlearea win-type-ellipsis" style="padding-left: 3%; padding-right: 3%; display: -ms-grid; -ms-grid-columns: auto auto minmax(min-content, 1fr) auto;">
             
             <button id="backbutton" class="win-backbutton" aria-label="Back" disabled style="-ms-grid-column: 1; -ms-grid-row-align: center;"></button>
-            <button id="filenameButton" class="titlecontainer" disabled style="-ms-grid-column: 2;">
+            <button id="filenameButton" class="titlecontainer" style="-ms-grid-column: 2;">
                 <h1>
                     <span id="filename" class="pagetitle">Notepad RT</span>
                     <span class="chevron win-type-x-large">&#xe099</span>
                 </h1>
             </button>
-            <input type="text" style="-ms-grid-column: 1; -ms-grid-row-align: center; display: none;" />
+            <input id="fileNameInput" type="text" style="-ms-grid-column: 2; -ms-grid-row-align: center; display: none;" />
             <div id="editorButtons">
 
                 <button id="newFile" class="action" title="New File">&#xe132;</button>

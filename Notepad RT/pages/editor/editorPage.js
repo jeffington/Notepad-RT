@@ -105,8 +105,18 @@ var editor,
             editorSession = editor.getSession();
             this.configureEditorFromSettings();
             
-            var filenameTitle = document.getElementById('filename');
-            filenameTitle.addEventListener('click', fileNameClick);
+            document.getElementById('filenameButton').addEventListener('click', fileNameClick);
+
+            var fileNameInput = document.getElementById('fileNameInput');
+            fileNameInput.addEventListener('blur', hideFileNameInput);
+            fileNameInput.addEventListener('keydown', function (e) {
+
+                if (e.key === 'Enter') {
+
+                    e.preventDefault();
+                }
+
+            });
 
             Windows.Storage.ApplicationData.current.addEventListener("datachanged", this.configureEditorFromSettings);
 
@@ -118,6 +128,7 @@ var editor,
             document.getElementById('saveFileMenuItem').addEventListener('click', saveFile);
             document.getElementById('saveAsFileMenuItem').addEventListener('click', saveFileToLocation);
 
+            window.addEventListener('resize', resized);
 
             // Keyboard events
             this.addKeyboardShortcuts();
@@ -182,7 +193,8 @@ var editor,
             
             
             sessionState.hasEditorChanged = false;
-            window.addEventListener('resize', resized);
+            setupStandardOrSnappedView();
+            window.addEventListener('resize', setupStandardOrSnappedView);
             this.setupAppBar();
             
         },
@@ -192,7 +204,7 @@ var editor,
             var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
             dataTransferManager.removeEventListener("datarequested", this.dataRequestedForSharing);
             Windows.Storage.ApplicationData.current.removeEventListener("datachanged", this.configureEditorFromSettings);
-            window.removeEventListener('resize', resized);
+            window.removeEventListener('resize', setupStandardOrSnappedView);
             this.removeKeyboardShortcuts();
             hideAppBar();
             hideSearch();
@@ -450,7 +462,7 @@ var editor,
         //
     });
 
-    function resized() {
+    function setupStandardOrSnappedView() {
 
         var currentState = Windows.UI.ViewManagement.ApplicationView.value;
         if (currentState === Windows.UI.ViewManagement.ApplicationViewState.snapped) {
@@ -469,7 +481,7 @@ var editor,
 
         document.querySelector('.titlearea').removeEventListener('click', showHeaderMenu);
         document.querySelector('.titlecontainer').disabled = true;
-        document.getElementById('filename').addEventListener('click', fileNameClick);
+        filenameButton.addEventListener('click', fileNameClick);
 
     }
 
@@ -477,12 +489,12 @@ var editor,
 
         document.querySelector('.titlearea').addEventListener('click', showHeaderMenu);
         document.querySelector('.titlecontainer').disabled = false;
-        document.getElementById('filename').removeEventListener('click', fileNameClick);
+        filenameButton.removeEventListener('click', fileNameClick);
 
     }
 
     function showHeaderMenu() {
-        var title = document.querySelector('.titlecontainer');
+        var title = document.getElementById('filenameButton');
         var menu = document.getElementById('editorHeaderMenu').winControl;
         menu.anchor = title;
         menu.placement = 'bottom';
@@ -615,6 +627,7 @@ var editor,
         }
 
         sessionState.editorCurrentFileName = name;
+        //document.getElementById('filenameButton');
         document.getElementById('filename').innerHTML = name;
 
     }
@@ -622,21 +635,23 @@ var editor,
     function getFileName () {
 
         var fileName = '',
-            titleHead = document.getElementById('filename'),
+            fileNameButton = document.getElementById('filenameButton'),
+            fileNameSpan = document.getElementById('filename'),
+            fileNameInput = document.getElementById('filenameInput'),
             sessionState = WinJS.Application.sessionState;
 
         if (!sessionState.editorCurrentFileToken) {
 
-            if (titleHead.firstChild.nodeType !== 1) {
+            if (fileNameButton.style.visibility == 'visible') {
 
-                fileName = titleHead.innerHTML;
+                fileName = fileNameSpan.innerHTML;
 
             } else {
                 
-                fileName = titleHead.firstChild.value;
+                fileName = fileNameInput.value;
                 
             }
-            //fileName = 'Untitled';
+            
 
         } else {
 
@@ -835,9 +850,14 @@ var editor,
     function hideFileNameInput() {
 
         var sessionState = WinJS.Application.sessionState,
-            sessionFiles = sessionState.files;
-        //console.log("Here!");
-        var titleVal = document.getElementById('fileNameInput').value;
+            sessionFiles = sessionState.files,
+            fileNameInput = document.getElementById('fileNameInput'),
+            titleVal = fileNameInput.value,
+            fileNameButton = document.getElementById('filenameButton');
+
+        fileNameInput.style.display = 'none';
+        fileNameButton.style.display = 'inline-block';
+
         //console.log(titleVal+' '+editorCurrentFileName+' '+editorCurrentFileToken);
         if (sessionState.editorCurrentFileToken && titleVal != sessionState.editorCurrentFileName) {
 
@@ -863,15 +883,6 @@ var editor,
 
                     }
 
-                    /*sessionFiles.push({
-                        icon: "images/filelogo.png",
-                        title: retrievedFile.name,
-                        textType: retrievedFile.displayType,
-                        size: "",
-                        // sourceIcon: "",
-                        kind: "R",
-                        token: sessionState.editorCurrentFileToken,
-                    });*/
 
                     setFileName(titleVal);
                     //filenameTitle.innerHTML = titleVal;
@@ -889,7 +900,7 @@ var editor,
 
     }
 
-    function fileNameClick() {
+/*    function fileNameClick() {
 
         var fileNameHead = document.getElementById('filename');
         if (fileNameHead.firstChild.nodeType !== 1) {
@@ -917,7 +928,40 @@ var editor,
         }
         
     }
+/* This is the only onclick event handler for the file name in the editor. */
+    /*
 
+            textInput.addEventListener('blur', hideFileNameInput);
+            textInput.addEventListener('keydown', function (e) {
+
+                if (e.key === 'Enter') {
+
+                    //findNext();
+                    e.preventDefault();
+                }
+
+            });
+    /* */
+    function fileNameClick() {
+
+        var fileNameInput = document.getElementById('fileNameInput'),
+            fileNameSpan = document.getElementById('filename'),
+            fileNameButton = document.getElementById('filenameButton');
+
+        console.log("HERE");
+
+        if (fileNameButton.style.display !== 'none') {
+
+            var name = getFileName();
+            fileNameButton.style.display = 'none';
+            
+            fileNameInput.value = name;
+            fileNameInput.style.display = 'inline-block';
+            fileNameInput.focus();
+
+        }
+
+    }
 
     function saveFileToLocation() {
 
