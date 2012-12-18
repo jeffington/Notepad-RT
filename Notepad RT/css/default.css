@@ -331,9 +331,16 @@ Back button.
     }
 }
 @media screen and (-ms-view-state: snapped) {
-    .titlecontainer {
-        -ms-grid-column-span: 3;
+    .titlearea {
+        -ms-grid-columns: max-content;
     }
+
+    .titlecontainer {
+        -ms-grid-column-span: 1;
+        -ms-grid-row-align: center;
+        -ms-grid-column-align: center;
+    }
+
     .chevron {
         vertical-align: 4px;
     }
