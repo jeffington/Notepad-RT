@@ -29,6 +29,38 @@ div.fragment {
     If possible, we should move this into a separate file so it can be un/loaded with the page.
 */
 
+/*
+body {
+    background-color: #F5F5F5;
+    color: black;
+
+}
+/* TODO: This is the "Light" app theme. */
+
+#editor { 
+    position: absolute;
+    top: 80px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-family: monospace;
+}
+.ace_editor {
+    /*
+        This was the code that added a scrollbar.    
+    */
+    -ms-overflow-style: scrollbar;
+    
+}
+    
+    textarea {
+        -ms-overflow: hidden;
+        overflow: hidden;
+        text-indent: -9999px !important;
+        font-family: monospace !important;
+        /* TODO: Need to get rid of that fucking flashing pixel. BLINKY! */
+    }
+
 #editorFragment {
     display: -ms-grid;
     -ms-grid-rows: auto max-content;
