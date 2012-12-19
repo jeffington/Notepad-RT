@@ -30,8 +30,15 @@ div.fragment {
 */
 
 #editorFragment {
-
+    display: -ms-grid;
+    -ms-grid-rows: auto max-content;
     
+}
+
+#editor {
+
+    -ms-grid-row: 2;
+
 }
 
 #filename {
@@ -105,6 +112,10 @@ div.fragment {
         display: none;
     }
     #backbutton {
+        display: none;
+    }
+
+    #cmdOpenSettings {
         display: none;
     }
 }

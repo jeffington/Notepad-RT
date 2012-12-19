@@ -36,37 +36,38 @@
 </style>
 </head>
 <body>
+    <div id="editorFragment">
+        <header aria-label="Header content" role="banner">
 
-    <header aria-label="Header content" role="banner">
-
-        <div class="titlearea win-type-ellipsis" style="padding-left: 3%; padding-right: 3%; display: -ms-grid; -ms-grid-columns: auto auto minmax(min-content, 1fr) auto;">
+            <div class="titlearea win-type-ellipsis" style="padding-left: 3%; padding-right: 3%; display: -ms-grid; -ms-grid-columns: auto auto minmax(min-content, 1fr) auto;">
             
-            <button id="backbutton" class="win-backbutton" aria-label="Back" disabled style="-ms-grid-column: 1; -ms-grid-row-align: center;"></button>
-            <button id="filenameButton" class="titlecontainer" style="-ms-grid-column: 2;">
-                <h1>
-                    <span id="filename" class="pagetitle">Untitled</span>
-                    <span class="chevron win-type-x-large">&#xe099</span>
-                </h1>
-            </button>
-            <input id="fileNameInput" type="text" style="-ms-grid-column: 2; -ms-grid-row-align: center; display: none;" />
-            <div id="editorButtons">
+                <button id="backbutton" class="win-backbutton" aria-label="Back" disabled style="-ms-grid-column: 1; -ms-grid-row-align: center;"></button>
+                <button id="filenameButton" class="titlecontainer" style="-ms-grid-column: 2;">
+                    <h1>
+                        <span id="filename" class="pagetitle">Untitled</span>
+                        <span class="chevron win-type-x-large">&#xe099</span>
+                    </h1>
+                </button>
+                <input id="fileNameInput" type="text" style="-ms-grid-column: 2; -ms-grid-row-align: center; display: none;" />
+                <div id="editorButtons">
 
-                <button id="saveFile" class="action" title="Save File">&#xe105;</button>
-				<p id="saveFileLabel">Save</p>
-                <button id="saveAsFile" class="action" title="Save As File">&#xe159;</button>
-				<p id="saveAsFileLabel">Save As</p>
-                <button id="newFileEditor" class="action" title="New File">&#xe132;</button>
-				<p id="newFileEditorLabel">New</p>
+                    <button id="saveFile" class="action" title="Save File">&#xe105;</button>
+				    <p id="saveFileLabel">Save</p>
+                    <button id="saveAsFile" class="action" title="Save As File">&#xe159;</button>
+				    <p id="saveAsFileLabel">Save As</p>
+                    <button id="newFileEditor" class="action" title="New File">&#xe132;</button>
+				    <p id="newFileEditorLabel">New</p>
+
+                </div>
 
             </div>
 
-        </div>
+        </header>
 
-    </header>
-
-    <section aria-label="Main content" role="main">
+    <!--<section aria-label="Main content" role="main">-->
         <div id="editor"></div>
-    </section>
+    <!--</section>-->
+    </div>
 
     <div id="editorHeaderMenu" class="headerMenu" data-win-control="WinJS.UI.Menu">
         <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'renameFileMenuItem'}">
