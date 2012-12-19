@@ -8,6 +8,12 @@ body.light {
     color: black;
 }
 
+body {
+    background: #151615 url('/images/home.png') no-repeat left top;
+    background-size: cover;
+    background-attachment:fixed;
+}
+
 div.fragment {
     width: 94%;
     height: 100%;
