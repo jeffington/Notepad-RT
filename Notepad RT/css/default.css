@@ -48,31 +48,47 @@ div.fragment {
 	-ms-grid-columns: 70px 70px 70px;
 }
 
-#newFile {
+#newFileEditor {
+    -ms-grid-column-align: center;
+    -ms-grid-row-align: center;
+    -ms-grid-column: 3;
+	
+}
+
+#newFileEditorLabel {
+    text-align: center;
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    -ms-grid-row-align: center;
+	font-size: 10pt;
+}
+
+#saveFile {
     -ms-grid-column-align: center;
     -ms-grid-row-align: center;
     -ms-grid-column: 1;
 	
 }
 
-#saveFile {
+#saveFileLabel {
+    text-align: center;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-row-align: center;
+	font-size: 10pt;
+}
+
+#saveAsFile {
     -ms-grid-column-align: center;
     -ms-grid-row-align: center;
     -ms-grid-column: 2;
 	
 }
 
-#saveAsFile {
-    -ms-grid-column-align: center;
-    -ms-grid-row-align: center;
-    -ms-grid-column: 3;
-	
-}
-
 #saveAsFileLabel {
     text-align: center;
     -ms-grid-row: 2;
-    -ms-grid-column: 3;
+    -ms-grid-column: 2;
     -ms-grid-row-align: center;
 	font-size: 10pt;
 }

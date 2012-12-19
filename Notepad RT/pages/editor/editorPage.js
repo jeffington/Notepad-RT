@@ -122,16 +122,6 @@ var editor,
 
             var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
             dataTransferManager.addEventListener("datarequested", this.dataRequestedForSharing);
-
-            document.getElementById('renameFileMenuItem').addEventListener('click', fileNameClick);
-            document.getElementById('newFileMenuItem').addEventListener('click', cmdNewFile);
-            document.getElementById('saveFileMenuItem').addEventListener('click', saveFile);
-            document.getElementById('saveAsFileMenuItem').addEventListener('click', saveFileToLocation);
-            document.getElementById('homeMenuItem').addEventListener('click', function () {
-
-                WinJS.Navigation.back();
-
-            });
             
 
             // Keyboard events
@@ -472,8 +462,7 @@ var editor,
     function setupStandardOrSnappedView() {
 
         var currentState = Windows.UI.ViewManagement.ApplicationView.value;
-        console.log("Current state: " + currentState);
-        document.getElementById('filename').innerHTML = currentState;
+        
         if (currentState === Windows.UI.ViewManagement.ApplicationViewState.snapped) {
             
             setupSnappedView();
@@ -492,6 +481,19 @@ var editor,
         //document.querySelector('.titlecontainer').disabled = true;
         document.getElementById('filenameButton').addEventListener('click', fileNameClick);
 
+        
+        document.getElementById('renameFileMenuItem').removeEventListener('click', fileNameClick);
+        document.getElementById('newFileMenuItem').removeEventListener('click', cmdNewFile);
+        document.getElementById('saveFileMenuItem').removeEventListener('click', saveFile);
+        document.getElementById('saveAsFileMenuItem').removeEventListener('click', saveFileToLocation);
+        document.getElementById('homeMenuItem').removeEventListener('click', navigateBack);
+
+
+        document.getElementById('saveFile').addEventListener('click', saveFile);
+        document.getElementById('saveAsFile').addEventListener('click', saveFileToLocation);
+        document.getElementById('newFileEditor').addEventListener('click', cmdNewFile);
+
+
     }
 
     function setupSnappedView() {
@@ -499,6 +501,23 @@ var editor,
         document.querySelector('.titlearea').addEventListener('click', showHeaderMenu);
         //document.querySelector('.titlecontainer').disabled = false;
         filenameButton.removeEventListener('click', fileNameClick);
+
+        document.getElementById('renameFileMenuItem').addEventListener('click', fileNameClick);
+        document.getElementById('newFileMenuItem').addEventListener('click', cmdNewFile);
+        document.getElementById('saveFileMenuItem').addEventListener('click', saveFile);
+        document.getElementById('saveAsFileMenuItem').addEventListener('click', saveFileToLocation);
+        document.getElementById('homeMenuItem').addEventListener('click', navigateBack);
+
+        document.getElementById('saveFile').removeEventListener('click', saveFile);
+        document.getElementById('saveAsFile').removeEventListener('click', saveFileToLocation);
+        document.getElementById('newFileEditor').removeEventListener('click', cmdNewFile);
+
+        
+    }
+
+    function navigateBack() {
+
+        WinJS.Navigation.back();
 
     }
 
