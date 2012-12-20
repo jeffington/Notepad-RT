@@ -1800,8 +1800,8 @@ exports.addMouseWheelListener = function(el, callback) {
         callback(e);
     };
     // TODO: 
-    exports.addListener(el, "DOMMouseScroll", listener);
-    exports.addListener(el, "mousewheel", listener);
+    //exports.addListener(el, "DOMMouseScroll", listener);
+    //exports.addListener(el, "mousewheel", listener);
 };
 
 exports.addMultiMouseDownListener = function(el, timeouts, eventHandler, callbackName) {
@@ -4266,6 +4266,9 @@ function DefaultHandlers(mouseHandler) {
             }
         }
 
+        // TODO:
+        console.log("onMouseWheel event");
+        
         editor.renderer.scrollBy(ev.wheelX * ev.speed, ev.wheelY * ev.speed);
         return ev.preventDefault();
     };
@@ -11556,6 +11559,7 @@ var VirtualRenderer = function(container, theme) {
 
     this.$animatedScroll = false;
 
+    // TODO:
     this.scrollBar = new ScrollBar(container);
     this.scrollBar.addEventListener("scroll", function(e) {
         if (!_self.$inScrollAnimation)
