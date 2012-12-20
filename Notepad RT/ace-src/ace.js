@@ -1796,7 +1796,7 @@ exports.addMouseWheelListener = function(el, callback) {
         }
         callback(e);
     };
-    exports.addListener(el, "DOMMouseScroll", listener);
+    //exports.addListener(el, "DOMMouseScroll", listener);
     exports.addListener(el, "mousewheel", listener);
 };
 
