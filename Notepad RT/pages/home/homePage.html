@@ -1,36 +1,52 @@
 ﻿<!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+
         <script src="/js/recentFilesList.js"></script>
         <script src="/pages/home/homePage.js"></script>
-        
+        <link rel="stylesheet" src="/css/homePage.css" />
     </head>
     <body>
-
-        <div class="fragment">
+        
+        <div id="homePageFragment" class="fragment">
 
             <header aria-label="Header content" role="banner">
-                <h1 class="titlearea win-type-ellipsis">
-                    <span class="pagetitle">Notepad RT</span>
-                </h1>
+
+                <div class="titlearea win-type-ellipsis" style="display: -ms-grid; -ms-grid-columns: auto minmax(min-content, 1fr) auto;">
+                
+                    <button class="titlecontainer" disabled>
+                        <h1>
+                        <span class="pagetitle">Notepad RT</span>
+                        <span class="chevron win-type-x-large">&#xe099</span>
+                        </h1>
+                    </button>
+
+                    <div id="homeButtons">
+
+                        <button id="newFile" class="action" title="New File">&#xe132;</button>
+					    <p id="newFileLabel">New</p>
+                        <button id="openFile" class="action" title="Open File">&#xe1a5;</button>
+					    <p id="openFileLabel">Open</p>
+                    
+                    </div>
+
+                </div>
+                
             </header>
 
-            <section aria-label="Main content" role="main" class="fullScreenLayout">
-                <ul style="list-style-type: none;">
-                    <li>
-                        <div id="firstCol">
-                            <button id="openfile" class="btn">Open File</button>
-                            <br />
-                            <button id="newfile" class="btn">New File</button>
-                        </div>
-                    </li>
-                    <li>
-                        <div id="secondCol">
-                            <div id="filesListView"></div>
-                        </div>
-                    </li>
-                </ul>
+            <div id="filesListView"></div>
+            
+        </div> <!-- End class="fragment" -->
+
+    <div id="homeHeaderMenu" class="headerMenu" data-win-control="WinJS.UI.Menu">
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'newFileMenuItem'}">
+            <span class="menuItemIcon">&#xe132;</span> New File
+        </button>
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'openFileMenuItem'}">
+            <span class="menuItemIcon">&#xe1a5;</span> Open File
+        </button>
+    </div>
+
 <!-- List Header template -->
 <div id="groupHeaderTemplate" data-win-control="WinJS.Binding.Template" style="display: none;">
     <div class="simpleHeaderItem">
@@ -42,7 +58,7 @@
 <div id="imageTextListFileTemplate" 
      data-win-control="WinJS.Binding.Template" style="display: none;">
   <div class="imageTextListFile">
-    <img class="imageTextListFileImage" data-win-bind="src: icon; style.visibility: thumbReady" style="visibility: hidden;"/>
+    <img class="imageTextListFileImage" data-win-bind="src: icon; style.visibility: thumbReady"/>
     <div class="imageTextListFileTextArea">
       <h3 class="imageTextListFileTextName" 
           data-win-bind="innerText: title">        
@@ -56,8 +72,5 @@
     </div>
   </div>
 </div>
-
-            </section>
-        </div>
     </body>
 </html>

@@ -91,10 +91,18 @@ div.fragment {
    -----------------------------------------------
 */
 
+/*
+body {
+    background-color: #F5F5F5;
+    color: black;
+
+}
+/* TODO: This is the "Light" app theme. */
+
 #editorFragment {
 
     display: -ms-grid;
-    -ms-grid-rows: 200px minmax(min-content, 1fr);
+    -ms-grid-rows: auto minmax(min-content, 1fr);
     -ms-grid-columns: minmax(min-content, 1fr);
     
 }
@@ -208,11 +216,6 @@ textarea {
     #cmdOpenSettings {
         display: none;
     }
-
-    #editorFragment {
-        -ms-grid-rows: 40px minmax(min-content, 1fr);
-    }
-
     #editor {
         top: 50px;
     }

@@ -11706,6 +11706,11 @@ var VirtualRenderer = function(container, theme) {
         
         if (!height)
             height = dom.getInnerHeight(this.container);
+
+        console.log('height: ' + height);
+
+        
+
         if (force || size.height != height) {
             size.height = height;
 
@@ -11721,6 +11726,9 @@ var VirtualRenderer = function(container, theme) {
 
         if (!width)
             width = dom.getInnerWidth(this.container);
+        // TODO:
+        console.log('width: ' + width);
+
         if (force || this.resizing > 1 || size.width != width) {
             size.width = width;
 
@@ -13712,10 +13720,12 @@ var RenderLoop = function(onRender, win) {
 exports.RenderLoop = RenderLoop;
 });
 define("text!ace/css/editor.css", [], ".ace_editor {\n" +
-  "    position: absolute;\n" +
+  "    position: absolute;\n" + // position: static
   "    overflow: hidden;\n" +
   "    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Droid Sans Mono', 'Consolas', monospace;\n" +
   "    font-size: 12px;\n" +
+  /*"    -ms-grid-column: 1;\n" +
+  "    -ms-grid-row: 2;\n" +*/
   "}\n" +
   "\n" +
   ".ace_scroller {\n" +
@@ -13726,8 +13736,8 @@ define("text!ace/css/editor.css", [], ".ace_editor {\n" +
   ".ace_content {\n" +
   "    position: absolute;\n" +
   "    box-sizing: border-box;\n" +
-  "    -moz-box-sizing: border-box;\n" +
-  "    -webkit-box-sizing: border-box;\n" +
+  //"    -moz-box-sizing: border-box;\n" +
+  //"    -webkit-box-sizing: border-box;\n" +
   "    cursor: text;\n" +
   "}\n" +
   "\n" +
@@ -13811,7 +13821,7 @@ define("text!ace/css/editor.css", [], ".ace_editor {\n" +
   "    opacity: 0;\n" +
   "    background: transparent;\n" +
   "    appearance: none;\n" +
-  "    -moz-appearance: none;\n" +
+  //"    -moz-appearance: none;\n" +
   "    border: none;\n" +
   "    resize: none;\n" +
   "    outline: none;\n" +
@@ -13836,8 +13846,8 @@ define("text!ace/css/editor.css", [], ".ace_editor {\n" +
   "    height: 100%;\n" +
   "    width: 100%;\n" +
   "    box-sizing: border-box;\n" +
-  "    -moz-box-sizing: border-box;\n" +
-  "    -webkit-box-sizing: border-box;\n" +
+  //"    -moz-box-sizing: border-box;\n" +
+  //"    -webkit-box-sizing: border-box;\n" +
   "    /* setting pointer-events: auto; on node under the mouse, which changes\n" +
   "        during scroll, will break mouse wheel scrolling in Safari */\n" +
   "    pointer-events: none;\n" +

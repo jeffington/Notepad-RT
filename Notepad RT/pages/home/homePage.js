@@ -14,17 +14,66 @@
     var page = WinJS.UI.Pages.define("/pages/home/homePage.html", {
         ready: function (element, options) {
 
-            var openFileButton = document.getElementById('openfile');
-            var newFileButton = document.getElementById('newfile');
+            var openFileButton = document.getElementById('openFile');
+            var newFileButton = document.getElementById('newFile');
             openFileButton.addEventListener('click', pickFile);
             newFileButton.addEventListener('click', launchEditor); // Pass them directory to editorPage.html with no arguments
+            
             //WinJS.Promise.timeout(10, WinJS.Promise.as(initData));
             //setTimeout(initData, 100);
             initData();
+            setupStandardOrSnappedView();
+            window.addEventListener('resize', setupStandardOrSnappedView);
+            
+
+        },
+        unload: function () {
+
+            window.removeEventListener('resize', setupStandardOrSnappedView);
 
         }
     });
 
+    function setupStandardOrSnappedView() {
+
+        var currentState = Windows.UI.ViewManagement.ApplicationView.value;
+        if (currentState === Windows.UI.ViewManagement.ApplicationViewState.snapped) {
+
+            setupSnappedView();
+
+        } else {
+
+            setupStandardView();
+
+        }
+
+    }
+
+    function setupStandardView() {
+
+        document.querySelector('.titlearea').removeEventListener('click', showHeaderMenu);
+        document.querySelector('.titlecontainer').disabled = true;
+        recentFilesListView.layout = new WinJS.UI.GridLayout();
+    }
+
+    function setupSnappedView() {
+
+        document.querySelector('.titlearea').addEventListener('click', showHeaderMenu);
+        document.querySelector('.titlecontainer').disabled = false;
+        document.getElementById('openFileMenuItem').addEventListener('click', pickFile);
+        document.getElementById('newFileMenuItem').addEventListener('click', launchEditor);
+        recentFilesListView.layout = new WinJS.UI.ListLayout();
+
+    }
+
+    function showHeaderMenu() {
+        var title = document.querySelector('.titlecontainer');
+        var menu = document.getElementById('homeHeaderMenu').winControl;
+        menu.anchor = title;
+        menu.placement = 'bottom';
+
+        menu.show();
+    }
 
 })();
 

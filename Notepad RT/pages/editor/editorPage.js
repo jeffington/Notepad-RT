@@ -105,13 +105,24 @@ var editor,
             editorSession = editor.getSession();
             this.configureEditorFromSettings();
             
-            var filenameTitle = document.getElementById('filename');
-            filenameTitle.addEventListener('click', fileNameClick);
+            document.getElementById('filenameButton').addEventListener('click', fileNameClick);
+
+            var fileNameInput = document.getElementById('fileNameInput');
+            fileNameInput.addEventListener('blur', hideFileNameInput);
+            fileNameInput.addEventListener('keydown', function (e) {
+
+                if (e.key === 'Enter') {
+
+                    e.preventDefault();
+                }
+
+            });
 
             Windows.Storage.ApplicationData.current.addEventListener("datachanged", this.configureEditorFromSettings);
 
             var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
             dataTransferManager.addEventListener("datarequested", this.dataRequestedForSharing);
+            
 
             // Keyboard events
             this.addKeyboardShortcuts();
@@ -145,12 +156,15 @@ var editor,
 
                     options.shareData.getTextAsync().then(function (text) {
                         
+                        editor.getSession().getDocument().setValue(text);
+                        setUnsaved();
                         return WinJS.Promise.timeout(1200);
                         
 
                     }).done(function () {
-                        //configureEditorFromSettings();
-                        editor.getSession().getDocument().setValue(text);
+                        
+                        
+                        that.configureEditorFromSettings();
                         editor.navigateTo(0, 0);
                     });
 
@@ -169,14 +183,15 @@ var editor,
 
                     that.configureEditorFromSettings();
                     setSaved();
-
+                    setFileName('Untitled');
                 });
 
             }
             
             
             sessionState.hasEditorChanged = false;
-
+            setupStandardOrSnappedView();
+            window.addEventListener('resize', setupStandardOrSnappedView);
             this.setupAppBar();
             
         },
@@ -186,7 +201,7 @@ var editor,
             var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
             dataTransferManager.removeEventListener("datarequested", this.dataRequestedForSharing);
             Windows.Storage.ApplicationData.current.removeEventListener("datachanged", this.configureEditorFromSettings);
-
+            window.removeEventListener('resize', setupStandardOrSnappedView);
             this.removeKeyboardShortcuts();
             hideAppBar();
             hideSearch();
@@ -281,10 +296,10 @@ var editor,
                 
             });
 
-            cmdNew.addEventListener('click', cmdNewFile);
-            cmdSave.addEventListener('click', saveFile);
+            //cmdNew.addEventListener('click', cmdNewFile);
+            //cmdSave.addEventListener('click', saveFile);
             cmdSearch.addEventListener('click', openSearch);
-            cmdSaveAs.addEventListener('click', saveFileToLocation);
+            //cmdSaveAs.addEventListener('click', saveFileToLocation);
             cmdUndo.addEventListener('click', doUndo);
             cmdRedo.addEventListener('click', doRedo);
             cmdFindNext.addEventListener('click', findNext);
@@ -447,6 +462,77 @@ var editor,
         //
     });
 
+    function setupStandardOrSnappedView() {
+
+        var currentState = Windows.UI.ViewManagement.ApplicationView.value;
+        
+        if (currentState === Windows.UI.ViewManagement.ApplicationViewState.snapped) {
+            
+            setupSnappedView();
+
+        } else {
+
+            setupStandardView();
+
+        }
+
+    }
+
+    function setupStandardView() {
+
+        document.querySelector('.titlearea').removeEventListener('click', showHeaderMenu);
+        //document.querySelector('.titlecontainer').disabled = true;
+        document.getElementById('filenameButton').addEventListener('click', fileNameClick);
+
+        
+        document.getElementById('renameFileMenuItem').removeEventListener('click', fileNameClick);
+        document.getElementById('newFileMenuItem').removeEventListener('click', cmdNewFile);
+        document.getElementById('saveFileMenuItem').removeEventListener('click', saveFile);
+        document.getElementById('saveAsFileMenuItem').removeEventListener('click', saveFileToLocation);
+        document.getElementById('homeMenuItem').removeEventListener('click', navigateBack);
+
+
+        document.getElementById('saveFile').addEventListener('click', saveFile);
+        document.getElementById('saveAsFile').addEventListener('click', saveFileToLocation);
+        document.getElementById('newFileEditor').addEventListener('click', cmdNewFile);
+
+
+    }
+
+    function setupSnappedView() {
+
+        document.querySelector('.titlearea').addEventListener('click', showHeaderMenu);
+        //document.querySelector('.titlecontainer').disabled = false;
+        filenameButton.removeEventListener('click', fileNameClick);
+
+        document.getElementById('renameFileMenuItem').addEventListener('click', fileNameClick);
+        document.getElementById('newFileMenuItem').addEventListener('click', cmdNewFile);
+        document.getElementById('saveFileMenuItem').addEventListener('click', saveFile);
+        document.getElementById('saveAsFileMenuItem').addEventListener('click', saveFileToLocation);
+        document.getElementById('homeMenuItem').addEventListener('click', navigateBack);
+
+        document.getElementById('saveFile').removeEventListener('click', saveFile);
+        document.getElementById('saveAsFile').removeEventListener('click', saveFileToLocation);
+        document.getElementById('newFileEditor').removeEventListener('click', cmdNewFile);
+
+        
+    }
+
+    function navigateBack() {
+
+        WinJS.Navigation.back();
+
+    }
+
+    function showHeaderMenu() {
+        var title = document.getElementById('filenameButton');
+        var menu = document.getElementById('editorHeaderMenu').winControl;
+        menu.anchor = title;
+        menu.placement = 'bottom';
+
+        menu.show();
+    }
+
     // Callbacks need to be accessible to everybody within the (function{ ... })();
     // But functions that related to Ace/Editor can be either here or within the Page's scope
 
@@ -572,6 +658,7 @@ var editor,
         }
 
         sessionState.editorCurrentFileName = name;
+        //document.getElementById('filenameButton');
         document.getElementById('filename').innerHTML = name;
 
     }
@@ -579,21 +666,23 @@ var editor,
     function getFileName () {
 
         var fileName = '',
-            titleHead = document.getElementById('filename'),
+            fileNameButton = document.getElementById('filenameButton'),
+            fileNameSpan = document.getElementById('filename'),
+            fileNameInput = document.getElementById('filenameInput'),
             sessionState = WinJS.Application.sessionState;
 
         if (!sessionState.editorCurrentFileToken) {
 
-            if (titleHead.firstChild.nodeType !== 1) {
+            if (fileNameButton.style.visibility !== 'hidden') {
 
-                fileName = titleHead.innerHTML;
+                fileName = fileNameSpan.innerHTML;
 
             } else {
                 
-                fileName = titleHead.firstChild.value;
+                fileName = fileNameInput.value;
                 
             }
-            //fileName = 'Untitled';
+            
 
         } else {
 
@@ -792,43 +881,20 @@ var editor,
     function hideFileNameInput() {
 
         var sessionState = WinJS.Application.sessionState,
-            sessionFiles = sessionState.files;
-        //console.log("Here!");
-        var titleVal = document.getElementById('fileNameInput').value;
+            sessionFiles = sessionState.files,
+            fileNameInput = document.getElementById('fileNameInput'),
+            titleVal = fileNameInput.value,
+            fileNameButton = document.getElementById('filenameButton');
+
+        fileNameInput.style.visibility = 'hidden';
+        fileNameButton.style.visibility = 'visible';
+
         //console.log(titleVal+' '+editorCurrentFileName+' '+editorCurrentFileToken);
         if (sessionState.editorCurrentFileToken && titleVal != sessionState.editorCurrentFileName) {
 
             Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(sessionState.editorCurrentFileToken).then(function (retrievedFile) {
 
                 retrievedFile.renameAsync(titleVal).done(function () {
-
-                    // Need to refresh the file in the mruList
-                    //Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.remove(sessionState.editorCurrentFileToken);
-                    //sessionState.editorCurrentFileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(retrievedFile, retrievedFile.name);
-
-                    //
-
-                    for (var x = 0; x < sessionFiles.length; x++) {
-
-                        if (sessionFiles[x].token == sessionState.editorCurrentFileToken) {
-
-                            sessionFiles[x].title = titleVal;
-                            //sessionFiles.splice(x, 1);
-
-                        }
-
-
-                    }
-
-                    /*sessionFiles.push({
-                        icon: "images/filelogo.png",
-                        title: retrievedFile.name,
-                        textType: retrievedFile.displayType,
-                        size: "",
-                        // sourceIcon: "",
-                        kind: "R",
-                        token: sessionState.editorCurrentFileToken,
-                    });*/
 
                     setFileName(titleVal);
                     //filenameTitle.innerHTML = titleVal;
@@ -846,7 +912,7 @@ var editor,
 
     }
 
-    function fileNameClick() {
+/*    function fileNameClick() {
 
         var fileNameHead = document.getElementById('filename');
         if (fileNameHead.firstChild.nodeType !== 1) {
@@ -874,7 +940,39 @@ var editor,
         }
         
     }
+/* This is the only onclick event handler for the file name in the editor. */
+    /*
 
+            textInput.addEventListener('blur', hideFileNameInput);
+            textInput.addEventListener('keydown', function (e) {
+
+                if (e.key === 'Enter') {
+
+                    //findNext();
+                    e.preventDefault();
+                }
+
+            });
+    /* */
+    function fileNameClick() {
+
+        var fileNameInput = document.getElementById('fileNameInput'),
+            fileNameSpan = document.getElementById('filename'),
+            fileNameButton = document.getElementById('filenameButton');
+
+
+        if (fileNameButton.style.visibility !== 'hidden') {
+
+            var name = getFileName();
+            fileNameButton.style.visibility = 'hidden';
+            
+            fileNameInput.value = name;
+            fileNameInput.style.visibility = 'visible';
+            fileNameInput.focus();
+
+        }
+
+    }
 
     function saveFileToLocation() {
 
@@ -959,6 +1057,15 @@ var editor,
     // 
     function unsavedFilePrompt () {
         // Create the message dialog and set its content
+
+        var currentState = Windows.UI.ViewManagement.ApplicationView.value;
+        if (currentState === Windows.UI.ViewManagement.ApplicationViewState.snapped &&
+            !Windows.UI.ViewManagement.ApplicationView.tryUnsnap()) {
+            // Fail silently if we can't unsnap
+            
+            return;
+        }
+
         var sessionState = WinJS.Application.sessionState,
             msg = new Windows.UI.Popups.MessageDialog("Do you want to save changes to " + sessionState.editorCurrentFileName + "?", "Unsaved Changes"),
             that = this;

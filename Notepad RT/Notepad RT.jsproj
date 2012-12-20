@@ -77,10 +77,12 @@
     <Content Include="Assets\WideLogo.scale-140.png" />
     <Content Include="Assets\WideLogo.scale-180.png" />
     <Content Include="Assets\WideLogo.scale-80.png" />
+    <Content Include="css\homePage.css" />
     <Content Include="default.html" />
     <Content Include="html\DefaultsUI.html" />
     <Content Include="html\FeedbackUI.html" />
     <Content Include="html\LegalUI.html" />
+    <Content Include="images\home.png" />
     <Content Include="js\default.js" />
     <Content Include="css\default.css" />
     <Content Include="ace-src\ace.js" />
@@ -176,9 +178,6 @@
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="images\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment

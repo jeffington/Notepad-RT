@@ -3,85 +3,67 @@
 <head>
     <meta charset="utf-8" />
     <script src="/pages/editor/editorPage.js"></script>
-<style type="text/css">
-    body {
-        /*background-color: #F5F5F5;
-        color: black;
-        /* TODO: This is the "Light" app theme.    
-        */
-    }
-    #editor { 
-        position: absolute;
-        top: 80px;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        font-family: monospace;
-    }
-    .ace_editor {
-        /*
-           This was the code that added a scrollbar.    
-        */
-        -ms-overflow-style: scrollbar;
-        
-    }
-    
-    textarea {
-        -ms-overflow: hidden;
-        overflow: hidden;
-        text-indent: -9999px !important;
-        font-family: monospace !important;
-        /* TODO: Need to get rid of that fucking flashing pixel. */
-    }
-</style>
 </head>
 <body>
-    
-    <header aria-label="Header content" role="banner">
-        
-        <h1 class="win-type-ellipsis" style="padding-left: 3%; padding-right: 3%;" >
+    <div id="editorFragment">
+
+        <header aria-label="Header content" role="banner" style="-ms-grid-row: 1;">
+
+            <div class="titlearea win-type-ellipsis" style="padding-left: 3%; padding-right: 3%; display: -ms-grid; -ms-grid-columns: auto auto minmax(min-content, 1fr) auto; -ms-grid-rows: minmax(min-content, 1fr);">
+                
+                <button id="backbutton" class="win-backbutton" aria-label="Back" disabled style="-ms-grid-column: 1; -ms-grid-row-align: center;"></button>
+                
+                <button id="filenameButton" class="titlecontainer" style="-ms-grid-column: 2;">
+                    <h1>
+                        <span id="filename" class="pagetitle">Untitled</span>
+                        <span class="chevron win-type-x-large">&#xe099</span>
+                    </h1>
+                </button>
+
+                <input id="fileNameInput" type="text" style="-ms-grid-column: 2; -ms-grid-row-align: center; -ms-grid-column-align: start; visibility: hidden;" />
+                
+                <div id="editorButtons">
+
+                    <button id="saveFile" class="action" title="Save File">&#xe105;</button>
+				    <p id="saveFileLabel">Save</p>
+                    <button id="saveAsFile" class="action" title="Save As File">&#xe159;</button>
+				    <p id="saveAsFileLabel">Save As</p>
+                    <button id="newFileEditor" class="action" title="New File">&#xe132;</button>
+				    <p id="newFileEditorLabel">New</p>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <section aria-label="Main content" role="main" style="-ms-grid-row: 2; -ms-grid-column: 1;">
             
-            <button id="backbutton" class="win-backbutton" aria-label="Back" disabled></button>
-            <!--<button class="action">&#xe160;</button>
-            <button class="action">&#xe160;</button>-->
-            <span id="filename" class="pagetitle">Untitled</span>
-            <!--<span class="chevron win-type-x-large">&#xe099;</span>
-            <progress></progress>
-            <button></button>-->
-            
-            <!--<table style="float: right; display: inline-block; border: 1px solid white; margin-top: -2%;">
-                <tr>
-                    <td>
-                        <button class="action">&#xe160;</button>
-                    </td>
-                    <td>
-                        <button class="action">&#xe105;</button>
-                    </td>
-                    <td>
-                        <button id="saveAsBtn" class="action">&#xe159;</button>
-                        <label for="saveAsBtn">Save As</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="color: white;">New</td>
-                    <td>Save</td>
-                    <td>Save As</td>
-                </tr>
-            </table>-->
-            
-            
-        </h1>
-        
-            
-            
-        <!--<button style="float: right;"
-            data-win-control="WinJS.UI.MenuCommand" 
-            data-win-options="{id:'otherCmd',label:'Save As',icon:'savelocal',
-                section:'selection',tooltip:'Remove item'}">-->
-    </header>
-    <section aria-label="Main content" role="main">
-        <div id="editor"></div>
-    </section>
+            <div id="editor"></div>
+
+        </section>
+
+    </div>
+
+    <div id="editorHeaderMenu" class="headerMenu" data-win-control="WinJS.UI.Menu">
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'renameFileMenuItem'}">
+            <span class="menuItemIcon">&#xe186;</span>Rename File
+        </button>
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'newFileMenuItem'}">
+            <span class="menuItemIcon">&#xe132;</span>New File
+        </button>
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'saveFileMenuItem'}">
+            <span class="menuItemIcon">&#xe105;</span>Save File
+        </button>
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'saveAsFileMenuItem'}">
+            <span class="menuItemIcon">&#xe159;</span>Save File As
+        </button>
+        <hr data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'separator',type:'separator'}" />
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'homeMenuItem'}">
+            <span class="menuItemIcon">&#xe112;</span>Home
+        </button>
+    </div>
+
     <div id="modeFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{Mode flyout}">
         <h3>Editor Mode</h3>
         <select id="editor-mode">
@@ -159,28 +141,12 @@
             data-win-options="{id:'cmdRedo',label:'Redo',icon:'redo',
                 section:'selection',tooltip:'Redo Typing'}">
         </button>
-       
-        <button 
-            data-win-control="WinJS.UI.AppBarCommand" 
-            data-win-options="{id:'cmdSave',label:'Save',icon:'save',
-                section:'selection',tooltip:'Save File'}">
-        </button>
-        <button 
-            data-win-control="WinJS.UI.AppBarCommand" 
-            data-win-options="{id:'cmdSaveAs',label:'Save As',icon:'savelocal',
-                section:'selection',tooltip:'Save as new file'}">
-        </button>
         <button 
             data-win-control="WinJS.UI.AppBarCommand" 
             data-win-options="{id:'cmdSearch',label:'Find',icon:'zoom',
                 section:'selection',tooltip:'Find and Replace'}">
         </button>
 
-        <button 
-            data-win-control="WinJS.UI.AppBarCommand" 
-            data-win-options="{id:'cmdNew',label:'New',icon:'page2',
-                section:'global',tooltip:'New File'}">
-        </button>
         <hr 
             data-win-control="WinJS.UI.AppBarCommand" 
             data-win-options="{type:'separator',section:'global'}" />

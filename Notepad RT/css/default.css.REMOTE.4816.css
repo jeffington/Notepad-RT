@@ -1,17 +1,11 @@
-﻿/* -----------------------------------------------
+﻿/*
     All of this CSS is 'global', that is, it is used in multiple pages/elements.
     This would be the place for branding and overall app styling & behavior.
-    -----------------------------------------------
 */
 
 body.light {
     background-color: #F5F5F5;
     color: black;
-}
-
-#contenthost {
-    width: 100%;
-    height: 100%;
 }
 
 body {
@@ -36,99 +30,14 @@ div.fragment {
     margin-right: 10px;
 }
 
-/* Styles for button.action */
-.action {
-    display: inline-block;
-    min-width: 0;
-    min-height: 0;
-    background-clip: border-box;
-    box-sizing: border-box;
-    border-radius: 50%;
-    border-width: 2px;
-    border-style: solid;
-    padding: 0;
-    text-align: center;
-    color: inherit;
-    /* Normal sizing. */
-    border-color: inherit;
-    width: 41px;
-    height: 41px;
-    font-size: 14pt;
-    line-height: 37px; /* line-height must match the content box height. */
-    vertical-align: baseline;
-}
-.win-backbutton .win-backbutton:disabled{
-    color: inherit;
-    border-color: inherit;
-}
-.win-backbutton:hover, .win-backbutton:hover:active {
-    border-color: inherit;
-    /*background-color: #D2D2D2;*/
-}
-.win-backbutton:disabled, .win-backbutton:disabled:active {
-    visibility: inherit;
-}
-.action:hover, .action:hover:active {
-    border-width: 2px;
-    border-style: solid;
-    border-color: inherit;
-    border-radius: 50%;
-    /*background-color: #D2D2D2;*/
-}
-.action::before {
-    font-family: "Segoe UI Symbol";
-    font-weight: normal;
-    /*content: "\E0D5";*/
-    vertical-align: 50%;
-}
-.action:-ms-lang(ar, dv, fa, he, ku-Arab, pa-Arab, prs, ps, sd-Arab, syr, ug, ur, qps-plocm)::before {
-    content: "\E0AE";
-}
-
-/* -----------------------------------------------
+/* 
     This is all the CSS for editorPage.html
     If possible, we should move this into a separate file so it can be un/loaded with the page.
-   -----------------------------------------------
 */
 
 #editorFragment {
 
-    display: -ms-grid;
-    -ms-grid-rows: 200px minmax(min-content, 1fr);
-    -ms-grid-columns: minmax(min-content, 1fr);
     
-}
-
-#editor {
-    
-    position: absolute;
-    
-    top: 80px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    
-    /*background-color: red;
-    position: static;
-    margin-top: 10px;
-    -ms-grid-column: 1;
-    -ms-grid-row: 2;
-    -ms-grid-row-align: stretch;
-    -ms-grid-column-align: stretch;
-    -ms-grid-row-span: 2;*/
-}
-.ace_editor {
-    /*
-        This was the code that added a scrollbar.    
-    */
-    -ms-overflow-style: scrollbar;
-    
-}
-    
-textarea {
-    text-indent: -9999px !important;
-    
-    /* TODO: Need to get rid of that fucking flashing pixel. BLINKY! */
 }
 
 #filename {
@@ -204,25 +113,12 @@ textarea {
     #backbutton {
         display: none;
     }
-
-    #cmdOpenSettings {
-        display: none;
-    }
-
-    #editorFragment {
-        -ms-grid-rows: 40px minmax(min-content, 1fr);
-    }
-
-    #editor {
-        top: 50px;
-    }
 }
 
 
-/* -----------------------------------------------
+/* 
     This is all the CSS for homePage.html
     If possible, we should move this into a separate file so it can be un/loaded with the page.
-    -----------------------------------------------
 */
 
 #homePageFragment {
@@ -288,17 +184,12 @@ textarea {
 	-ms-grid-row-align: center;
 }
 
-#filesListView  {
+#filesListView {
+    padding: 0;
     margin-top: 10px;
     -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    -ms-grid-row-align: stretch;
-    /*height: *;*/
+	
 }
-
-/*
-    Styles for the listview header and item templates    
-*/
 
 .groupHeaderTemplateTitle {
     display: -ms-grid;
@@ -367,6 +258,58 @@ textarea {
             overflow: hidden;
         }
 
+
+
+/*
+Back button.
+*/
+.action {
+    display: inline-block;
+    min-width: 0;
+    min-height: 0;
+    background-clip: border-box;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    padding: 0;
+    text-align: center;
+    color: inherit;
+    /* Normal sizing. */
+    border-color: inherit;
+    width: 41px;
+    height: 41px;
+    font-size: 14pt;
+    line-height: 37px; /* line-height must match the content box height. */
+    vertical-align: baseline;
+}
+.win-backbutton .win-backbutton:disabled{
+    color: inherit;
+    border-color: inherit;
+}
+.win-backbutton:hover, .win-backbutton:hover:active {
+    border-color: inherit;
+    /*background-color: #D2D2D2;*/
+}
+.win-backbutton:disabled, .win-backbutton:disabled:active {
+    visibility: inherit;
+}
+.action:hover, .action:hover:active {
+    border-width: 2px;
+    border-style: solid;
+    border-color: inherit;
+    border-radius: 50%;
+    /*background-color: #D2D2D2;*/
+}
+.action::before {
+    font-family: "Segoe UI Symbol";
+    font-weight: normal;
+    /*content: "\E0D5";*/
+    vertical-align: 50%;
+}
+.action:-ms-lang(ar, dv, fa, he, ku-Arab, pa-Arab, prs, ps, sd-Arab, syr, ug, ur, qps-plocm)::before {
+    content: "\E0AE";
+}
 
 /*button.btn {
     width:250px;

@@ -42,13 +42,13 @@
 
             });
 
-            keyBinding.value = settings['keybinding'];
+            /*keyBinding.value = settings['keybinding'];
             keyBinding.addEventListener('change', function (eventInfo) {
 
                 settings['keybinding'] = keyBinding.value;
                 Windows.Storage.ApplicationData.current.signalDataChanged();
 
-            });
+            });*/
 
             themeElem.value = settings['theme'];
             themeElem.addEventListener('change', function (eventInfo) {
