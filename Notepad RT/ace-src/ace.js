@@ -1794,9 +1794,13 @@ exports.addMouseWheelListener = function(el, callback) {
                 e.wheelY = (e.detail || 0) * 5;
             }
         }
+
+        console.log('Mouse wheel x: ' + e.wheelX + ' y: ' + e.wheelY);
+
         callback(e);
     };
-    //exports.addListener(el, "DOMMouseScroll", listener);
+    // TODO: 
+    exports.addListener(el, "DOMMouseScroll", listener);
     exports.addListener(el, "mousewheel", listener);
 };
 

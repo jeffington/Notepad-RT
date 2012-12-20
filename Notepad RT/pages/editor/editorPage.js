@@ -411,7 +411,10 @@ var editor,
             
             //editorSession.setMode(settings['mode']);
             editor.setTheme(settings['theme']);
-        
+            
+            // TODO:
+            editor.setAnimatedScroll(false);
+
             var gutter = document.querySelector('.ace_gutter-layer');
 
             if (settings['showGutter']) {
