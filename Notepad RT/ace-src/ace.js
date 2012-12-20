@@ -11693,6 +11693,11 @@ var VirtualRenderer = function(container, theme) {
         
         if (!height)
             height = dom.getInnerHeight(this.container);
+
+        console.log('height: ' + height);
+
+        
+
         if (force || size.height != height) {
             size.height = height;
 
@@ -11708,6 +11713,9 @@ var VirtualRenderer = function(container, theme) {
 
         if (!width)
             width = dom.getInnerWidth(this.container);
+        // TODO:
+        console.log('width: ' + width);
+
         if (force || this.resizing > 1 || size.width != width) {
             size.width = width;
 
