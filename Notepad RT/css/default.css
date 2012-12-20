@@ -37,13 +37,27 @@ body {
 }
 /* TODO: This is the "Light" app theme. */
 
+#editorFragment {
+    display: -ms-grid;
+    -ms-grid-rows: auto minmax(min-content, 1fr);
+    -ms-grid-columns: minmax(min-content, 1fr);
+    
+}
+
 #editor { 
+    
     position: absolute;
+    
     top: 80px;
     right: 0;
     bottom: 0;
     left: 0;
-    font-family: monospace;
+    
+    
+    /*position: static;
+    -ms-grid-column: 1;
+    -ms-grid-row: 2;
+    bottom: 0;*/
 }
 .ace_editor {
     /*
@@ -53,24 +67,10 @@ body {
     
 }
     
-    textarea {
-        -ms-overflow: hidden;
-        overflow: hidden;
-        text-indent: -9999px !important;
-        font-family: monospace !important;
-        /* TODO: Need to get rid of that fucking flashing pixel. BLINKY! */
-    }
-
-#editorFragment {
-    display: -ms-grid;
-    -ms-grid-rows: auto max-content;
+textarea {
+    text-indent: -9999px !important;
     
-}
-
-#editor {
-
-    -ms-grid-row: 2;
-
+    /* TODO: Need to get rid of that fucking flashing pixel. BLINKY! */
 }
 
 #filename {
