@@ -1,0 +1,385 @@
+﻿/*
+    All of this CSS is 'global', that is, it is used in multiple pages/elements.
+    This would be the place for branding and overall app styling & behavior.
+*/
+
+body.light {
+    background-color: #F5F5F5;
+    color: black;
+}
+
+body {
+    background: #151615 url('/images/home.png') no-repeat left top;
+    background-size: cover;
+    background-attachment:fixed;
+}
+
+div.fragment {
+    width: 94%;
+    height: 100%;
+    padding: 3%;
+}
+
+.headerMenu {
+    
+    width: 100%;
+    
+}
+
+.menuItemIcon {
+    margin-right: 10px;
+}
+
+/* 
+    This is all the CSS for editorPage.html
+    If possible, we should move this into a separate file so it can be un/loaded with the page.
+*/
+
+#editorFragment {
+
+    
+}
+
+#filename {
+    width: 100%;
+    text-overflow: ellipsis;
+}
+
+#editorButtons {
+	display: -ms-grid;
+	-ms-grid-column: 4;
+	-ms-grid-row-align: center;
+
+	-ms-grid-rows: auto 20px;
+	-ms-grid-columns: 70px 70px 70px;
+}
+
+#newFileEditor {
+    -ms-grid-column-align: center;
+    -ms-grid-row-align: center;
+    -ms-grid-column: 3;
+	
+}
+
+#newFileEditorLabel {
+    text-align: center;
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    -ms-grid-row-align: center;
+	font-size: 10pt;
+}
+
+#saveFile {
+    -ms-grid-column-align: center;
+    -ms-grid-row-align: center;
+    -ms-grid-column: 1;
+	
+}
+
+#saveFileLabel {
+    text-align: center;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-row-align: center;
+	font-size: 10pt;
+}
+
+#saveAsFile {
+    -ms-grid-column-align: center;
+    -ms-grid-row-align: center;
+    -ms-grid-column: 2;
+	
+}
+
+#saveAsFileLabel {
+    text-align: center;
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    -ms-grid-row-align: center;
+	font-size: 10pt;
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .titlecontainer {
+        -ms-grid-column-span: 3;
+    }
+    .chevron {
+        vertical-align: 4px;
+        visibility: visible;
+    }
+    #editorButtons {
+        display: none;
+    }
+    #backbutton {
+        display: none;
+    }
+}
+
+
+/* 
+    This is all the CSS for homePage.html
+    If possible, we should move this into a separate file so it can be un/loaded with the page.
+*/
+
+#homePageFragment {
+    display: -ms-grid;
+    -ms-grid-rows: auto minmax(min-content, 1fr);
+	-ms-grid-columns: minmax(min-content, 1fr);
+}
+
+.chevron {
+    vertical-align:8px;
+    visibility: hidden;
+}
+.titlecontainer {
+    display: inline;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+}
+.titlecontainer:hover, .titlecontainer:disabled, .titlecontainer:active, .titlecontainer:focus {
+    background:transparent;
+    color: inherit;
+}
+
+#homeButtons {
+	display: -ms-grid;
+	-ms-grid-column: 3;
+	-ms-grid-row-align: center;
+
+	-ms-grid-rows: auto 20px;
+	-ms-grid-columns: 70px 70px;
+}
+
+#newFile {
+    -ms-grid-column-align: center;
+    -ms-grid-row-align: center;
+    -ms-grid-column: 1;
+	
+}
+
+#newFileLabel {
+    text-align: center;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-row-align: center;
+	font-size: 10pt;
+}
+
+#openFile {
+    -ms-grid-column-align: center;
+    -ms-grid-column: 2;
+    
+}
+#openFileLabel {
+    text-align: center;
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    -ms-grid-row-align: center;
+	font-size: 10pt;
+}
+
+#homeButtons button {
+	-ms-grid-row: 1;
+	-ms-grid-row-align: center;
+}
+
+#filesListView {
+    padding: 0;
+    margin-top: 10px;
+    -ms-grid-row: 2;
+	
+}
+
+.groupHeaderTemplateTitle {
+    display: -ms-grid;
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    text-overflow: ellipsis;
+}
+/*        <h6 class="groupHeaderTemplateDetails
+
+/* overall list dimensions */
+#imageTextListFile {
+    width: 1366px;
+    height: 578px;
+}
+
+    /*-------------------------------------------------------------------------------------------*/
+    /* imageText-listFile - used in Picker list */
+    /*-------------------------------------------------------------------------------------------*/
+    /*starting margin */
+    #imageTextListFile .win-horizontal.win-viewport .win-surface {
+        margin: 0px 100px;
+    }
+
+    #imageTextListFile .win-horizontal.win-viewport .win-container {
+        margin: 5px 10px;
+    }
+
+/*individual item dimensions */
+.imageTextListFile {
+    display: -ms-grid;
+    width: 290px;
+    height: 60px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+    /* image */
+.imageTextListFile img.imageTextListFileImage {
+    -ms-grid-column: 1;
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+    .imageTextListFile .imageTextListFileTextArea {
+        -ms-grid-column: 2;
+        margin: 0px 5px 0px 5px;
+    }
+
+        /* text line 1 */
+        .imageTextListFile .imageTextListFileTextArea .imageTextListFileTextName {
+            width: 230px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        /* text line 2 */
+        .imageTextListFile .imageTextListFileTextArea .imageTextListFileTextDate {
+            width: 230px;
+            overflow: hidden;
+        }
+
+        /* text line 3 */
+        .imageTextListFile .imageTextListFileTextArea .imageTextListFileTextSize {
+            width: 230px;
+            overflow: hidden;
+        }
+
+
+
+/*
+Back button.
+*/
+.action {
+    display: inline-block;
+    min-width: 0;
+    min-height: 0;
+    background-clip: border-box;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    padding: 0;
+    text-align: center;
+    color: inherit;
+    /* Normal sizing. */
+    border-color: inherit;
+    width: 41px;
+    height: 41px;
+    font-size: 14pt;
+    line-height: 37px; /* line-height must match the content box height. */
+    vertical-align: baseline;
+}
+.win-backbutton .win-backbutton:disabled{
+    color: inherit;
+    border-color: inherit;
+}
+.win-backbutton:hover, .win-backbutton:hover:active {
+    border-color: inherit;
+    /*background-color: #D2D2D2;*/
+}
+.win-backbutton:disabled, .win-backbutton:disabled:active {
+    visibility: inherit;
+}
+.action:hover, .action:hover:active {
+    border-width: 2px;
+    border-style: solid;
+    border-color: inherit;
+    border-radius: 50%;
+    /*background-color: #D2D2D2;*/
+}
+.action::before {
+    font-family: "Segoe UI Symbol";
+    font-weight: normal;
+    /*content: "\E0D5";*/
+    vertical-align: 50%;
+}
+.action:-ms-lang(ar, dv, fa, he, ku-Arab, pa-Arab, prs, ps, sd-Arab, syr, ug, ur, qps-plocm)::before {
+    content: "\E0AE";
+}
+
+/*button.btn {
+    width:250px;
+    height: 60px;
+    margin-bottom: 20px;
+    color: inherit;
+}
+#firstCol {
+    float: left;
+    width: 17%;
+    padding-right: 3%;
+}
+#secondCol {
+    float: left;
+    width: 74%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+/* Leftover code from the original layout. 1.0-1.2*/
+
+
+/*
+#imageTextList.light {
+
+    background-color: white;
+    border: 1px solid #D2D2D2;
+
+}
+/* Experimentation for the light app theme */
+
+.notepadrt-background {
+    background: #7cb800;
+}
+
+@media screen and (-ms-view-state: fullscreen-landscape) {
+}
+
+@media screen and (-ms-view-state: filled) {
+    .chevron {
+        display: none;
+    }
+}
+@media screen and (-ms-view-state: snapped) {
+    .titlearea {
+        -ms-grid-columns: max-content;
+    }
+
+    .titlecontainer {
+        -ms-grid-column-span: 2;
+        -ms-grid-row-align: center;
+        -ms-grid-column-align: center;
+
+    }
+
+    .chevron {
+        vertical-align: 4px;
+    }
+    #homeButtons {
+        display: none;
+    }
+    .chevron {
+        visibility: visible;
+    }
+    #backbutton {
+        display: none;
+    }
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    /*.chevron {
+        display: none;
+    }*/
+}
