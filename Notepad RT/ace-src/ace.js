@@ -1802,6 +1802,11 @@ exports.addMouseWheelListener = function(el, callback) {
     // TODO: 
     //exports.addListener(el, "DOMMouseScroll", listener);
     //exports.addListener(el, "mousewheel", listener);
+    exports.addListener(el, "mousewheel", function () {
+
+        el.onscroll.apply(el);
+
+    });
 };
 
 exports.addMultiMouseDownListener = function(el, timeouts, eventHandler, callbackName) {
