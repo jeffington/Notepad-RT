@@ -670,7 +670,7 @@ var editor,
 
         if (!sessionState.editorCurrentFileToken) {
 
-            if (fileNameButton.style.display !== 'none') {
+            if (fileNameButton.style.visibility !== 'hidden') {
 
                 fileName = fileNameSpan.innerHTML;
 
@@ -883,8 +883,8 @@ var editor,
             titleVal = fileNameInput.value,
             fileNameButton = document.getElementById('filenameButton');
 
-        fileNameInput.style.display = 'none';
-        fileNameButton.style.display = 'inline-block';
+        fileNameInput.style.visibility = 'hidden';
+        fileNameButton.style.visibility = 'visible';
 
         //console.log(titleVal+' '+editorCurrentFileName+' '+editorCurrentFileToken);
         if (sessionState.editorCurrentFileToken && titleVal != sessionState.editorCurrentFileName) {
@@ -957,15 +957,14 @@ var editor,
             fileNameSpan = document.getElementById('filename'),
             fileNameButton = document.getElementById('filenameButton');
 
-        console.log("HERE");
 
-        if (fileNameButton.style.display !== 'none') {
+        if (fileNameButton.style.visibility !== 'hidden') {
 
             var name = getFileName();
-            fileNameButton.style.display = 'none';
+            fileNameButton.style.visibility = 'hidden';
             
             fileNameInput.value = name;
-            fileNameInput.style.display = 'inline-block';
+            fileNameInput.style.visibility = 'visible';
             fileNameInput.focus();
 
         }

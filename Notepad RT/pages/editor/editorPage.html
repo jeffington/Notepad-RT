@@ -7,18 +7,21 @@
 <body>
     <div id="editorFragment">
 
-        <header aria-label="Header content" role="banner">
+        <header aria-label="Header content" role="banner" style="-ms-grid-row: 1;">
 
-            <div class="titlearea win-type-ellipsis" style="padding-left: 3%; padding-right: 3%; display: -ms-grid; -ms-grid-columns: auto auto minmax(min-content, 1fr) auto;">
-            
+            <div class="titlearea win-type-ellipsis" style="padding-left: 3%; padding-right: 3%; display: -ms-grid; -ms-grid-columns: auto auto minmax(min-content, 1fr) auto; -ms-grid-rows: minmax(min-content, 1fr);">
+                
                 <button id="backbutton" class="win-backbutton" aria-label="Back" disabled style="-ms-grid-column: 1; -ms-grid-row-align: center;"></button>
+                
                 <button id="filenameButton" class="titlecontainer" style="-ms-grid-column: 2;">
                     <h1>
                         <span id="filename" class="pagetitle">Untitled</span>
                         <span class="chevron win-type-x-large">&#xe099</span>
                     </h1>
                 </button>
-                <input id="fileNameInput" type="text" style="-ms-grid-column: 2; -ms-grid-row-align: center; -ms-grid-column-align: center; display: none;" />
+
+                <input id="fileNameInput" type="text" style="-ms-grid-column: 2; -ms-grid-row-align: center; -ms-grid-column-align: start; visibility: hidden;" />
+                
                 <div id="editorButtons">
 
                     <button id="saveFile" class="action" title="Save File">&#xe105;</button>
