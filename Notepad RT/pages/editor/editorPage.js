@@ -32,6 +32,20 @@ var editor,
         
         },
         {
+            exts: ["go"],
+            mode: "ace/mode/golang",
+        },
+        {
+            exts: ["groovy"],
+            mode: "ace/mode/groovy",
+
+        },
+        {
+            exts: ["hx"],
+            mode: "ace/mode/haxe",
+
+        },
+        {
             exts: ["java"],
             mode: "ace/mode/java",
         },
@@ -68,29 +82,114 @@ var editor,
             mode: "ace/mode/xml",
         },
         {
-            exts: ["c", "cpp", "h"],
+            exts: ["xq", "xqy", "xquery"],
+            mode: "ace/mode/xquery",
+        },
+        {
+            exts: ["c", "cc", "cxx", "cpp", "h"],
             mode: "ace/mode/c_cpp",
         },
         {
-            exts: ["cs"],
+            exts: ["clj"],
+            mode: "ace/mode/clojure",
+        },
+        {
+            exts: ["coffee"],
+            mode: "ace/mode/coffee",
+        },
+        {
+            exts: ["cs", "asp"],
             mode: "ace/mode/csharp",
+        },
+        {
+            exts: ["cfc"],
+            mode: "ace/mode/coldfusion",
+        },
+        {
+            exts: ["jade"],
+            mode: "ace/mode/jade",
+        },
+        {
+            exts: ["glslv", "glslf", "vert", "frag"],
+            mode: "ace/mode/glsl",
+        },
+        {
+            exts: ["jsx"],
+            mode: "ace/mode/jsx",
+        },
+        {
+            exts: ["latex", "tex"],
+            mode: "ace/mode/latex",
+        },
+        {
+            exts: ["liquid"],
+            mode: "ace/mode/liquid",
+        },
+        {
+            exts: ["less"],
+            mode: "ace/mode/less",
+        },
+        {
+            exts: ["lua"],
+            mode: "ace/mode/lua",
+        },
+        {
+            exts: ["lp"],
+            mode: "ace/mode/luapage",
         },
         {
             exts: ["json"],
             mode: "ace/mode/json",
         },
         {
+            exts: ["ocaml", "ml", "mli"],
+            mode: "ace/mode/ocaml",
+        },
+        {
             exts: ["rb", "rbw"],
             mode: "ace/mode/ruby",
+        },
+        {
+            exts: ["scala"],
+            mode: "ace/mode/scala",
+        },
+        {
+            exts: [".sass", ".scss"],
+            mode: "ace/mode/scss",
+        },
+        {
+            exts: ["sh"],
+            mode: "ace/mode/sh",
         },
         {
             exts: ["sql"],
             mode: "ace/mode/sql",
         },
         {
+            exts: ["scad"],
+            mode: "ace/mode/scad",
+        },
+        {
+            exts: ["svg"],
+            mode: "ace/mode/svg",
+        },
+        {
             exts: ["psql"],
             mode: "ace/mode/pgsql",
         },
+        {
+            exts: ["tcl"],
+            mode: "ace/mode/tcl",
+        },
+        {
+            exts: ["textile"],
+            mode: "ace/mode/textile",
+        },
+        {
+            exts: ["yaml"],
+            mode: "ace/mode/yaml",
+
+        }
     ];
     
     var editorPage = WinJS.UI.Pages.define("/pages/editor/editorPage.html", {
