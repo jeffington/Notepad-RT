@@ -76,7 +76,13 @@
     }
 
 })();
+function launchEditor() {
 
+    WinJS.Navigation.navigate("/pages/editor/editorPage.html");
+
+}
+
+/*
 function badFileType(type) {
     // Create the message dialog and set its content
 
@@ -96,11 +102,6 @@ function badFileType(type) {
 
 }
 
-function launchEditor() {
-
-    WinJS.Navigation.navigate("/pages/editor/editorPage.html");
-
-}
 
 function isValidFileType(file) {
 
@@ -333,6 +334,11 @@ function isValidFileType(file) {
     return validFileType;
 
 }
+/*
+    This was used to prevent the user from opening files that we didn't support or couldn't do anything about. (e.g. executables)
+    It was a bad solution because it was based on file extension.  This is because the StorageFile class gives us so little information
+    about the file.  This may be revisited later.
+*/
 
 function pickFile() {
 
@@ -359,7 +365,7 @@ function pickFile() {
         if (file) {
             //console.log(file.contentType);
             
-            if (isValidFileType(file)) {
+            //if (isValidFileType(file)) {
             //if (file.contentType.match('text/') || file.contentType.length === 0) {
                 // Application now has read/write access to the picked file(s)
 
@@ -368,11 +374,11 @@ function pickFile() {
 
                 WinJS.Navigation.navigate("/pages/editor/editorPage.html", { filetoken: fileToken });
 
-            } else {
+            /*} else {
 
                 badFileType(file.contentType);
 
-            }
+            }*/
 
         } // Do nothing if a file wasn't picked
 
