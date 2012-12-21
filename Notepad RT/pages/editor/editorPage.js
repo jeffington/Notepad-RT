@@ -106,6 +106,26 @@ var editor,
             mode: "ace/mode/coldfusion",
         },
         {
+            exts: ["ts"],
+            mode: "ace/mode/typescript"
+        },
+        {
+            exts: ["dart"],
+            mode: "ace/mode/dart",
+        },
+        {
+            exts: ["r"],
+            mode: "ace/mode/r",
+        },
+        {
+            exts: ["rdoc"],
+            mode: "ace/mode/rdoc",
+        },
+        {
+            exts: ["rhtml"],
+            mode: "ace/mode/rhtml",
+        },
+        {
             exts: ["jade"],
             mode: "ace/mode/jade",
         },
