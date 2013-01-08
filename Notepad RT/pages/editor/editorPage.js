@@ -527,31 +527,19 @@ var editor,
         //
         configureEditorFromSettings: function () {
 
-            var editor = ace.edit("editor"),
-                editorSession = editor.getSession(),
-                settings = Windows.Storage.ApplicationData.current.localSettings.values;
-        
-            
-            settings['fontSize'] = settings['fontSize'] || 12;
-            settings['highlightActiveLine'] = (settings['highlightActiveLine'] === undefined ? false : settings['highlightActiveLine']);
-            settings['showInvisibleCharacters'] = (settings['showInvisibleCharacters'] === undefined ? false : settings['showInvisibleCharacters']);
-            settings['theme'] = settings['theme'] || 'ace/theme/tomorrow_night';
-            settings['mode'] = settings['mode'] || 'ace/mode/text';
-            settings['useHardTabs'] = (settings['useHardTabs'] === undefined ? true : settings['useHardTabs']);
-            settings['showIndentGuides'] = (settings['showIndentGuides'] === undefined ? true : settings['showIndentGuides']);
-            settings['showGutter'] = (settings['showGutter'] === undefined ? true : settings['showGutter']);
-            settings['showPrintMargin'] = (settings['showPrintMargin'] === undefined ? false : settings['showPrintMargin']);
+            var editor = ace.edit( "editor"),
+                editorSession = editor.getSession();
 
             
             //editorSession.setMode(settings['mode']);
-            editor.setTheme(settings['theme']);
+            editor.setTheme( settings[ 'theme']);
             
             // TODO:
             editor.setAnimatedScroll(false);
 
-            var gutter = document.querySelector('.ace_gutter-layer');
+            var gutter = document.querySelector( '.ace_gutter-layer');
 
-            if (settings['showGutter']) {
+            if ( settings[ 'showGutter']) {
 
                 gutter.style.display = 'inherit';
 
@@ -562,7 +550,7 @@ var editor,
             }
             
             
-            document.getElementById('editor').style.fontSize = settings['fontSize'] + 'px';
+            document.getElementById( 'editor').style.fontSize = settings[ 'fontSize'] + 'px';
         
         
             editorSession.setUseWrapMode(true);
