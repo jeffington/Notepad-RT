@@ -34,6 +34,7 @@
 
             });
 
+            /*
             editorModeElem.value = settings['mode'];
             editorModeElem.addEventListener('change', function (eventInfo) {
 
@@ -41,7 +42,7 @@
                 Windows.Storage.ApplicationData.current.signalDataChanged();
 
             });
-
+            */
             /*keyBinding.value = settings['keybinding'];
             keyBinding.addEventListener('change', function (eventInfo) {
 
