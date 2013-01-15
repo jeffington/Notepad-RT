@@ -61,27 +61,27 @@ var recentFilesDataAdapter = WinJS.Class.define(
         //var lastFetchIndex = Math.min(requestIndex + countAfter, that._groupData.length - 1);
         //var fetchIndex = Math.max(requestIndex - countBefore, 0);
         //var results = [];
-        itemsFromIndex: function (requestIndex, countBefore, countAfter) {
+        itemsFromIndex: function( requestIndex, countBefore, countAfter) {
 
             var that = this;
 
-            var fetchIndex = Math.max(requestIndex - countBefore, 0);
+            var fetchIndex = Math.max( requestIndex - countBefore, 0);
             var fileTotal = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.size;
 
             
-            if (fetchIndex >= fileTotal || fetchIndex < 0) {
+            if ( fetchIndex >= fileTotal || fetchIndex < 0) {
 
-                return WinJS.Promise.wrapError(new WinJS.ErrorFromName(WinJS.UI.FetchError.doesNotExist));
+                return WinJS.Promise.wrapError( new WinJS.ErrorFromName( WinJS.UI.FetchError.doesNotExist));
 
             }
 
             
-            var token = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(requestIndex).token;//fetchIndex).token;
+            var token = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt( requestIndex).token;//fetchIndex).token;
             
 
             var currentObject;
 
-            return Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(token).then(function (currentFile) {
+            return Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync( token).then( function( currentFile) {
 
                 currentObject = {
                     items: [
@@ -105,7 +105,7 @@ var recentFilesDataAdapter = WinJS.Class.define(
                     totalCount: fileTotal,
                 }
 
-                return currentFile.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.documentsView);
+                return currentFile.getThumbnailAsync( Windows.Storage.FileProperties.ThumbnailMode.documentsView);
                 
 
                 

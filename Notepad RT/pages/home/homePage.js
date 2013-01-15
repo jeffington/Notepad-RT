@@ -11,7 +11,7 @@
 (function () {
     "use strict";
     
-    var page = WinJS.UI.Pages.define("/pages/home/homePage.html", {
+    var page = WinJS.UI.Pages.define( "/pages/home/homePage.html", {
         ready: function (element, options) {
 
             var openFileButton = document.getElementById('openFile');
@@ -354,25 +354,25 @@ function pickFile() {
     var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
     openPicker.viewMode = Windows.Storage.Pickers.PickerViewMode.list;
     openPicker.suggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.documentsLibrary;
-    openPicker.fileTypeFilter.replaceAll(["*"]);
+    openPicker.fileTypeFilter.replaceAll( [ "*"]);
 
     // Open the picker for the user to pick a file
-    openPicker.pickSingleFileAsync().then(function (file) {
+    openPicker.pickSingleFileAsync().then( function( file) {
         var fileToken,
             fileInfo,
             sessionFileList = WinJS.Application.sessionState.files;
         
-        if (file) {
+        if ( file) {
             //console.log(file.contentType);
             
             //if (isValidFileType(file)) {
             //if (file.contentType.match('text/') || file.contentType.length === 0) {
                 // Application now has read/write access to the picked file(s)
 
-                fileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add(file, file.name);
+                fileToken = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.add( file, file.name);
                 //Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.add(file);
 
-                WinJS.Navigation.navigate("/pages/editor/editorPage.html", { filetoken: fileToken });
+                WinJS.Navigation.navigate( "/pages/editor/editorPage.html", { filetoken: fileToken });
 
             /*} else {
 
