@@ -1164,7 +1164,7 @@ var editor,
     // 
     function unsavedFilePrompt () {
         // Create the message dialog and set its content
-
+        /*
         var currentState = Windows.UI.ViewManagement.ApplicationView.value;
         if (currentState === Windows.UI.ViewManagement.ApplicationViewState.snapped &&
             !Windows.UI.ViewManagement.ApplicationView.tryUnsnap()) {
@@ -1203,7 +1203,7 @@ var editor,
 
         // Show the message dialog
         msg.showAsync();
-
+        /* The old way using the system Message Dialog. */
     }
 
 })();
