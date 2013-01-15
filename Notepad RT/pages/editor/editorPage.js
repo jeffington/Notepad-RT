@@ -501,15 +501,15 @@ var editor,
                 // Cut off the characters: ï»¿
                 if (array[0] == "ï" || array[1] == "»" || array[2] == "¿") {
 
-                    array.splice(0, 3);
+                    array.splice( 0, 3);
 
                 }
 
-                editor.getSession().getDocument().setValue(array.join(''));
+                editor.getSession().getDocument().setValue( array.join( ''));
             
-                return WinJS.Promise.timeout(1200);
+                return WinJS.Promise.timeout( 1200);
 
-            }).then(function (complete) {
+            }).then( function( complete) {
 
                 that.configureEditorFromSettings();
 
@@ -531,43 +531,43 @@ var editor,
         //
         configureEditorFromSettings: function () {
 
-            var editor = ace.edit( "editor"),
-                editorSession = editor.getSession(),
-                settings = Windows.Storage.ApplicationData.current.localSettings.values;
-            
-            //editorSession.setMode(settings['mode']);
-            editor.setTheme( settings[ 'theme']);
-            
-            // TODO:
-            editor.setAnimatedScroll(false);
+            //var //editor = ace.edit( "editor"),
+                //editorSession = editor.getSession(),
+            var settings = Windows.Storage.ApplicationData.current.localSettings.values;
+            if (editor) {
+                //editorSession.setMode(settings['mode']);
+                editor.setTheme(settings['theme']);
 
-            var gutter = document.querySelector( '.ace_gutter-layer');
+                // TODO:
+                editor.setAnimatedScroll(false);
 
-            if ( settings[ 'showGutter']) {
+                var gutter = document.querySelector('.ace_gutter-layer');
 
-                gutter.style.display = 'inherit';
+                if (settings['showGutter']) {
 
-            } else {
+                    gutter.style.display = 'inherit';
 
-                gutter.style.display = 'none';
+                } else {
 
+                    gutter.style.display = 'none';
+
+                }
+
+
+                document.getElementById('editor').style.fontSize = settings['fontSize'] + 'px';
+
+
+                editorSession.setUseWrapMode(true);
+                editorSession.setTabSize(4);
+                editorSession.setUseSoftTabs(settings['useHardTabs']);
+
+                editor.setHighlightActiveLine(settings['highlightActiveLine']);
+                editor.setShowInvisibles(settings['showInvisibleCharacters']);
+                editor.setShowPrintMargin(settings['showPrintMargin']);
+                editor.setTheme(settings['theme']);
+                //editorSession.setMode('ace/mode/text');
+                //editorSession.setMode(settings['mode']);
             }
-            
-            
-            document.getElementById( 'editor').style.fontSize = settings[ 'fontSize'] + 'px';
-        
-        
-            editorSession.setUseWrapMode( true);
-            editorSession.setTabSize( 4);
-            editorSession.setUseSoftTabs( settings[ 'useHardTabs']);
-
-            editor.setHighlightActiveLine( settings[ 'highlightActiveLine']);
-            editor.setShowInvisibles( settings[ 'showInvisibleCharacters']);
-            editor.setShowPrintMargin( settings[ 'showPrintMargin']);
-            editor.setTheme( settings[ 'theme']);
-            //editorSession.setMode('ace/mode/text');
-            //editorSession.setMode(settings['mode']);
-        
 
         },
         //
@@ -778,14 +778,14 @@ var editor,
     function getFileName() {
 
         var fileName = '',
-            fileNameButton = document.getElementById( 'filenameButton'),
+            filenameButton = document.getElementById( 'filenameButton'),
             fileNameSpan = document.getElementById( 'filename'),
             fileNameInput = document.getElementById( 'filenameInput'),
             sessionState = WinJS.Application.sessionState;
 
         if ( !sessionState.editorCurrentFileToken) {
 
-            if ( fileNameButton.style.visibility !== 'hidden') {
+            if ( filenameButton.style.visibility !== 'hidden') {
 
                 fileName = fileNameSpan.innerHTML;
 
