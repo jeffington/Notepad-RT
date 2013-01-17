@@ -548,6 +548,8 @@ var editor,
                 //editorSession.setMode(settings['mode']);
                 editor.setTheme( settings[ 'theme']);
 
+                //console.log("THEME: " + settings[ 'theme']);
+
                 // TODO:
                 editor.setAnimatedScroll( false);
 

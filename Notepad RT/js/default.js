@@ -14,6 +14,8 @@
 
     app.onactivated = function (args) {
 
+        setupDefaultSettings();
+
         if (args.detail.kind === activation.ActivationKind.launch) {
             
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
