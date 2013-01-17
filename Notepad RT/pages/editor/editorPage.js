@@ -212,6 +212,9 @@ var editor,
         }
     ];
     
+
+
+
     var editorPage = WinJS.UI.Pages.define("/pages/editor/editorPage.html", {
 
         ready: function (element, options) {
@@ -345,18 +348,18 @@ var editor,
 
         },
         //
-        dataRequestedForSharing: function(e) {
-            var request = e.request;
+        dataRequestedForSharing: function( event) {
+            var request = event.request;
        
             try {
 
                 var dataPackageTitle = getFileName();
                 request.data.properties.title = dataPackageTitle;
-                request.data.setText(editorSession.getDocument().getValue());
-            
-            } catch (e) {
+                request.data.setText( editorSession.getDocument().getValue());
+                
+            } catch( exception) {
 
-                request.failWithDisplayText("There's no text to share in the document.");
+                request.failWithDisplayText( "There's no text to share in the document.");
 
             }
             
@@ -395,55 +398,55 @@ var editor,
                 cmdFindNext = document.getElementById('cmdFindNext'),
                 cmdFindPrev = document.getElementById('cmdFindPrev'),
                 cmdReplace = document.getElementById('cmdReplace'),
-                cmdReplaceAll = document.getElementById('cmdReplaceAll'),
-                cmdCut = document.getElementById('cmdCut'),
-                cmdCopy = document.getElementById('cmdCopy'),
-                cmdPaste = document.getElementById('cmdPaste'),
-                inputSearchTerms = document.getElementById('searchTerms'),
-                inputReplaceTerms = document.getElementById('replaceTerms'),
-                cmdOpenSettings = document.getElementById('cmdOpenSettings'),
-                cmdMode = document.getElementById('cmdMode').winControl,
-                selectMode = document.getElementById('editor-mode');
+                cmdReplaceAll = document.getElementById( 'cmdReplaceAll'),
+                cmdCut = document.getElementById( 'cmdCut'),
+                cmdCopy = document.getElementById( 'cmdCopy'),
+                cmdPaste = document.getElementById( 'cmdPaste'),
+                inputSearchTerms = document.getElementById( 'searchTerms'),
+                inputReplaceTerms = document.getElementById( 'replaceTerms'),
+                cmdOpenSettings = document.getElementById( 'cmdOpenSettings'),
+                cmdMode = document.getElementById( 'cmdMode').winControl,
+                selectMode = document.getElementById( 'editor-mode');
 
 
-            cmdMode.flyout = document.getElementById("modeFlyout").winControl;
+            cmdMode.flyout = document.getElementById( "modeFlyout").winControl;
 
-            selectMode.addEventListener('change', function (event) {
+            selectMode.addEventListener( 'change', function( event) {
 
                 var mode = event.target.value;
                 
-                editorSession.setMode(mode);
-                editorSession.setMode('ace/mode/text');
-                editorSession.setMode(mode);
+                editorSession.setMode( mode);
+                editorSession.setMode( 'ace/mode/text');
+                editorSession.setMode( mode);
 
                 
             });
 
             //cmdNew.addEventListener('click', cmdNewFile);
             //cmdSave.addEventListener('click', saveFile);
-            cmdSearch.addEventListener('click', openSearch);
+            cmdSearch.addEventListener( 'click', openSearch);
             //cmdSaveAs.addEventListener('click', saveFileToLocation);
-            cmdUndo.addEventListener('click', doUndo);
-            cmdRedo.addEventListener('click', doRedo);
-            cmdFindNext.addEventListener('click', findNext);
-            cmdFindPrev.addEventListener('click', findPrev);
-            cmdReplace.addEventListener('click', replace);
-            cmdReplaceAll.addEventListener('click', replaceAll);
-            cmdCopy.addEventListener('click', doCopy);
-            cmdCut.addEventListener('click', doCut);
-            cmdPaste.addEventListener('click', doPaste);
+            cmdUndo.addEventListener( 'click', doUndo);
+            cmdRedo.addEventListener( 'click', doRedo);
+            cmdFindNext.addEventListener( 'click', findNext);
+            cmdFindPrev.addEventListener( 'click', findPrev);
+            cmdReplace.addEventListener( 'click', replace);
+            cmdReplaceAll.addEventListener( 'click', replaceAll);
+            cmdCopy.addEventListener( 'click', doCopy);
+            cmdCut.addEventListener( 'click', doCut);
+            cmdPaste.addEventListener( 'click', doPaste);
 
-            cmdOpenSettings.addEventListener('click', doOpenSettings);
+            cmdOpenSettings.addEventListener( 'click', doOpenSettings);
 
-            searchTerms.addEventListener('keydown', this.inputSearchTermsKeydown);
+            searchTerms.addEventListener( 'keydown', this.inputSearchTermsKeydown);
 
-            inputReplaceTerms.addEventListener('keydown', this.inputReplaceTermsKeydown);
+            inputReplaceTerms.addEventListener( 'keydown', this.inputReplaceTermsKeydown);
 
         },
         // 
-        inputReplaceTermsKeydown: function(e) {
+        inputReplaceTermsKeydown: function( e) {
 
-            if (e.key === 'Enter') {
+            if ( e.key === 'Enter') {
 
                 replace();
                 e.preventDefault();
@@ -452,9 +455,9 @@ var editor,
 
         },
         // 
-        inputSearchTermsKeydown: function (e) {
+        inputSearchTermsKeydown: function( e) {
 
-            if (e.key === 'Enter') {
+            if ( e.key === 'Enter') {
 
                 findNext();
                 e.preventDefault();
@@ -465,7 +468,7 @@ var editor,
         // This is the start of all the app bar set-up methods and callbacks
         // 
         // 
-        loadFromToken: function (fileToken) {
+        loadFromToken: function( fileToken) {
 
             var sessionState = WinJS.Application.sessionState,
                 that = this;
@@ -475,36 +478,43 @@ var editor,
             // Configure and prepare the editor to receive the file's content
             this.configureEditorFromSettings();
 
-            Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(fileToken).then(function (retrievedFile) {
+            Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync( fileToken).then( function( retrievedFile) {
 
                 sessionState.editorCurrentFileName = retrievedFile.name;
-                setFileName(retrievedFile.name);
-            
-                //return retrievedFile.openAsync(Windows.Storage.FileAccessMode.read);
-                return Windows.Storage.FileIO.readBufferAsync(retrievedFile);
+                setFileName( retrievedFile.name);
+                
+                return Windows.Storage.FileIO.readBufferAsync( retrievedFile);
+                //return retrievedFile.readTextAsync();
 
-            }).then(function (buffer) {
+            }).then( function( buffer) {
 
-                var dataReader = Windows.Storage.Streams.DataReader.fromBuffer(buffer),
-                    array = new Array(buffer.length),
-                    output = dataReader.readBytes(array),
+                //var dataReader = new Windows.Storage.Streams.DataReader( stream);
+                var dataReader = Windows.Storage.Streams.DataReader.fromBuffer( buffer),
+                    array = new Array( buffer.length),
+                    unicodeEncoding = dataReader.unicodeEncoding, // 0 = utf8, 1 = Utf16-bigEndian, 2 = Utf16-littleEndian
+                    byteOrder = dataReader.byteOrder, // 0 = littleEndian, 1 = bigEndian
+                    output = '',
                     x;
 
+                console.log('File: ' + getFileName() + ' | Byte Order: ' + byteOrder + ' | Unicode encoding: ' + unicodeEncoding);
+
+                dataReader.readBytes( array);
                 dataReader.close();
+                
+                for ( x = 0; x < array.length; x++) {
 
-                for (x = 0; x < array.length; x++) {
-
-                    array[x] = String.fromCharCode(array[x]);
+                    array[ x] = decodeChar( array[ x]);
 
                 }
 
                 // Cut off the characters: ï»¿
-                if (array[0] == "ï" || array[1] == "»" || array[2] == "¿") {
+                
+                if ( array[ 0] == "ï" || array[ 1] == "»" || array[ 2] == "¿") {
 
                     array.splice( 0, 3);
 
                 }
-
+                
                 editor.getSession().getDocument().setValue( array.join( ''));
             
                 return WinJS.Promise.timeout( 1200);
@@ -513,7 +523,7 @@ var editor,
 
                 that.configureEditorFromSettings();
 
-                detectEditorModeFromExtension(getFileName());
+                detectEditorModeFromExtension( getFileName());
 
                 //editor.getSession().getDocument().setValue(contents);
                 //that.editor.navigateTo(0, 0);
@@ -534,16 +544,16 @@ var editor,
             //var //editor = ace.edit( "editor"),
                 //editorSession = editor.getSession(),
             var settings = Windows.Storage.ApplicationData.current.localSettings.values;
-            if (editor) {
+            if ( editor) {
                 //editorSession.setMode(settings['mode']);
-                editor.setTheme(settings['theme']);
+                editor.setTheme( settings[ 'theme']);
 
                 // TODO:
-                editor.setAnimatedScroll(false);
+                editor.setAnimatedScroll( false);
 
-                var gutter = document.querySelector('.ace_gutter-layer');
+                var gutter = document.querySelector( '.ace_gutter-layer');
 
-                if (settings['showGutter']) {
+                if ( settings[ 'showGutter']) {
 
                     gutter.style.display = 'inherit';
 
@@ -554,17 +564,17 @@ var editor,
                 }
 
 
-                document.getElementById('editor').style.fontSize = settings['fontSize'] + 'px';
+                document.getElementById( 'editor').style.fontSize = settings[ 'fontSize'] + 'px';
 
 
-                editorSession.setUseWrapMode(true);
-                editorSession.setTabSize(4);
-                editorSession.setUseSoftTabs(settings['useHardTabs']);
+                editorSession.setUseWrapMode( true);
+                editorSession.setTabSize( 4);
+                editorSession.setUseSoftTabs( settings[ 'useHardTabs']);
 
-                editor.setHighlightActiveLine(settings['highlightActiveLine']);
-                editor.setShowInvisibles(settings['showInvisibleCharacters']);
-                editor.setShowPrintMargin(settings['showPrintMargin']);
-                editor.setTheme(settings['theme']);
+                editor.setHighlightActiveLine( settings[ 'highlightActiveLine']);
+                editor.setShowInvisibles( settings[ 'showInvisibleCharacters']);
+                editor.setShowPrintMargin( settings[ 'showPrintMargin']);
+                editor.setTheme( settings[ 'theme']);
                 //editorSession.setMode('ace/mode/text');
                 //editorSession.setMode(settings['mode']);
             }
@@ -1194,8 +1204,24 @@ var editor,
     function unsavedFilePrompt() {
         // Create the message dialog and set its content
 
-        confirmFlyout.winControl.show(document.getElementsByTagName('header')[0], 'bottom');
-        document.getElementById('unsavedChangesFilename').innerHTML = getFileName();
+        confirmFlyout.winControl.show(document.getElementsByTagName( 'header')[ 0], 'bottom');
+        document.getElementById( 'unsavedChangesFilename').innerHTML = getFileName();
+
+    }
+
+    function decodeChar( charCode) {
+
+        if ( charCode > 0xFFFF) {
+
+            charCode -= 0x10000;
+
+            return String.fromCharCode( 0xD800 + ( charCode >> 10), 0xDC00 + ( charCode & 0x3FF));
+            
+        } else {
+
+            return String.fromCharCode( charCode);
+            
+        }
 
     }
 

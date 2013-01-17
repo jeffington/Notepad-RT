@@ -107,11 +107,11 @@ var recentFilesDataAdapter = WinJS.Class.define(
 
                 return currentFile.getThumbnailAsync( Windows.Storage.FileProperties.ThumbnailMode.documentsView);
                 
-            }, function( error) {
+            }/*, function( error) {
 
                 return WinJS.Promise.wrapError(new WinJS.ErrorFromName(WinJS.UI.FetchError.doesNotExist));
                 
-            }).then(function (thumb) {
+            }*/).then(function (thumb) {
 
                 if ( thumb) {
                     
