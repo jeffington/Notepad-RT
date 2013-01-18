@@ -1122,27 +1122,37 @@ var editor,
         var savePicker = new Windows.Storage.Pickers.FileSavePicker();
         savePicker.suggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.documentsLibrary;
         // Dropdown of file types the user can save the file as
-        savePicker.fileTypeChoices.insert( ".txt", [ ".txt"]);
-        savePicker.fileTypeChoices.insert( ".c", [".c"]);
-        savePicker.fileTypeChoices.insert( ".cs", [".cs"]);
-        savePicker.fileTypeChoices.insert( ".css", [".css"]);
-        savePicker.fileTypeChoices.insert( ".cpp", [".cpp"]);
-        savePicker.fileTypeChoices.insert( ".h", [".h"]);
-        savePicker.fileTypeChoices.insert( ".html", [".html"]);
-        savePicker.fileTypeChoices.insert( ".java", [".java"]);
-        savePicker.fileTypeChoices.insert( ".js", [".js"]);
-        savePicker.fileTypeChoices.insert( ".json", [".json"]);
-        savePicker.fileTypeChoices.insert( ".jsp", [".jsp"]);
-        savePicker.fileTypeChoices.insert( ".md", [".md"]);
-        savePicker.fileTypeChoices.insert( ".sql", [".sql"]);
-        savePicker.fileTypeChoices.insert( ".php", [".php"]);
-        savePicker.fileTypeChoices.insert( ".pl", [".pl"]);
-        savePicker.fileTypeChoices.insert( ".ps1", [".ps1"]);
-        savePicker.fileTypeChoices.insert( ".psql", [".psql"]);
-        savePicker.fileTypeChoices.insert( ".py", [".py"]);
-        savePicker.fileTypeChoices.insert( ".rb", [".rb"]);
-        savePicker.fileTypeChoices.insert( ".xml", [".xml"]);
-         
+        savePicker.fileTypeChoices.insert( "Text", [ ".txt"]);
+        savePicker.fileTypeChoices.insert( "C", [".c"]);
+        savePicker.fileTypeChoices.insert( "C Sharp", [".cs"]);
+        savePicker.fileTypeChoices.insert( "CSS", [".css"]);
+        savePicker.fileTypeChoices.insert( "C++", [".cpp"]);
+        savePicker.fileTypeChoices.insert( "C Header", [".h"]);
+        savePicker.fileTypeChoices.insert( "HTML", [".html"]);
+        savePicker.fileTypeChoices.insert( "Java", [".java"]);
+        savePicker.fileTypeChoices.insert( "JavaScript", [".js"]);
+        savePicker.fileTypeChoices.insert( "JSON", [".json"]);
+        savePicker.fileTypeChoices.insert( "JSP", [".jsp"]);
+        savePicker.fileTypeChoices.insert( "Markdown", [".md"]);
+        savePicker.fileTypeChoices.insert( "SQL", [".sql"]);
+        savePicker.fileTypeChoices.insert( "PHP", [".php"]);
+        savePicker.fileTypeChoices.insert( "Perl", [".pl"]);
+        savePicker.fileTypeChoices.insert( "Powershell", [".ps1"]);
+        savePicker.fileTypeChoices.insert( "PostgreSQL", [".psql"]);
+        savePicker.fileTypeChoices.insert( "Python", [".py"]);
+        savePicker.fileTypeChoices.insert( "Ruby", [".rb"]);
+        savePicker.fileTypeChoices.insert( "XML", [".xml"]);
+        savePicker.fileTypeChoices.insert( "Go", [".go"]);
+        savePicker.fileTypeChoices.insert( "Groovy", [".groovy"]);
+        savePicker.fileTypeChoices.insert( "XQuery", [".xq"]);
+        savePicker.fileTypeChoices.insert( "Clojure", [".clojure"]);
+        savePicker.fileTypeChoices.insert( "CoffeeScript", [".coffee"]);
+        savePicker.fileTypeChoices.insert( "ColdFusion", [".cf"]);
+        savePicker.fileTypeChoices.insert( "Dart", [".dart"]);
+        savePicker.fileTypeChoices.insert( "TypeScript", [".ts"]);
+        savePicker.fileTypeChoices.insert( "R", [".r"]);
+        savePicker.fileTypeChoices.insert( "RDoc", [".rdoc"]);
+        
         savePicker.suggestedFileName = getFileName();
 
         savePicker.pickSaveFileAsync().then( function( file) {
