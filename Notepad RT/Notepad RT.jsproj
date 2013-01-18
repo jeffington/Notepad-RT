@@ -55,6 +55,10 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="ace-src\mode-dart.js" />
+    <Content Include="ace-src\mode-r.js" />
+    <Content Include="ace-src\mode-rdoc.js" />
+    <Content Include="ace-src\mode-typescript.js" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\Logo.scale-140.png" />
     <Content Include="Assets\Logo.scale-180.png" />
