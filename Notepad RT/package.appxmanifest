@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="21022MarkSpirek.NotepadRT" Version="1.3.0.0" Publisher="CN=3714733F-5D19-41FF-8C3D-D9DF8CBCAFC1" />
+  <Identity Name="21022MarkSpirek.NotepadRT" Version="1.3.0.1" Publisher="CN=3714733F-5D19-41FF-8C3D-D9DF8CBCAFC1" />
   <Properties>
     <DisplayName>Notepad RT</DisplayName>
     <PublisherDisplayName>JDM Labs, LLC</PublisherDisplayName>
