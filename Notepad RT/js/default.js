@@ -14,6 +14,8 @@
 
     app.onactivated = function (args) {
 
+        setupDefaultSettings();
+
         if (args.detail.kind === activation.ActivationKind.launch) {
             
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
@@ -104,6 +106,25 @@
         // TODO:
         // Code to switch from light-ui.css to dark-ui.css
 
+
+    }
+
+    // This method makes sure that all of the settings are defined and if they were previously undefined,
+    // set their value to our preferred default.
+    function setupDefaultSettings() {
+
+        var settings = Windows.Storage.ApplicationData.current.localSettings.values;
+
+
+        settings[ 'fontSize'] = settings[ 'fontSize'] || 12;
+        settings[ 'highlightActiveLine'] = ( settings[ 'highlightActiveLine'] === undefined ? false : settings[ 'highlightActiveLine']);
+        settings[ 'showInvisibleCharacters'] = ( settings[ 'showInvisibleCharacters'] === undefined ? false : settings[ 'showInvisibleCharacters']);
+        settings[ 'theme'] = settings[ 'theme'] || 'ace/theme/tomorrow_night';
+        settings[ 'mode'] = settings[ 'mode'] || 'ace/mode/text';
+        settings[ 'useHardTabs'] = ( settings[ 'useHardTabs'] === undefined ? true : settings[ 'useHardTabs']);
+        settings[ 'showIndentGuides'] = ( settings[ 'showIndentGuides'] === undefined ? true : settings[ 'showIndentGuides']);
+        settings[ 'showGutter'] = ( settings[ 'showGutter'] === undefined ? true : settings[ 'showGutter']);
+        settings[ 'showPrintMargin'] = ( settings[ 'showPrintMargin'] === undefined ? false : settings[ 'showPrintMargin']);
 
     }
 

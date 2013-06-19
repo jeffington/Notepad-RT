@@ -37,7 +37,7 @@
 
         </header>
 
-        <section aria-label="Main content" role="main" style="-ms-grid-row: 2; -ms-grid-column: 1;">
+        <section id="editorMain" aria-label="Main content" role="main" style="-ms-grid-row: 2; -ms-grid-column: 1;">
             
             <div id="editor"></div>
 
@@ -175,6 +175,16 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input id="replaceTerms" type="text" placeholder="Replace" style="display: inline-block;" />&nbsp;&nbsp;
         <button id="cmdReplace" style="display: inline-block;">Replace</button> <button id="cmdReplaceAll" style="display: inline-block;">Replace All</button>
+    </div>
+    <div id="confirmFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{Confirm purchase flyout}" style="width: 40%;">
+        <h2>Unsaved Changes</h2>
+        <p>
+            Do you want to save changes to file <span id="unsavedChangesFilename"></span>?
+        </p>
+        <div style="float: right;">
+            <button id="noSaveButton">Don't Save</button>
+            <button id="yesSaveButton">Save</button>
+        </div>
     </div>
 </body>
 </html>

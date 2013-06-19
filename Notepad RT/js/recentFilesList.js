@@ -61,27 +61,27 @@ var recentFilesDataAdapter = WinJS.Class.define(
         //var lastFetchIndex = Math.min(requestIndex + countAfter, that._groupData.length - 1);
         //var fetchIndex = Math.max(requestIndex - countBefore, 0);
         //var results = [];
-        itemsFromIndex: function (requestIndex, countBefore, countAfter) {
+        itemsFromIndex: function( requestIndex, countBefore, countAfter) {
 
             var that = this;
 
-            var fetchIndex = Math.max(requestIndex - countBefore, 0);
+            var fetchIndex = Math.max( requestIndex - countBefore, 0);
             var fileTotal = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.size;
 
             
-            if (fetchIndex >= fileTotal || fetchIndex < 0) {
+            if ( fetchIndex >= fileTotal || fetchIndex < 0) {
 
-                return WinJS.Promise.wrapError(new WinJS.ErrorFromName(WinJS.UI.FetchError.doesNotExist));
+                return WinJS.Promise.wrapError( new WinJS.ErrorFromName( WinJS.UI.FetchError.doesNotExist));
 
             }
 
             
-            var token = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt(requestIndex).token;//fetchIndex).token;
+            var token = Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.entries.getAt( requestIndex).token;//fetchIndex).token;
             
 
             var currentObject;
 
-            return Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync(token).then(function (currentFile) {
+            return Windows.Storage.AccessCache.StorageApplicationPermissions.mostRecentlyUsedList.getFileAsync( token).then( function( currentFile) {
 
                 currentObject = {
                     items: [
@@ -105,33 +105,41 @@ var recentFilesDataAdapter = WinJS.Class.define(
                     totalCount: fileTotal,
                 }
 
-                return currentFile.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.documentsView);
+                return currentFile.getThumbnailAsync( Windows.Storage.FileProperties.ThumbnailMode.documentsView);
                 
+            }/*, function( error) {
 
+                return WinJS.Promise.wrapError(new WinJS.ErrorFromName(WinJS.UI.FetchError.doesNotExist));
                 
-            }).then(function(thumb) {
+            }*/).then(function (thumb) {
 
-                currentObject.items[0].data.icon = URL.createObjectURL(thumb, { oneTimeOnly: true });
-                currentObject.items[0].data.thumbReady = "visible";
+                if ( thumb) {
+                    
+                    currentObject.items[ 0].data.icon = URL.createObjectURL( thumb, { oneTimeOnly: true });
+                    currentObject.items[ 0].data.thumbReady = "visible";
 
-                console.log(JSON.stringify(currentObject));
+                    console.log( JSON.stringify( currentObject));
 
-                return WinJS.Promise.wrap(currentObject);
+                    return WinJS.Promise.wrap( currentObject);
 
+                }
             });
             
         },
     });
 
 // Create a DataSource by deriving and wrapping the data adapter with a VirtualizedDataSource
-var recentFilesDataSource = WinJS.Class.derive(WinJS.UI.VirtualizedDataSource, function () {//data) {
-    this._baseDataSourceConstructor(new recentFilesDataAdapter());//data));
+var recentFilesDataSource = WinJS.Class.derive(WinJS.UI.VirtualizedDataSource, function() {//data) {
+    
+    this._baseDataSourceConstructor( new recentFilesDataAdapter());//data));
+
 });
 
 var fileGroupDataAdapter = WinJS.Class.define(
-    function (groupData) {
+    function( groupData) {
         // Constructor
         this._groupData = groupData;
+
     },
 
     // Data Adapter interface methods
@@ -156,13 +164,15 @@ var fileGroupDataAdapter = WinJS.Class.define(
         //      [{ key: groupkey1, firstItemIndexHint: 0, data : { field1: value, field2: value, ... }}, { key: groupkey2, firstItemIndexHint: 27, data : {...}}, ...
         //   offset: The offset into the array for the requested group
         //   totalCount: (optional) an update of the count of items
-        itemsFromIndex: function (requestIndex, countBefore, countAfter) {
+        itemsFromIndex: function( requestIndex, countBefore, countAfter) {
             //var that = this;
 
             console.log("group request index: " + requestIndex);
 
-            if (requestIndex > 1) {
-                return Promise.wrapError(new WinJS.ErrorFromName(UI.FetchError.doesNotExist));
+            if ( requestIndex > 1) {
+
+                return Promise.wrapError( new WinJS.ErrorFromName( UI.FetchError.doesNotExist));
+                    
             }
 
             //var lastFetchIndex = Math.min(requestIndex + countAfter, that._groupData.length - 1);

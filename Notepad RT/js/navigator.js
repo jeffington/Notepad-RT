@@ -4,12 +4,12 @@
     var appView = Windows.UI.ViewManagement.ApplicationView;
     var nav = WinJS.Navigation;
 
-    WinJS.Namespace.define("Application", {
+    WinJS.Namespace.define( "Application", {
         PageControlNavigator: WinJS.Class.define(
             // Define the constructor function for the PageControlNavigator.
-            function PageControlNavigator(element, options) {
-                this._element = element || document.createElement("div");
-                this._element.appendChild(this._createPageElement());
+            function PageControlNavigator( element, options) {
+                this._element = element || document.createElement( "div");
+                this._element.appendChild( this._createPageElement());
 
                 this.home = options.home;
                 this.editor = options.editor;
@@ -17,19 +17,19 @@
 
                 //console.log("Navigation history:");
 
-                if (WinJS.Application.sessionState.navigationHistory && WinJS.Application.sessionState.navigationHistory.length > 0) {
+                if ( WinJS.Application.sessionState.navigationHistory && WinJS.Application.sessionState.navigationHistory.length > 0) {
 
                     //console.log(JSON.stringify(WinJS.Application.sessionState.navigationHistory));
                     nav.history.backStack = WinJS.Application.sessionState.navigationHistory;
 
                 }
 
-                nav.onnavigated = this._navigated.bind(this);
-                window.onresize = this._resized.bind(this);
+                nav.onnavigated = this._navigated.bind( this);
+                window.onresize = this._resized.bind( this);
 
-                document.body.onkeyup = this._keyupHandler.bind(this);
-                document.body.onkeypress = this._keypressHandler.bind(this);
-                document.body.onmspointerup = this._mspointerupHandler.bind(this);
+                document.body.onkeyup = this._keyupHandler.bind( this);
+                document.body.onkeypress = this._keypressHandler.bind( this);
+                document.body.onmspointerup = this._mspointerupHandler.bind( this);
 
                 Application.navigator = this;
             }, {
@@ -95,31 +95,39 @@
                 },
 
                 // Responds to navigation by adding new pages to the DOM.
-                _navigated: function (args) {
+                _navigated: function( args) {
                     var newElement = this._createPageElement();
                     var parentedComplete;
-                    var parented = new WinJS.Promise(function (c) { parentedComplete = c; });
+                    var parented = new WinJS.Promise( function( c) {
+
+                        parentedComplete = c;
+
+                    });
 
                     this._lastNavigationPromise.cancel();
 
-                    this._lastNavigationPromise = WinJS.Promise.timeout().then(function () {
+                    this._lastNavigationPromise = WinJS.Promise.timeout().then( function() {
 
                         WinJS.Application.sessionState.lastUrl = args.detail.location;
 
-                        return WinJS.UI.Pages.render(args.detail.location, newElement, args.detail.state, parented);
+                        return WinJS.UI.Pages.render( args.detail.location, newElement, args.detail.state, parented);
 
-                    }).then(function parentElement(control) {
+                    }).then( function parentElement( control) {
                         var oldElement = this.pageElement;
-                        if (oldElement.winControl && oldElement.winControl.unload) {
+
+                        if ( oldElement.winControl && oldElement.winControl.unload) {
+
                             oldElement.winControl.unload();
+                            
                         }
-                        this._element.appendChild(newElement);
-                        this._element.removeChild(oldElement);
+                        this._element.appendChild( newElement);
+                        this._element.removeChild( oldElement);
                         oldElement.innerText = "";
                         this._updateBackButton();
                         parentedComplete();
-                        WinJS.UI.Animation.enterPage(this._getAnimationElements()).done();
-                    }.bind(this));
+                        WinJS.UI.Animation.enterPage( this._getAnimationElements()).done();
+
+                    }.bind( this));
 
                     args.detail.setPromise(this._lastNavigationPromise);
                 },
@@ -148,15 +156,18 @@
 
                         };
 
-                        if (nav.canGoBack) {
+                        if (!nav.canGoBack) {
 
-                            backButton.removeAttribute("disabled");
-
-                        } else {
-
-                            backButton.setAttribute("disabled", "disabled");
+                            nav.navigate(this.home);
 
                         }
+                        backButton.removeAttribute("disabled");
+
+                        //} else {
+
+                        //    backButton.setAttribute("disabled", "disabled");
+
+                        //}
 
                     }
                 },

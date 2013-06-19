@@ -1795,18 +1795,14 @@ exports.addMouseWheelListener = function(el, callback) {
             }
         }
 
-        console.log('Mouse wheel x: ' + e.wheelX + ' y: ' + e.wheelY);
+        //console.log('Mouse wheel x: ' + e.wheelX + ' y: ' + e.wheelY);
 
         callback(e);
     };
     // TODO: 
-    //exports.addListener(el, "DOMMouseScroll", listener);
-    //exports.addListener(el, "mousewheel", listener);
-    exports.addListener(el, "mousewheel", function () {
-
-        el.onscroll.apply(el);
-
-    });
+    exports.addListener(el, "DOMMouseScroll", listener);
+    exports.addListener(el, "mousewheel", listener);
+    
 };
 
 exports.addMultiMouseDownListener = function(el, timeouts, eventHandler, callbackName) {
@@ -4271,8 +4267,6 @@ function DefaultHandlers(mouseHandler) {
             }
         }
 
-        // TODO:
-        console.log("onMouseWheel event");
         
         editor.renderer.scrollBy(ev.wheelX * ev.speed, ev.wheelY * ev.speed);
         return ev.preventDefault();
@@ -11707,7 +11701,7 @@ var VirtualRenderer = function(container, theme) {
         if (!height)
             height = dom.getInnerHeight(this.container);
 
-        console.log('height: ' + height);
+        //console.log('height: ' + height);
 
         
 
@@ -11726,8 +11720,7 @@ var VirtualRenderer = function(container, theme) {
 
         if (!width)
             width = dom.getInnerWidth(this.container);
-        // TODO:
-        console.log('width: ' + width);
+        //console.log('width: ' + width);
 
         if (force || this.resizing > 1 || size.width != width) {
             size.width = width;
