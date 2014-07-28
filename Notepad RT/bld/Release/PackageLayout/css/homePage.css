@@ -1,0 +1,187 @@
+﻿
+.groupHeaderTemplateTitle {
+    display: -ms-grid;
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    text-overflow: ellipsis;
+}
+/*        <h6 class="groupHeaderTemplateDetails
+
+/* overall list dimensions */
+#imageTextListFile {
+    width: 1366px;
+    height: 578px;
+}
+
+    /*-------------------------------------------------------------------------------------------*/
+    /* imageText-listFile - used in Picker list */
+    /*-------------------------------------------------------------------------------------------*/
+    /*starting margin */
+    #imageTextListFile .win-horizontal.win-viewport .win-surface {
+        margin: 0px 100px;
+    }
+
+    #imageTextListFile .win-horizontal.win-viewport .win-container {
+        margin: 5px 10px;
+    }
+
+/*individual item dimensions */
+.imageTextListFile {
+    display: -ms-grid;
+    width: 290px;
+    height: 60px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+    /* image */
+.imageTextListFile img.imageTextListFileImage {
+    -ms-grid-column: 1;
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+    .imageTextListFile .imageTextListFileTextArea {
+        -ms-grid-column: 2;
+        margin: 0px 5px 0px 5px;
+    }
+
+        /* text line 1 */
+        .imageTextListFile .imageTextListFileTextArea .imageTextListFileTextName {
+            width: 230px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        /* text line 2 */
+        .imageTextListFile .imageTextListFileTextArea .imageTextListFileTextDate {
+            width: 230px;
+            overflow: hidden;
+        }
+
+        /* text line 3 */
+        .imageTextListFile .imageTextListFileTextArea .imageTextListFileTextSize {
+            width: 230px;
+            overflow: hidden;
+        }
+
+
+
+/*
+Back button.
+*/
+/*
+.action {
+    display: inline-block;
+    min-width: 0;
+    min-height: 0;
+    background-clip: border-box;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    padding: 0;
+    text-align: center;
+    color: inherit;
+    border-color: inherit;
+    width: 41px;
+    height: 41px;
+    font-size: 14pt;
+    line-height: 37px;
+    vertical-align: baseline;
+}
+.win-backbutton .win-backbutton:disabled{
+    color: inherit;
+    border-color: inherit;
+}
+.win-backbutton:hover, .win-backbutton:hover:active {
+    border-color: inherit;
+
+}
+.win-backbutton:disabled, .win-backbutton:disabled:active {
+    visibility: inherit;
+}
+.action:hover, .action:hover:active {
+    border-width: 2px;
+    border-style: solid;
+    border-color: inherit;
+    border-radius: 50%;
+
+}
+.action::before {
+    font-family: "Segoe UI Symbol";
+    font-weight: normal;
+
+    vertical-align: 50%;
+}
+.action:-ms-lang(ar, dv, fa, he, ku-Arab, pa-Arab, prs, ps, sd-Arab, syr, ug, ur, qps-plocm)::before {
+    content: "\E0AE";
+}
+
+div.fragment {
+    padding: 3%;
+}
+
+button.btn {
+    width:250px;
+    height: 60px;
+    margin-bottom: 20px;
+    color: inherit;
+}*/
+
+#filesListView {
+    padding: 0;
+    margin: 0;
+}
+
+#imageTextList.light {
+
+    background-color: white;
+    border: 1px solid #D2D2D2;
+
+}
+
+.notepadrt-background {
+    background: #7cb800;
+}
+
+.chevron {
+    vertical-align:8px;
+    visibility: hidden;
+}
+.titlecontainer {
+    display: inline;
+    background-color: transparent;
+    border: none;
+}
+#headerMenu {
+    width:200px;
+}
+
+@media screen and (-ms-view-state: fullscreen-landscape) {
+}
+
+@media screen and (-ms-view-state: filled) {
+    .chevron {
+        display: none;
+    }
+}
+
+@media screen and (-ms-view-state: snapped) {
+    #homeButtons {
+        display: none;
+    }
+    .chevron {
+        visibility: visible;
+    }
+    #headerMenu {
+        width: 100%;
+    }
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    .chevron {
+        display: none;
+    }
+}

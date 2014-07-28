@@ -1,0 +1,190 @@
+﻿ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="/pages/editor/editorPage.js"></script>
+</head>
+<body>
+    <div id="editorFragment">
+
+        <header aria-label="Header content" role="banner" style="-ms-grid-row: 1;">
+
+            <div class="titlearea win-type-ellipsis" style="padding-left: 3%; padding-right: 3%; display: -ms-grid; -ms-grid-columns: auto auto minmax(min-content, 1fr) auto; -ms-grid-rows: minmax(min-content, 1fr);">
+                
+                <button id="backbutton" class="win-backbutton" aria-label="Back" disabled style="-ms-grid-column: 1; -ms-grid-row-align: center;"></button>
+                
+                <button id="filenameButton" class="titlecontainer" style="-ms-grid-column: 2;">
+                    <h1>
+                        <span id="filename" class="pagetitle">Untitled</span>
+                        <span class="chevron win-type-x-large">&#xe099</span>
+                    </h1>
+                </button>
+
+                <input id="fileNameInput" type="text" style="-ms-grid-column: 2; -ms-grid-row-align: center; -ms-grid-column-align: start; visibility: hidden;" />
+                
+                <div id="editorButtons">
+
+                    <button id="saveFile" class="action" title="Save File">&#xe105;</button>
+				    <p id="saveFileLabel">Save</p>
+                    <button id="saveAsFile" class="action" title="Save As File">&#xe159;</button>
+				    <p id="saveAsFileLabel">Save As</p>
+                    <button id="newFileEditor" class="action" title="New File">&#xe132;</button>
+				    <p id="newFileEditorLabel">New</p>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <section id="editorMain" aria-label="Main content" role="main" style="-ms-grid-row: 2; -ms-grid-column: 1;">
+            
+            <div id="editor"></div>
+
+        </section>
+
+    </div>
+
+    <div id="editorHeaderMenu" class="headerMenu" data-win-control="WinJS.UI.Menu">
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'renameFileMenuItem'}">
+            <span class="menuItemIcon">&#xe186;</span>Rename File
+        </button>
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'newFileMenuItem'}">
+            <span class="menuItemIcon">&#xe132;</span>New File
+        </button>
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'saveFileMenuItem'}">
+            <span class="menuItemIcon">&#xe105;</span>Save File
+        </button>
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'saveAsFileMenuItem'}">
+            <span class="menuItemIcon">&#xe159;</span>Save File As
+        </button>
+        <hr data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'separator',type:'separator'}" />
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'homeMenuItem'}">
+            <span class="menuItemIcon">&#xe112;</span>Home
+        </button>
+    </div>
+
+    <div id="modeFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{Mode flyout}">
+        <h3>Editor Mode</h3>
+        <select id="editor-mode">
+                        
+                        <!--<option value="ace/mode/c9search">C9Search</option>-->
+                        <option value="ace/mode/coffee">CoffeeScript</option>
+                        <option value="ace/mode/coldfusion">ColdFusion</option>
+                        <option value="ace/mode/csharp">C#</option>
+                        <option value="ace/mode/css">CSS</option>
+                        <!--<option value="ace/mode/diff">Diff</option>-->
+                        <option value="ace/mode/glsl">Glsl</option>
+                        <option value="ace/mode/golang">Go</option>
+                        <option value="ace/mode/groovy">Groovy</option>
+                        <option value="ace/mode/haxe">haXe</option>
+                        <option value="ace/mode/html">HTML</option>
+                        <option value="ace/mode/c_cpp">C/C++</option>
+                        <option value="ace/mode/clojure">Clojure</option>
+                        <option value="ace/mode/dart">Dart</option>
+                        <option value="ace/mode/jade">Jade</option>
+                        <option value="ace/mode/java">Java</option>
+                        <option value="ace/mode/jsp">JSP</option>
+                        <option value="ace/mode/javascript">JavaScript</option>
+                        <option value="ace/mode/json">JSON</option>
+                        <option value="ace/mode/jsx">JSX</option>
+                        <option value="ace/mode/latex">LaTeX</option>
+                        <option value="ace/mode/less">LESS</option>
+                        <option value="ace/mode/liquid">Liquid</option>
+                        <option value="ace/mode/lua">Lua</option>
+                        <option value="ace/mode/luapage">LuaPage</option>
+                        <option value="ace/mode/markdown">Markdown</option>
+                        <option value="ace/mode/ocaml">OCaml</option>
+                        <option value="ace/mode/perl">Perl</option>
+                        <option value="ace/mode/pgsql">pgSQL</option>
+                        <option value="ace/mode/php">PHP</option>
+                        <option value="ace/mode/powershell">Powershell</option>
+                        <option value="ace/mode/python">Python</option>
+                        <option value="ace/mode/r">R</option>
+                        <option value="ace/mode/rdoc">RDoc</option>
+                        <option value="ace/mode/rhtml">RHTML</option>
+                        <option value="ace/mode/ruby">Ruby</option>
+                        <option value="ace/mode/scad">OpenSCAD</option>
+                        <option value="ace/mode/scala">Scala</option>
+                        <option value="ace/mode/scss">SCSS</option>
+                        <option value="ace/mode/sh">SH</option>
+                        <option value="ace/mode/sql">SQL</option>
+                        <option value="ace/mode/svg">SVG</option>
+                        <option value="ace/mode/tcl">Tcl</option>
+                        <option value="ace/mode/text">Text</option>
+                        <option value="ace/mode/textile">Textile</option>
+                        <option value="ace/mode/typescript">TypeScript</option>
+                        <option value="ace/mode/xml">XML</option>
+                        <option value="ace/mode/xquery">XQuery</option>
+                        <option value="ace/mode/yaml">YAML</option>
+                    </select>
+    </div>
+    <div id="appBar" data-win-control="WinJS.UI.AppBar" data-win-options="" style="border-top: 4px #8DC125 solid;">
+
+        <button 
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{id:'cmdCopy',label:'Copy',icon:'copy',
+                section:'selection',tooltip:'Copy Selection'}">
+        </button>
+        <button 
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{id:'cmdCut',label:'Cut',icon:'cut',
+                section:'selection',tooltip:'Cut Selection'}">
+        </button>
+        <button 
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{id:'cmdPaste',label:'Paste',icon:'paste',
+                section:'selection',tooltip:'Paste at Selection'}">
+        </button>
+        <button 
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{id:'cmdUndo',label:'Undo',icon:'undo',
+                section:'selection',tooltip:'Undo Typing'}">
+        </button>
+        <button 
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{id:'cmdRedo',label:'Redo',icon:'redo',
+                section:'selection',tooltip:'Redo Typing'}">
+        </button>
+        <button 
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{id:'cmdSearch',label:'Find',icon:'zoom',
+                section:'selection',tooltip:'Find and Replace'}">
+        </button>
+
+        <hr 
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{type:'separator',section:'global'}" />
+        <button 
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{id:'cmdMode',label:'Editor Mode',icon:'keyboard',type:'flyout',
+                section:'global',tooltip:'Change the editor mode'}">
+        </button>
+        <button 
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{id:'cmdOpenSettings',label:'Settings',icon:'settings',
+                section:'global',tooltip:'Settings'}">
+        </button>
+    </div>
+    <div id="searchBar" data-win-control="WinJS.UI.AppBar" class="win-appbar"
+       aria-label="Navigation Bar" data-win-options="{layout:'custom', disabled : true}"
+        style="height: 65px; text-align: center; border-top: 4px #8DC125 solid; padding-top: 20px;">
+        <input class="win-command" id="searchTerms" type="text" placeholder="Search" style="display: inline-block;"/>&nbsp;&nbsp;
+        <button id="cmdFindPrev" style="display: inline-block;">Prev</button>
+        <button id="cmdFindNext" style="display: inline-block;">Next</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id="replaceTerms" type="text" placeholder="Replace" style="display: inline-block;" />&nbsp;&nbsp;
+        <button id="cmdReplace" style="display: inline-block;">Replace</button> <button id="cmdReplaceAll" style="display: inline-block;">Replace All</button>
+    </div>
+    <div id="confirmFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{Confirm purchase flyout}" style="width: 40%;">
+        <h2>Unsaved Changes</h2>
+        <p>
+            Do you want to save changes to file <span id="unsavedChangesFilename"></span>?
+        </p>
+        <div style="float: right;">
+            <button id="noSaveButton">Don't Save</button>
+            <button id="yesSaveButton">Save</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="21022MarkSpirek.NotepadRT" version="1.0" primary="true">
+		<Qualifiers>
+			<Scale>80, 100</Scale>
+			<TargetSize>48, 32, 256, 16</TargetSize>
+		</Qualifiers>
+		<ResourceMapSubtree name="Files">
+			<NamedResource name="default.html" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/default.html">
+				<Candidate type="Path">
+					<Value>default.html</Value>
+				</Candidate>
+			</NamedResource>
+			<ResourceMapSubtree name="ace-src">
+				<NamedResource name="ace.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/ace.js">
+					<Candidate type="Path">
+						<Value>ace-src\ace.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="keybinding-emacs.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/keybinding-emacs.js">
+					<Candidate type="Path">
+						<Value>ace-src\keybinding-emacs.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="keybinding-vim.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/keybinding-vim.js">
+					<Candidate type="Path">
+						<Value>ace-src\keybinding-vim.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-c9search.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-c9search.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-c9search.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-clojure.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-clojure.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-clojure.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-coffee.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-coffee.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-coffee.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-coldfusion.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-coldfusion.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-coldfusion.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-csharp.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-csharp.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-csharp.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-css.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-css.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-css.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-c_cpp.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-c_cpp.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-c_cpp.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-dart.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-dart.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-dart.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-diff.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-diff.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-diff.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-glsl.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-glsl.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-glsl.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-golang.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-golang.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-golang.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-groovy.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-groovy.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-groovy.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-haxe.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-haxe.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-haxe.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-html.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-html.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-html.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-jade.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-jade.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-jade.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-java.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-java.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-java.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-javascript.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-javascript.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-javascript.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-json.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-json.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-json.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-jsp.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-jsp.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-jsp.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-jsx.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-jsx.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-jsx.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-latex.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-latex.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-latex.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-less.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-less.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-less.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-liquid.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-liquid.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-liquid.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-lua.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-lua.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-lua.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-luapage.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-luapage.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-luapage.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-markdown.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-markdown.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-markdown.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-ocaml.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-ocaml.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-ocaml.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-perl.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-perl.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-perl.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-pgsql.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-pgsql.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-pgsql.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-php.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-php.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-php.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-powershell.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-powershell.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-powershell.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-python.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-python.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-python.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-r.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-r.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-r.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-rdoc.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-rdoc.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-rdoc.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-ruby.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-ruby.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-ruby.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-scad.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-scad.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-scad.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-scala.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-scala.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-scala.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-scss.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-scss.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-scss.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-sh.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-sh.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-sh.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-sql.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-sql.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-sql.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-svg.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-svg.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-svg.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-tcl.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-tcl.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-tcl.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-text.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-text.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-text.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-textile.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-textile.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-textile.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-typescript.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-typescript.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-typescript.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-xml.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-xml.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-xml.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-xquery.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-xquery.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-xquery.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="mode-yaml.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/mode-yaml.js">
+					<Candidate type="Path">
+						<Value>ace-src\mode-yaml.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-ambiance.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-ambiance.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-ambiance.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-chrome.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-chrome.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-chrome.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-clouds.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-clouds.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-clouds.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-clouds_midnight.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-clouds_midnight.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-clouds_midnight.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-cobalt.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-cobalt.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-cobalt.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-crimson_editor.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-crimson_editor.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-crimson_editor.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-dawn.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-dawn.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-dawn.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-dreamweaver.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-dreamweaver.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-dreamweaver.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-eclipse.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-eclipse.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-eclipse.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-github.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-github.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-github.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-idle_fingers.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-idle_fingers.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-idle_fingers.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-kr_theme.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-kr_theme.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-kr_theme.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-merbivore.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-merbivore.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-merbivore.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-merbivore_soft.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-merbivore_soft.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-merbivore_soft.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-monokai.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-monokai.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-monokai.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-mono_industrial.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-mono_industrial.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-mono_industrial.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-pastel_on_dark.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-pastel_on_dark.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-pastel_on_dark.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-solarized_dark.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-solarized_dark.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-solarized_dark.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-solarized_light.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-solarized_light.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-solarized_light.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-textmate.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-textmate.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-textmate.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-tomorrow.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-tomorrow.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-tomorrow.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-tomorrow_night.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-tomorrow_night.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-tomorrow_night.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-tomorrow_night_blue.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-tomorrow_night_blue.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-tomorrow_night_blue.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-tomorrow_night_bright.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-tomorrow_night_bright.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-tomorrow_night_bright.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-tomorrow_night_eighties.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-tomorrow_night_eighties.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-tomorrow_night_eighties.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-twilight.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-twilight.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-twilight.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-vibrant_ink.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-vibrant_ink.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-vibrant_ink.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="theme-xcode.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/theme-xcode.js">
+					<Candidate type="Path">
+						<Value>ace-src\theme-xcode.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="worker-coffee.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/worker-coffee.js">
+					<Candidate type="Path">
+						<Value>ace-src\worker-coffee.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="worker-css.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/worker-css.js">
+					<Candidate type="Path">
+						<Value>ace-src\worker-css.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="worker-javascript.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/worker-javascript.js">
+					<Candidate type="Path">
+						<Value>ace-src\worker-javascript.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="worker-json.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/worker-json.js">
+					<Candidate type="Path">
+						<Value>ace-src\worker-json.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="worker-xquery.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/ace-src/worker-xquery.js">
+					<Candidate type="Path">
+						<Value>ace-src\worker-xquery.js</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Assets">
+				<NamedResource name="Logo.png" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/Assets/Logo.png">
+					<Candidate qualifiers="Scale-80" isDefault="true" type="Path">
+						<Value>Assets\Logo.scale-80.png</Value>
+					</Candidate>
+					<Candidate qualifiers="Scale-100" isDefault="true" type="Path">
+						<Value>Assets\Logo.scale-100.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SmallLogo.png" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/Assets/SmallLogo.png">
+					<Candidate qualifiers="TargetSize-48" isDefault="true" type="Path">
+						<Value>Assets\SmallLogo.targetsize-48.png</Value>
+					</Candidate>
+					<Candidate qualifiers="TargetSize-32" isDefault="true" type="Path">
+						<Value>Assets\SmallLogo.targetsize-32.png</Value>
+					</Candidate>
+					<Candidate qualifiers="TargetSize-256" isDefault="true" type="Path">
+						<Value>Assets\SmallLogo.targetsize-256.png</Value>
+					</Candidate>
+					<Candidate qualifiers="TargetSize-16" isDefault="true" type="Path">
+						<Value>Assets\SmallLogo.targetsize-16.png</Value>
+					</Candidate>
+					<Candidate qualifiers="Scale-80" isDefault="true" type="Path">
+						<Value>Assets\SmallLogo.scale-80.png</Value>
+					</Candidate>
+					<Candidate qualifiers="Scale-100" isDefault="true" type="Path">
+						<Value>Assets\SmallLogo.scale-100.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SplashScreen.png" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/Assets/SplashScreen.png">
+					<Candidate qualifiers="Scale-100" isDefault="true" type="Path">
+						<Value>Assets\SplashScreen.scale-100.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="StoreLogo.png" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/Assets/StoreLogo.png">
+					<Candidate qualifiers="Scale-100" isDefault="true" type="Path">
+						<Value>Assets\StoreLogo.scale-100.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="WideLogo.png" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/Assets/WideLogo.png">
+					<Candidate qualifiers="Scale-80" isDefault="true" type="Path">
+						<Value>Assets\WideLogo.scale-80.png</Value>
+					</Candidate>
+					<Candidate qualifiers="Scale-100" isDefault="true" type="Path">
+						<Value>Assets\WideLogo.scale-100.png</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="css">
+				<NamedResource name="default.css" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/css/default.css">
+					<Candidate type="Path">
+						<Value>css\default.css</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="homePage.css" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/css/homePage.css">
+					<Candidate type="Path">
+						<Value>css\homePage.css</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="html">
+				<NamedResource name="DefaultsUI.html" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/html/DefaultsUI.html">
+					<Candidate type="Path">
+						<Value>html\DefaultsUI.html</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="FeedbackUI.html" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/html/FeedbackUI.html">
+					<Candidate type="Path">
+						<Value>html\FeedbackUI.html</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="LegalUI.html" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/html/LegalUI.html">
+					<Candidate type="Path">
+						<Value>html\LegalUI.html</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="images">
+				<NamedResource name="home.png" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/images/home.png">
+					<Candidate type="Path">
+						<Value>images\home.png</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="js">
+				<NamedResource name="default.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/js/default.js">
+					<Candidate type="Path">
+						<Value>js\default.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="navigator.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/js/navigator.js">
+					<Candidate type="Path">
+						<Value>js\navigator.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="recentFilesList.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/js/recentFilesList.js">
+					<Candidate type="Path">
+						<Value>js\recentFilesList.js</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="pages">
+				<ResourceMapSubtree name="editor">
+					<NamedResource name="editorPage.html" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/pages/editor/editorPage.html">
+						<Candidate type="Path">
+							<Value>pages\editor\editorPage.html</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="editorPage.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/pages/editor/editorPage.js">
+						<Candidate type="Path">
+							<Value>pages\editor\editorPage.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="editorSettingsPage.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/pages/editor/editorSettingsPage.js">
+						<Candidate type="Path">
+							<Value>pages\editor\editorSettingsPage.js</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="home">
+					<NamedResource name="homePage.html" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/pages/home/homePage.html">
+						<Candidate type="Path">
+							<Value>pages\home\homePage.html</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="homePage.js" uri="ms-resource://21022MarkSpirek.NotepadRT/Files/pages/home/homePage.js">
+						<Candidate type="Path">
+							<Value>pages\home\homePage.js</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>

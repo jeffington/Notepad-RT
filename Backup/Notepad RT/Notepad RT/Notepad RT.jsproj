@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>aee2befe-8451-47a7-8c74-05b09c54715d</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0'">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).Default.props" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).props" />
+  <PropertyGroup>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetPlatformVersion>8.0</TargetPlatformVersion>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <PackageCertificateKeyFile>Notepad RT_StoreKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <PackageCertificateThumbprint>2A9F4FAF27D519A2385ECA95323D5BE0516665B2</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppxManifest Include="package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Content Include="ace-src\mode-dart.js" />
+    <Content Include="ace-src\mode-r.js" />
+    <Content Include="ace-src\mode-rdoc.js" />
+    <Content Include="ace-src\mode-typescript.js" />
+    <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\Logo.scale-140.png" />
+    <Content Include="Assets\Logo.scale-180.png" />
+    <Content Include="Assets\Logo.scale-80.png" />
+    <Content Include="Assets\SmallLogo.scale-100.png" />
+    <Content Include="Assets\SmallLogo.scale-140.png" />
+    <Content Include="Assets\SmallLogo.scale-180.png" />
+    <Content Include="Assets\SmallLogo.scale-80.png" />
+    <Content Include="Assets\SmallLogo.targetsize-16.png" />
+    <Content Include="Assets\SmallLogo.targetsize-256.png" />
+    <Content Include="Assets\SmallLogo.targetsize-32.png" />
+    <Content Include="Assets\SmallLogo.targetsize-48.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-140.png" />
+    <Content Include="Assets\SplashScreen.scale-180.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-140.png" />
+    <Content Include="Assets\StoreLogo.scale-180.png" />
+    <Content Include="Assets\WideLogo.scale-100.png" />
+    <Content Include="Assets\WideLogo.scale-140.png" />
+    <Content Include="Assets\WideLogo.scale-180.png" />
+    <Content Include="Assets\WideLogo.scale-80.png" />
+    <Content Include="css\homePage.css" />
+    <Content Include="default.html" />
+    <Content Include="html\DefaultsUI.html" />
+    <Content Include="html\FeedbackUI.html" />
+    <Content Include="html\LegalUI.html" />
+    <Content Include="images\home.png" />
+    <Content Include="js\default.js" />
+    <Content Include="css\default.css" />
+    <Content Include="ace-src\ace.js" />
+    <Content Include="ace-src\keybinding-emacs.js" />
+    <Content Include="ace-src\keybinding-vim.js" />
+    <Content Include="ace-src\mode-c9search.js" />
+    <Content Include="ace-src\mode-clojure.js" />
+    <Content Include="ace-src\mode-coffee.js" />
+    <Content Include="ace-src\mode-coldfusion.js" />
+    <Content Include="ace-src\mode-csharp.js" />
+    <Content Include="ace-src\mode-css.js" />
+    <Content Include="ace-src\mode-c_cpp.js" />
+    <Content Include="ace-src\mode-diff.js" />
+    <Content Include="ace-src\mode-glsl.js" />
+    <Content Include="ace-src\mode-golang.js" />
+    <Content Include="ace-src\mode-groovy.js" />
+    <Content Include="ace-src\mode-haxe.js" />
+    <Content Include="ace-src\mode-html.js" />
+    <Content Include="ace-src\mode-jade.js" />
+    <Content Include="ace-src\mode-java.js" />
+    <Content Include="ace-src\mode-javascript.js" />
+    <Content Include="ace-src\mode-json.js" />
+    <Content Include="ace-src\mode-jsp.js" />
+    <Content Include="ace-src\mode-jsx.js" />
+    <Content Include="ace-src\mode-latex.js" />
+    <Content Include="ace-src\mode-less.js" />
+    <Content Include="ace-src\mode-liquid.js" />
+    <Content Include="ace-src\mode-lua.js" />
+    <Content Include="ace-src\mode-luapage.js" />
+    <Content Include="ace-src\mode-markdown.js" />
+    <Content Include="ace-src\mode-ocaml.js" />
+    <Content Include="ace-src\mode-perl.js" />
+    <Content Include="ace-src\mode-pgsql.js" />
+    <Content Include="ace-src\mode-php.js" />
+    <Content Include="ace-src\mode-powershell.js" />
+    <Content Include="ace-src\mode-python.js" />
+    <Content Include="ace-src\mode-ruby.js" />
+    <Content Include="ace-src\mode-scad.js" />
+    <Content Include="ace-src\mode-scala.js" />
+    <Content Include="ace-src\mode-scss.js" />
+    <Content Include="ace-src\mode-sh.js" />
+    <Content Include="ace-src\mode-sql.js" />
+    <Content Include="ace-src\mode-svg.js" />
+    <Content Include="ace-src\mode-tcl.js" />
+    <Content Include="ace-src\mode-text.js" />
+    <Content Include="ace-src\mode-textile.js" />
+    <Content Include="ace-src\mode-xml.js" />
+    <Content Include="ace-src\mode-xquery.js" />
+    <Content Include="ace-src\mode-yaml.js" />
+    <Content Include="ace-src\theme-ambiance.js" />
+    <Content Include="ace-src\theme-chrome.js" />
+    <Content Include="ace-src\theme-clouds.js" />
+    <Content Include="ace-src\theme-clouds_midnight.js" />
+    <Content Include="ace-src\theme-cobalt.js" />
+    <Content Include="ace-src\theme-crimson_editor.js" />
+    <Content Include="ace-src\theme-dawn.js" />
+    <Content Include="ace-src\theme-dreamweaver.js" />
+    <Content Include="ace-src\theme-eclipse.js" />
+    <Content Include="ace-src\theme-github.js" />
+    <Content Include="ace-src\theme-idle_fingers.js" />
+    <Content Include="ace-src\theme-kr_theme.js" />
+    <Content Include="ace-src\theme-merbivore.js" />
+    <Content Include="ace-src\theme-merbivore_soft.js" />
+    <Content Include="ace-src\theme-monokai.js" />
+    <Content Include="ace-src\theme-mono_industrial.js" />
+    <Content Include="ace-src\theme-pastel_on_dark.js" />
+    <Content Include="ace-src\theme-solarized_dark.js" />
+    <Content Include="ace-src\theme-solarized_light.js" />
+    <Content Include="ace-src\theme-textmate.js" />
+    <Content Include="ace-src\theme-tomorrow.js" />
+    <Content Include="ace-src\theme-tomorrow_night.js" />
+    <Content Include="ace-src\theme-tomorrow_night_blue.js" />
+    <Content Include="ace-src\theme-tomorrow_night_bright.js" />
+    <Content Include="ace-src\theme-tomorrow_night_eighties.js" />
+    <Content Include="ace-src\theme-twilight.js" />
+    <Content Include="ace-src\theme-vibrant_ink.js" />
+    <Content Include="ace-src\theme-xcode.js" />
+    <Content Include="ace-src\worker-coffee.js" />
+    <Content Include="ace-src\worker-css.js" />
+    <Content Include="ace-src\worker-javascript.js" />
+    <Content Include="ace-src\worker-json.js" />
+    <Content Include="ace-src\worker-xquery.js" />
+    <Content Include="js\navigator.js" />
+    <Content Include="js\recentFilesList.js" />
+    <None Include="Package.StoreAssociation.xml" />
+    <None Include="Notepad RT_StoreKey.pfx" />
+    <Content Include="pages\editor\editorPage.html" />
+    <Content Include="pages\editor\editorPage.js" />
+    <Content Include="pages\editor\editorSettingsPage.js" />
+    <Content Include="pages\home\homePage.html" />
+    <Content Include="pages\home\homePage.js" />
+    <None Include="Notepad RT_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
+  <!-- To modify your build process, add your task inside one of the targets below then uncomment
+       that target and the DisableFastUpToDateCheck PropertyGroup. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <PropertyGroup>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+  </PropertyGroup>
+  -->
+</Project>

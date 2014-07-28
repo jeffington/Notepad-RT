@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="21022MarkSpirek.NotepadRT" Version="1.3.0.1" Publisher="CN=3714733F-5D19-41FF-8C3D-D9DF8CBCAFC1" />
+  <Properties>
+    <DisplayName>Notepad RT</DisplayName>
+    <PublisherDisplayName>JDM Labs, LLC</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="default.html">
+      <VisualElements DisplayName="Notepad RT" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Notepad RT is the missing plain text, markup and code editor for developers and geeks. Notepad RT is made specifically for Windows 8 and Windows RT with rich support for text manipulation and syntax highlighting." ForegroundText="light" BackgroundColor="#7cb800">
+        <DefaultTile ShowName="allLogos" WideLogo="Assets\WideLogo.png" />
+        <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#7cb800" />
+        <InitialRotationPreference>
+          <Rotation Preference="landscape" />
+          <Rotation Preference="landscapeFlipped" />
+        </InitialRotationPreference>
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.fileTypeAssociation">
+          <FileTypeAssociation Name=".txt">
+            <SupportedFileTypes>
+              <FileType>.txt</FileType>
+              <FileType>.css</FileType>
+              <FileType>.js</FileType>
+              <FileType>.md</FileType>
+              <FileType>.java</FileType>
+              <FileType>.c</FileType>
+              <FileType>.cpp</FileType>
+              <FileType>.h</FileType>
+              <FileType>.jsp</FileType>
+              <FileType>.html</FileType>
+              <FileType>.htm</FileType>
+              <FileType>.pl</FileType>
+              <FileType>.py</FileType>
+              <FileType>.cs</FileType>
+              <FileType>.php</FileType>
+              <FileType>.xml</FileType>
+              <FileType>.json</FileType>
+              <FileType>.rb</FileType>
+              <FileType>.rbw</FileType>
+              <FileType>.sql</FileType>
+              <FileType>.psql</FileType>
+              <FileType>.rss</FileType>
+            </SupportedFileTypes>
+          </FileTypeAssociation>
+        </Extension>
+        <Extension Category="windows.shareTarget">
+          <ShareTarget>
+            <DataFormat>Text</DataFormat>
+          </ShareTarget>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="removableStorage" />
+  </Capabilities>
+</Package>

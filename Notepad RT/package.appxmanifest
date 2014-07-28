@@ -1,28 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="21022MarkSpirek.NotepadRT" Version="1.3.0.1" Publisher="CN=3714733F-5D19-41FF-8C3D-D9DF8CBCAFC1" />
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+  <Identity Name="21022MarkSpirek.NotepadRT" Version="1.4.0.1" Publisher="CN=jeff_000" />
   <Properties>
     <DisplayName>Notepad RT</DisplayName>
-    <PublisherDisplayName>JDM Labs, LLC</PublisherDisplayName>
+    <PublisherDisplayName>Impeccable Digital</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>
-    <OSMinVersion>6.2.1</OSMinVersion>
-    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
   </Prerequisites>
   <Resources>
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <VisualElements DisplayName="Notepad RT" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Notepad RT is the missing plain text, markup and code editor for developers and geeks. Notepad RT is made specifically for Windows 8 and Windows RT with rich support for text manipulation and syntax highlighting." ForegroundText="light" BackgroundColor="#7cb800">
-        <DefaultTile ShowName="allLogos" WideLogo="Assets\WideLogo.png" />
-        <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#7cb800" />
-        <InitialRotationPreference>
-          <Rotation Preference="landscape" />
-          <Rotation Preference="landscapeFlipped" />
-        </InitialRotationPreference>
-      </VisualElements>
       <Extensions>
         <Extension Category="windows.fileTypeAssociation">
           <FileTypeAssociation Name=".txt">
@@ -58,6 +50,19 @@
           </ShareTarget>
         </Extension>
       </Extensions>
+      <m2:VisualElements DisplayName="Notepad RT" Description="Notepad RT is the missing plain text, markup and code editor for developers and geeks. Notepad RT is made specifically for Windows 8 and Windows RT with rich support for text manipulation and syntax highlighting." BackgroundColor="#7cb800" ForegroundText="light" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png">
+        <m2:DefaultTile Wide310x150Logo="Assets\WideLogo.png">
+          <m2:ShowNameOnTiles>
+            <m2:ShowOn Tile="square150x150Logo" />
+            <m2:ShowOn Tile="wide310x150Logo" />
+          </m2:ShowNameOnTiles>
+        </m2:DefaultTile>
+        <m2:InitialRotationPreference>
+          <m2:Rotation Preference="landscape" />
+          <m2:Rotation Preference="landscapeFlipped" />
+        </m2:InitialRotationPreference>
+        <m2:SplashScreen BackgroundColor="#7cb800" Image="Assets\SplashScreen.png" />
+      </m2:VisualElements>
     </Application>
   </Applications>
   <Capabilities>

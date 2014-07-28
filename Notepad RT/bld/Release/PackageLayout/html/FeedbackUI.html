@@ -1,0 +1,104 @@
+﻿<!doctype HTML>
+<html>
+    <head>
+        <title>About & Feedback</title>
+        
+        <style>
+        
+        a{
+        	color: #7cb800;
+        }
+        .support{
+        	background: #7cb800;
+        	color: #fff;
+        	text-decoration: none;
+        	padding: 8px 20px;
+        	margin: 10px 0;
+        	display: inline-block;
+        	text-align: center;
+        }
+
+               .support:hover{
+        	color: #fff;
+        }
+        
+        .support a {
+        	text-decoration: none;
+        	color: #ffffff;
+        }
+
+        .support a:hover {
+        	text-decoration: none;
+        	color: #ffffff;
+        }
+        
+        p{
+        	margin: 10px 0;
+        }
+        
+        ul{
+        	margin: 0px auto;
+        	padding: 0px;
+        	list-style: none;
+			text-align: center;
+        	width: 350px;
+        }
+        
+        li{
+        	margin: 1em 0;
+        	display: inline;
+        }
+        
+        </style>
+        
+    </head>
+    
+    <body>
+        <!-- BEGINTEMPLATE: Template code for an empty Help Flyout. -->
+        <!-- Each settings flyout should be defined in its own HTML file. -->
+        <!-- Set the width to 'narrow' for a narrow settings flyout. -->
+        <!-- Set the background color for the header to the background color defined for your
+             app tile in the manifest. -->
+        <div id="feedbackDiv" data-win-control="WinJS.UI.SettingsFlyout" aria-label="Help settings flyout"
+                data-win-options="{width:'wide'}">
+            <div class="win-header" style="background: #7cb800;">
+                <button type="button" onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton"></button>
+                <div class="win-label">About & Feedback</div>
+
+            </div>
+            <div class="win-content">
+			<h2>Special Note From The Developers</h2>
+			
+			<p>We're geeks just like you. We hope we can work together to make the best app possible. We respond to feature request and bug reports on our support website (click the button below). We respond quickly and are constantly iterating. So do not hesitate to tell us what you think!</p>
+
+			
+			<ul>
+			<li class="support"><a href="http://notepadrt.uservoice.com">Feedback and Support</a></li>
+			</ul>
+
+             <ul>
+                <li class="support"><a href="http://notepadrt.com">Website</a></li>
+                <li class="support"><a href="mailto:contact@notepadrt.com">Email</a></li>
+                <li class="support"><a href="http://blog.notepadrt.com">Changelog</a></li>
+             </ul>
+             
+              <ul>  
+                <li class="support"><a href="http://twitter.com/notepadrt">Twitter</a></li>
+                <li class="support"><a href="http://facebook.com/notepadrt">Facebook</a></li>
+                <li class="support"><a href="https://plus.google.com/110029600369856336503">Google+</a></li>
+              </ul>
+              
+<!--              <ul>
+              <li class="support"><a href="http://notepadrt.uservoice.com">Keyboard Shortcuts</a></li>
+              </ul>-->
+            
+
+            </div>
+
+         
+
+
+        </div>
+        <!-- ENDTEMPLATE -->
+    </body>
+</html>

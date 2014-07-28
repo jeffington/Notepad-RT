@@ -1,0 +1,15 @@
+C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\bin\Debug\ReverseMap\resources.pri
+C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\bin\Debug\AppxManifest.xml
+C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\bin\Debug\Notepad RT.build.appxrecipe
+C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\bld\Debug\priconfig.xml
+C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\bld\Debug\priconfig.xml.intermediate
+C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\bld\Debug\layout.resfiles
+C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\bld\Debug\layout.resfiles.intermediate
+C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\bld\Debug\resources.resfiles
+C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\bld\Debug\resources.resfiles.intermediate
+C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\bld\Debug\pri.resfiles
+C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\bld\Debug\pri.resfiles.intermediate
+C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\bld\Debug\qualifiers.txt
+C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\bld\Debug\qualifiers.txt.intermediate
+C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\bld\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\bld\Debug\ProjectArchitectures.txt

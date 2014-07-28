@@ -1,0 +1,548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>WINDOWS8-1</Machine>
+    <WindowsUser>jeff_000</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>21022MarkSpirek.NotepadRT</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\bld\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>F95C4209E3C1806231A94D921CE55C9350CC287623B6C930BA16652D5819F623</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>21022MarkSpirek.NotepadRT_1.4.0.1_neutral__gk7k3632sm22a</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>21022MarkSpirek.NotepadRT_gk7k3632sm22a!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>21022MarkSpirek.NotepadRT</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=3714733F-5D19-41FF-8C3D-D9DF8CBCAFC1</RegisteredPackagePublisher>
+    <RegisteredVersion>1.4.0.1</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:48:44.762</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-dart.js">
+      <PackagePath>ace-src\mode-dart.js</PackagePath>
+      <Modified>2014-07-28T22:38:08.675</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-r.js">
+      <PackagePath>ace-src\mode-r.js</PackagePath>
+      <Modified>2014-07-28T22:38:13.304</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-rdoc.js">
+      <PackagePath>ace-src\mode-rdoc.js</PackagePath>
+      <Modified>2014-07-28T22:38:13.342</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-typescript.js">
+      <PackagePath>ace-src\mode-typescript.js</PackagePath>
+      <Modified>2014-07-28T22:38:16.417</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\js\default.js">
+      <PackagePath>js\default.js</PackagePath>
+      <Modified>2014-07-28T22:38:29.683</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\ace.js">
+      <PackagePath>ace-src\ace.js</PackagePath>
+      <Modified>2014-07-28T22:38:06.106</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\keybinding-emacs.js">
+      <PackagePath>ace-src\keybinding-emacs.js</PackagePath>
+      <Modified>2014-07-28T22:38:06.185</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\keybinding-vim.js">
+      <PackagePath>ace-src\keybinding-vim.js</PackagePath>
+      <Modified>2014-07-28T22:38:06.390</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-c9search.js">
+      <PackagePath>ace-src\mode-c9search.js</PackagePath>
+      <Modified>2014-07-28T22:38:06.538</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-clojure.js">
+      <PackagePath>ace-src\mode-clojure.js</PackagePath>
+      <Modified>2014-07-28T22:38:06.969</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-coffee.js">
+      <PackagePath>ace-src\mode-coffee.js</PackagePath>
+      <Modified>2014-07-28T22:38:07.177</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-coldfusion.js">
+      <PackagePath>ace-src\mode-coldfusion.js</PackagePath>
+      <Modified>2014-07-28T22:38:07.577</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-csharp.js">
+      <PackagePath>ace-src\mode-csharp.js</PackagePath>
+      <Modified>2014-07-28T22:38:08.380</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-css.js">
+      <PackagePath>ace-src\mode-css.js</PackagePath>
+      <Modified>2014-07-28T22:38:08.611</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-c_cpp.js">
+      <PackagePath>ace-src\mode-c_cpp.js</PackagePath>
+      <Modified>2014-07-28T22:38:06.673</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-diff.js">
+      <PackagePath>ace-src\mode-diff.js</PackagePath>
+      <Modified>2014-07-28T22:38:08.776</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-glsl.js">
+      <PackagePath>ace-src\mode-glsl.js</PackagePath>
+      <Modified>2014-07-28T22:38:08.854</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-golang.js">
+      <PackagePath>ace-src\mode-golang.js</PackagePath>
+      <Modified>2014-07-28T22:38:08.911</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-groovy.js">
+      <PackagePath>ace-src\mode-groovy.js</PackagePath>
+      <Modified>2014-07-28T22:38:09.002</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-haxe.js">
+      <PackagePath>ace-src\mode-haxe.js</PackagePath>
+      <Modified>2014-07-28T22:38:09.051</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-html.js">
+      <PackagePath>ace-src\mode-html.js</PackagePath>
+      <Modified>2014-07-28T22:38:09.290</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-jade.js">
+      <PackagePath>ace-src\mode-jade.js</PackagePath>
+      <Modified>2014-07-28T22:38:09.364</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-java.js">
+      <PackagePath>ace-src\mode-java.js</PackagePath>
+      <Modified>2014-07-28T22:38:09.413</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-javascript.js">
+      <PackagePath>ace-src\mode-javascript.js</PackagePath>
+      <Modified>2014-07-28T22:38:09.492</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-json.js">
+      <PackagePath>ace-src\mode-json.js</PackagePath>
+      <Modified>2014-07-28T22:38:09.528</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-jsp.js">
+      <PackagePath>ace-src\mode-jsp.js</PackagePath>
+      <Modified>2014-07-28T22:38:09.701</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-jsx.js">
+      <PackagePath>ace-src\mode-jsx.js</PackagePath>
+      <Modified>2014-07-28T22:38:10.215</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-latex.js">
+      <PackagePath>ace-src\mode-latex.js</PackagePath>
+      <Modified>2014-07-28T22:38:10.473</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-less.js">
+      <PackagePath>ace-src\mode-less.js</PackagePath>
+      <Modified>2014-07-28T22:38:10.755</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-liquid.js">
+      <PackagePath>ace-src\mode-liquid.js</PackagePath>
+      <Modified>2014-07-28T22:38:10.984</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-lua.js">
+      <PackagePath>ace-src\mode-lua.js</PackagePath>
+      <Modified>2014-07-28T22:38:11.640</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-luapage.js">
+      <PackagePath>ace-src\mode-luapage.js</PackagePath>
+      <Modified>2014-07-28T22:38:12.173</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-markdown.js">
+      <PackagePath>ace-src\mode-markdown.js</PackagePath>
+      <Modified>2014-07-28T22:38:12.692</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-ocaml.js">
+      <PackagePath>ace-src\mode-ocaml.js</PackagePath>
+      <Modified>2014-07-28T22:38:12.753</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-perl.js">
+      <PackagePath>ace-src\mode-perl.js</PackagePath>
+      <Modified>2014-07-28T22:38:12.804</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-pgsql.js">
+      <PackagePath>ace-src\mode-pgsql.js</PackagePath>
+      <Modified>2014-07-28T22:38:12.880</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-php.js">
+      <PackagePath>ace-src\mode-php.js</PackagePath>
+      <Modified>2014-07-28T22:38:13.047</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-powershell.js">
+      <PackagePath>ace-src\mode-powershell.js</PackagePath>
+      <Modified>2014-07-28T22:38:13.213</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-python.js">
+      <PackagePath>ace-src\mode-python.js</PackagePath>
+      <Modified>2014-07-28T22:38:13.258</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-ruby.js">
+      <PackagePath>ace-src\mode-ruby.js</PackagePath>
+      <Modified>2014-07-28T22:38:13.453</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-scad.js">
+      <PackagePath>ace-src\mode-scad.js</PackagePath>
+      <Modified>2014-07-28T22:38:13.525</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-scala.js">
+      <PackagePath>ace-src\mode-scala.js</PackagePath>
+      <Modified>2014-07-28T22:38:13.590</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-scss.js">
+      <PackagePath>ace-src\mode-scss.js</PackagePath>
+      <Modified>2014-07-28T22:38:13.722</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-sh.js">
+      <PackagePath>ace-src\mode-sh.js</PackagePath>
+      <Modified>2014-07-28T22:38:14.184</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-sql.js">
+      <PackagePath>ace-src\mode-sql.js</PackagePath>
+      <Modified>2014-07-28T22:38:14.677</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-svg.js">
+      <PackagePath>ace-src\mode-svg.js</PackagePath>
+      <Modified>2014-07-28T22:38:15.326</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-tcl.js">
+      <PackagePath>ace-src\mode-tcl.js</PackagePath>
+      <Modified>2014-07-28T22:38:15.692</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-text.js">
+      <PackagePath>ace-src\mode-text.js</PackagePath>
+      <Modified>2014-07-28T22:38:15.861</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-textile.js">
+      <PackagePath>ace-src\mode-textile.js</PackagePath>
+      <Modified>2014-07-28T22:38:16.041</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-xml.js">
+      <PackagePath>ace-src\mode-xml.js</PackagePath>
+      <Modified>2014-07-28T22:38:16.709</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-xquery.js">
+      <PackagePath>ace-src\mode-xquery.js</PackagePath>
+      <Modified>2014-07-28T22:38:16.813</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\mode-yaml.js">
+      <PackagePath>ace-src\mode-yaml.js</PackagePath>
+      <Modified>2014-07-28T22:38:16.864</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-ambiance.js">
+      <PackagePath>ace-src\theme-ambiance.js</PackagePath>
+      <Modified>2014-07-28T22:38:16.914</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-chrome.js">
+      <PackagePath>ace-src\theme-chrome.js</PackagePath>
+      <Modified>2014-07-28T22:38:16.946</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-clouds.js">
+      <PackagePath>ace-src\theme-clouds.js</PackagePath>
+      <Modified>2014-07-28T22:38:16.982</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-clouds_midnight.js">
+      <PackagePath>ace-src\theme-clouds_midnight.js</PackagePath>
+      <Modified>2014-07-28T22:38:17.075</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-cobalt.js">
+      <PackagePath>ace-src\theme-cobalt.js</PackagePath>
+      <Modified>2014-07-28T22:38:17.177</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-crimson_editor.js">
+      <PackagePath>ace-src\theme-crimson_editor.js</PackagePath>
+      <Modified>2014-07-28T22:38:17.222</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-dawn.js">
+      <PackagePath>ace-src\theme-dawn.js</PackagePath>
+      <Modified>2014-07-28T22:38:17.245</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-dreamweaver.js">
+      <PackagePath>ace-src\theme-dreamweaver.js</PackagePath>
+      <Modified>2014-07-28T22:38:17.276</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-eclipse.js">
+      <PackagePath>ace-src\theme-eclipse.js</PackagePath>
+      <Modified>2014-07-28T22:38:17.338</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-github.js">
+      <PackagePath>ace-src\theme-github.js</PackagePath>
+      <Modified>2014-07-28T22:38:17.361</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-idle_fingers.js">
+      <PackagePath>ace-src\theme-idle_fingers.js</PackagePath>
+      <Modified>2014-07-28T22:38:17.422</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-kr_theme.js">
+      <PackagePath>ace-src\theme-kr_theme.js</PackagePath>
+      <Modified>2014-07-28T22:38:17.444</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-merbivore.js">
+      <PackagePath>ace-src\theme-merbivore.js</PackagePath>
+      <Modified>2014-07-28T22:38:17.481</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-merbivore_soft.js">
+      <PackagePath>ace-src\theme-merbivore_soft.js</PackagePath>
+      <Modified>2014-07-28T22:38:17.564</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-monokai.js">
+      <PackagePath>ace-src\theme-monokai.js</PackagePath>
+      <Modified>2014-07-28T22:38:18.011</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-mono_industrial.js">
+      <PackagePath>ace-src\theme-mono_industrial.js</PackagePath>
+      <Modified>2014-07-28T22:38:17.605</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-pastel_on_dark.js">
+      <PackagePath>ace-src\theme-pastel_on_dark.js</PackagePath>
+      <Modified>2014-07-28T22:38:18.304</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-solarized_dark.js">
+      <PackagePath>ace-src\theme-solarized_dark.js</PackagePath>
+      <Modified>2014-07-28T22:38:18.732</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-solarized_light.js">
+      <PackagePath>ace-src\theme-solarized_light.js</PackagePath>
+      <Modified>2014-07-28T22:38:18.970</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-textmate.js">
+      <PackagePath>ace-src\theme-textmate.js</PackagePath>
+      <Modified>2014-07-28T22:38:19.462</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-tomorrow.js">
+      <PackagePath>ace-src\theme-tomorrow.js</PackagePath>
+      <Modified>2014-07-28T22:38:19.869</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-tomorrow_night.js">
+      <PackagePath>ace-src\theme-tomorrow_night.js</PackagePath>
+      <Modified>2014-07-28T22:38:20.007</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-tomorrow_night_blue.js">
+      <PackagePath>ace-src\theme-tomorrow_night_blue.js</PackagePath>
+      <Modified>2014-07-28T22:38:20.377</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-tomorrow_night_bright.js">
+      <PackagePath>ace-src\theme-tomorrow_night_bright.js</PackagePath>
+      <Modified>2014-07-28T22:38:20.677</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-tomorrow_night_eighties.js">
+      <PackagePath>ace-src\theme-tomorrow_night_eighties.js</PackagePath>
+      <Modified>2014-07-28T22:38:20.714</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-twilight.js">
+      <PackagePath>ace-src\theme-twilight.js</PackagePath>
+      <Modified>2014-07-28T22:38:20.760</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-vibrant_ink.js">
+      <PackagePath>ace-src\theme-vibrant_ink.js</PackagePath>
+      <Modified>2014-07-28T22:38:20.793</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\theme-xcode.js">
+      <PackagePath>ace-src\theme-xcode.js</PackagePath>
+      <Modified>2014-07-28T22:38:20.834</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\worker-coffee.js">
+      <PackagePath>ace-src\worker-coffee.js</PackagePath>
+      <Modified>2014-07-28T22:38:21.378</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\worker-css.js">
+      <PackagePath>ace-src\worker-css.js</PackagePath>
+      <Modified>2014-07-28T22:38:21.682</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\worker-javascript.js">
+      <PackagePath>ace-src\worker-javascript.js</PackagePath>
+      <Modified>2014-07-28T22:38:22.368</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\worker-json.js">
+      <PackagePath>ace-src\worker-json.js</PackagePath>
+      <Modified>2014-07-28T22:38:22.542</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\ace-src\worker-xquery.js">
+      <PackagePath>ace-src\worker-xquery.js</PackagePath>
+      <Modified>2014-07-28T22:38:28.832</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\js\navigator.js">
+      <PackagePath>js\navigator.js</PackagePath>
+      <Modified>2014-07-28T22:38:29.843</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\js\recentFilesList.js">
+      <PackagePath>js\recentFilesList.js</PackagePath>
+      <Modified>2014-07-28T22:38:30.108</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\pages\editor\editorPage.js">
+      <PackagePath>pages\editor\editorPage.js</PackagePath>
+      <Modified>2014-07-28T22:38:30.815</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\pages\editor\editorSettingsPage.js">
+      <PackagePath>pages\editor\editorSettingsPage.js</PackagePath>
+      <Modified>2014-07-28T22:38:30.917</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\pages\home\homePage.js">
+      <PackagePath>pages\home\homePage.js</PackagePath>
+      <Modified>2014-07-28T22:38:31.026</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:03.857</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\Logo.scale-140.png">
+      <PackagePath>Assets\Logo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:03.867</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\Logo.scale-180.png">
+      <PackagePath>Assets\Logo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:03.877</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\Logo.scale-80.png">
+      <PackagePath>Assets\Logo.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:03.921</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:03.984</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\SmallLogo.scale-140.png">
+      <PackagePath>Assets\SmallLogo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:04.099</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\SmallLogo.scale-180.png">
+      <PackagePath>Assets\SmallLogo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:04.110</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\SmallLogo.scale-80.png">
+      <PackagePath>Assets\SmallLogo.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:04.125</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\SmallLogo.targetsize-16.png">
+      <PackagePath>Assets\SmallLogo.targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:04.153</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\SmallLogo.targetsize-256.png">
+      <PackagePath>Assets\SmallLogo.targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:04.212</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\SmallLogo.targetsize-32.png">
+      <PackagePath>Assets\SmallLogo.targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:04.231</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\SmallLogo.targetsize-48.png">
+      <PackagePath>Assets\SmallLogo.targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:04.244</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:04.287</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\SplashScreen.scale-140.png">
+      <PackagePath>Assets\SplashScreen.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:04.319</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\SplashScreen.scale-180.png">
+      <PackagePath>Assets\SplashScreen.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:04.340</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:04.350</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\StoreLogo.scale-140.png">
+      <PackagePath>Assets\StoreLogo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:04.359</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\StoreLogo.scale-180.png">
+      <PackagePath>Assets\StoreLogo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:04.403</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\WideLogo.scale-100.png">
+      <PackagePath>Assets\WideLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:04.505</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\WideLogo.scale-140.png">
+      <PackagePath>Assets\WideLogo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:04.551</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\WideLogo.scale-180.png">
+      <PackagePath>Assets\WideLogo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:04.597</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\Assets\WideLogo.scale-80.png">
+      <PackagePath>Assets\WideLogo.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-07-28T22:38:04.638</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\images\home.png">
+      <PackagePath>images\home.png</PackagePath>
+      <Modified>2014-07-28T22:38:29.557</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\css\homePage.css">
+      <PackagePath>css\homePage.css</PackagePath>
+      <Modified>2014-07-28T22:38:29.266</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+      <Modified>2014-07-28T22:38:28.886</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\default.html">
+      <PackagePath>default.html</PackagePath>
+      <Modified>2014-07-28T22:47:54.465</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\html\DefaultsUI.html">
+      <PackagePath>html\DefaultsUI.html</PackagePath>
+      <Modified>2014-07-28T22:38:29.381</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\html\FeedbackUI.html">
+      <PackagePath>html\FeedbackUI.html</PackagePath>
+      <Modified>2014-07-28T22:38:29.529</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\html\LegalUI.html">
+      <PackagePath>html\LegalUI.html</PackagePath>
+      <Modified>2014-07-28T22:38:29.545</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\pages\editor\editorPage.html">
+      <PackagePath>pages\editor\editorPage.html</PackagePath>
+      <Modified>2014-07-28T22:38:30.547</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\pages\home\homePage.html">
+      <PackagePath>pages\home\homePage.html</PackagePath>
+      <Modified>2014-07-28T22:38:30.979</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jeff_000\Desktop\Notepad-RT\Notepad RT\bin\Debug\ReverseMap\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2014-07-28T22:48:37.609</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.WinJS.2.0\1.0\">
+      <Name>Microsoft.WinJS.2.0</Name>
+      <Version>1.0.9600.16408</Version>
+      <Architecture>Neutral</Architecture>
+      <FrameworkIdentity>Name=Microsoft.WinJS.2.0, MinVersion=1.0.9600.16408</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.WinJS.2.0\1.0\Microsoft.WinJS.2.0.appx</AppxLocation>
+      <MoreInfo>http://go.microsoft.com/fwlink/%3fLinkId=260891</MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>
