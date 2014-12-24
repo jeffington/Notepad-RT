@@ -1,4 +1,4 @@
-Copyright (c) 2013, JDM Labs, LLC. All rights reserved.
+Copyright (c) 2014, Impeccable Labs, LLC. All rights reserved.
 
 Copyright (c) 2010, Ajax.org B.V. All rights reserved.
 
