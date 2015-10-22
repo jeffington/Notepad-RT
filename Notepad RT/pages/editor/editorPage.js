@@ -483,39 +483,43 @@ var editor,
                 sessionState.editorCurrentFileName = retrievedFile.name;
                 setFileName( retrievedFile.name);
                 
-                return Windows.Storage.FileIO.readBufferAsync( retrievedFile);
+                //return Windows.Storage.FileIO.readBufferAsync( retrievedFile);
+                return Windows.Storage.FileIO.readTextAsync(retrievedFile);
                 //return retrievedFile.readTextAsync();
 
             }).then( function( buffer) {
 
                 //var dataReader = new Windows.Storage.Streams.DataReader( stream);
-                var dataReader = Windows.Storage.Streams.DataReader.fromBuffer( buffer),
-                    array = new Array( buffer.length),
-                    unicodeEncoding = dataReader.unicodeEncoding, // 0 = utf8, 1 = Utf16-bigEndian, 2 = Utf16-littleEndian
-                    byteOrder = dataReader.byteOrder, // 0 = littleEndian, 1 = bigEndian
-                    output = '',
-                    x;
+                //var dataReader = new Windows.Storage.Streams.DataReader( stream);
+                //var dataReader = Windows.Storage.Streams.DataReader.fromBuffer( buffer),
+                //    array = new Array( buffer.length),
+                //    unicodeEncoding = dataReader.unicodeEncoding, // 0 = utf8, 1 = Utf16-bigEndian, 2 = Utf16-littleEndian
+                //    byteOrder = dataReader.byteOrder, // 0 = littleEndian, 1 = bigEndian
+                //    output = '',
+                //    x;
 
-                console.log('File: ' + getFileName() + ' | Byte Order: ' + byteOrder + ' | Unicode encoding: ' + unicodeEncoding);
+                //console.log('File: ' + getFileName() + ' | Byte Order: ' + byteOrder + ' | Unicode encoding: ' + unicodeEncoding);
 
-                dataReader.readBytes( array);
-                dataReader.close();
+                //dataReader.readBytes( array);
+                //dataReader.close();
                 
-                for ( x = 0; x < array.length; x++) {
+                //for ( x = 0; x < array.length; x++) {
 
-                    array[ x] = decodeChar( array[ x]);
+                //    array[ x] = decodeChar( array[ x]);
 
-                }
+                //}
 
-                // Cut off the characters: ï»¿
+                //// Cut off the characters: ï»¿
                 
-                if ( array[ 0] == "ï" || array[ 1] == "»" || array[ 2] == "¿") {
+                //if ( array[ 0] == "ï" || array[ 1] == "»" || array[ 2] == "¿") {
 
-                    array.splice( 0, 3);
+                //    array.splice( 0, 3);
 
-                }
+                //}
                 
-                editor.getSession().getDocument().setValue( array.join( ''));
+                //editor.getSession().getDocument().setValue(array.join(''));
+
+                editor.getSession().getDocument().setValue(buffer);
             
                 return WinJS.Promise.timeout( 1200);
 
